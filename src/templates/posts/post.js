@@ -1,10 +1,10 @@
 import React, { Component } from "react"
-import Layout from "../layouts/index"
+import Layout from "../../layouts/index"
 import { graphql } from "gatsby"
 import PropTypes from "prop-types"
-import ReturnButton from '../components/master/returnButton/returnButton'
+import ReturnButton from '../../components/master/returnButton/returnButton'
 import Img from 'gatsby-image'
-import "./css/post.css"
+import "./../css/post.css"
 class Post extends Component {
   render() {
     // This variable will return all the fields related to the post
@@ -107,27 +107,7 @@ Post.propTypes = {
   edges: PropTypes.array,
 }
 export default Post
-/*
-============================================
-This is the default query for all the posts,
-if you need an specific query for an specific
-post you need to create a conditional for the 
-post or post type on the gatsby-node.js file 
-and there select a different template for that
-kind of posts.
 
-To add ACF fields into the query you can add 
-them like this into the wordpressPost query.
-
-acf {
-  field1
-  field1
-}
-
-There must exist a dummy post with all the 
-fields set so the query wont return any error.
-============================================
-*/
 export const postQuery = graphql`
   query($id: String!) {
     wordpressPost(id: { eq: $id }) {

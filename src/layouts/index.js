@@ -4,6 +4,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Helmet from "react-helmet"
 import Header from "../components/header/header"
 import Footer from "../components/footer/footer"
+import MainMenu from "../components/menu/mainMenu"
 import "./index.css"
 import "./custom.css"
 const Layout = ({ children }) => {
@@ -55,6 +56,7 @@ const Layout = ({ children }) => {
       <Header siteTitle={siteData.name} siteLogo={siteLogo} />
       <div className="master__wrapper">
         <main >{children}</main>
+        <MainMenu></MainMenu>
         <Footer />
       </div>
     </>

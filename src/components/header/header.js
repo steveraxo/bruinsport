@@ -1,13 +1,9 @@
 import React, {Component} from "react"
 import Link from 'gatsby-link'
-import MainMenu from "../menu/mainMenu"
 import { globalHistory } from "@reach/router"
 import "./header.css"
 // Get the svg logo as a component
 import Logo from "../../images/logo/bruinsport.png"
-
-console.log(Logo);
-
 class Header extends Component {
   constructor(props) {
     super(props);
@@ -44,24 +40,17 @@ class Header extends Component {
       if(this.props.siteLogo){
         wpLogo = this.props.siteLogo
       }
-      const title = this.props.siteTitle;
       return (
         <div className="header__wrapper">
           <div className="brand__wrapper" id="/">
             <Link to="/" className="brand__link">
               {
-                // We check if wpLogo exist and if we dont, we load the logo
-                // from the gatsby images component using the react-svg plugin.
-
-                // If you want to set an different type image (png, jpg) you can 
-                // remove the code  and add your own
                 wpLogo
                 ?<img src={wpLogo} className="brand__svg__logo wp__logo" alt="Raxo" />
-                :<Logo/>
+                :<img src={Logo} className="brand__svg__logo wp__logo" alt="Raxo" />
               }
             </Link>
           </div>
-          <MainMenu theme={this.state.darkTheme ? '--dark' : '--light' }></MainMenu>
         </div>
       )
   }

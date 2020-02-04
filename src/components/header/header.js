@@ -4,8 +4,10 @@ import MainMenu from "../menu/mainMenu"
 import { globalHistory } from "@reach/router"
 import "./header.css"
 // Get the svg logo as a component
-import LogoSvgBlack from "./../../images/svg/logo.svg"
-import LogoSvgwhite from "./../../images/svg/logo-white.svg"
+import Logo from "../../images/logo/bruinsport.png"
+
+console.log(Logo);
+
 class Header extends Component {
   constructor(props) {
     super(props);
@@ -55,9 +57,7 @@ class Header extends Component {
                 // remove the code  and add your own
                 wpLogo
                 ?<img src={wpLogo} className="brand__svg__logo wp__logo" alt="Raxo" />
-                :this.state.darkTheme
-                  ?<LogoSvgwhite title={title} className="brand__svg__logo local__logo" alt="Raxo"></LogoSvgwhite>
-                  :<LogoSvgBlack title={title} className="brand__svg__logo local__logo" alt="Raxo"></LogoSvgBlack>
+                :<Logo/>
               }
             </Link>
           </div>

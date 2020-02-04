@@ -32,12 +32,12 @@ module.exports = {
         ],
       },
     },
-    {
-      resolve: `gatsby-plugin-mailchimp`,
-      options: {
-          endpoint: `${process.env.MAILCHIMP_KEY}`, 
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-mailchimp`,
+    //   options: {
+    //       endpoint: `${process.env.MAILCHIMP_KEY}`, 
+    //   },
+    // },
     {
       resolve: 'gatsby-plugin-react-svg',
       options: {

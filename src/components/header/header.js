@@ -1,6 +1,7 @@
 import React, {Component} from "react"
 import Link from 'gatsby-link'
 import { globalHistory } from "@reach/router"
+import TopMenu from "../menu/topMenu"
 import "./header.css"
 // Get the svg logo as a component
 import Logo from "../../images/logo/bruinsport.png"
@@ -34,6 +35,11 @@ class Header extends Component {
   }
   componentDidMount(){
     this.markCurrentPageItem()
+
+    // Set the menu visibility to hidden
+    setTimeout(function(){ 
+      document.querySelectorAll('.main__menu')[0].style.visibility = "hidden";
+    }, 500);
   }
   render() {
       let wpLogo = false; 
@@ -46,11 +52,12 @@ class Header extends Component {
             <Link to="/" className="brand__link">
               {
                 wpLogo
-                ?<img src={wpLogo} className="brand__svg__logo wp__logo" alt="Raxo" />
-                :<img src={Logo} className="brand__svg__logo wp__logo" alt="Raxo" />
+                ?<img src={wpLogo} className="brand__svg__logo wp__logo" alt="Bruin Sport Capital" />
+                :<img src={Logo} className="brand__svg__logo wp__logo" alt={"Bruin Sport Capital"} />
               }
             </Link>
           </div>
+          <TopMenu />
         </div>
       )
   }

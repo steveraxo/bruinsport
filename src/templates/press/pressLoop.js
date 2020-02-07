@@ -3,7 +3,7 @@ import React from 'react'
 import Layout from "../../layouts/index"
 import Link from 'gatsby-link'
 import PaginationController from '../../components/blog/paginationController/paginationController'
-import ReturnButton from '../../components/master/returnButton/returnButton'
+import Button from '../../components/master/buttons/button'
 import "./../css/posts.css"
 const PostsIndex = ({ pageContext }) => {
 const { group, index, first, last, pageCount } = pageContext
@@ -57,7 +57,7 @@ return (
                 postType={`/press/`}
             >
             </PaginationController>
-            <ReturnButton buttonText="Return to home" redirectionLink={'/'} customClass={'blog__return__button'}></ReturnButton>
+            <Button buttonText="Return to home" redirectionLink={'/'} customClass={'blog__return__button'}></Button>
         </div> 
     </Layout>
   )

@@ -1,0 +1,29 @@
+.burguer__button{
+    cursor: pointer;
+}
+.burguer__line{
+    position: relative;
+    width: 24.47px;
+    height: 3.33px;
+    background: white;
+}
+.burguer__line:after{
+    position: absolute;
+    content: '';
+    width: 24.47px;
+    height: 3.33px;
+    background: white;
+    left: 0;
+    right: 0;
+    top: -12px;
+}
+.burguer__line:before{
+    position: absolute;
+    content: '';
+    width: 24.47px;
+    height: 3.33px;
+    background: white;
+    left: 0;
+    right: 0;
+    bottom: -12px;
+}

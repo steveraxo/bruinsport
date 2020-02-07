@@ -1,0 +1,9 @@
+.news__list__pagination .previous__page , .news__list__pagination .next__page{
+    cursor: pointer;
+}
+.active{
+    display: block;
+}
+.not__active{
+    display: none;
+}

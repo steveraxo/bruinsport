@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import Layout from "../../layouts/index"
 import { graphql } from "gatsby"
 import PropTypes from "prop-types"
-import ReturnButton from '../../components/master/returnButton/returnButton'
+import Button from '../../components/master/buttons/button'
 import Img from 'gatsby-image'
 import "./../css/post.css"
 class Post extends Component {
@@ -96,7 +96,7 @@ class Post extends Component {
                 </div>
               </div>
             </div>
-            <ReturnButton buttonText={'Return to News'} redirectionLink={`/news`} customClass={'inner__post__return__button'}></ReturnButton>
+            <Button buttonText={'Return to News'} redirectionLink={`/news`} customClass={'inner__post__return__button'}></Button>
           </div>
       </Layout>
     )

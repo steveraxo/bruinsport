@@ -8,6 +8,8 @@ import MainMenu from "../components/menu/mainMenu"
 import "./index.css"
 import "./custom.css"
 const Layout = ({ children }) => {
+  
+  const menuState = 'closed'; 
   const data = useStaticQuery(graphql`
     query {
       allWordpressSiteMetadata {
@@ -38,25 +40,23 @@ const Layout = ({ children }) => {
   let siteLogo = false, 
       siteFavicon = false
 
-  /* ===== We verify if the logo query returned something 
   if(data.logo.nodes.length > 0){
     siteLogo = data.logo.nodes[0].source_url
-  } ===== */
+  }
 
-  /* ===== We verify if the favicon query returned something
   if(data.favicon.nodes.length > 0){
     siteFavicon = data.favicon.nodes[0].source_url
-  } ===== */
+  }
 
   return (
     <>
       <Helmet>
         <link rel="icon" href={siteFavicon} />
       </Helmet>
-      <Header siteTitle={siteData.name} siteLogo={siteLogo} />
+      <Header  siteTitle={siteData.name} siteLogo={siteLogo} />
       <div className="master__wrapper">
         <main >{children}</main>
-        <MainMenu></MainMenu>
+        <MainMenu ></MainMenu>
         <Footer />
       </div>
     </>

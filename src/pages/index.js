@@ -7,13 +7,13 @@ import "./css/index.css"
 class HomePage extends Component {
   render() {
     // This variable will return all the fields related to the post
-    const home = this.props.data.allWordpressPage.edges[0].node
+    const pageData = this.props.data.allWordpressPage.edges[0].node
     return (
       <Layout>
         <Helmet>
             <meta charSet="utf-8" />
-            <meta name="description" content={ home.title }/>
-            <title>{ home.title }</title>
+            <meta name="description" content={ pageData.title }/>
+            <title>{ pageData.title }</title>
             <link rel="canonical" href={globalHistory.location.origin} />
         </Helmet>
         <div className="home__page">

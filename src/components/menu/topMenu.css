@@ -1,0 +1,15 @@
+.top__menu a {
+    color: white;
+}
+.top__menu__divider{
+    height: 41.7px;
+    width: 2px;
+    background: white;
+}
+/* Responsive for top menu*/
+@media(max-width: 500px){
+    .top__menu__divider{
+        margin: 0 5px!important;
+        padding: 0;
+    }
+}

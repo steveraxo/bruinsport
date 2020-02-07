@@ -1,12 +1,11 @@
 .header__wrapper{
-    background:transparent;
-    padding: 1.45rem;
+    background: black;
+    padding: 37.87px 66px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     max-width: 100%;
     margin: 0 auto;
-    position: absolute;
     width: 100%;
     z-index: 1;
 }
@@ -30,4 +29,15 @@
 .brand__wrapper .brand__svg__logo{
     height: 40px;
     margin: 0;
+}
+/* Responsive for header block*/ 
+@media (max-width: 500px){
+    .header__wrapper {
+        padding: 10px 20px;
+    }
+    .brand__wrapper .brand__svg__logo {
+        height: auto;
+        margin: 0;
+        width: 150px;
+    }
 }

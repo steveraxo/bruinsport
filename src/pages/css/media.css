@@ -1,16 +1,4 @@
-.media__featured{
-    position: relative;
-}
-.page__background{
-    position: absolute;
-    top: 0;
-    height: 100%;
-    width: 100%;
-}
-.page__background .gatsby-image-wrapper{
-    height: 100%;
-    width: 100%;
-}
+
 .page__title{
     width: 100%;
     text-align: center;
@@ -27,8 +15,6 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-}
-.featured__wrapper .slick-dots{
 }
 .featured__wrapper .slick-dots li {
     width: 5px;

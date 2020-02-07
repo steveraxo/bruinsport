@@ -1,0 +1,40 @@
+.home__page .media__featured{
+    min-height: 900px;
+} 
+.home__page .media__featured{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+.home__page .clients__logos{
+    position: relative;
+    bottom: 0;
+    padding: 0;
+    bottom: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    mix-blend-mode: difference;
+}
+.home__page .clients__logos img{
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+.home__page .header__copy{
+    position: absolute;
+    top: 50%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transform: translateY(-56%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 100px;
+    max-width: 1200px;
+}

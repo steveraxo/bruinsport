@@ -11,6 +11,7 @@ class Header extends Component {
         paginationSize: 2,
     };
   }
+  // Constrols de arrow to next page of articles
   nextPage(event){
     let type = event.target.getAttribute("data-type"),
           lastPage = parseInt(event.target.getAttribute("data-finalpage")),
@@ -39,6 +40,7 @@ class Header extends Component {
         }
     })
   }
+  // Constrols de arrow to previous page of articles
   previousPage(event){
     let   type = event.target.getAttribute("data-type"),
           lastPage = parseInt(event.target.getAttribute("data-finalpage")),
@@ -105,20 +107,20 @@ class Header extends Component {
     let newsArray = this.props.newsArray 
 
     return (
-        <div className="news__list" id={this.props.elId}>
+        <div className={`news__list ${this.props.state}`} id={this.props.elId}>
             {
                 newsArray.map((element, index) => 
                     <div className={`${this.props.elId} news__list_element`} key={index} >
-                            <div className="news__list date">
+                            <div className="news__list_field date col">
                                 <p>{element.node.date}</p>
                             </div>
-                            <div className="news__list subtitle">
+                            <div className="news__list_field subtitle col">
                                 <p>{element.node.acf.subtitle}</p>
                             </div>
-                            <div className="news__list title">
+                            <div className="news__list_field title col">
                                 <p>{element.node.acf.title}</p>
                             </div>
-                            <div className="news__list actions">
+                            <div className="news__list_field actions col">
                             {   
                                 this.props.elId === 'press'
                                 ? <>
@@ -152,14 +154,16 @@ class Header extends Component {
                      data-page={this.state.currentPage} 
                      onClick={this.previousPage.bind(this)} 
                      key={`id-${this.props.elId}-1`} 
-                     data-finalpage={`${newsArray.length / this.state.paginationSize}`}> back </div>
+                     data-finalpage={`${newsArray.length / this.state.paginationSize}`}> back 
+                </div>
                 
                 <div className={'next__page'} 
                      key={`id-${this.props.elId}-2`} 
                      data-type={this.props.elId} 
                      data-page={this.state.currentPage} 
                      data-finalpage={`${newsArray.length / this.state.paginationSize}`}  
-                     onClick={this.nextPage.bind(this)}> next </div>
+                     onClick={this.nextPage.bind(this)}> next 
+                </div>
             </div>
         </div>
     )

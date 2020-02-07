@@ -12,3 +12,28 @@ p{
 a{
     text-decoration: none;
 }
+button{
+    font-size: 1.313rem;
+    background: #b02931;
+    color: white;
+    padding: 20px 85px;
+    letter-spacing: 1px;
+    border: none;
+}
+button a{
+    color: white;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+@media(max-width: 500px){
+    button {
+        font-size: 1.313rem;
+        background: #b02931;
+        color: white;
+        padding: 15px 47px;
+        letter-spacing: 1px;
+        border: none;
+        width: 100%;
+        margin-top: 20px;
+    }
+}

@@ -3,7 +3,7 @@ import React from 'react'
 import Layout from "../../layouts/index"
 import Link from 'gatsby-link'
 import PaginationController from '../../components/blog/paginationController/paginationController'
-import Button from '../../components/master/buttons/button'
+import Button from '../../components/master/buttons/internalButton'
 import "./../css/posts.css"
 const PostsIndex = ({ pageContext }) => {
 const { group, index, first, last, pageCount } = pageContext

@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import Layout from "../../layouts/index"
 import { graphql } from "gatsby"
 import PropTypes from "prop-types"
-import Button from '../../components/master/buttons/button'
+import Button from '../../components/master/buttons/internalButton'
 import Img from 'gatsby-image'
 import "./../css/post.css"
 class Post extends Component {

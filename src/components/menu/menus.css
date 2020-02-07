@@ -109,6 +109,9 @@
 .menu__wrapper.main__menu.opened{
     right: 0px;
 }
+.main__menu .list__element h4{
+    padding-right: 30px;
+}
 /* Responsive for main menu*/ 
 @media (max-width: 1024px){
     .menu__wrapper.main__menu {

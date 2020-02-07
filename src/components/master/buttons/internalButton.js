@@ -2,14 +2,14 @@
 import React, { Component } from "react"
 import Link from 'gatsby-link'
 import "./buttons.css"
-class PaginationController extends Component {
+class InternalButton extends Component {
     render() {
         const props = this.props; 
         return (
-            <div className={'return__main__blog ' + props.customClass}>
+            <button className={props.buttonClass}>
                 <Link to={props.redirectionLink}>{props.buttonText}</Link>
-            </div>
+            </button>
         )
     }
 }
-export default PaginationController
+export default InternalButton

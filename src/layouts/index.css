@@ -317,22 +317,22 @@ h6 {
   line-height: 1.1;
 }
 body h1{
-  font-size: 4.344rem;
+  font-size: 8.688rem;
+  line-height: 7.5rem;
 }
 body h2{
-  font-size: 3.563rem;
+  font-size: 6.25rem;
+  line-height: 5.436rem;
 }
 body h3{
-  font-size: 3.125rem;
+  font-size: 2.813rem;
+  line-height: 2.813rem;
 }
 body h4{
-  font-size: 2.813rem;
+  font-size: 1.813rem;
 }
-body h5{
+body p{
   font-size: 1.375rem;
-}
-body h6{
-  font-size: 1.25rem;
 }
 body p, body li{
   font-size: 1rem;
@@ -633,8 +633,19 @@ pre tt:before,
 pre tt:after {
   content: "";
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 568px) {
   html {
     font-size: 100%;
   }
+  body h1 {
+    font-size: 7.688rem;
+  }
+  body h3 {
+    font-size: 1.813rem;
+    line-height: 1.813rem;
+  }
+  body h4 {
+    font-size: 1.13rem;
+  }
 }
+

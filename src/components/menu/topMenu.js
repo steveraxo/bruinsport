@@ -39,7 +39,7 @@ const MainMenu = (props) => {
           ? menuItems.map((item, index) => 
               <li key={item.wordpress_id}  className={`list__element ` + item.classes}>
                 <Link to={item.url} id={item.url}>
-                  <h6>{item.title}</h6>
+                  <h4>{item.title}</h4>
                 </Link>
               </li>
             )

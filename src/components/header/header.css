@@ -41,3 +41,11 @@
         width: 150px;
     }
 }
+@media (max-width:340px){
+    .brand__wrapper .brand__svg__logo {
+        width: 120px;
+    }
+    body h1 {
+        font-size: 6.688rem;
+    }
+}

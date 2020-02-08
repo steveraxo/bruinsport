@@ -13,14 +13,57 @@ import Popup from "reactjs-popup";
 import ExternalButton from "../components/master/buttons/externalButton"
 import InternalButton from "../components/master/buttons/internalButton"
 import MapBackground  from "../images/home/home-map.png"
+import BruinLogo from "../images/media/bruin-letter.png"
 
 class HomePage extends Component {
   constructor(props) {
     super(props);
     this.state = { mixBlend: 'mix-blend' };
   }
-  endModal() {
-    [...document.querySelectorAll('.popup-overlay')][0].remove()
+  focusTrap(){
+    setTimeout(function(){ 
+    // Focus the element on the burguer menu
+    document.getElementById("close__menu").focus(); 
+
+    // Trap the focus loop inside the menu
+    var element = document.getElementById("popup__inner")
+    var focusableEls = document.querySelectorAll('#popup__inner .close, #popup__inner .btn-main a ');
+
+    var firstFocusableEl = focusableEls[0],  
+        lastFocusableEl = focusableEls[focusableEls.length - 1],
+        KEYCODE_TAB = 9;
+
+      element.addEventListener('keydown', function(e) {
+          var isTabPressed = (e.key === 'Tab' || e.keyCode === KEYCODE_TAB);
+          if (!isTabPressed) { 
+              return; 
+          }
+
+          if ( e.shiftKey ) /* shift + tab */ {
+              if (document.activeElement === firstFocusableEl) {
+                  lastFocusableEl.focus();
+                  e.preventDefault();
+              }
+          } else /* tab */ {
+              if (document.activeElement === lastFocusableEl) {
+                  firstFocusableEl.focus();
+                  e.preventDefault();
+              }
+          }
+      });
+    },10);
+    
+
+  }
+  endModal(e) {
+    e.preventDefault() 
+    if (e.type === 'keypress'){
+      if(e.which === 32 || e.which === 13){
+        [...document.querySelectorAll('.popup-overlay')][0].remove()
+      }
+    }else{
+      [...document.querySelectorAll('.popup-overlay')][0].remove()
+    }
   }
   render() {
     // This variable will return all the fields related to the post
@@ -58,7 +101,6 @@ class HomePage extends Component {
       ]
     }
     
-    console.log(newsData);
     return (
       <Layout>
         <Helmet>
@@ -70,7 +112,7 @@ class HomePage extends Component {
         <div className="home__page">
           <section className="container-fluid hero-bg media__featured">
             <div className="page__background">
-              <Img fluid={pageData.featured_media.localFile.childImageSharp.fluid} />
+              <Img fluid={pageData.featured_media.localFile.childImageSharp.fluid} alt={''} tabIndex={-1}/>
             </div>
             <div className="container">
               <div tabIndex={0} className="header__copy text-left" dangerouslySetInnerHTML={{__html: pageData.acf.main_copy}} />
@@ -84,23 +126,24 @@ class HomePage extends Component {
                         modal
                         closeOnEscape
                         closeOnDocumentClick
+                        onOpen={this.focusTrap}
                         on="focus"
                         trigger={
                         <img 
-                        className={this.state.mixBlend}
+                        className={`${this.state.mixBlend}`}
                         tabIndex={0}
                         src={element.icon.source_url}
-                        alt={`${element.title} logo`}
+                        alt={`Client ${element.title} logo`}
                       />
                       }>
-                      <div className="popup__inner featured__wrapper">
+                      <div className="popup__inner featured__wrapper" id={'popup__inner'}>
                         <div className="triangle__big"></div>
                         <div className="triangle__small"></div>
-                        <a className="close" onClick={this.endModal}>
+                        <button className="close" tabIndex="0" onClick={this.endModal} onKeyPress={this.endModal} id="close__menu">
                           
-                        </a>
+                        </button>
                         <div className="featured__article" key={index}>
-                        <img className="popup__inner__background" src={MapBackground} tabIndex="-1" />
+                        <img className="popup__inner__background" src={MapBackground} alt="" tabIndex="-1" />
                           <div className="featured__artitle__inner">
                             <div className="featured__article__top">
                               <div className="featured__article__title">
@@ -113,7 +156,7 @@ class HomePage extends Component {
                           </div>
                           <div className="featured__article__bottom flex-end">
                               <div className="featured__article__cta">
-                                <ExternalButton redirectionLink={element.button_link} buttonText={element.button_text}></ExternalButton>
+                                <ExternalButton  redirectionLink={element.button_link} buttonText={element.button_text}></ExternalButton>
                               </div>
                           </div>
                         </div>
@@ -123,6 +166,33 @@ class HomePage extends Component {
                     </div>
                   )
                 }
+              </div>
+            </div>
+          </section>
+          <section className="our__approach container-fluid">
+            <div className="floating__letter">
+              <img src={BruinLogo} />
+            </div>
+            <div className="container">
+              <div className="row">
+                <div className={'col-md-12 col-lg-8'}>
+                  <h1>{pageData.acf.our_approach_title}</h1>
+                  <div dangerouslySetInnerHTML={{__html: pageData.acf.our_approach_content}} />
+                  <InternalButton buttonText={pageData.acf.our_approach_button_text} redirectionLink={pageData.acf.our_approach_button_link}></InternalButton>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section className="our__approach featured__section container-fluid">
+            <img className={'img__background'} src={pageData.acf.featured_background.source_url} alt="" tabIndex={-1} />
+            <div className="container">
+              <div className="row">
+                <div className={'col-md-12 col-lg-4 col-xl-6'}></div>
+                <div className={'col-md-12 col-lg-8 col-xl-6 text-left'}>
+                  <h1>{pageData.acf.featured_title}</h1>
+                  <div dangerouslySetInnerHTML={{__html: pageData.acf.featured_content}} />
+                  <InternalButton buttonText={pageData.acf.featured_button_text} redirectionLink={pageData.acf.featured_button_link}></InternalButton>
+                </div>
               </div>
             </div>
           </section>
@@ -145,7 +215,7 @@ class HomePage extends Component {
             </div> 
           </section>
           <section className="container-fluid get__started">
-            <img className={'img__background'} src={pageData.acf.get_started_background.source_url} alt="Decorative background" tabIndex={-1} />
+            <img className={'img__background'} src={pageData.acf.get_started_background.source_url} alt="" tabIndex={-1} />
             <div className="container get__started__content">
               <div className="row d-flex justify-content-center align-items-center flex-column">
                 <h1 style={{lineHeight: '100px'}}>{pageData.acf.get_started_title}</h1>

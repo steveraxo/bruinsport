@@ -34,7 +34,7 @@ const MainMenu = (props) => {
   // The next function handles the open and close of the menu and also includes the logic for a11y trap inside the menu
   const handleMenu = useCallback(e => {
     e.preventDefault() 
-    if (e.type == 'keypress'){
+    if (e.type === 'keypress'){
         if(e.which === 32 || e.which === 13){
             openMenu()
         }

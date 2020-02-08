@@ -6,6 +6,9 @@
     width: 2px;
     background: white;
 }
+.top__menu a:hover{
+    color: white;
+}
 /* Responsive for top menu*/
 @media(max-width: 500px){
     .top__menu__divider{

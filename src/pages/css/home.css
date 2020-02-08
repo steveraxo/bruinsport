@@ -131,7 +131,56 @@
 .latest__news .container{
     padding-top: 40px;
 }
-
+.home__page .our__approach{
+    position: relative;
+}
+.floating__letter{
+    position: absolute;
+    top: 14%;
+    left: -18%;
+    z-index: 2;
+    width: 100%;
+}
+.floating__letter img{
+    width: 70%;
+}
+.home__page .our__approach .container{
+    padding: 180px 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+.home__page .our__approach h1, .home__page .our__approach h3, .home__page .our__approach button{
+    z-index: 9;
+    position: relative;
+}
+.home__page .our__approach p{
+    padding: 10px 0 60px;
+    line-height: 50px;
+    font-weight: 500;
+    z-index: 9;
+    position: relative;
+}
+.home__page .featured__section h1, .home__page .featured__section h3, .home__page .featured__section p{
+    color: white;
+}
+.home__page .featured__section .container {
+    padding: 450px 0 60px 0;
+}
+.home__page .featured__section{
+    margin-top: -450px;
+}
+@media(max-width: 1280px){
+    .latest__article h5 {
+        min-height: 170px;
+    }
+    .latest__article > div {
+        min-height: 130px;
+    }
+    button.small-btn {
+        padding: 10px 25px;
+        font-size: 1.125rem;
+    }
+}
 @media(max-width: 1024px){
     .home__page .popup-content {
         max-width: 80%!important;
@@ -152,6 +201,25 @@
     }
     .latest__article h5 {
         min-height: 100px;
+    }
+    .home__page .our__approach{
+        padding: 0 80px!important;
+    }
+    .home__page .featured__section {
+        padding: 0 80px 50!important;
+    }
+    .home__page .our__approach .container {
+        padding: 100px 0 270px;
+    }
+    .home__page .featured__section .container{
+        padding: 450px 0 80px;
+    }
+    .floating__letter img {
+        width: 100%;
+    }
+    .floating__letter {
+        top: 6%;
+        left: -40%;
     }
 }
 @media(max-width: 768px){
@@ -233,9 +301,36 @@
     .get__started__content {
         padding: 100px 40px;
     }
+    .home__page .our__approach {
+        padding: 0 30px!important;
+    }
+}
+@media (max-width: 812px) and (orientation: landscape) {
+    .latest__article h5 {
+        min-height: 150px;
+    }
+    .latest__article > div {
+        min-height: 150px;
+    }
+    button.small-btn {
+        padding: 10px 22px;
+        font-size: 0.8rem;
+    }
 }
 @media (max-width: 600px) and (orientation: landscape) {
     .home__page .media__featured {
         min-height: 360px;
+    }
+    .latest__article h5 {
+        min-height: 80px;
+        font-size: 15px;
+    }
+    .latest__article > div {
+        min-height: 80px;
+        font-size: 12px;
+    }
+    button.small-btn {
+        padding: 10px 15px;
+        font-size: 10px;
     }
 }

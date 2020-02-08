@@ -19,9 +19,9 @@ class MediaPage extends Component {
           type = event.target.getAttribute("data-type")
 
     if(!clickedElement.classList.contains('active')){
-      [...document.querySelectorAll('.type__selector')].map(element => {
+      [...document.querySelectorAll('.type__selector')].map(element => 
         element.classList.remove('active')
-      })
+      )
       clickedElement.classList.add('active');
     }
 
@@ -36,6 +36,7 @@ class MediaPage extends Component {
         element.classList.remove('active')
       }
       
+      return true;
     })
   }
   render() {
@@ -52,7 +53,6 @@ class MediaPage extends Component {
       infinite: true,
       speed: 500,
       fade: true,
-      cssEase: 'linear',
       centerMode: true,
       autoplay: true,
       autoplaySpeed: 9000,
@@ -121,8 +121,8 @@ class MediaPage extends Component {
                         <button onClick={this.changeList} data-type={'news'} className="type__news type__selector active ">News</button>
                         <button onClick={this.changeList} data-type={'press'} className="type__press type__selector">Press Releases</button>
                       </div>
-                      <NewsCarrousel newsArray={NewsData} state={'active'} elId={'news'} />
-                      <NewsCarrousel newsArray={PressData} state={'not__active'} elId={'press'} />
+                      <NewsCarrousel  newsArray={NewsData} state={'active'} elId={'news'} />
+                      <NewsCarrousel  newsArray={PressData} state={'not__active'} elId={'press'} />
                     </div>
                   </div>
 

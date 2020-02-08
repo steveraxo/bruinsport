@@ -40,6 +40,14 @@
     transform: rotate(-45deg);
     right: 0px;
 }
+.featured__wrapper .slick-arrow.slick-next:focus, .featured__wrapper .slick-arrow.slick-prev:focus{
+    outline: 1px dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+}
+.featured__wrapper .slick-dots button:focus{
+    outline: 1px dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+}
 .featured__wrapper .slick-arrow.slick-prev{
     display: inline-block;
     border-right: 2px solid white;

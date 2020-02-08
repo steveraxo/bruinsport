@@ -1,3 +1,16 @@
+button{
+    font-size: 1.313rem;
+    background: #b02931;
+    color: white;
+    padding: 20px 85px;
+    letter-spacing: 1px;
+    border: none;
+}
+button a{
+    color: white;
+    font-weight: normal;
+    text-transform: uppercase;
+}
 button.dark-btn{
     border: solid 2px #b02931;
     background: transparent;
@@ -6,4 +19,9 @@ button.dark-btn{
 button.small-btn{
     padding: 10px 45px;
     font-size: 1.125rem;
+}
+@media (max-width: 500px){
+    button {
+        padding: 20px 65px;
+    }
 }

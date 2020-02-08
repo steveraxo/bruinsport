@@ -154,6 +154,7 @@ class Header extends Component {
                      data-page={this.state.currentPage} 
                      onClick={this.previousPage.bind(this)} 
                      key={`id-${this.props.elId}-1`} 
+                     tabIndex={0}
                      data-finalpage={`${newsArray.length / this.state.paginationSize}`}> back 
                 </div>
                 
@@ -161,6 +162,7 @@ class Header extends Component {
                      key={`id-${this.props.elId}-2`} 
                      data-type={this.props.elId} 
                      data-page={this.state.currentPage} 
+                     tabIndex={0}
                      data-finalpage={`${newsArray.length / this.state.paginationSize}`}  
                      onClick={this.nextPage.bind(this)}> next 
                 </div>

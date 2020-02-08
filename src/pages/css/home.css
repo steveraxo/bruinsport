@@ -17,6 +17,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    
+}
+.mix-blend{
     mix-blend-mode: difference;
 }
 .home__page .clients__logos img{
@@ -37,4 +40,202 @@
     align-items: center;
     padding: 0 100px;
     max-width: 1200px;
+}
+.home__page .popup-content {
+    background: transparent!important;
+    border: 0!important;
+    max-width: 1100px!important;
+    width: 100%!important;
+}
+.home__page .popup-content .close{
+    position: absolute;
+    right: 32px;
+    top: 32px;
+    width: 32px;
+    height: 32px;
+    opacity: 1;
+    cursor: pointer;
+    z-index: 9;
+}
+.home__page .popup-content .close:before, .home__page .popup-content .close:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 33px;
+    width: 5px;
+    background-color: #a5a5a5;
+}
+.home__page .popup-content .close:after {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+.home__page .popup-content .close:before {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.home__page .popup__inner__background{
+    position: absolute;
+    width: 60%;
+    height: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto!important;
+}
+.triangle__big {
+    width: 0;
+    height: 0;
+    border-left: 32px solid transparent;
+    border-right: 32px solid transparent;
+    border-top: 32px solid #ccc;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.triangle__small {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #ffffff;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.get__started{
+    position: relative;
+}
+.get__started__content{
+    z-index: 1;
+    position: relative;
+    color: white;
+    padding: 100px 0;
+}
+.latest__news__wrapper{
+    padding: 0 50px 30px;
+}
+.latest__news__wrapper{
+    margin: 0!important;
+}
+.latest__article{
+    padding: 0 30px;
+}
+.latest__article h5{
+    min-height: 130px;
+}
+.latest__article > div{
+    min-height: 100px;
+}
+.latest__news .container{
+    padding-top: 40px;
+}
+
+@media(max-width: 1024px){
+    .home__page .popup-content {
+        max-width: 80%!important;
+    }
+    .latest__news__wrapper {
+        padding: 0 0px 30px;
+    }
+    .home__page .slick-list{
+        width: 100%;
+    }
+    button.small-btn {
+        padding: 10px 21px;
+        font-size: 1rem;
+    }
+    .latest__article > div {
+        min-height: 120px;
+        line-height: 1.2em;
+    }
+    .latest__article h5 {
+        min-height: 100px;
+    }
+}
+@media(max-width: 768px){
+    .home__page .popup-content {
+        max-width: 80%!important;
+    }
+    .home__page .slick-list{
+        width: 100%;
+    }
+    .featured__artitle__inner {
+        width: 100%;
+        top: 0;
+        position: relative;
+    }
+    .featured__article__bottom.flex-end {
+        justify-content: center;
+    }
+    .home__page .popup__inner__background {
+        width: 100%;
+        opacity: 0.5;
+    }
+    .latest__news__wrapper {
+        padding: 0 20px 30px;
+    }
+    .home__page .popup-content {
+        max-width: 95%!important;
+    }
+}
+@media (max-width: 500px){
+    .home__page .media__featured {
+        min-height: 520px;
+    }
+    .latest__news__wrapper {
+        padding: 0 20px 30px;
+    }
+    .home__page .slick-list {
+        position: relative;
+        top: 0px;
+    }
+    .latest__news h1{
+        padding: 0!important;
+        text-align: center;
+    }
+    .featured__wrapper.slick-slider {
+        min-height: auto;
+    }
+    .latest__article h5 {
+        min-height: auto;
+    }
+    .latest__article > div {
+        min-height: auto;
+        line-height: 1.2em;
+    }
+    .home__page .header__copy {
+        position: relative;
+        top: 0px;
+        transform: translateY(-0%);
+        display: flex;
+    }
+    .home__page .media__featured {
+        justify-content: center;
+    }
+    .home__page .clients__logos {
+        flex-direction: column;
+    }
+    .home__page .clients__logos .col{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .home__page .clients__logos img {
+        margin: 10px 0;
+        width: 100px;
+    }
+    .home__page .media__featured .header__copy h2 {
+        text-align: center;
+        margin-top: 70px;
+    }
+    .get__started__content {
+        padding: 100px 40px;
+    }
+}
+@media (max-width: 600px) and (orientation: landscape) {
+    .home__page .media__featured {
+        min-height: 360px;
+    }
 }

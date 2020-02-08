@@ -4,6 +4,10 @@ html {
   -webkit-text-size-adjust: 100%;
   overflow-x: hidden;
 }
+body a:hover {
+  color: inherit;
+  text-decoration: underline;
+}
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
@@ -319,20 +323,29 @@ h6 {
 body h1{
   font-size: 8.688rem;
   line-height: 7.5rem;
+  font-weight: 500;
 }
 body h2{
   font-size: 4.25rem;
   line-height: 4rem;
+  font-weight: 500;
 }
 body h3{
   font-size: 2.813rem;
   line-height: 2.813rem;
+  font-weight: 500;
 }
 body h4{
   font-size: 1.813rem;
+  font-weight: 500;
+}
+body h5{
+  font-size: 1.625rem;
+  font-weight: 500;
 }
 body p{
   font-size: 1.375rem;
+  
 }
 body p, body li{
   font-size: 1rem;
@@ -633,12 +646,20 @@ pre tt:before,
 pre tt:after {
   content: "";
 }
+@media only screen and (max-width: 1024px) {
+
+body h5 {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+}
 @media only screen and (max-width: 568px) {
   html {
     font-size: 100%;
   }
   body h1 {
-    font-size: 7.688rem;
+    font-size: 5.688rem;
+    line-height: 5rem!important;
   }
   body h3 {
     font-size: 1.813rem;
@@ -647,10 +668,12 @@ pre tt:after {
   body h4 {
     font-size: 1.13rem;
   }
+  body h2 {
+    font-size: 2.25rem;
+    line-height: 2rem;
+  }
 }
 
-@media only screen and (max-width: 568px) {
-  body h1 {
-    font-size: 6.688rem;
-  }
+@media only screen and (max-width: 320px) {
+
 }

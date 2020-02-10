@@ -70,7 +70,11 @@ class BurguerButton extends Component {
         const props = this.props; 
         return (
             <div aria-label={"Open the menu"} tabIndex="0" role="button" className={'ml-2 burguer__button ' + props.theme} onClick={this.handleMenu} onKeyPress={this.handleMenu} id="burguer-menu">
-                <div aria-hidden={"true"} className="burguer__line"></div>
+                <div aria-hidden={"true"} className="burguer__wrapper">
+                    <div className={'burguer__line line-one'}></div>
+                    <div className={'burguer__line line-two'}></div>
+                    <div className={'burguer__line line-three'}></div>
+                </div>
             </div>            
         )
     }

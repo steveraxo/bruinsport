@@ -208,4 +208,7 @@ input, textarea{
     .interested__wrapper , .name__wrapper , .email__wrapper , .message__wrapper {
         padding: 0;
     }
+    .interested__wrapper > label, .name__wrapper > label, .email__wrapper > label, .message__wrapper > label{
+        font-size: 35px;
+    }
 }

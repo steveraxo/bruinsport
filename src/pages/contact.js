@@ -157,10 +157,10 @@ class HomePage extends Component {
             <Img className={'position-absolute'} fluid={pageData.featured_media.localFile.childImageSharp.fluid} alt={''} tabIndex={-1}/>
             <div className="container">
               <div className="row">
-                <div className="col-sm-12 col-md-12 col-xl-4">
+                <div className="col-sm-12 col-md-12 col-xl-3">
                 
                 </div>
-                <div className="col-sm-12 col-md-12 col-xl-8 form__section">
+                <div className="col-sm-12 col-md-12 col-xl-9 form__section">
                   <h1 className="text-left" dangerouslySetInnerHTML={{__html: pageAcf.main_title}} />
                   <form className={'async__form'} id={'async__form'}>
                   
@@ -300,7 +300,7 @@ class HomePage extends Component {
                 {
                   pageAcf.three_columns_data.map((element) => 
                     <div className="col-sm-12 col-md-6 col-xl-4 text-left column__data">
-                      <h3>{element.column_title}</h3>
+                      <h4>{element.column_title}</h4>
                       {
                         element.column_element.map((subElement) => 
                           <p>{subElement.element_title}</p>

@@ -35,18 +35,26 @@ section{
     width: 100%;
     background: white;
 }
-.featured__wrapper h3{
+.featured__wrapper h4{
     font-family: 'Muli', sans-serif;
 }
-.featured__wrapper .featured__article__title h3{
+.featured__wrapper .featured__article__title h4{
     font-weight: normal;
+    color: black;
+}
+.featured__wrapper .featured__article img{
+    cursor: none;
+    pointer-events: none;
 }
 .featured__wrapper .featured__article__subtitle p{
     color:  #b02931;
     font-weight: normal;
 }
 .featured__wrapper .featured__article__content{
-    margin: 40px 0 30px;
+    margin: 20px 0 30px;
+}
+.featured__article__subtitle{
+    margin-top: 20px;
 }
 .featured__wrapper .featured__article__content p{
     color:  black;

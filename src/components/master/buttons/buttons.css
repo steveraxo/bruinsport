@@ -1,5 +1,5 @@
 button{
-    font-size: 1.313rem;
+    font-size: 22px;
     background: #b02931;
     color: white;
     padding: 20px 85px;
@@ -18,18 +18,22 @@ button:disabled{
 button.dark-btn{
     border: solid 2px #b02931;
     background: transparent;
-    margin-top: 40px;
+    margin-top: 20px;
 }
 button.md-btn{
     padding: 15px 85px;
-    font-size: 1.125rem;
+    font-size: 21px;
 }
 button.small-btn{
     padding: 10px 45px;
-    font-size: 1.125rem;
+    font-size: 18.87px;
 }
 @media (max-width: 500px){
     button {
         padding: 20px 65px;
+    }
+    button.md-btn {
+        padding: 15px 45px;
+        font-size: 18px;
     }
 }

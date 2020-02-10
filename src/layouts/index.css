@@ -321,37 +321,55 @@ h6 {
   line-height: 1.1;
 }
 body h1{
-  font-size: 8.688rem;
-  line-height: 7.5rem;
+  font-size: 139px;
+  line-height: 120px;
   font-weight: 500;
+  margin: 0;
+  padding: 0;
 }
 body h2{
-  font-size: 4.25rem;
-  line-height: 4rem;
+  font-size: 114px;
+  line-height: 94px;
   font-weight: 500;
+  margin: 0;
+  padding: 0;
 }
 body h3{
-  font-size: 2.813rem;
-  line-height: 2.813rem;
+  font-size: 100px;
+  line-height: 86.96px;
   font-weight: 500;
+  margin: 0;
+  padding: 0;
 }
 body h4{
-  font-size: 1.813rem;
+  font-size: 45px;
+  line-height: 45px;
   font-weight: 500;
+  margin: 0;
+  padding: 0;
 }
 body h5{
-  font-size: 1.625rem;
+  font-size: 26.83px;
+  line-height: 32.2px;
   font-weight: 500;
+  margin: 0;
+  padding: 0;
+}
+body h6{
+  font-size: 21px;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
 }
 body p{
-  font-size: 1.375rem;
+  font-size: 22px;
   
 }
 body p, body li{
-  font-size: 1rem;
+  font-size: 22px;
 }
 body small{
-  font-size: 0.75rem;
+  font-size: 14.25px;
 }
 hgroup {
   margin-left: 0;
@@ -647,7 +665,14 @@ pre tt:after {
   content: "";
 }
 @media only screen and (max-width: 1024px) {
-
+  body h1 {
+    font-size: 109px;
+    line-height: 90px;
+}
+  body h3 {
+    font-size: 80px;
+    line-height: 73.96px;
+}
 body h5 {
   font-size: 1.25rem;
   font-weight: 500;
@@ -658,20 +683,20 @@ body h5 {
     font-size: 100%;
   }
   body h1 {
-    font-size: 5.688rem;
-    line-height: 5rem!important;
-  }
+    font-size: 75px;
+    line-height: 60px;
+}
   body h3 {
-    font-size: 1.813rem;
-    line-height: 1.813rem;
-  }
-  body h4 {
-    font-size: 1.13rem;
-  }
-  body h2 {
-    font-size: 2.25rem;
-    line-height: 2rem;
-  }
+    font-size: 50px;
+    line-height: 48.96px;
+}
+body h4 {
+  font-size: 30px;
+  line-height: 35px;
+}
+body p, body li {
+  font-size: 16px;
+}
 }
 
 @media only screen and (max-width: 320px) {

@@ -9,10 +9,19 @@
 .top__menu a:hover{
     color: white;
 }
+.top__menu a p{
+    font-family: 'Teko';
+    font-weight: 600;
+    font-size: 29.21px;
+    line-height: 35.05px;
+}
 /* Responsive for top menu*/
 @media(max-width: 500px){
     .top__menu__divider{
         margin: 0 5px!important;
         padding: 0;
+    }
+    .top__menu a p {
+        font-size: 23.21px;
     }
 }

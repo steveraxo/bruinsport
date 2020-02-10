@@ -80,7 +80,7 @@ class MediaPage extends Component {
                               <div className="featured__article" key={index}>
                                 <div className="featured__article__top">
                                   <div className="featured__article__title">
-                                    <h3>{element.post_title}</h3>
+                                    <h4>{element.post_title}</h4>
                                   </div>
                                   <div className="featured__article__subtitle">
                                     <p>{element.acf.subtitle}</p>
@@ -100,7 +100,7 @@ class MediaPage extends Component {
                                     </div>
                                   </div>
                                   <div className="featured__article__cta">
-                                    <ExternalButton redirectionLink={element.acf.external_news_link} buttonText={'Read More'}></ExternalButton>
+                                    <ExternalButton redirectionLink={element.acf.external_news_link} buttonClass={'md-btn'} buttonText={'Read More'}></ExternalButton>
                                   </div>
                                 </div>
                               </div>
@@ -157,7 +157,7 @@ query mediaPageQuery {
           news_section_title
           page_title
           featured_media {
-            post_date(formatString: "MMM/ DD / YYYY")
+            post_date(formatString: "MMM DD  YYYY")
             post_title
             post_content
             acf {

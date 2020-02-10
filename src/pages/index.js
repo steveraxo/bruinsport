@@ -147,7 +147,7 @@ class HomePage extends Component {
                           <div className="featured__artitle__inner">
                             <div className="featured__article__top">
                               <div className="featured__article__title">
-                                <h3>{element.title}</h3>
+                                <h4>{element.title}</h4>
                               </div>
                               <div className="featured__article__content" dangerouslySetInnerHTML={{__html: element.first_copy}} />
                             </div>
@@ -156,7 +156,7 @@ class HomePage extends Component {
                           </div>
                           <div className="featured__article__bottom flex-end">
                               <div className="featured__article__cta">
-                                <ExternalButton  redirectionLink={element.button_link} buttonText={element.button_text}></ExternalButton>
+                                <ExternalButton  redirectionLink={element.button_link} buttonText={element.button_text} buttonClass={'md-btn'}></ExternalButton>
                               </div>
                           </div>
                         </div>
@@ -175,7 +175,7 @@ class HomePage extends Component {
             </div>
             <div className="container">
               <div className="row">
-                <div className={'col-md-12 col-lg-8'}>
+                <div className={'col-md-12 col-lg-9'}>
                   <h1>{pageData.acf.our_approach_title}</h1>
                   <div dangerouslySetInnerHTML={{__html: pageData.acf.our_approach_content}} />
                   <InternalButton buttonText={pageData.acf.our_approach_button_text} redirectionLink={pageData.acf.our_approach_button_link}></InternalButton>
@@ -205,8 +205,8 @@ class HomePage extends Component {
               {
                 newsData.map((element, index) => 
                   <div className="latest__article" key={index}>
-                    <h5>{element.node.title}</h5>
-                    <div dangerouslySetInnerHTML={{__html: element.node.title}} />
+                    <div className={'title'} dangerouslySetInnerHTML={{__html: element.node.content}} />
+                    <div className={'content'} dangerouslySetInnerHTML={{__html: element.node.content}} />
                     <ExternalButton buttonClass={'small-btn'} buttonText={'Read More'} redirectionLink={element.node.acf.external_news_link} ></ExternalButton>
                   </div>
                 )
@@ -218,9 +218,9 @@ class HomePage extends Component {
             <img className={'img__background'} src={pageData.acf.get_started_background.source_url} alt=" " tabIndex={-1} />
             <div className="container get__started__content">
               <div className="row d-flex justify-content-center align-items-center flex-column">
-                <h1 style={{lineHeight: '100px'}}>{pageData.acf.get_started_title}</h1>
+                <h2 style={{lineHeight: '100px'}}>{pageData.acf.get_started_title}</h2>
                 <p>{pageData.acf.get_started_copy}</p>
-                <InternalButton redirectionLink={pageData.acf.get_started_button_link} buttonText={pageData.acf.get_started_button_text} buttonClass={'dark-btn'}>
+                <InternalButton redirectionLink={pageData.acf.get_started_button_link} buttonText={pageData.acf.get_started_button_text} buttonClass={'dark-btn md-btn'}>
 
                 </InternalButton>
               </div>

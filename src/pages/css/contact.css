@@ -6,7 +6,7 @@
     background: #b02931;
 }
 .contact__section__one .gatsby-image-wrapper{
-    left: 0;
+    left: -6%;
     width: 50%;
     top: 0;
 }
@@ -66,15 +66,21 @@ fieldset {
 
 
 .interested__wrapper > label, .name__wrapper > label, .email__wrapper > label, .message__wrapper > label{
-    font-size: 2rem;
-    line-height: 2.813rem;
+    font-size: 40px;
+    line-height: 45px;
     font-weight: 500;
     text-transform: uppercase;
+}
+.column__data h4{
+    font-family: 'Muli';
+    font-weight: 500;
+    font-size: 34px;
+    margin-bottom: 30px;
 }
 input, textarea{
     text-transform: uppercase;
     color: #a5a5a5;
-    font-size: 1.275rem;
+    font-size: 22px;
     font-weight: normal;
     border: none;
     border-bottom: solid 2px #d5d5d5;
@@ -198,5 +204,8 @@ input, textarea{
     }
     .contact__section__three, .contact__section__two, .contact__section__one {
         padding: 50px 15px!important;
+    }
+    .interested__wrapper , .name__wrapper , .email__wrapper , .message__wrapper {
+        padding: 0;
     }
 }

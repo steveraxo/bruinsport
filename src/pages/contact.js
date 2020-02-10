@@ -134,8 +134,6 @@ class HomePage extends Component {
         if (!isTabPressed) { 
             return; 
         }
-
-        console.log(document.activeElement)
     });
   }
 
@@ -145,8 +143,6 @@ class HomePage extends Component {
     // This variable will return all the fields related to the post
     const pageData = this.props.data.allWordpressPage.edges[0].node
     const pageAcf = this.props.data.allWordpressPage.edges[0].node.acf
-
-    console.log(pageAcf)
 
     return (
       <Layout>
@@ -272,7 +268,7 @@ class HomePage extends Component {
 
                       </div>
                       <div className={'col-md-12 col-lg-12 submit__wrapper d-flex justify-content-start align-items-start flex-column'}>
-                        <Reaptcha ref={e => (this.captcha = e)} tabindex={0} className={this.state.showRecaptcha ? '' : 'hidden__element'} sitekey={process.env.GOOGLE_REV2_KEY} onVerify={this.onVerify} />
+                        <Reaptcha ref={e => (this.captcha = e)} tabindex={0} className={this.state.showRecaptcha ? '' : 'hidden__element'} sitekey={'6LdDd9cUAAAAAODEZ-CLPxm1CPpZyqmfo2NN58Yk'} onVerify={this.onVerify} />
                         <button type="submit" style={{marginTop: '20px'}} className={'md-btn long-btn'} onClick={this.handleSubmit} disabled={!this.state.verified}>Send</button>
                         <div className={'loading__status ' + loading }>
                           {

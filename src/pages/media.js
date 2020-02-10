@@ -46,7 +46,6 @@ class MediaPage extends Component {
     const NewsData = this.props.data.allWordpressWpNews.edges
     const featuredArticles = pageData.acf.featured_media;
 
-    console.log(pageData);
     //Slick Setting
     let settings = {
       dots: true,

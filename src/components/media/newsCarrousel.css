@@ -71,6 +71,9 @@
     transform: rotate(-45deg);
     right: 0px;
 }
+.media__featured .slick-list{
+    width: 100%;
+}
 @media(max-width: 500px){
 
     .news__list_element {

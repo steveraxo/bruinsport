@@ -87,7 +87,7 @@ class MediaPage extends Component {
                                     <p>{element.acf.subtitle}</p>
                                   </div>
                                   <div className="featured__article__content">
-                                    <p>{element.post_content}</p>
+                                    <p className="text-left" dangerouslySetInnerHTML={{__html: element.post_content}} />
                                   </div>
                                 </div>
                                 <div className="featured__article__divider"></div>

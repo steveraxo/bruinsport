@@ -6,7 +6,7 @@ class ExternalButton extends Component {
         const props = this.props; 
         return (
             <button tabIndex={-1}  className={`btn-main ${props.buttonClass}`}>
-                <a  href={props.redirectionLink} rel="noopener noreferrer">{props.buttonText}</a>
+                <a  href={props.redirectionLink} target={'_BLANK'} rel="noopener noreferrer">{props.buttonText}</a>
             </button>
         )
     }

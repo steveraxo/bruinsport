@@ -34,6 +34,7 @@ section{
     max-width: 1480px;
     width: 100%;
     background: white;
+    margin: 0 auto;
 }
 .featured__wrapper h4{
     font-family: 'Muli', sans-serif;
@@ -57,7 +58,7 @@ section{
     margin-top: 20px;
 }
 .featured__wrapper .featured__article__content p{
-    color:  black;
+    color: #000000;
     font-weight: 500;
 }
 .featured__wrapper .featured__article__bottom{

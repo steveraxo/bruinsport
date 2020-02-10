@@ -1,3 +1,4 @@
+
 .home__page .media__featured{
     min-height: 900px;
 } 
@@ -36,13 +37,14 @@
     font-weight: 500;
     font-size: 26.83px;
     line-height: 32.2px;
+    text-transform: uppercase;
 }
 .home__page .latest__news .content p{
     font-family: "Muli";
-    font-weight: 500;
+    font-weight: 700;
     font-style: normal;
-    font-size:  19.68px;
-    line-height: 32.2px;
+    font-size: 16.68px;
+    line-height: 26.2px;
     text-transform: unset!important;
 }
 .mix-blend{
@@ -145,8 +147,9 @@
 .latest__news__wrapper{
     padding: 0 50px 30px;
 }
-.latest__news__wrapper{
-    margin: 0!important;
+.latest__news__wrapper {
+    margin: 0 auto!important;
+    max-width: 1480px;
 }
 .latest__article{
     padding: 0 30px;
@@ -155,7 +158,7 @@
     min-height: 130px;
 }
 .latest__article .content{
-    min-height: 100px;
+    min-height: 60px;
     margin-top: 20px;
 }
 .latest__news .container{
@@ -199,6 +202,32 @@
 .home__page .featured__section{
     margin-top: -450px;
 }
+@media(min-width: 1920px){
+    .floating__letter {
+        top: 13%;
+        left: -28%;
+    }
+}
+@media(max-width: 4000px){
+    .floating__letter img {
+        width: 50%;
+    }
+    .floating__letter {
+        top: 13%;
+        left: -8%;
+        width: 70%;
+    }
+    .home__page .our__approach {
+        position: relative;
+        height: 2720px;
+    }
+    .home__page .featured__section {
+        margin-top: -2310px;
+    }
+    .home__page .featured__section .container {
+        padding: 1450px 0 60px 0;
+    }
+}
 @media(max-width: 1280px){
     .latest__article .title  {
         min-height: 170px;
@@ -209,6 +238,32 @@
     button.small-btn {
         padding: 10px 25px;
         font-size: 1.125rem;
+    }
+}
+@media(max-width: 1920px){
+    .home__page .featured__section {
+        margin-top: -450px;
+    }
+    .floating__letter img {
+        width: 70%;
+    }
+    .floating__letter {
+        position: absolute;
+        top: 14%;
+        left: -28%;
+        z-index: 2;
+        width: 100%;
+    }
+    .home__page .our__approach {
+        height: 1318px;
+    }
+    .home__page .featured__section .container {
+        padding: 450px 0 60px 0;
+    }
+}
+@media(max-width: 1600px){
+    .home__page .our__approach {
+        height: auto;
     }
 }
 @media(max-width: 1024px){

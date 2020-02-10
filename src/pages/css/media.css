@@ -57,6 +57,9 @@
     transform: rotate(135deg);
     left: 0px;
 }
+.featured__article__meta{
+    color: #000000;
+}
 .featured__wrapper.dark .slick-arrow.slick-prev{
     border-right: 2px solid black;
     border-bottom: 2px solid black;
@@ -85,6 +88,7 @@
 }
 .media__lists h1{
     z-index: 1;
+    color: #000000;
 }
 .media__lists .row{
     padding: 40px 100px 20px;

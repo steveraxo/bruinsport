@@ -102,7 +102,6 @@ class HomePage extends Component {
   }
 
   changeRadioOption(event){
-    
     let radioElement = event.target;
 
     if(radioElement.classList.contains('is__input')){
@@ -300,7 +299,7 @@ class HomePage extends Component {
                 {
                   pageAcf.three_columns_data.map((element) => 
                     <div className="col-sm-12 col-md-6 col-xl-4 text-left column__data">
-                      <h4>{element.column_title}</h4>
+                      <h4 className="text-left" dangerouslySetInnerHTML={{__html: element.column_title}} />
                       {
                         element.column_element.map((subElement) => 
                           <p>{subElement.element_title}</p>
@@ -325,11 +324,18 @@ class HomePage extends Component {
                   pageAcf.portfolio_data.map((element) => 
                   <>
                     <div className="col-md-4 col-xl-3 s__three__column">
-                      <div className={'column__image'}>
-                        <Img fixed={element.cliente_logo.localFile.childImageSharp.fixed} alt={'Client Logo'} tabIndex={0}/>
-                      </div>
+                      <a href={`https://${element.client_url}`} target="_BLANK" rel="noopener noreferrer">
+                        <div className={'column__image'}>
+                          <Img fixed={element.cliente_logo.localFile.childImageSharp.fixed} alt={'Client Logo'} tabIndex={0}/>
+                        </div>
+                      </a>
                       <div className={'column__info'}>
-                        <div className="text-left" dangerouslySetInnerHTML={{__html: element.client_info}} />
+                        <a href={`mailto:${element.client_email}`} target="_BLANK" rel="noopener noreferrer">
+                          <p className="text-left" dangerouslySetInnerHTML={{__html: element.client_email}} />
+                        </a>
+                        <a href={`https://${element.client_url}`} target="_BLANK" rel="noopener noreferrer">
+                          <p className="text-left" dangerouslySetInnerHTML={{__html: element.client_url}} />
+                        </a>
                       </div>
                     </div>
                     <div className="col"></div>
@@ -371,7 +377,8 @@ query ContactQuery {
           main_title
           portfolio_title
           portfolio_data {
-            client_info
+            client_email
+            client_url
             cliente_logo {
               localFile {
                 childImageSharp {

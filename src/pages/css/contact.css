@@ -83,15 +83,39 @@ input, textarea{
     background: transparent;
 }
 .interested__wrapper #interest__group label{
+    position: relative;
+}
+.interested__wrapper #interest__group label h4{
     color: #a5a5a5;
     font-size: 1.275rem;
+    font-family: 'Muli', sans-serif;
+    background: white;
+    z-index: 2;
+    position: relative;
 }
-.interested__wrapper #interest__group .checked{
+.interested__wrapper #interest__group{
+    transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.interested__wrapper #interest__group .checked h4{
     color: #b02931;
+    
+}
+.interested__wrapper input:focus{
+    outline: solid 1px #b02931;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    outline-style: dashed;
 }
 #interest__group input{
     position: absolute;
-    opacity: 0;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 .first__rows, .second__row{
     padding: 40px 0;
@@ -105,6 +129,13 @@ input, textarea{
 }
 .validation__message{
     color: #b02931;
+}
+.column__image img{
+    object-fit: initial!important;
+    max-width: 200px!important;
+    height: auto!important;
+    margin: 0;
+    padding: 0;
 }
 @media(max-width: 1024px){
     .contact__section__two {
@@ -144,6 +175,7 @@ input, textarea{
     .interested__wrapper #interest__group label {
         font-size: 1.575rem;
         margin: 20px 0;
+
     }
     .message__wrapper label{
         position: absolute;

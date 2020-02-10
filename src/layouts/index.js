@@ -9,7 +9,6 @@ import "./index.css"
 import "./custom.css"
 const Layout = ({ children }) => {
   
-  const menuState = 'closed'; 
   const data = useStaticQuery(graphql`
     query {
       allWordpressSiteMetadata {

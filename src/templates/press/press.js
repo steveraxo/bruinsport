@@ -115,19 +115,6 @@ export const postQuery = graphql`
       content
       date(formatString: "MMMM DD, YYYY")
       status
-      featured_media{
-        source_url
-        alt_text
-        caption
-        description
-        localFile {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-          }
-        }
-      }
       author {
         name
         avatar_urls {

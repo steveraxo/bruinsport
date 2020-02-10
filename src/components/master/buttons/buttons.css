@@ -5,16 +5,24 @@ button{
     padding: 20px 85px;
     letter-spacing: 1px;
     border: none;
+    text-transform: uppercase;
 }
 button a{
     color: white;
     font-weight: normal;
     text-transform: uppercase;
 }
+button:disabled{
+    background: #a5a5a5;
+}
 button.dark-btn{
     border: solid 2px #b02931;
     background: transparent;
     margin-top: 40px;
+}
+button.md-btn{
+    padding: 15px 85px;
+    font-size: 1.125rem;
 }
 button.small-btn{
     padding: 10px 45px;

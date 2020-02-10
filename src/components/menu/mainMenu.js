@@ -1,7 +1,6 @@
 import React from 'react';
 import { useStaticQuery, graphql } from "gatsby"
 import Link from "gatsby-link"
-import { useCallback } from "react";
 import "./menus.css"
 
 const MainMenu = (props) => {
@@ -32,7 +31,7 @@ const MainMenu = (props) => {
     menuId  = data.allWordpressMenusMenusItems.edges[0].node.id;
   }
   // The next function handles the open and close of the menu and also includes the logic for a11y trap inside the menu
-  const handleMenu = useCallback(e => {
+  const handleMenu = (e => {
     e.preventDefault() 
     if (e.type === 'keypress'){
         if(e.which === 32 || e.which === 13){
@@ -54,8 +53,6 @@ const MainMenu = (props) => {
               mainMenu[0].style.visibility = "hidden";
               // Focus the element on the burguer menu
               document.getElementById("burguer-menu").focus();  
-              
-              var focusableEls = false;
             }, 1000);
         }else{
             mainMenu[0].classList.add('opened')
@@ -97,7 +94,7 @@ const MainMenu = (props) => {
     }
     
   });
-  const closeMenu = useCallback(e => {
+  const closeMenu = (e => {
     e.preventDefault() 
     if (e.type === 'keypress'){
         if(e.which === 32 || e.which === 13){
@@ -112,7 +109,6 @@ const MainMenu = (props) => {
             // Focus the element on the burguer menu
             document.getElementById("burguer-menu").focus();  
             
-            var focusableEls = false;
           }, 1000);
         }
     }

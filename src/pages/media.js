@@ -69,7 +69,7 @@ class MediaPage extends Component {
             <div className="media__page">
                 <section className="container-fluid hero-bg media__featured">
                     <div className="page__background">
-                      <Img fluid={pageData.featured_media.localFile.childImageSharp.fluid} />
+                      <Img fluid={pageData.featured_media.localFile.childImageSharp.fluid} alt=" "/>
                     </div>
                     <div className="row text-center">
                       <div className="page__title">
@@ -112,7 +112,7 @@ class MediaPage extends Component {
                 </section>
                 <section className="media__lists">
                   <div className="media__list__background">
-                    <img src={BruinLogo} />
+                    <img src={BruinLogo} alt={' '} />
                   </div>
                   <div className="container">
                     <div className="row">
@@ -163,7 +163,11 @@ query mediaPageQuery {
             post_content
             acf {
               source_text
-              pdf_press_release
+              pdf_press_release {
+                url {
+                  source_url
+                }
+              }
               subtitle
               external_news_link
             }
@@ -180,7 +184,9 @@ query mediaPageQuery {
         acf {
           external_news_link
           pdf_press_release {
-            source_url
+            url {
+              source_url
+            }
           }
           subtitle
           source_text

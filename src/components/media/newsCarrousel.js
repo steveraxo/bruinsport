@@ -38,6 +38,8 @@ class Header extends Component {
             element.classList.remove('active')
             element.classList.add('not__active')
         }
+
+        return true
     })
   }
   // Constrols de arrow to previous page of articles
@@ -68,6 +70,8 @@ class Header extends Component {
             element.classList.remove('active')
             element.classList.add('not__active')
         }
+
+        return true
     })
   }
   // Split the list in chunks
@@ -126,7 +130,7 @@ class Header extends Component {
                                 ? <>
                                     {
                                         element.node.acf.pdf_press_release
-                                        ? <a href={element.node.acf.pdf_press_release.source_url} download target="_BLANK" rel="noopener noreferrer">
+                                        ? <a href={element.node.acf.pdf_press_release.url.source_url} download target="_BLANK" rel="noopener noreferrer">
                                             <img src={downloadIcon} alt="Download the PDF attachment"/>
                                           </a>
                                         :''

@@ -16,6 +16,7 @@
     left: 0;
     right: 0;
     top: -12px;
+    cursor: pointer;
 }
 .burguer__line:before{
     position: absolute;
@@ -26,4 +27,5 @@
     left: 0;
     right: 0;
     bottom: -12px;
+    cursor: pointer;
 }

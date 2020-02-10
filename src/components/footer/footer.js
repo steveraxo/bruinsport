@@ -1,11 +1,10 @@
-//import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import "./footer.css"
 
-const Footer = ({}) => {
+const Footer = () => {
       const data = useStaticQuery(graphql`
       query footerQuery {
         allWordpressAcfOptions {

@@ -26,7 +26,7 @@ class HomePage extends Component {
       // loading states
       loading: 'slept',
       //recaptcha states
-      verified: true,
+      verified: false,
       recaptchaKey: `${process.env.GOOGLE_REV2_KEY}`,
       submit: false, 
       showRecaptcha: true,
@@ -235,17 +235,19 @@ class HomePage extends Component {
                         <label htmlFor="your-interest">I'm interested in</label>
                         <fieldset name={'your-interest'} id={'interest__group'}>
                           
-                          <label for="interest__option" id={'interest__option__one__label'} className={'checked'} onClick={this.changeRadioOption}>General Inquires
+                          <label for="interest__option" id={'interest__option__one__label'} className={'checked'} onClick={this.changeRadioOption}>
+                          <h4>General Inquires</h4>
                           <input id="interest__option__one" className={'is__input'} tabIndex={0} type="radio" name="interest__option" value="General Inquires"  checked/>
                           </label><br></br>
                           
-                          <label for="interest__option"  id={'interest__option__two__label'} onClick={this.changeRadioOption}>Media Inquires
+                          <label for="interest__option"  id={'interest__option__two__label'} onClick={this.changeRadioOption}>
+                          <h4>Media Inquires</h4>
                           <input id="interest__option__two" className={'is__input'} tabIndex={0} type="radio" name="interest__option" value="Media Inquires" />
                           </label><br></br>
                         </fieldset> 
                       </div>
-                      <div className={'col-md-12 col-lg-6 messsage__wrapper'}>
-                        <label htmlFor="your-message" className={'invisible'}><small>Your Message</small></label>
+                      <div className={'col-md-12 col-lg-6 message__wrapper'}>
+                        <label htmlFor="your-message" className={'invisible'}>Your Message</label>
                         <textarea 
                           value={message} 
                           className={message.length > 0 ? 'passed__field' : 'error__field'} 
@@ -271,7 +273,7 @@ class HomePage extends Component {
                       </div>
                       <div className={'col-md-12 col-lg-12 submit__wrapper d-flex justify-content-start align-items-start flex-column'}>
                         <Reaptcha ref={e => (this.captcha = e)} tabindex={0} className={this.state.showRecaptcha ? '' : 'hidden__element'} sitekey={process.env.GOOGLE_REV2_KEY} onVerify={this.onVerify} />
-                        <button type="submit" onClick={this.handleSubmit} disabled={!this.state.verified}>Send!</button>
+                        <button type="submit" style={{marginTop: '20px'}} className={'md-btn long-btn'} onClick={this.handleSubmit} disabled={!this.state.verified}>Send</button>
                         <div className={'loading__status ' + loading }>
                           {
                             loading === 'loading' ? <p>We are submitting your message</p> : ''
@@ -377,7 +379,7 @@ query ContactQuery {
             cliente_logo {
               localFile {
                 childImageSharp {
-                  fixed(width: 300, quality: 100) {
+                  fixed(width: 200, quality: 100) {
                     ...GatsbyImageSharpFixed
                   }
                 }

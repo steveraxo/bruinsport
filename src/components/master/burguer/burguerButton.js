@@ -25,8 +25,6 @@ class BurguerButton extends Component {
                   mainMenu[0].style.visibility = "hidden";
                   // Focus the element on the burguer menu
                   document.getElementById("burguer-menu").focus();  
-                  
-                  var focusableEls = false;
                 }, 1000);
             }else{
                 mainMenu[0].classList.add('opened')
@@ -73,7 +71,7 @@ class BurguerButton extends Component {
         return (
             <div aria-label={"Open the menu"} tabIndex="0" role="button" className={'ml-2 burguer__button ' + props.theme} onClick={this.handleMenu} onKeyPress={this.handleMenu} id="burguer-menu">
                 <div aria-hidden={"true"} className="burguer__line"></div>
-            </div>
+            </div>            
         )
     }
 }

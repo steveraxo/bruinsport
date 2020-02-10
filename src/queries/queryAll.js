@@ -65,12 +65,6 @@ module.exports = `
                 description
                 path
               }
-              featured_media{
-                source_url
-                alt_text
-                caption
-                description
-              }
               author {
                 name
                 avatar_urls {
@@ -99,12 +93,6 @@ module.exports = `
                 slug
                 description
                 path
-              }
-              featured_media{
-                source_url
-                alt_text
-                caption
-                description
               }
               author {
                 name

@@ -52,6 +52,7 @@ const Layout = ({ children }) => {
     <>
       <Helmet>
         <link rel="icon" href={siteFavicon} />
+        <html lang="en" />
       </Helmet>
       <Header  siteTitle={siteData.name} siteLogo={siteLogo} />
       <div className="master__wrapper">

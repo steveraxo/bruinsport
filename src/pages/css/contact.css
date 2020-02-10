@@ -1,0 +1,170 @@
+.contact__section__one{
+    padding: 150px 0 30px !important;
+}
+.contact__section__two{
+    min-height: 579px;
+    background: #b02931;
+}
+.contact__section__one .gatsby-image-wrapper{
+    left: 0;
+    width: 50%;
+    top: 0;
+}
+.contact__section__two h3{
+    font-weight: normal;
+    width: 240px;
+    margin-bottom: 30px;
+}
+.contact__section__two p{
+    color: white;
+    border-top: solid 2px black;
+    padding: 18px 0;
+}
+.contact__section__two p:last-child{
+    border-bottom: solid 2px black;
+}
+.contact__section__two .column__data{
+    position: relative;
+    z-index: 9;
+    padding: 0 50px;
+}
+.contact__section__two .img__background{
+    opacity: 0.5;
+}
+.contact__section__three{
+    padding: 50px 0!important;
+}
+.contact__section__three__columns{
+    margin: 20px 0 0;
+}
+.contact__section__three__columns .s__three__column{
+    padding: 50px 0px;
+    border-bottom: 3px solid #d5d5d5;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.contact__section__three__columns .s__three__column:nth-last-child(-n+7) {
+    border-bottom: none;
+}
+.contact__section__three__columns p{
+    font-weight: 500;
+}
+.contact__section__three .s__three__column .column__image{
+    min-height: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+fieldset {
+    border: none;
+}
+.radio-wrapper {
+    margin: 0.5rem 0;
+}
+
+
+.interested__wrapper > label, .name__wrapper > label, .email__wrapper > label, .message__wrapper > label{
+    font-size: 2rem;
+    line-height: 2.813rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+input, textarea{
+    text-transform: uppercase;
+    color: #a5a5a5;
+    font-size: 1.275rem;
+    font-weight: normal;
+    border: none;
+    border-bottom: solid 2px #d5d5d5;
+    padding-bottom: 5px;
+    padding-top: 10px;
+    background: transparent;
+}
+.interested__wrapper #interest__group label{
+    color: #a5a5a5;
+    font-size: 1.275rem;
+}
+.interested__wrapper #interest__group .checked{
+    color: #b02931;
+}
+#interest__group input{
+    position: absolute;
+    opacity: 0;
+}
+.first__rows, .second__row{
+    padding: 40px 0;
+
+}
+.submit__wrapper{
+    margin-top: 20px;
+}
+.loading__status{
+    margin: 40px 0 0 0 ;
+}
+.validation__message{
+    color: #b02931;
+}
+@media(max-width: 1024px){
+    .contact__section__two {
+        padding: 110px 0!important;
+        height: auto;
+    }
+    .contact__section__one .gatsby-image-wrapper {
+        left: -15%;
+        width: 100%;
+        opacity: 0.5;
+    }
+    .message__wrapper{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+}
+@media(max-width: 768px){
+    .contact__section__two .column__data {
+        padding: 30px 20px;
+    }
+    .submit__wrapper {
+        margin-top: 60px;
+    }
+    .interested__wrapper , .name__wrapper , .email__wrapper , .message__wrapper {
+        display: flex;
+        justify-content: flex-start;
+        align-items: self-start;
+        flex-direction: column;
+    }
+    .interested__wrapper label, .name__wrapper label, .email__wrapper label, .message__wrapper label{
+        width: 100%;
+    }
+    .interested__wrapper input, .name__wrapper input, .email__wrapper input, .message__wrapper input{
+        width: 100%;
+    }
+    .interested__wrapper #interest__group label {
+        font-size: 1.575rem;
+        margin: 20px 0;
+    }
+    .message__wrapper label{
+        position: absolute;
+        left: -1000px;
+    }
+    .contact__section__one .gatsby-image-wrapper {
+        opacity: 0.2;
+    }
+}
+@media(max-width: 500px){
+    .contact__section__three__columns .s__three__column {
+        padding: 10px 0px 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .contact__section__three .s__three__column .column__image {
+        min-height: 100px;
+    }
+    .contact__section__three, .contact__section__two, .contact__section__one {
+        padding: 50px 15px!important;
+    }
+}

@@ -48,7 +48,7 @@ class Header extends Component {
       }
       return (
         <div className="header__wrapper">
-          <div className="brand__wrapper" id="/">
+          <div className="brand__wrapper" id="brand__logo">
             <Link to="/" className="brand__link">
               {
                 wpLogo

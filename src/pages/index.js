@@ -91,7 +91,7 @@ class HomePage extends Component {
           }
         },
         {
-          breakpoint: 480,
+          breakpoint: 600,
           settings: {
             arrows: true,
             slidesToShow: 1,

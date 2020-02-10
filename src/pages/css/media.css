@@ -108,7 +108,7 @@ button.type__news.active:before {
     width: 0;
     height: 0;
     border-top: 37px solid transparent;
-    border-bottom: 38px solid transparent;
+    border-bottom: 36px solid transparent;
     border-left: 40px solid #b02831;
     content: "";
     position: absolute;
@@ -120,7 +120,7 @@ button.type__news:before {
     width: 0;
     height: 0;
     border-top: 37px solid transparent;
-    border-bottom: 38px solid transparent;
+    border-bottom: 36px solid transparent;
     border-left: 40px solid #a5a5a5;
     content: "";
     position: absolute;
@@ -132,7 +132,7 @@ button.type__news:after {
     width: 0;
     height: 0;
     border-top: 37px solid transparent;
-    border-bottom: 38px solid transparent;
+    border-bottom: 36px solid transparent;
     border-left: 40px solid #ffffff;
     content: "";
     position: absolute;

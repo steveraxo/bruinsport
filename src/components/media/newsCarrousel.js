@@ -114,7 +114,7 @@ class Header extends Component {
         <div className={`news__list ${this.props.state}`} id={this.props.elId}>
             {
                 newsArray.map((element, index) => 
-                    <div className={`${this.props.elId} news__list_element`} key={index} >
+                    <div className={`${this.props.elId} news__list_element`} key={`${this.props.elId}-${index}`} >
                             <div className="news__list_field date col">
                                 <p>{element.node.date}</p>
                             </div>

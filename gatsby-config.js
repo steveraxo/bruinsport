@@ -9,15 +9,6 @@ module.exports = {
     // author: ``,
   },
   plugins: [
-    { 
-      resolve: 'gatsby-plugin-web-font-loader',
-        options: {
-          custom: {
-            families: ['Muli', 'Teko'],
-            urls: ['src/fonts/custom-fonts.css']
-          }
-        }
-    },
     // {
     //   resolve: `gatsby-plugin-mailchimp`,
     //   options: {

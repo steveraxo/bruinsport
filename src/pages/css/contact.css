@@ -171,8 +171,18 @@ input, textarea{
         width: 40%;
     }
 }
-@media(max-width: 1600px){
-
+@media(max-width: 1445px){
+    .latest__article .title {
+        min-height: 170px;
+    }
+}
+@media(max-width: 1280px){
+    .latest__article .title {
+        min-height: 210px;
+    }
+    .latest__article .content {
+        min-height: 80px;
+    }
 }
 @media(max-width: 1200px){
     .contact__section__two {

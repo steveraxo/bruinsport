@@ -75,9 +75,9 @@
     max-width: 1100px!important;
     width: 100%!important;
 }
-.home__page .popup-content .close{
+.popup-content .close{
     position: absolute;
-    right: 32px;
+    right: 50px;
     top: 32px;
     width: 32px;
     height: 32px;
@@ -85,7 +85,7 @@
     cursor: pointer;
     z-index: 9;
 }
-.home__page .popup-content .close:before, .home__page .popup-content .close:after {
+.popup-content .close:before, .popup-content .close:after {
     position: absolute;
     left: 15px;
     content: ' ';
@@ -96,11 +96,11 @@
 .home__page .latest__article button{
     margin-top: 30px;
 }
-.home__page .popup-content .close:after {
+.popup-content .close:after {
     -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg);
 }
-.home__page .popup-content .close:before {
+.popup-content .close:before {
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
 }

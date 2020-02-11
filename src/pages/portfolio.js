@@ -41,7 +41,7 @@ class MediaPage extends Component {
                     <div className={'row'}>
                         <div className={`our__approach featured__section container-fluid d-flex justify-content-center align-items-end ${pageAcf.project[0].project_layout} col-xl-12`} key={`1`}>
                             <div className="page__background">
-                            <Img fluid={pageAcf.project[0].project_background.localFile.childImageSharp.fluid} alt={' '} tabIndex={-1}/>
+                                <Img fluid={pageAcf.project[0].project_background.localFile.childImageSharp.fluid} alt={' '} tabIndex={-1}/>
                             </div>
                             <div className="container">
                             <div className="row">

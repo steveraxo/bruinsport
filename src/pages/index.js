@@ -130,11 +130,11 @@ class HomePage extends Component {
                         on="focus"
                         trigger={
                         <img 
-                        className={`${this.state.mixBlend}`}
-                        tabIndex={0}
-                        src={element.icon.source_url}
-                        alt={`Client ${element.title} logo`}
-                      />
+                          className={`${this.state.mixBlend}`}
+                          tabIndex={0}
+                          src={element.icon.source_url}
+                          alt={`Client ${element.title} logo`}
+                        />
                       }>
                       <div className="popup__inner featured__wrapper" id={'popup__inner'}>
                         <div className="triangle__big"></div>

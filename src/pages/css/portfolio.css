@@ -5,7 +5,6 @@
 }
 .portfolio__page .our__approach{
     overflow: hidden;
-    min-height: 636px;
     position: relative;
 }
 .projects__section .our__approach{
@@ -16,8 +15,9 @@
     margin: 20px 0;
 }
 .projects__section .our__approach p{
-    line-height: 45px;
+    line-height: 50px;
 }
+
 .diagonal button{
     margin-top: 40px;
 }
@@ -25,7 +25,6 @@
     padding: 0;
 }
 .projects__section .portfolio_half .portfolio__inner{
-    padding: 40px 20%;
     border-right: 2px solid #cecece4d;
     min-height: 650px;
 }
@@ -68,17 +67,54 @@
 }
 @media(max-width: 4000px){
     .projects__section .our__approach {
-        padding: 800px 0 60px 0!important;
+        padding: 800px 0 90px 0!important;
         color: white;
         margin-top: -530px;
         clip-path: polygon(0 50%, 110% 0,790% 130%,0 110%);
         position: relative;
         z-index: 3;
     }
+    .portfolio__page .our__approach {
+        min-height: 1000px;
+    }
+    .portfolio_full{
+        min-height: 1000px;
+    }
+    .portfolio__inner{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin: auto;
+        padding: 40px 20% 160px;
+    }
+    .porftolio__description{
+        width: 660px;
+    }
+    .portfolio_full .portfolio__logo .gatsby-image-wrapper{
+        width: 281px!important;
+        height: 92px!important;
+    }
 }
 @media(max-width: 3000px){
     .projects__section .our__approach {
         clip-path: polygon(0 60%, 110% 0,790% 130%,0 110%);
+    }
+}
+@media(max-width: 2000px){
+    .portfolio_full{
+        min-height: 600px;
+    }
+    .projects__section .portfolio_half .portfolio__inner {
+        padding: 40px 20%;
+    }
+    .portfolio__page .our__approach {
+        min-height: 630px;
+    }
+    .porftolio__description {
+        width: auto;
+    }
+    .portfolio_full .portfolio__inner {
+        padding: 40px 0% 40px;
     }
 }
 @media(max-width: 1600px){
@@ -94,6 +130,9 @@
     }
     .portfolio_full .col-lg-6 {
         padding: 0px 7%;
+    }
+    .projects__section .our__approach {
+        clip-path: polygon(0 60%, 113% 0,790% 130%,0 110%);
     }
 }
 @media(max-width: 1280px){
@@ -157,5 +196,8 @@
     }
     .porftolio__description p{
         line-height: 40px;
+    }
+    .portfolio__page .our__approach {
+        min-height: 360px;
     }
 }

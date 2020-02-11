@@ -48,7 +48,7 @@ class MediaPage extends Component {
                                 <div className={'col-md-12 col-lg-10 col-xl-10 text-left'}>
                                 <Img fixed={pageAcf.project[0].project_logo.localFile.childImageSharp.fixed} alt={'Client Logo'} tabIndex={0}/>
                                 <div dangerouslySetInnerHTML={{__html: pageAcf.project[0].project_description}} />
-                                <ExternalButton buttonText={'Learn More'} redirectionLink={pageAcf.project[0].project_link}></ExternalButton>
+                                <ExternalButton buttonClass={'md-btn'} buttonText={'Learn More'} redirectionLink={pageAcf.project[0].project_link}></ExternalButton>
                                 </div>
                             </div>
                             </div>
@@ -67,7 +67,7 @@ class MediaPage extends Component {
                                     <div dangerouslySetInnerHTML={{__html: pageAcf.project[1].project_description}} />
                                 </div>
                                 <div className={'portfolio__button'}>
-                                    <ExternalButton buttonText={'Learn More'} redirectionLink={pageAcf.project[1].project_link}></ExternalButton>
+                                    <ExternalButton buttonClass={'md-btn'} buttonText={'Learn More'} redirectionLink={pageAcf.project[1].project_link}></ExternalButton>
                                 </div>
                             </div>
                         </div>
@@ -83,7 +83,7 @@ class MediaPage extends Component {
                                     <div dangerouslySetInnerHTML={{__html: pageAcf.project[2].project_description}} />
                                 </div>
                                 <div className={'portfolio__button'}>
-                                    <ExternalButton buttonText={'Learn More'} redirectionLink={pageAcf.project[2].project_link}></ExternalButton>
+                                    <ExternalButton buttonClass={'md-btn'} buttonText={'Learn More'} redirectionLink={pageAcf.project[2].project_link}></ExternalButton>
                                 </div>
                             </div>
                         </div>
@@ -107,7 +107,7 @@ class MediaPage extends Component {
                                         <div dangerouslySetInnerHTML={{__html: pageAcf.project[3].project_description}} />
                                     </div>
                                     <div className={'portfolio__button'}>
-                                        <ExternalButton buttonText={'Learn More'} redirectionLink={pageAcf.project[3].project_link}></ExternalButton>
+                                        <ExternalButton buttonClass={'md-btn'} buttonText={'Learn More'} redirectionLink={pageAcf.project[3].project_link}></ExternalButton>
                                     </div>
                                 </div>
                             </div>
@@ -127,7 +127,7 @@ class MediaPage extends Component {
                                     <div dangerouslySetInnerHTML={{__html: pageAcf.project[4].project_description}} />
                                 </div>
                                 <div className={'portfolio__button'}>
-                                    <ExternalButton buttonText={'Learn More'} redirectionLink={pageAcf.project[4].project_link}></ExternalButton>
+                                    <ExternalButton buttonClass={'md-btn'} buttonText={'Learn More'} redirectionLink={pageAcf.project[4].project_link}></ExternalButton>
                                 </div>
                             </div>
                         </div>
@@ -143,7 +143,7 @@ class MediaPage extends Component {
                                     <div dangerouslySetInnerHTML={{__html: pageAcf.project[5].project_description}} />
                                 </div>
                                 <div className={'portfolio__button'}>
-                                    <ExternalButton buttonText={'Learn More'} redirectionLink={pageAcf.project[5].project_link}></ExternalButton>
+                                    <ExternalButton buttonClass={'md-btn'} buttonText={'Learn More'} redirectionLink={pageAcf.project[5].project_link}></ExternalButton>
                                 </div>
                             </div>
                         </div>
@@ -164,7 +164,7 @@ class MediaPage extends Component {
                                         <div dangerouslySetInnerHTML={{__html: pageAcf.project[6].project_description}} />
                                     </div>
                                     <div className={'portfolio__button'}>
-                                        <ExternalButton buttonText={'Learn More'} redirectionLink={pageAcf.project[6].project_link}></ExternalButton>
+                                        <ExternalButton buttonClass={'md-btn'} buttonText={'Learn More'} redirectionLink={pageAcf.project[6].project_link}></ExternalButton>
                                     </div>
                                 </div>
                             </div>

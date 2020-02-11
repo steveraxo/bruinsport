@@ -144,6 +144,10 @@ button.type__press{
     padding: 20px 35px 20px 70px;
     margin-left: 5px;
 }
+.news__list{
+    position: relative;
+    z-index: 2;
+}
 @media(max-width: 1600px){
     .media__lists{
         padding-bottom: 50px!important;
@@ -191,6 +195,19 @@ button.type__press{
     .article__type__selector button.type__news:after {
         border-top: 51px solid transparent;
         border-bottom: 51px solid transparent;
+    }
+}
+@media(max-width: 330px){
+    .media__lists button {
+        font-size: 13px;
+    }
+    .article__type__selector button.type__news:before {
+        border-top: 40px solid transparent;
+        border-bottom: 38px solid transparent;
+    }
+    .article__type__selector button.type__news:after {
+        border-top: 40px solid transparent;
+        border-bottom: 38px solid transparent;
     }
 }
 @media (max-width: 920px) and (orientation: landscape) {

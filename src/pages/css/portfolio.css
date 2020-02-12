@@ -182,7 +182,7 @@
 }
 @media(max-width: 500px){
     .projects__section .our__approach {
-        clip-path: polygon(0 50%, 190% 0,790% 130%,0 110%);
+        clip-path: polygon(0 27%, 310% 0,790% 130%,0 110%);
     }
     .projects__section .our__approach {
         padding: 770px 40px 60px 40px!important;
@@ -199,5 +199,6 @@
     }
     .portfolio__page .our__approach {
         min-height: 360px;
+        margin-bottom: 120px;
     }
 }

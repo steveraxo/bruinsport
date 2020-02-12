@@ -249,6 +249,9 @@ input, textarea{
         align-items: center;
         text-align: center;
     }
+    .contact__section__three__columns .s__three__column:nth-last-child(-n+7) {
+        border-bottom: 3px solid #d5d5d5;
+    }
     .contact__section__three .s__three__column .column__image {
         min-height: 100px;
     }
@@ -260,6 +263,12 @@ input, textarea{
     }
     .interested__wrapper > label, .name__wrapper > label, .email__wrapper > label, .message__wrapper > label{
         font-size: 35px;
+    }
+    .contact__section__one .gatsby-image-wrapper {
+        width: 62%;
+    }
+    .contact__page form{
+        margin-top: 30px;
     }
 }
 @media (max-width: 600px) and (orientation: landscape) {

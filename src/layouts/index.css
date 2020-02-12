@@ -321,11 +321,24 @@ h6 {
   line-height: 1.1;
 }
 body h1{
-  font-size: 139px;
+  font-size: 105px;
   line-height: 120px;
   font-weight: 500;
   margin: 0;
   padding: 0;
+}
+body .mainText { 
+  font-size: 103px;
+  line-height: 120px;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+  color: #000000;
+  position: relative;
+  z-index: 2;
+}
+body .mainText.--white{ 
+  color: #ffffff;
 }
 body h2{
   font-size: 114px;
@@ -669,6 +682,10 @@ pre tt:after {
     font-size: 109px;
     line-height: 90px;
 }
+body .mainText { 
+  font-size: 109px;
+  line-height: 90px;
+}
   body h3 {
     font-size: 80px;
     line-height: 73.96px;
@@ -685,6 +702,10 @@ body h5 {
   body h1 {
     font-size: 75px;
     line-height: 60px;
+}
+body .mainText { 
+  font-size: 75px;
+  line-height: 60px;
 }
   body h3 {
     font-size: 50px;

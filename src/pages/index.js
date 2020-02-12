@@ -185,7 +185,7 @@ class HomePage extends Component {
             <div className="container">
               <div className="row">
                 <div className={'col-md-12 col-lg-9'}>
-                  <h1>{pageData.acf.our_approach_title}</h1>
+                  <h1 dangerouslySetInnerHTML={{__html: pageData.acf.our_approach_title}} />
                   <div dangerouslySetInnerHTML={{__html: pageData.acf.our_approach_content}} />
                   <InternalButton buttonText={pageData.acf.our_approach_button_text} redirectionLink={pageData.acf.our_approach_button_link}></InternalButton>
                 </div>
@@ -198,7 +198,8 @@ class HomePage extends Component {
               <div className="row">
                 <div className={'col-md-12 col-lg-4 col-xl-6'}></div>
                 <div className={'col-md-12 col-lg-8 col-xl-6 text-left'}>
-                  <h1>{pageData.acf.featured_title}</h1>
+                  
+                  <h2 className={'mainText --white'} dangerouslySetInnerHTML={{__html: pageData.acf.featured_title}} />
                   <div dangerouslySetInnerHTML={{__html: pageData.acf.featured_content}} />
                   <InternalButton buttonText={pageData.acf.featured_button_text} redirectionLink={pageData.acf.featured_button_link}></InternalButton>
                 </div>
@@ -207,7 +208,7 @@ class HomePage extends Component {
           </section>
           <section className="container-fluid latest__news">
             <div className="container">
-              <h1 className="pl-4">{pageData.acf.latest_news_title}</h1>
+              <h2 className={'mainText '} dangerouslySetInnerHTML={{__html: pageData.acf.latest_news_title}} />
             </div>  
             <div className="latest__news__wrapper">
             <Slider className="row featured__wrapper dark latest__news__wrapper" {...settings}>

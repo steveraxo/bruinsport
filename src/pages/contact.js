@@ -316,7 +316,7 @@ class HomePage extends Component {
             <div className="container">
               <div className="row ">
                 <div className="col-sm-12 col-xl-6">
-                  <h1>{pageAcf.portfolio_title}</h1>
+                  <h2 className="mainText" dangerouslySetInnerHTML={{__html: pageAcf.portfolio_title}} />
                 </div>
               </div>
               <div className="row contact__section__three__columns">

@@ -54,6 +54,7 @@ class MediaPage extends Component {
                             </div>
                         </div>
                     </div>
+
                     <div className={'row'}>
                         <div class={'col-md-12 col-lg-6 portfolio_half left__portfolio'} key={`1`}>
                             <div className={'portfolio__header'}>
@@ -88,7 +89,7 @@ class MediaPage extends Component {
                             </div>
                         </div>
                     </div>
-                    
+
                     <div className={'row'}>
                         <div class={'col-md-12 col-lg-12 portfolio_full '} key={`3`}>
                             <div className="page__background">

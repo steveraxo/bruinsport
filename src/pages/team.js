@@ -11,17 +11,27 @@ import Img from "gatsby-image"
 
 
 class MediaPage extends Component {
-  focusTrapMain(){
+  focusMain(){
     setTimeout(function(){ 
-    console.log('t')
     // Focus the element on the burguer menu
     document.getElementById("close__menu").focus(); 
-    document.body.style.overflow = "hidden";
-    document.documentElement.style.overflow = "hidden";
+
+    document.querySelectorAll('html')[0].classList.add('html__custom')
 
     // Trap the focus loop inside the menu
-    var element = document.getElementById("popup__main")
-    var focusableEls = document.querySelectorAll('#popup__main .close, #popup__main a, #popup__main iframe ');
+    var theElement = document.querySelectorAll('.popup__inner')[0].id; 
+
+    var element = document.getElementById(theElement)
+     
+    var focusableEls = false; 
+
+    if(theElement === 'popup__main'){
+        focusableEls = document.querySelectorAll('#popup__main .close, #popup__main a, #popup__main iframe ');
+    }
+
+    if(theElement === 'popup__team'){
+        focusableEls = document.querySelectorAll('#popup__team .close, #popup__team .btn-main a ');
+    }   
 
     var firstFocusableEl = focusableEls[0],  
         lastFocusableEl = focusableEls[focusableEls.length - 1],
@@ -45,48 +55,11 @@ class MediaPage extends Component {
                 }
             }
         });
-     },10);
+     },1);
   }
-  focusTrapTeam(){
-    setTimeout(function(){ 
-    // Focus the element on the burguer menu
-    document.getElementById("close__menu").focus(); 
-    document.body.style.overflow = "hidden";
-    document.documentElement.style.overflow = "hidden";
 
-    // Trap the focus loop inside the menu
-    var element = document.getElementById("popup__team")
-    var focusableEls = document.querySelectorAll('#popup__team .close, #popup__team .btn-main a ');
-
-    var firstFocusableEl = focusableEls[0],  
-        lastFocusableEl = focusableEls[focusableEls.length - 1],
-        KEYCODE_TAB = 9;
-
-        element.addEventListener('keydown', function(e) {
-            var isTabPressed = (e.key === 'Tab' || e.keyCode === KEYCODE_TAB);
-            if (!isTabPressed) { 
-                return; 
-            }
-
-            if ( e.shiftKey ) /* shift + tab */ {
-                if (document.activeElement === firstFocusableEl) {
-                    lastFocusableEl.focus();
-                    e.preventDefault();
-                }
-            } else /* tab */ {
-                if (document.activeElement === lastFocusableEl) {
-                    firstFocusableEl.focus();
-                    e.preventDefault();
-                }
-            }
-        });
-     },10);
-  }
   endModal(e) {
-    // When the modal is hidden...
-    document.body.style.overflowX = "hidden";
-    document.body.style.overflowY = "scroll";
-    document.documentElement.style.overflow = "unset";
+    document.querySelectorAll('html')[0].classList.remove('html__custom')
 
     e.preventDefault() 
     if (e.type === 'keypress'){
@@ -96,6 +69,11 @@ class MediaPage extends Component {
     }else{
         [...document.querySelectorAll('.popup-overlay')][0].remove()
     }
+  }
+  
+  changeBodyScroll(){
+    // When the modal is hidden...
+    document.querySelectorAll('html')[0].classList.remove('html__custom')
   }
   render() {
     const pageData = this.props.data.allWordpressPage.edges[0].node
@@ -119,7 +97,10 @@ class MediaPage extends Component {
                                 <div dangerouslySetInnerHTML={{__html: pageAcf.main_copy}} />
                                 <Popup     
                                         modal
-                                        onOpen={this.focusTrapMain}
+                                        closeOnEscape
+                                        closeOnDocumentClick
+                                        onOpen={this.focusMain}
+                                        onClose={this.changeBodyScroll}
                                         on="focus"
                                         trigger={
                                             <button className={'md-btn'}>Learn More</button>
@@ -128,8 +109,13 @@ class MediaPage extends Component {
                                     <div className="popup__inner featured__wrapper team__main__popup" id={'popup__main'}>
                                         <div className="triangle__big"></div>
                                         <div className="triangle__small"></div>
-                                        <button className="close" tabIndex="0" onClick={this.endModal} onKeyPress={this.endModal} id="close__menu">
-                                        
+                                        <button 
+                                            className="close" 
+                                            tabIndex="0" 
+                                            onClick={this.endModal} 
+                                            onKeyPress={this.endModal} 
+                                            id="close__menu" 
+                                        >
                                         </button>
                                         <div className="featured__article row">
                                             <div className={'col-md-12 col-lg-6'}>
@@ -146,7 +132,7 @@ class MediaPage extends Component {
                                                 <div className={'popup__logos row'}>
                                                     {
                                                         pageAcf.popup_logos.map((element, index) => 
-                                                            <div className={'col-sm-12 col-lg-4 d-flex justify-content-center align-items-center'} key={`logo-${index}`}>
+                                                            <div className={'col-xs-6 col-sm-4 col-md-4 col-lg-4 d-flex justify-content-center align-items-center'} key={`logo-${index}`}>
                                                                 <a href={element.url} target={'_BLANK'} rel="noopener noreferrer">
                                                                     <img src={element.logo.source_url} alt={' '} tabIndex={-1}/>
                                                                     <p className="featured__article__logo__desc" dangerouslySetInnerHTML={{__html: element.title}} />
@@ -179,13 +165,17 @@ class MediaPage extends Component {
                                     <div className={'col-sm-12 col-md-6 col-xl-4'} key={`${member.name}-${index}`}>
                                         <Popup     
                                             modal
-                                            onOpen={this.focusTrapTeam}
+                                            closeOnEscape
+                                            closeOnDocumentClick
+                                            onOpen={this.focusMain}
+                                            onClose={this.changeBodyScroll}
                                             on="focus"
                                             trigger={
-                                                <img 
+                                            <img 
                                                 tabIndex={0}
                                                 src={member.photo.source_url}
-                                              />
+                                                alt={`${member.name}, member Bruin Sport Capital Team`}
+                                            />
                                         }>
                                         <div className="popup__inner featured__wrapper" id={'popup__team'}>
                                             <div className="triangle__big"></div>
@@ -196,9 +186,10 @@ class MediaPage extends Component {
                                             <div className="featured__article row" key={index}>
                                                 <div className={'col-md-12 col-lg-4'}>
                                                 <img 
-                                                tabIndex={0}
-                                                src={member.photo.source_url}
-                                              />
+                                                    tabIndex={0}
+                                                    src={member.photo.source_url}
+                                                    alt={`${member.name}, member Bruin Sport Capital Team`}
+                                                />
                                                 </div>
                                                 <div className={'col-md-12 col-lg-8'}>
                                                     <div className="featured__artitle__inner">

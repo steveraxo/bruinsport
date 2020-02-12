@@ -1,12 +1,17 @@
 @media(max-width:4000px){
     .team__page .main__section{ 
         position: relative;
-        height: 3650px;
+        height: 3810px;
         padding: 120px 0!important;
         display: flex;
         justify-content: center;
         align-items: center;
-        clip-path: polygon(0 0, 100% 0, 103% 100%, 0 65%);
+    }
+    .team__page  #popup__team .featured__article:after {
+        display: none;
+    }
+    .team__main__popup .featured__article__full__copy  {
+        padding-right: 35px;
     }
     .team__page .team__section .featured__wrapper .featured__article img{
         border-right: 10px #cccccc solid;
@@ -37,7 +42,7 @@
     }
     .team__section .container{
         margin-top: -15%;
-        padding: 200px 0;
+        padding: 200px 0 0;
     }
     .team__page .popup-content {
         width: 100%!important;
@@ -159,16 +164,31 @@
         right: 22px!important;
         top: 2px!important;
     }
+    .team__page .featured__article{
+        position: relative;
+    }
+    .team__page .featured__article:after{
+        content: "";
+        position: absolute;
+        right: 0;
+        top: -30px;
+        width: 1px;
+        height: 590px;
+        background: #cdcdcd;
+        z-index: 9;
+        left: -39.9px;
+        margin: auto;
+        bottom: 0;
+    }
 }
 @media(max-width:3000px){
     .team__page .main__section {
-        height: 2649px;
+        height: 2849px;
     }
 }
 @media(max-width:2000px){
     .team__page .main__section{ 
         height: 2150px;
-        clip-path: polygon(0 0, 100% 0, 101% 100%, 0 72%);
     }
     .team__section .container {
         margin-top: -22%;
@@ -183,11 +203,10 @@
 @media(max-width:1600px){
     .team__page .main__section {
         height: 2000px;
-        clip-path: polygon(0 0, 100% 0, 101% 100%, 0 112%);
     }
     .team__section .container{
         margin-top: -25%;
-        padding: 50px 0 110px;
+        padding: 50px 0 0px;
     }
     .team__page .main__section .container {
         margin-top: -34%;
@@ -204,6 +223,10 @@
     .team__page .main__section .page__background img {
         object-position: -710px!important;
     }    
+    .team__main__popup .close {
+        right: 72px!important;
+        top: 6px!important;
+    }
     .team__page .main__section {
         height: 1710px;
     }
@@ -231,6 +254,10 @@
     }
     .team__section .container {
         margin-top: -15%;
+    }
+    .team__main__popup .popup__logos .featured__article__logo__desc {
+        font-size: 11px;
+        line-height: 12px;
     }
 }
 @media(max-width:768px){
@@ -261,6 +288,27 @@
         margin: 0;
         border-bottom: 10px #cccccc solid;
         margin-bottom: 10px;
+    }
+    .team__main__popup .featured__article__top {
+        max-height: 280px;
+        margin-bottom: 40px;
+    }
+    .team__main__popup .featured__article {
+        height: 620px;
+        overflow: scroll;
+    }
+    .team__main__popup .featured__article {
+        padding: 40px 15px;
+    }
+    .team__page .featured__article:after{
+        right: 33.9px;
+        top: -229.1px;
+        height: 250px;
+        left: unset;
+        bottom: 0;
+    }
+    .team__page .team__main__popup p {
+        margin: 0px 0;
     }
 }
 @media(max-width:600px){
@@ -302,11 +350,40 @@
         height: 600px;
     }
     .team__section .container {
-        margin-top: -95%;
-        padding: 0px 40px 60px;
+        margin-top:-115%;
+        padding: 0px 40px 0px;
     }
     .team__members .col-sm-12 {
         padding: 0 15px 0 15px;
+    }
+    .team__main__popup .close {
+        right: 32px!important;
+    }
+    .team__main__popup .featured__article__full__copy {
+        padding-right: 17px;
+    }
+    .team__page .team__main__popup p {
+        margin: 0px 0 25px;
+    }
+    .team__page .featured__article:after {
+        right: 24.9px;
+    }
+    .popup-content .close:before, .popup-content .close:after {
+        left: 19px;
+        content: ' ';
+        height: 23px;
+    }
+    .team__main__popup .featured__article {
+        padding: 40px 5px;
+    }
+    .popup__logos .col-xs-6{
+        margin: 15px 0px;
+    }
+    .team__main__popup .popup__logos img {
+        margin: 12px 0;
+    }
+    .team__page .team__main__popup p {
+        line-height: 25px;
     }
 }
 @media(max-width:320px){
@@ -322,7 +399,73 @@
     .team__page .team__section .featured__wrapper .featured__article img {
         height: 220px;
     }
+    .team__main__popup .featured__article {
+        height: 420px;
+    }
+    .team__page .featured__article:after {
+        top: -49.1px;
+    }
+    .team__page .team__section .triangle__small {
+        left: 17.5%;
+    }
+    .team__section .container {
+        margin-top: -205%;
+    }
 }
 .team__page p {
     line-height: 50px;
 }
+.html__custom{
+    overflow: hidden;
+}
+
+
+#popup__main .featured__article__top::-webkit-scrollbar-track {
+    border-radius: 10px;
+    border: 1px solid transparent;
+    width: 1px;
+    height: 50px;
+  }
+  #popup__main .featured__article__top::-webkit-scrollbar {
+    width: 10px;
+    background-color: transparent;
+    border-radius: 10px;
+    height: 50px;
+  }
+  #popup__main .featured__article__top::-webkit-scrollbar-thumb {
+    border-radius: 100px;
+    background-color: #cccccc;
+    border: 5px solid transparent;
+    height:50px;
+    width: 1px;
+  }
+  @media (max-width: 920px) and (orientation: landscape) {
+    .team__page .featured__article {
+        height: 320px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+    .team__page .featured__article:after{
+        display: none;
+    }
+    .team__page .featured__article .col-md-12{
+        margin-bottom: 40px;
+    }
+    .team__main__popup .close {
+        right: 60px!important;
+    }
+    .team__section .container {
+        margin-top: -28%;
+    }
+  }
+  @media (max-width: 600px) and (orientation: landscape) {
+    .team__page .featured__article {
+        height: 270px;
+    }
+    .team__main__popup .close {
+        right: 29px!important;
+    }
+    .team__section .container {
+        margin-top: -76%;
+    }
+  }

@@ -10,11 +10,12 @@
     flex-direction: column;
     text-align: left;
     background: #b02931;
-    border: solid 15px white;
+    border: solid 0px white;
     z-index: 9;
     overflow: hidden;
     right: -1000px;
     transition: right 0.7s cubic-bezier(0.86, 0, 0.07, 1);
+    box-shadow: -4px 1px 12px -5px rgba(0,0,0,0.75);
 }
 .menu__wrapper.main__menu:after{
     background: url('../../images/menu/bruin-transparent.png');

@@ -22,6 +22,8 @@ class HomePage extends Component {
   }
   focusTrap(){
     setTimeout(function(){ 
+    
+    document.querySelectorAll('html')[0].classList.add('html__custom')
     // Focus the element on the burguer menu
     document.getElementById("close__menu").focus(); 
 
@@ -56,6 +58,8 @@ class HomePage extends Component {
 
   }
   endModal(e) {
+    document.querySelectorAll('html')[0].classList.remove('html__custom')
+
     e.preventDefault() 
     if (e.type === 'keypress'){
       if(e.which === 32 || e.which === 13){
@@ -64,6 +68,10 @@ class HomePage extends Component {
     }else{
       [...document.querySelectorAll('.popup-overlay')][0].remove()
     }
+  }
+  changeBodyScroll(){
+    // When the modal is hidden...
+    document.querySelectorAll('html')[0].classList.remove('html__custom')
   }
   render() {
     // This variable will return all the fields related to the post
@@ -127,6 +135,7 @@ class HomePage extends Component {
                         closeOnEscape
                         closeOnDocumentClick
                         onOpen={this.focusTrap}
+                        onClose={this.changeBodyScroll}
                         on="focus"
                         trigger={
                         <img 

@@ -262,3 +262,17 @@ input, textarea{
         font-size: 35px;
     }
 }
+@media (max-width: 600px) and (orientation: landscape) {
+    .contact__section__three__columns .s__three__column {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .contact__section__three__columns .s__three__column {
+        padding: 10px 0px 50px;
+    }
+    .contact__section__three .s__three__column .column__image {
+        min-height: 100px;
+    }
+}

@@ -97,6 +97,7 @@ input, textarea{
 }
 .interested__wrapper #interest__group label{
     position: relative;
+    cursor: pointer;
 }
 .interested__wrapper #interest__group label h4{
     color: #a5a5a5;

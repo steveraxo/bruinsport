@@ -20,7 +20,7 @@ class MediaPage extends Component {
             <Helmet>
                 <meta charSet="utf-8" />
                 <meta name="description" content={ pageData.title }/>
-                <title>{ pageData.title }</title>
+                <title>{ pageData.yoast_title }</title>
                 <link rel="canonical" href={globalHistory.location.origin} />
             </Helmet>
             <div className={'portfolio__page'}>
@@ -188,12 +188,13 @@ query portfolioPageQuery {
         id
         title
         content
+        yoast_title
         date(formatString: "MMMM DD, YYYY")
         featured_media {
           id
           localFile {
             childImageSharp {
-              fluid(maxWidth: 1920, quality: 100) {
+              fluid(maxWidth: 4000, quality: 100) {
                 ...GatsbyImageSharpFluid
               }
             }
@@ -205,7 +206,7 @@ query portfolioPageQuery {
             project_background{
               localFile {
                 childImageSharp {
-                    fluid(maxWidth: 1920, quality: 100) {
+                    fluid(maxWidth: 4000, quality: 100) {
                     ...GatsbyImageSharpFluid
                     }
                 }
@@ -214,7 +215,7 @@ query portfolioPageQuery {
             project_logo{
                 localFile {
                     childImageSharp {
-                        fixed(width: 300, quality: 100) {
+                        fixed(width: 220, quality: 100) {
                             ...GatsbyImageSharpFixed
                         }
                     }

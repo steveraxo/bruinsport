@@ -148,7 +148,7 @@ class HomePage extends Component {
         <Helmet>
             <meta charSet="utf-8" />
             <meta name="description" content={ pageData.title }/>
-            <title>{ pageData.title }</title>
+            <title>{ pageData.yoast_title }</title>
             <link rel="canonical" href={globalHistory.location.origin} />
         </Helmet>
         <div className="contact__page">
@@ -230,14 +230,14 @@ class HomePage extends Component {
                         <label htmlFor="your-interest">I'm interested in</label>
                         <fieldset name={'your-interest'} id={'interest__group'}>
                           
-                          <label for="interest__option" id={'interest__option__one__label'} className={'checked'} onClick={this.changeRadioOption}>
+                          <label htmlFor="interest__option" id={'interest__option__one__label'} className={'checked'} onClick={this.changeRadioOption}>
                           <h4>General Inquires</h4>
-                          <input id="interest__option__one" className={'is__input'} tabIndex={0} type="radio" name="interest__option" value="General Inquires"  checked/>
+                          <input id="interest__option__one" className={'is__input'} tabIndex={0} type="radio" name="interest__option" value="General Inquires"  checked onChange={this.changeRadioOption}/>
                           </label><br></br>
                           
-                          <label for="interest__option"  id={'interest__option__two__label'} onClick={this.changeRadioOption}>
+                          <label htmlFor="interest__option"  id={'interest__option__two__label'} onClick={this.changeRadioOption}>
                           <h4>Media Inquires</h4>
-                          <input id="interest__option__two" className={'is__input'} tabIndex={0} type="radio" name="interest__option" value="Media Inquires" />
+                          <input id="interest__option__two" onChange={this.changeRadioOption} className={'is__input'} tabIndex={0} type="radio" name="interest__option" value="Media Inquires" />
                           </label><br></br>
                         </fieldset> 
                       </div>
@@ -297,12 +297,14 @@ class HomePage extends Component {
             <div className="container">
               <div className="row">
                 {
-                  pageAcf.three_columns_data.map((element) => 
-                    <div className="col-sm-12 col-md-6 col-xl-4 text-left column__data">
+                  pageAcf.three_columns_data.map((element, index) => 
+                    <div className="col-sm-12 col-md-6 col-xl-4 text-left column__data" key={`${element}-${index}`}>
                       <h4 className="text-left" dangerouslySetInnerHTML={{__html: element.column_title}} />
                       {
-                        element.column_element.map((subElement) => 
-                          <p>{subElement.element_title}</p>
+                        element.column_element.map((subElement, index) => 
+                          <div key={`${element}-${subElement}-${index}`}>
+                          <p >{subElement.element_title}</p>
+                          </div>
                         )
                       }
                     </div>
@@ -321,9 +323,9 @@ class HomePage extends Component {
               </div>
               <div className="row contact__section__three__columns">
               {
-                  pageAcf.portfolio_data.map((element) => 
+                  pageAcf.portfolio_data.map((element, index) => 
                   <>
-                    <div className="col-md-4 col-xl-3 s__three__column">
+                    <div className="col-md-4 col-xl-3 s__three__column" key={`${element}-${index}`}>
                       <a href={`https://${element.client_url}`} target="_BLANK" rel="noopener noreferrer">
                         <div className={'column__image'}>
                           <Img fixed={element.cliente_logo.localFile.childImageSharp.fixed} alt={'Client Logo'} tabIndex={0}/>
@@ -363,6 +365,7 @@ query ContactQuery {
         id
         title
         content
+        yoast_title
         date(formatString: "MMMM DD, YYYY")
         featured_media {
           localFile {

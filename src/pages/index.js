@@ -114,7 +114,7 @@ class HomePage extends Component {
         <Helmet>
             <meta charSet="utf-8" />
             <meta name="description" content={ pageData.title }/>
-            <title>{ pageData.title }</title>
+            <title>{ pageData.yoast_title }</title>
             <link rel="canonical" href={globalHistory.location.origin} />
         </Helmet>
         <div className="home__page">
@@ -129,7 +129,7 @@ class HomePage extends Component {
               <div className="row clients__logos">
                 {
                   pageData.acf.header_logos.map( (element, index) => 
-                    <div className="col" key={index}>
+                    <div className="col" key={`${element}-${index}`}>
                       <Popup     
                         modal
                         closeOnEscape
@@ -214,7 +214,7 @@ class HomePage extends Component {
             <Slider className="row featured__wrapper dark latest__news__wrapper" {...settings}>
               {
                 newsData.map((element, index) => 
-                  <div className="latest__article" key={index}>
+                  <div className="latest__article" key={`${element}-${index}`}>
                     <div className={'title'} dangerouslySetInnerHTML={{__html: element.node.content}} />
                     <div className={'content'} dangerouslySetInnerHTML={{__html: element.node.content}} />
                     <ExternalButton buttonClass={'small-btn'} buttonText={'Read More'} redirectionLink={element.node.acf.external_news_link} ></ExternalButton>
@@ -252,10 +252,11 @@ query HomeQuery {
         title
         content
         date(formatString: "MMMM DD, YYYY")
+        yoast_title
         featured_media {
           localFile {
             childImageSharp {
-              fluid(maxWidth: 1920, quality: 100) {
+              fluid(maxWidth: 4000, quality: 100) {
                 ...GatsbyImageSharpFluid
               }
             }

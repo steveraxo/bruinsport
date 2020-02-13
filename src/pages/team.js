@@ -8,6 +8,7 @@ import "./css/team.css"
 import Popup from "reactjs-popup";
 import ExternalButton from "../components/master/buttons/externalButton"
 import Img from "gatsby-image"
+import BruinLogo from "../images/media/bruin-letter.png"
 
 
 class MediaPage extends Component {
@@ -17,7 +18,7 @@ class MediaPage extends Component {
     document.getElementById("close__menu").focus(); 
 
     document.querySelectorAll('html')[0].classList.add('html__custom')
-
+    
     // Trap the focus loop inside the menu
     var theElement = document.querySelectorAll('.popup__inner')[0].id; 
 
@@ -27,6 +28,7 @@ class MediaPage extends Component {
 
     if(theElement === 'popup__main'){
         focusableEls = document.querySelectorAll('#popup__main .close, #popup__main a, #popup__main iframe ');
+        document.querySelectorAll('.team__page .main__section')[0].classList.add('no__clipPath')
     }
 
     if(theElement === 'popup__team'){
@@ -60,6 +62,7 @@ class MediaPage extends Component {
 
   endModal(e) {
     document.querySelectorAll('html')[0].classList.remove('html__custom')
+    document.querySelectorAll('.team__page .main__section')[0].classList.remove('no__clipPath')
 
     e.preventDefault() 
     if (e.type === 'keypress'){
@@ -74,6 +77,7 @@ class MediaPage extends Component {
   changeBodyScroll(){
     // When the modal is hidden...
     document.querySelectorAll('html')[0].classList.remove('html__custom')
+    document.querySelectorAll('.team__page .main__section')[0].classList.remove('no__clipPath')
   }
   render() {
     const pageData = this.props.data.allWordpressPage.edges[0].node
@@ -83,16 +87,20 @@ class MediaPage extends Component {
             <Helmet>
                 <meta charSet="utf-8" />
                 <meta name="description" content={ pageData.title }/>
-                <title>{ pageData.title }</title>
+                <title>{ pageData.yoast_title }</title>
                 <link rel="canonical" href={globalHistory.location.origin} />
             </Helmet>
             <div className={'team__page'}>
                 <section className={'main__section container-fluid'}>
                     <div className="page__background">
+                        <div className={'fade__top'}></div>
                         <Img fluid={pageData.featured_media.localFile.childImageSharp.fluid} alt={' '} tabIndex={-1}/>
                     </div>
+                    <div className="media__list__background">
+                        <img src={BruinLogo} alt={' '} />
+                    </div>
                     <div className={'container'}>
-                        <div className={'row'}>
+                        <div className={'row main__row'}>
                             <div className={'col-md-12 col-xl-8'}>
                                 <div dangerouslySetInnerHTML={{__html: pageAcf.main_copy}} />
                                 <Popup     
@@ -145,12 +153,12 @@ class MediaPage extends Component {
                                         </div>
                                     </div>
                                     </Popup>
-                                
                             </div>
                             <div className={'col-md-12 col-xl-4'}></div>
                         </div>
                     </div> 
                 </section>
+
                 <section className={'team__section container-fluid'}>
                     <div className={'container'}>
                         <div className={'row'}>
@@ -234,12 +242,13 @@ query teamPageQuery {
         id
         title
         content
+        yoast_title
         date(formatString: "MMMM DD, YYYY")
         featured_media {
           id
           localFile {
             childImageSharp {
-              fluid(maxWidth: 1920, quality: 100) {
+              fluid(maxWidth: 4000, quality: 100) {
                 ...GatsbyImageSharpFluid
               }
             }
@@ -253,7 +262,7 @@ query teamPageQuery {
                 logo {
                     localFile {
                         childImageSharp {
-                            fixed(width: 300, quality: 100) {
+                            fixed(width: 200, quality: 100) {
                                 ...GatsbyImageSharpFixed
                             }
                         }

@@ -62,7 +62,7 @@ class MediaPage extends Component {
             <Helmet>
                 <meta charSet="utf-8" />
                 <meta name="description" content={ pageData.title }/>
-                <title>{ pageData.title }</title>
+                <title>{ pageData.yoast_title }</title>
                 <link rel="canonical" href={globalHistory.location.origin} />
             </Helmet>
             <div className="media__page">
@@ -142,6 +142,7 @@ query mediaPageQuery {
         id
         title
         content
+        yoast_title
         date(formatString: "MMMM DD, YYYY")
         featured_media {
           id

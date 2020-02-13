@@ -322,14 +322,14 @@ h6 {
 }
 body h1{
   font-size: 105px;
-  line-height: 120px;
+  line-height: 90px;
   font-weight: 500;
   margin: 0;
   padding: 0;
 }
 body .mainText { 
   font-size: 103px;
-  line-height: 120px;
+  line-height: 90px;
   font-weight: 500;
   margin: 0;
   padding: 0;

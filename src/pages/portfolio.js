@@ -195,7 +195,7 @@ query portfolioPageQuery {
           localFile {
             childImageSharp {
               fluid(maxWidth: 4000, quality: 100) {
-                ...GatsbyImageSharpFluid
+                ...GatsbyImageSharpFluid_withWebp
               }
             }
           }
@@ -207,7 +207,7 @@ query portfolioPageQuery {
               localFile {
                 childImageSharp {
                     fluid(maxWidth: 4000, quality: 100) {
-                    ...GatsbyImageSharpFluid
+                    ...GatsbyImageSharpFluid_withWebp
                     }
                 }
               }
@@ -216,7 +216,7 @@ query portfolioPageQuery {
                 localFile {
                     childImageSharp {
                         fixed(width: 220, quality: 100) {
-                            ...GatsbyImageSharpFixed
+                            ...GatsbyImageSharpFixed_withWebp
                         }
                     }
                 }

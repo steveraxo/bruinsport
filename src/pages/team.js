@@ -249,7 +249,7 @@ query teamPageQuery {
           localFile {
             childImageSharp {
               fluid(maxWidth: 4000, quality: 100) {
-                ...GatsbyImageSharpFluid
+                ...GatsbyImageSharpFluid_withWebp
               }
             }
           }
@@ -263,7 +263,7 @@ query teamPageQuery {
                     localFile {
                         childImageSharp {
                             fixed(width: 200, quality: 100) {
-                                ...GatsbyImageSharpFixed
+                                ...GatsbyImageSharpFixed_withWebp
                             }
                         }
                     }
@@ -278,7 +278,7 @@ query teamPageQuery {
                     localFile {
                         childImageSharp {
                             fixed(width: 300, quality: 100) {
-                                ...GatsbyImageSharpFixed
+                                ...GatsbyImageSharpFixed_withWebp
                             }
                         }
                     }

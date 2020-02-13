@@ -120,7 +120,7 @@ class HomePage extends Component {
         <div className="home__page">
           <section className="container-fluid hero-bg media__featured">
             <div className="page__background">
-              <Img fluid={pageData.featured_media.localFile.childImageSharp.fluid} alt={' '} tabIndex={-1}/>
+              <Img fluid={pageData.featured_media.localFile.childImageSharp.fluid} alt={""} tabIndex={-1}/>
             </div>
             <div className="container">
               <div tabIndex={0} className="header__copy text-left" dangerouslySetInnerHTML={{__html: pageData.acf.main_copy}} />
@@ -152,7 +152,7 @@ class HomePage extends Component {
                           
                         </button>
                         <div className="featured__article" key={index}>
-                        <img className="popup__inner__background" src={MapBackground} alt=" " tabIndex="-1" />
+                        <img className="popup__inner__background" src={MapBackground} alt="" tabIndex="-1" />
                           <div className="featured__artitle__inner">
                             <div className="featured__article__top">
                               <div className="featured__article__title">
@@ -193,7 +193,7 @@ class HomePage extends Component {
             </div>
           </section>
           <section className="our__approach featured__section container-fluid">
-            <img className={'img__background'} src={pageData.acf.featured_background.source_url} alt=" " tabIndex={-1} />
+            <img className={'img__background'} src={pageData.acf.featured_background.source_url} alt="" tabIndex={-1} />
             <div className="container">
               <div className="row">
                 <div className={'col-md-12 col-lg-4 col-xl-6'}></div>
@@ -225,7 +225,7 @@ class HomePage extends Component {
             </div> 
           </section>
           <section className="container-fluid get__started">
-            <img className={'img__background'} src={pageData.acf.get_started_background.source_url} alt=" " tabIndex={-1} />
+            <img className={'img__background'} src={pageData.acf.get_started_background.source_url} alt="" tabIndex={-1} />
             <div className="container get__started__content">
               <div className="row d-flex justify-content-center align-items-center flex-column">
                 <h2 style={{lineHeight: '100px'}}>{pageData.acf.get_started_title}</h2>
@@ -257,7 +257,7 @@ query HomeQuery {
           localFile {
             childImageSharp {
               fluid(maxWidth: 4000, quality: 100) {
-                ...GatsbyImageSharpFluid
+                ...GatsbyImageSharpFluid_withWebp
               }
             }
           }

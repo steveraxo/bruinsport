@@ -18,7 +18,7 @@ const Footer = () => {
                   localFile {
                     childImageSharp {
                       fixed(width: 20, height: 20) {
-                        ...GatsbyImageSharpFixed
+                        ...GatsbyImageSharpFixed_withWebp
                       }
                     }
                   }

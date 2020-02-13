@@ -371,7 +371,7 @@ query ContactQuery {
           localFile {
             childImageSharp {
               fluid(maxWidth: 1920, quality: 100) {
-                ...GatsbyImageSharpFluid
+                ...GatsbyImageSharpFluid_withWebp
               }
             }
           }
@@ -386,7 +386,7 @@ query ContactQuery {
               localFile {
                 childImageSharp {
                   fixed(width: 200, quality: 100) {
-                    ...GatsbyImageSharpFixed
+                    ...GatsbyImageSharpFixed_withWebp
                   }
                 }
               }

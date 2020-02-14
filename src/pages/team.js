@@ -114,44 +114,42 @@ class MediaPage extends Component {
                                             <button className={'md-btn'}>Learn More</button>
                                         }
                                     >
-                                    <div className="popup__inner featured__wrapper team__main__popup" id={'popup__main'}>
-                                        <div className="triangle__big"></div>
-                                        <div className="triangle__small"></div>
-                                        <button 
-                                            className="close" 
-                                            tabIndex="0" 
-                                            onClick={this.endModal} 
-                                            onKeyPress={this.endModal} 
-                                            id="close__menu" 
-                                        >
-                                        </button>
-                                        <div className="featured__article row">
-                                            <div className={'col-md-12 col-lg-6'}>
-                                                <div className="featured__artitle__inner">
-                                                    <div className="featured__article__top">
-                                                        <p className="featured__article__full__copy" dangerouslySetInnerHTML={{__html: pageAcf.full_copy}} />
+                                    {close => (
+                                    <div>
+                                        <div className="popup__inner featured__wrapper team__main__popup" id={'popup__main'}>
+                                            <div className="triangle__big"></div>
+                                            <div className="triangle__small"></div>
+                                            <div className="featured__article row">
+                                                <div className={'col-md-12 col-lg-6'}>
+                                                    <div className="featured__artitle__inner">
+                                                        <div className="featured__article__top">
+                                                            <p className="featured__article__full__copy" dangerouslySetInnerHTML={{__html: pageAcf.full_copy}} />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className={'col-md-12 col-lg-6'}>
+                                                    <div className={'popup_iframe'}>
+                                                        <div className="featured__article__iframe" dangerouslySetInnerHTML={{__html: pageAcf.video_iframe}} />
+                                                    </div>
+                                                    <div className={'popup__logos row'}>
+                                                        {
+                                                            pageAcf.popup_logos.map((element, index) => 
+                                                                <div className={'col-xs-6 col-sm-4 col-md-4 col-lg-4 d-flex justify-content-center align-items-center'} key={`logo-${index}`}>
+                                                                    <a href={element.url} target={'_BLANK'} rel="noopener noreferrer">
+                                                                        <img src={element.logo.source_url} alt={' '} tabIndex={-1}/>
+                                                                        <p className="featured__article__logo__desc" dangerouslySetInnerHTML={{__html: element.title}} />
+                                                                    </a>
+                                                                </div>
+                                                            )
+                                                        }
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div className={'col-md-12 col-lg-6'}>
-                                                <div className={'popup_iframe'}>
-                                                    <div className="featured__article__iframe" dangerouslySetInnerHTML={{__html: pageAcf.video_iframe}} />
-                                                </div>
-                                                <div className={'popup__logos row'}>
-                                                    {
-                                                        pageAcf.popup_logos.map((element, index) => 
-                                                            <div className={'col-xs-6 col-sm-4 col-md-4 col-lg-4 d-flex justify-content-center align-items-center'} key={`logo-${index}`}>
-                                                                <a href={element.url} target={'_BLANK'} rel="noopener noreferrer">
-                                                                    <img src={element.logo.source_url} alt={' '} tabIndex={-1}/>
-                                                                    <p className="featured__article__logo__desc" dangerouslySetInnerHTML={{__html: element.title}} />
-                                                                </a>
-                                                            </div>
-                                                        )
-                                                    }
-                                                </div>
-                                            </div>
-                                        </div>
+                                        </div>                                      
+                                        <button className="close" tabIndex="0" onClick={close} onKeyPress={close}       id="close__menu" ></button>
                                     </div>
+                                    )}
+
                                     </Popup>
                             </div>
                             <div className={'col-md-12 col-xl-4'}></div>
@@ -185,36 +183,40 @@ class MediaPage extends Component {
                                                 alt={`${member.name}, member Bruin Sport Capital Team`}
                                             />
                                         }>
-                                        <div className="popup__inner featured__wrapper" id={'popup__team'}>
-                                            <div className="triangle__big"></div>
-                                            <div className="triangle__small"></div>
-                                            <button className="close" tabIndex="0" onClick={this.endModal} onKeyPress={this.endModal} id="close__menu">
-                                            
-                                            </button>
-                                            <div className="featured__article row" key={index}>
-                                                <div className={'col-md-12 col-lg-4'}>
-                                                <Img 
-                                                    tabIndex={0}
-                                                    fixed={member.photo.localFile.childImageSharp.fixed}
-                                                    alt={`${member.name}, member Bruin Sport Capital Team`}
-                                                />
-                                                </div>
-                                                <div className={'col-md-12 col-lg-8'}>
-                                                    <div className="featured__artitle__inner">
-                                                        <div className="featured__article__top">
-                                                        <div className="featured__article__title">
-                                                            <h4 className="featured__article__name" dangerouslySetInnerHTML={{__html: member.name}} />
-                                                            <p className="featured__article__position" dangerouslySetInnerHTML={{__html: member.position}} />
-                                                        </div>
-                                                        <div className="featured__article__content" dangerouslySetInnerHTML={{__html: member.bio}} />
-                                                        </div>
-                                                        <div className="featured__article__cta">
-                                                            <ExternalButton  redirectionLink={member.member_link} buttonText={'Read More'} buttonClass={'md-btn'}></ExternalButton>
+                                        {close => (
+                                        <div>
+                                            <div className="popup__inner featured__wrapper" id={'popup__team'}>
+                                                <div className="triangle__big"></div>
+                                                <div className="triangle__small"></div>
+                                                
+                                                <div className="featured__article row" key={index}>
+                                                    <div className={'col-md-12 col-lg-4'}>
+                                                    <Img 
+                                                        tabIndex={0}
+                                                        fixed={member.photo.localFile.childImageSharp.fixed}
+                                                        alt={`${member.name}, member Bruin Sport Capital Team`}
+                                                    />
+                                                    </div>
+                                                    <div className={'col-md-12 col-lg-8'}>
+                                                        <div className="featured__artitle__inner">
+                                                            <div className="featured__article__top">
+                                                            <div className="featured__article__title">
+                                                                <h4 className="featured__article__name" dangerouslySetInnerHTML={{__html: member.name}} />
+                                                                <p className="featured__article__position" dangerouslySetInnerHTML={{__html: member.position}} />
+                                                            </div>
+                                                            <div className="featured__article__content" dangerouslySetInnerHTML={{__html: member.bio}} />
+                                                            </div>
+                                                            <div className="featured__article__cta">
+                                                                <ExternalButton  redirectionLink={member.member_link} buttonText={'Read More'} buttonClass={'md-btn'}></ExternalButton>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                           
+                                            <button className="close" tabIndex="0" onClick={close} onKeyPress={close}       id="close__menu" ></button>
+                                         </div>
+                                        )}
                                         </Popup>
                                         <div className={'team__inside'}>
                                             <h4 dangerouslySetInnerHTML={{__html: member.name}} />

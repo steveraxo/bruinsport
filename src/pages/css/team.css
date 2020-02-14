@@ -398,6 +398,14 @@
     .team__page .main__section .container {
         padding: 0 40px;
     }
+    .team__page .main__section h1 {
+        font-size: 50px;
+    }
+    .team__page .main__section h4 {
+        line-height: 34px;
+        margin: 20px 0 0;
+        font-size: 23px;
+    }        
     .team__page .main__row {
         padding: 0px;
     }
@@ -478,11 +486,19 @@
     .team__section {
         margin-top: -1080px;
     }
+    .team__page .main__section p {
+        margin: 20px 0 50px 0;
+    }
 }
 @media(max-width:375px){
     .team__page .main__section {
         height: 3050px;
         clip-path: polygon(0 0, 100% 0, 100% 61%, 0 56%);
+    }
+    .team__page .main__section h4 {
+        line-height: 28px;
+        margin: 20px 0 0;
+        font-size: 19px;
     }
     .team__section {
         margin-top: -1220px;

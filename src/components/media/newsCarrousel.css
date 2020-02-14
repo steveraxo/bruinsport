@@ -72,6 +72,9 @@
     transform: rotate(-45deg);
     right: 0px;
 }
+.media__featured{
+    overflow: hidden;
+}
 .media__featured .slick-list{
     width: 100%;
 }

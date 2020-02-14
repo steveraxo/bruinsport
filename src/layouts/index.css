@@ -8,6 +8,9 @@ body a:hover {
   color: inherit;
   text-decoration: underline;
 }
+#___gatsby, .overflown__hidden {
+  overflow:hidden!important;
+  }
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;

@@ -393,6 +393,14 @@
     .home__page .media__featured {
         min-height: 520px;
     }
+    body .get__started__content  h2{
+        line-height: 70px!important;
+        font-size: 85px!important;
+    }
+    .get__started__content > div {
+        align-items: flex-start!important;
+        justify-content: flex-start!important;
+    }
     .latest__news .container {
         padding-left: 40px;
     }

@@ -340,10 +340,12 @@
     }
 }
 @media(max-width:768px){
+    
     .team__section .team__members .col-sm-12 img {
         height: 290px;
         object-fit: cover;
     }
+
     .team__page .main__section {
         height: 2790px;
         clip-path: polygon(0 0, 100% 0, 100% 63%, 0 56%);

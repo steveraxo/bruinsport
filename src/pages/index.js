@@ -236,7 +236,7 @@ class HomePage extends Component {
             <img className={'img__background'} src={pageData.acf.get_started_background.source_url} alt="" tabIndex={-1} />
             <div className="container get__started__content">
               <div className="row d-flex justify-content-center align-items-center flex-column">
-                <h2 style={{lineHeight: '100px'}}>{pageData.acf.get_started_title}</h2>
+                <h2 style={{lineHeight: '100px'}} dangerouslySetInnerHTML={{__html: pageData.acf.get_started_title}} />
                 <p>{pageData.acf.get_started_copy}</p>
                 <InternalButton redirectionLink={pageData.acf.get_started_button_link} buttonText={pageData.acf.get_started_button_text} buttonClass={'dark-btn md-btn'}>
 

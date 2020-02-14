@@ -8,6 +8,12 @@
         right: 17%;
         z-index: 9;
     }
+    #popup__team .featured__article .gatsby-image-wrapper{
+        width: 100%!important;
+        height: 100%!important;
+        position: absolute!important;
+        top: 0!important;
+    }
     .team__page .media__list__background img{
         position: absolute;
         width: 100%;

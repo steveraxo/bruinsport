@@ -91,11 +91,19 @@ class HomePage extends Component {
       slidesToScroll: 4,
       responsive: [
         {
-          breakpoint: 768,
+          breakpoint: 1000,
           settings: {
             arrows: true,
             slidesToShow: 3,
             slidesToScroll: 3,
+          }
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            arrows: true,
+            slidesToShow: 2,
+            slidesToScroll: 2,
           }
         },
         {

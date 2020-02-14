@@ -271,9 +271,7 @@
     .latest__article .content {
         min-height: 150px;
     }
-    button.small-btn {
-        padding: 10px 35px;
-    }
+
 }
 @media(max-width: 1280px){
     .latest__article .title  {
@@ -282,12 +280,34 @@
     .latest__article .content {
         min-height: 90px;
     }
-    button.small-btn {
-        padding: 10px 25px;
-        font-size: 1.125rem;
-    }
+
     .latest__news .container {
         padding-left: 130px;
+    }
+}
+@media(max-width: 1180px){
+    .home__page .latest__news .title p {
+        font-size: 20.83px;
+    }
+}
+
+@media (max-width: 1142px)
+{
+    .latest__article .title {
+        min-height: 160px;
+    }
+    .home__page .latest__news .title p {
+        font-size: 17.83px;
+        line-height: 23.2px;
+    }
+    .latest__article .title {
+        min-height: 130px;
+    }
+    .home__page .latest__news .content p {
+        line-height: 20.2px;
+    }
+    .latest__article .content {
+        min-height: 100px;
     }
 }
 @media(max-width: 1024px){
@@ -300,10 +320,7 @@
     .home__page .slick-list{
         width: 100%;
     }
-    button.small-btn {
-        padding: 10px 21px;
-        font-size: 1rem;
-    }
+
     .latest__article .content {
         min-height: 80px;
         line-height: 1.2em;
@@ -333,6 +350,14 @@
     .home__page .latest__news .title p {
         font-size: 18.83px;
         line-height: 20.2px;
+    }
+}
+@media (max-width: 812px) and (orientation: portrait) {
+    .latest__article .title {
+        min-height: 60px;
+    }
+    .latest__article .content {
+        min-height: 50px;
     }
 }
 @media(max-width: 768px){
@@ -464,10 +489,7 @@
     .latest__article .content {
         min-height: 150px;
     }
-    button.small-btn {
-        padding: 10px 22px;
-        font-size: 0.8rem;
-    }
+
     .featured__article{
         height: 300px;
         overflow-y: scroll;
@@ -503,10 +525,7 @@
         min-height: 80px;
         font-size: 12px;
     }
-    button.small-btn {
-        padding: 10px 15px;
-        font-size: 10px;
-    }
+
     body h3 {
         font-size: 40px;
         line-height: 36.96px;

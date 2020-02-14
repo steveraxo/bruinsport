@@ -24,7 +24,7 @@
 .column__data h4{
     color: #000000;
 }
-.contact__section__two p:last-child{
+.contact__section__two .column__data div:last-child p{
     border-bottom: solid 2px #000000;
 }
 .contact__section__two .column__data{

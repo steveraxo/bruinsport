@@ -193,9 +193,9 @@ class MediaPage extends Component {
                                             </button>
                                             <div className="featured__article row" key={index}>
                                                 <div className={'col-md-12 col-lg-4'}>
-                                                <img 
+                                                <Img 
                                                     tabIndex={0}
-                                                    src={member.photo.source_url}
+                                                    fixed={member.photo.localFile.childImageSharp.fixed}
                                                     alt={`${member.name}, member Bruin Sport Capital Team`}
                                                 />
                                                 </div>

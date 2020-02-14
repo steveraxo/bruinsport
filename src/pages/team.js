@@ -103,18 +103,9 @@ class MediaPage extends Component {
                         <div className={'row main__row'}>
                             <div className={'col-md-12 col-xl-8'}>
                                 <div dangerouslySetInnerHTML={{__html: pageAcf.main_copy}} />
-                                <Popup     
-                                        modal
-                                        closeOnEscape
-                                        closeOnDocumentClick
-                                        onOpen={this.focusMain}
-                                        onClose={this.changeBodyScroll}
-                                        on="focus"
-                                        trigger={
-                                            <button className={'md-btn'}>Learn More</button>
-                                        }
-                                    >
-                                    {close => (
+
+                                <Popup onOpen={this.focusMain} onClose={this.changeBodyScroll} modal closeOnEscape closeOnDocumentClick trigger={<button className={'md-btn'}>Learn More</button>} position="center center">
+                                {close => (
                                     <div>
                                         <div className="popup__inner featured__wrapper team__main__popup" id={'popup__main'}>
                                             <div className="triangle__big"></div>
@@ -146,11 +137,12 @@ class MediaPage extends Component {
                                                 </div>
                                             </div>
                                         </div>                                      
-                                        <button className="close" tabIndex="0" onClick={close} onKeyPress={close}       id="close__menu" ></button>
+                                        <button className="close" tabIndex="0" onClick={close} onKeyPress={close} id="close__menu" ></button>
                                     </div>
-                                    )}
+                                )}
+                            </Popup>
 
-                                    </Popup>
+     
                             </div>
                             <div className={'col-md-12 col-xl-4'}></div>
                         </div>
@@ -175,14 +167,15 @@ class MediaPage extends Component {
                                             closeOnDocumentClick
                                             onOpen={this.focusMain}
                                             onClose={this.changeBodyScroll}
-                                            on="focus"
+                                            key={`d-${index}`}
                                             trigger={
-                                            <img 
-                                                tabIndex={0}
-                                                src={member.photo.source_url}
-                                                alt={`${member.name}, member Bruin Sport Capital Team`}
-                                            />
-                                        }>
+                                                <img 
+                                                    tabIndex={0}
+                                                    src={member.photo.source_url}
+                                                    alt={`${member.name}, member Bruin Sport Capital Team`}
+                                                />
+                                            }
+                                        >
                                         {close => (
                                         <div>
                                             <div className="popup__inner featured__wrapper" id={'popup__team'}>

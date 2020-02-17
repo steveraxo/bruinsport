@@ -166,7 +166,7 @@ class HomePage extends Component {
                   <div className={'container'}>
                     <div className={'row first__row'}>
                       <div className={'col-md-12 col-lg-6 name__wrapper'}>
-                        <label htmlFor="your-name ">Your name</label><br></br>
+                        <label htmlFor="name">Your name</label><br></br>
                         <input 
                           type="text" 
                           className={
@@ -178,7 +178,7 @@ class HomePage extends Component {
                           } 
                           value={name} 
                           onChange={this.handleChange}  
-                          id="your-name" 
+                          id="name" 
                           name="your-name" 
                           required 
                           placeholder={'My Name Is'}
@@ -194,7 +194,7 @@ class HomePage extends Component {
                         </div>
                       </div>
                       <div className={'col-md-12 col-lg-6 email__wrapper'}>
-                        <label htmlFor="your-email" className={'invisible'}>Email address</label>
+                        <label htmlFor="email" className={'invisible'}>Email address</label>
                         <input 
                           type="text" 
                           className={
@@ -206,7 +206,7 @@ class HomePage extends Component {
                           } 
                           value={this.state.email} 
                           onChange={this.handleChange} 
-                          id="your-email" 
+                          id="email" 
                           name="your-email" 
                           required 
                           placeholder={'Email'}
@@ -242,12 +242,12 @@ class HomePage extends Component {
                         </fieldset> 
                       </div>
                       <div className={'col-md-12 col-lg-6 message__wrapper'}>
-                        <label htmlFor="your-message" className={'invisible'}>Your Message</label>
+                        <label htmlFor="message" className={'invisible'}>Your Message</label>
                         <textarea 
                           value={message} 
                           className={message.length > 0 ? 'passed__field' : 'error__field'} 
                           onChange={this.handleChange} 
-                          id="your-message" 
+                          id="message" 
                           name="your-message" 
                           required 
                           

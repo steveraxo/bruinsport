@@ -6,10 +6,15 @@ import "../pages/css/404.css"
 
 const NotFoundPage = () => (
   <Layout>
+    <Helmet>
+      <meta charSet="utf-8" />
+      <meta name="description" content={ 'We were not able to find the page you are looking for' }/>
+      <title>{ 'Bruin Sports Capital | Not Found' }</title>
+    </Helmet>
     <div className="not__found__page">
       <SEO title="404: Not found" />
       <h1>Ups!</h1>
-      <p>It seems that you just hit a page that doesn&#39;t exist... you better return to home</p>
+      <p>We were not able to find the page you are looking for</p>
       <InternalButton redirectionLink={'/'} buttonText={'Return to home'} buttonClass={'md-btn not__found__button'} />
     </div>
   </Layout>

@@ -63,7 +63,7 @@ class MediaPage extends Component {
                 <meta charSet="utf-8" />
                 <meta name="description" content={ pageData.yoast_meta.yoast_wpseo_metadesc }/>
                 <title>{ pageData.yoast_meta.yoast_wpseo_title }</title>
-                <link rel="canonical" href={globalHistory.location.origin || pageData.yoast_meta.yoast_wpseo_canonical} />
+                <link rel="canonical" href={pageData.yoast_meta.yoast_wpseo_canonical} />
             </Helmet>
             <div className="media__page">
                 <section className="container-fluid hero-bg media__featured">

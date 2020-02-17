@@ -8,9 +8,9 @@ import "./css/contact.css"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Img from "gatsby-image"
-import MapBackground  from "../images/contact/contact-image-4.png"
 import Reaptcha from 'reaptcha';
 import axios from "axios"
+import MapBackground from "../components/master/map-background/mapBackground"
 
 class HomePage extends Component {
   constructor(props) {
@@ -293,7 +293,9 @@ class HomePage extends Component {
           </section>
 
           <section className="container-fluid contact__section__two position-relative d-flex justify-content-center align-items-center">
-            <img className={'img__background'} src={MapBackground} alt="" tabIndex={-1} />
+            <div className="img__background">
+              <MapBackground  />
+            </div>
             <div className="container">
               <div className="row">
                 {

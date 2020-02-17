@@ -5,10 +5,16 @@
     min-height: 579px;
     background: #b02931;
 }
+.contact__section__two  .gatsby-image-wrapper{
+    height: 100%;
+}
 .contact__section__one .gatsby-image-wrapper{
     left: -6%;
     width: 50%;
     top: 0;
+}
+.contact__section__one .gatsby-image-wrapper img{
+    height: 100%;
 }
 .contact__section__two h3{
     font-weight: normal;

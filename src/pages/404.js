@@ -3,6 +3,7 @@ import Layout from "../layouts/index"
 import SEO from "../components/seo"
 import InternalButton from "../components/master/buttons/internalButton"
 import "../pages/css/404.css"
+import {Helmet} from "react-helmet";
 
 const NotFoundPage = () => (
   <Layout>

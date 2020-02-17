@@ -2,7 +2,6 @@ import React, { Component } from "react"
 import Layout from "../layouts/index"
 import { graphql } from "gatsby"
 import {Helmet} from "react-helmet";
-import { globalHistory } from "@reach/router"
 import "./css/index.css"
 import "./css/home.css"
 import Slider from "react-slick";

@@ -77,7 +77,7 @@ class HomePage extends Component {
     // This variable will return all the fields related to the post
     const pageData = this.props.data.allWordpressPage.edges[0].node
     const newsData = this.props.data.allWordpressWpNews.edges
-    
+    console.log(pageData)
     //Slick Setting
     let settings = {
       dots: false,
@@ -145,10 +145,10 @@ class HomePage extends Component {
                       closeOnEscape 
                       closeOnDocumentClick 
                       trigger={
-                        <img 
+                        <Img 
                           className={`${this.state.mixBlend}`}
                           tabIndex={0}
-                          src={element.icon.source_url}
+                          fluid={element.icon.localFile.childImageSharp.fluid}
                           alt={`Client ${element.title} logo`}
                         />
                       } 
@@ -158,9 +158,6 @@ class HomePage extends Component {
                               <div className="popup__inner featured__wrapper" id={'popup__inner'}>
                                 <div className="triangle__big"></div>
                                 <div className="triangle__small"></div>
-                                <button className="close" tabIndex="0" onClick={this.endModal} onKeyPress={this.endModal} id="close__menu">
-                                  
-                                </button>
                                 <div className="featured__article" key={index}>
                                 <img className="popup__inner__background" src={MapBackground} alt="" tabIndex="-1" />
                                   <div className="featured__artitle__inner">
@@ -205,7 +202,7 @@ class HomePage extends Component {
             </div>
           </section>
           <section className="our__approach featured__section container-fluid">
-            <img className={'img__background'} src={pageData.acf.featured_background.source_url} alt="" tabIndex={-1} />
+            <Img className={'img__background'} fluid={pageData.acf.featured_background.localFile.childImageSharp.fluid} alt="" tabIndex={-1} />
             <div className="container">
               <div className="row">
                 <div className={'col-md-12 col-lg-4 col-xl-6'}></div>
@@ -237,7 +234,7 @@ class HomePage extends Component {
             </div> 
           </section>
           <section className="container-fluid get__started">
-            <img className={'img__background'} src={pageData.acf.get_started_background.source_url} alt="" tabIndex={-1} />
+            <Img className={'img__background'} fluid={pageData.acf.get_started_background.localFile.childImageSharp.fluid} alt="" tabIndex={-1} />
             <div className="container get__started__content">
               <div className="row d-flex justify-content-center align-items-center flex-column">
                 <h2 style={{lineHeight: '100px'}} dangerouslySetInnerHTML={{__html: pageData.acf.get_started_title}} />
@@ -297,13 +294,34 @@ query HomeQuery {
             title
             icon {
               source_url
+              localFile {
+                childImageSharp{
+                  fluid(maxWidth: 200, quality: 100) {
+                    ...GatsbyImageSharpFluid_withWebp
+                  }
+                }
+              }
             }
           }
           get_started_background {
             source_url
+            localFile {
+              childImageSharp{
+                fluid(maxWidth: 4000, quality: 100) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
+            }
           }
           featured_background {
             source_url
+            localFile {
+              childImageSharp{
+                fluid(maxWidth: 4000, quality: 100) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
+            }
           }
         }
       }

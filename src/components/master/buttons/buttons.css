@@ -58,7 +58,7 @@ button.small-btn{
 }
 @media (max-width: 500px){
     button {
-        padding: 20px 65px;
+        padding: 20px 45px;
     }
     button.md-btn {
         padding: 15px 45px;

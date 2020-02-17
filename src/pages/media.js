@@ -61,9 +61,9 @@ class MediaPage extends Component {
         <Layout>
             <Helmet>
                 <meta charSet="utf-8" />
-                <meta name="description" content={ pageData.title }/>
-                <title>{ pageData.yoast_title }</title>
-                <link rel="canonical" href={globalHistory.location.origin} />
+                <meta name="description" content={ pageData.yoast_meta.yoast_wpseo_metadesc }/>
+                <title>{ pageData.yoast_meta.yoast_wpseo_title }</title>
+                <link rel="canonical" href={globalHistory.location.origin || pageData.yoast_meta.yoast_wpseo_canonical} />
             </Helmet>
             <div className="media__page">
                 <section className="container-fluid hero-bg media__featured">
@@ -142,7 +142,11 @@ query mediaPageQuery {
         id
         title
         content
-        yoast_title
+        yoast_meta {
+          yoast_wpseo_metadesc
+          yoast_wpseo_title
+          yoast_wpseo_canonical
+        }
         date(formatString: "MMMM DD, YYYY")
         featured_media {
           id

@@ -3,7 +3,7 @@ import Link from 'gatsby-link'
 import { globalHistory } from "@reach/router"
 import TopMenu from "../menu/topMenu"
 import "./header.css"
-// Get the svg logo as a component
+import Img from "gatsby-image"
 import Logo from "../../images/logo/bruinsport.png"
 class Header extends Component {
   constructor(props) {
@@ -52,8 +52,8 @@ class Header extends Component {
             <Link to="/" className="brand__link">
               {
                 wpLogo
-                ?<img src={wpLogo} className="brand__svg__logo wp__logo" alt="Bruin Sport Capital" />
-                :<img src={Logo} className="brand__svg__logo wp__logo" alt={"Bruin Sport Capital"} />
+                ?<Img fixed={wpLogo.localFile.childImageSharp.fixed} backgroundColor={'#000000'} className={'brand__svg__logo wp__logo'} alt={"Bruin Sport Capital"} tabIndex={-1}/>
+                :<img src={Logo} className="brand__svg__logo " alt={"Bruin Sport Capital"} />
               }
             </Link>
           </div>

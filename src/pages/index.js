@@ -13,7 +13,7 @@ import Popup from "reactjs-popup";
 import ExternalButton from "../components/master/buttons/externalButton"
 import InternalButton from "../components/master/buttons/internalButton"
 import MapBackground  from "../images/home/home-map.png"
-import BruinLogo from "../images/media/bruin-letter.png"
+import BruinLogo from "../components/master/bruin-letter-logo/bruinLetter"
 
 class HomePage extends Component {
   constructor(props) {
@@ -77,7 +77,7 @@ class HomePage extends Component {
     // This variable will return all the fields related to the post
     const pageData = this.props.data.allWordpressPage.edges[0].node
     const newsData = this.props.data.allWordpressWpNews.edges
-    console.log(pageData)
+
     //Slick Setting
     let settings = {
       dots: false,
@@ -189,7 +189,7 @@ class HomePage extends Component {
           </section>
           <section className="our__approach container-fluid">
             <div className="floating__letter">
-              <img src={BruinLogo} alt=" "/>
+              <BruinLogo />
             </div>
             <div className="container">
               <div className="row">

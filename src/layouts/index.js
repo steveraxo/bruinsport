@@ -8,8 +8,8 @@ import MainMenu from "../components/menu/mainMenu"
 import "./index.css"
 import "./custom.css"
 import "../fonts/custom-fonts.css"
+
 const Layout = ({ children }) => {
-  
   const data = useStaticQuery(graphql`
     query {
       allWordpressSiteMetadata {
@@ -26,6 +26,13 @@ const Layout = ({ children }) => {
         nodes {
           source_url
           title
+          localFile {
+            childImageSharp{
+              fixed(width: 200, quality: 100) {
+                ...GatsbyImageSharpFixed_withWebp
+              }
+            }
+          }
         }
       }
       favicon: allWordpressWpMedia(filter: {title: {eq: "favicon"}}) {
@@ -41,7 +48,7 @@ const Layout = ({ children }) => {
       siteFavicon = false
 
   if(data.logo.nodes.length > 0){
-    siteLogo = data.logo.nodes[0].source_url
+    siteLogo = data.logo.nodes[0]
   }
 
   if(data.favicon.nodes.length > 0){

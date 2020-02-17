@@ -103,7 +103,6 @@ class MediaPage extends Component {
                         <div className={'row main__row'}>
                             <div className={'col-md-12 col-xl-8'}>
                                 <div dangerouslySetInnerHTML={{__html: pageAcf.main_copy}} />
-
                                 <Popup onOpen={this.focusMain} onClose={this.changeBodyScroll} modal closeOnEscape closeOnDocumentClick trigger={<button className={'md-btn'}>Learn More</button>} position="center center">
                                 {close => (
                                     <div>

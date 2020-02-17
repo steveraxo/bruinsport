@@ -138,48 +138,52 @@ class HomePage extends Component {
                 {
                   pageData.acf.header_logos.map( (element, index) => 
                     <div className="col" key={`${element}-${index}`}>
-                      <Popup     
-                        modal
-                        closeOnEscape
-                        closeOnDocumentClick
-                        onOpen={this.focusTrap}
-                        onClose={this.changeBodyScroll}
-                        on="focus"
-                        trigger={
+                      <Popup 
+                      onOpen={this.focusTrap} 
+                      onClose={this.changeBodyScroll} 
+                      modal 
+                      closeOnEscape 
+                      closeOnDocumentClick 
+                      trigger={
                         <img 
                           className={`${this.state.mixBlend}`}
                           tabIndex={0}
                           src={element.icon.source_url}
                           alt={`Client ${element.title} logo`}
                         />
-                      }>
-                      <div className="popup__inner featured__wrapper" id={'popup__inner'}>
-                        <div className="triangle__big"></div>
-                        <div className="triangle__small"></div>
-                        <button className="close" tabIndex="0" onClick={this.endModal} onKeyPress={this.endModal} id="close__menu">
-                          
-                        </button>
-                        <div className="featured__article" key={index}>
-                        <img className="popup__inner__background" src={MapBackground} alt="" tabIndex="-1" />
-                          <div className="featured__artitle__inner">
-                            <div className="featured__article__top">
-                              <div className="featured__article__title">
-                                <h4>{element.title}</h4>
+                      } 
+                      position="center center">
+                          {close => (
+                            <div>
+                              <div className="popup__inner featured__wrapper" id={'popup__inner'}>
+                                <div className="triangle__big"></div>
+                                <div className="triangle__small"></div>
+                                <button className="close" tabIndex="0" onClick={this.endModal} onKeyPress={this.endModal} id="close__menu">
+                                  
+                                </button>
+                                <div className="featured__article" key={index}>
+                                <img className="popup__inner__background" src={MapBackground} alt="" tabIndex="-1" />
+                                  <div className="featured__artitle__inner">
+                                    <div className="featured__article__top">
+                                      <div className="featured__article__title">
+                                        <h4>{element.title}</h4>
+                                      </div>
+                                      <div className="featured__article__content" dangerouslySetInnerHTML={{__html: element.first_copy}} />
+                                    </div>
+                                    <div className="featured__article__divider"></div>
+                                    <div className="featured__article__content" dangerouslySetInnerHTML={{__html: element.second_copy}} />
+                                  </div>
+                                  <div className="featured__article__bottom flex-end">
+                                      <div className="featured__article__cta">
+                                        <ExternalButton  redirectionLink={element.button_link} buttonText={element.button_text} buttonClass={'md-btn'}></ExternalButton>
+                                      </div>
+                                  </div>
+                                </div>
                               </div>
-                              <div className="featured__article__content" dangerouslySetInnerHTML={{__html: element.first_copy}} />
+                              <button className="close" tabIndex="0" onClick={close} onKeyPress={close} id="close__menu" ></button>
                             </div>
-                            <div className="featured__article__divider"></div>
-                            <div className="featured__article__content" dangerouslySetInnerHTML={{__html: element.second_copy}} />
-                          </div>
-                          <div className="featured__article__bottom flex-end">
-                              <div className="featured__article__cta">
-                                <ExternalButton  redirectionLink={element.button_link} buttonText={element.button_text} buttonClass={'md-btn'}></ExternalButton>
-                              </div>
-                          </div>
-                        </div>
-                      </div>
+                          )}
                       </Popup>
-
                     </div>
                   )
                 }

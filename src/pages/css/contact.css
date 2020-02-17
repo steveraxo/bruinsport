@@ -42,7 +42,7 @@
     margin: 20px 0 0;
 }
 .contact__section__three__columns .s__three__column{
-    padding: 50px 0px;
+    padding: 50px 0px 20px;
     border-bottom: 3px solid #d5d5d5;
     display: flex;
     justify-content: center;
@@ -54,6 +54,7 @@
 }
 .contact__section__three__columns p{
     font-weight: 500;
+    margin: 25px 0;
 }
 .contact__section__three .s__three__column .column__image{
     min-height: 160px;

@@ -7,9 +7,9 @@ import "./project.css"
 class Project extends Component {
     render() {
         const projectData = this.props.projectData; 
-
+console.log(projectData)
         return (
-            <div className={'row'}>
+            <>
                 {
                     // ======= Diagonal Project Layout =======
                     projectData.project_layout === "diagonal"
@@ -74,7 +74,7 @@ class Project extends Component {
                 {
                     // ======= Full Width Project Layout =======
                     projectData.project_layout === "full-width"
-                    ?   <div className={'col-md-12 col-lg-12 portfolio_full '} key={`3`}>
+                    ?   <div className={`col-md-12 col-lg-12 portfolio_full ${projectData.theme}`} key={`3`}>
                             <div className="page__background">
                                 <Img fluid={projectData.project_background.localFile.childImageSharp.fluid} alt={' '} tabIndex={-1}/>
                             </div>
@@ -98,7 +98,7 @@ class Project extends Component {
                         </div>
                     :''
                 }                                             
-            </div>
+            </>
         )
     }
 }

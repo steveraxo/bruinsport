@@ -16,7 +16,9 @@
 .projects__section .our__approach p{
     line-height: 50px;
 }
-
+.portfolio_full.dark{
+    flex-direction: row-reverse;
+}
 .diagonal button{
     margin-top: 40px;
 }

@@ -36,12 +36,14 @@ class MediaPage extends Component {
                 </section>
 
                 <section className={'projects__section container-fluid'}>
+                  <div className={'row'}>
                     {
                         pageAcf.project.map((element, index) => (
                             <Project projectData={element} key={index}  />
                         ))
                     }
-                </section>
+                  </div>
+                </section> 
             </div>
         </Layout>
     )
@@ -97,6 +99,7 @@ query portfolioPageQuery {
             project_description
             project_link
             project_layout
+            theme
           }
           featured_media {
             post_date(formatString: "MMM DD  YYYY")

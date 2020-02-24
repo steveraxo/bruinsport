@@ -136,7 +136,7 @@ class HomePage extends Component {
               <div className="row clients__logos">
                 {
                   pageData.acf.header_logos.map( (element, index) => 
-                    <div className="col" key={`${element}-${index}`}>
+                    <div className="col" key={`header_logos-${element}-${index}`}>
                       <Popup 
                       onOpen={this.focusTrap} 
                       onClose={this.changeBodyScroll} 
@@ -222,7 +222,7 @@ class HomePage extends Component {
             <Slider className="row featured__wrapper dark latest__news__wrapper" {...settings}>
               {
                 newsData.map((element, index) => 
-                  <div className="latest__article" key={`${element}-${index}`}>
+                  <div className="latest__article" key={`newsData-${element}-${index}`}>
                     <div className={'title'} dangerouslySetInnerHTML={{__html: element.node.content}} />
                     <div className={'content'} dangerouslySetInnerHTML={{__html: element.node.content}} />
                     <ExternalButton buttonClass={'small-btn'} buttonText={'Read More'} redirectionLink={element.node.acf.external_news_link} ></ExternalButton>

@@ -66,6 +66,9 @@
     line-height: 50px;
     min-height: 220px;
 }
+.portfolio__logo img{
+    filter: contrast(4.5);
+}
 @media(max-width: 4000px){
     .projects__section .our__approach {
         padding: 800px 0 90px 0!important;

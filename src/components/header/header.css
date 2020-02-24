@@ -9,6 +9,9 @@
     width: 100%;
     z-index: 4;
 }
+.brand__wrapper{
+    background-color: #000000;
+}
 .brand__wrapper .brand__link{
     color: white;
     text-decoration: none;

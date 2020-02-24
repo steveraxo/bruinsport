@@ -47,7 +47,7 @@ const Footer = () => {
               </div>
               <div className="footer__content">
                 {
-                  <p><small>{footerOptions.copyright} {new Date().getFullYear()}</small></p>
+                  <p>{footerOptions.copyright} {new Date().getFullYear()}</p>
                 }
               </div>
             </div>

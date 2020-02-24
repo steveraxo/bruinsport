@@ -39,7 +39,7 @@
     padding: 0 50px;
 }
 .contact__section__two .img__background{
-    opacity: 0.5;
+    opacity: 0.4;
 }
 .contact__section__three{
     padding: 50px 0!important;
@@ -58,15 +58,20 @@
 .contact__section__three__columns .s__three__column:nth-last-child(-n+7) {
     border-bottom: none;
 }
-.contact__section__three__columns p{
+.contact__section__three__columns ul{
+    list-style-type: none;
+}
+.contact__section__three__columns li{
     font-weight: 500;
     margin: 30px 0;
+    text-transform: none;
 }
 .contact__section__three .s__three__column .column__image{
     min-height: 160px;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: white;
 }
 fieldset {
     border: none;
@@ -84,6 +89,9 @@ fieldset {
     font-weight: 500;
     text-transform: uppercase;
     color: #000000;
+}
+.floating__b__letter{
+    background: white;
 }
 .column__data h4{
     font-family: 'Muli';
@@ -106,18 +114,27 @@ input, textarea{
     position: relative;
     cursor: pointer;
 }
-.interested__wrapper #interest__group label h4{
-    color: #a5a5a5;
+.interested__wrapper #interest__group label h2{
+    color: #767676;
     font-size: 1.275rem;
     font-family: 'Muli', sans-serif;
     background: white;
     z-index: 2;
     position: relative;
+    line-height: 35px;
+}
+#interest__group legend{
+    font-size: 40px;
+    line-height: 45px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #000000;
+    font-family: 'Muli', sans-serif;
 }
 .interested__wrapper #interest__group{
     transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
-.interested__wrapper #interest__group .checked h4{
+.interested__wrapper #interest__group .checked h2{
     color: #b02931;
     
 }
@@ -134,7 +151,7 @@ input, textarea{
     color: #000000;
     text-decoration: none;
 }
-#interest__group h4{
+#interest__group h2{
     pointer-events: none;
 }
 #interest__group input{
@@ -165,6 +182,7 @@ input, textarea{
     height: auto!important;
     margin: 0;
     padding: 0;
+    filter: contrast(4.51);
 }
 @media(min-width: 4000px){
     .contact__section__one .gatsby-image-wrapper {
@@ -270,6 +288,9 @@ input, textarea{
         padding: 0;
     }
     .interested__wrapper > label, .name__wrapper > label, .email__wrapper > label, .message__wrapper > label{
+        font-size: 35px;
+    }
+    #interest__group legend{
         font-size: 35px;
     }
     .contact__section__one .gatsby-image-wrapper {

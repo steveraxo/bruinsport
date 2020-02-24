@@ -11,7 +11,7 @@ import Reaptcha from 'reaptcha';
 import axios from "axios"
 import MapBackground from "../components/master/map-background/mapBackground"
 
-class HomePage extends Component {
+class ContactPage extends Component {
   constructor(props) {
     super(props);
 
@@ -152,7 +152,7 @@ class HomePage extends Component {
         </Helmet>
         <div className="contact__page">
           <section className="container-fluid contact__section__one position-relative">
-            <Img className={'position-absolute'} fluid={pageData.featured_media.localFile.childImageSharp.fluid} alt={''} tabIndex={-1}/>
+            <Img className={'position-absolute floating__b__letter'} fluid={pageData.featured_media.localFile.childImageSharp.fluid} alt={''} tabIndex={-1}/>
             <div className="container">
               <div className="row">
                 <div className="col-sm-12 col-md-12 col-xl-3">
@@ -226,18 +226,17 @@ class HomePage extends Component {
                   <div className={'container'}>
                     <div className={'row second__row'}>
                       <div className={'col-md-12 col-lg-6 interested__wrapper'}>
-                        <label htmlFor="your-interest">I'm interested in</label>
                         <fieldset name={'your-interest'} id={'interest__group'}>
-                          
-                          <label htmlFor="interest__option" id={'interest__option__one__label'} className={'checked'} onClick={this.changeRadioOption}>
-                          <h4>General Inquires</h4>
+                          <legend>I'm interested in</legend>
+                          <label htmlFor="interest__option__one" id={'interest__option__one__label'} className={'checked'} onClick={this.changeRadioOption}>
+                          <h2>General Inquires</h2>
                           <input id="interest__option__one" className={'is__input'} tabIndex={0} type="radio" name="interest__option" value="General Inquires"  checked onChange={this.changeRadioOption}/>
-                          </label><br></br>
+                          </label>
                           
-                          <label htmlFor="interest__option"  id={'interest__option__two__label'} onClick={this.changeRadioOption}>
-                          <h4>Media Inquires</h4>
+                          <label htmlFor="interest__option__two"  id={'interest__option__two__label'} onClick={this.changeRadioOption}>
+                          <h2>Media Inquires</h2>
                           <input id="interest__option__two" onChange={this.changeRadioOption} className={'is__input'} tabIndex={0} type="radio" name="interest__option" value="Media Inquires" />
-                          </label><br></br>
+                          </label>
                         </fieldset> 
                       </div>
                       <div className={'col-md-12 col-lg-6 message__wrapper'}>
@@ -299,11 +298,11 @@ class HomePage extends Component {
               <div className="row">
                 {
                   pageAcf.three_columns_data.map((element, index) => 
-                    <div className="col-sm-12 col-md-6 col-xl-4 text-left column__data" key={`${element}-${index}`}>
+                    <div className="col-sm-12 col-md-6 col-xl-4 text-left column__data" key={`three_columns_data-${element}-${index}`}>
                       <h4 className="text-left" dangerouslySetInnerHTML={{__html: element.column_title}} />
                       {
                         element.column_element.map((subElement, index) => 
-                          <div key={`${element}-${subElement}-${index}`}>
+                          <div key={`column_element-${element}-${subElement}-${index}`}>
                           <p >{subElement.element_title}</p>
                           </div>
                         )
@@ -326,19 +325,25 @@ class HomePage extends Component {
               {
                   pageAcf.portfolio_data.map((element, index) => 
                   <>
-                    <div className="col-md-4 col-xl-3 s__three__column" key={`${element}-${index}`}>
+                    <div className="col-md-4 col-xl-3 s__three__column" key={`portfolio_data-${element}-${index}`}>
                       <a href={`https://${element.client_url}`} target="_BLANK" rel="noopener noreferrer">
                         <div className={'column__image'}>
                           <Img fixed={element.cliente_logo.localFile.childImageSharp.fixed} alt={'Client Logo'} tabIndex={0}/>
                         </div>
                       </a>
                       <div className={'column__info'}>
-                        <a href={`mailto:${element.client_email}`} target="_BLANK" rel="noopener noreferrer">
-                          <p className="text-left" dangerouslySetInnerHTML={{__html: element.client_email}} />
-                        </a>
-                        <a href={`https://${element.client_url}`} target="_BLANK" rel="noopener noreferrer">
-                          <p className="text-left" dangerouslySetInnerHTML={{__html: element.client_url}} />
-                        </a>
+                        <ul>
+                          <li>
+                            <a href={`mailto:${element.client_email}`} target="_BLANK" rel="noopener noreferrer">
+                              <p className="text-left" dangerouslySetInnerHTML={{__html: element.client_email}} />
+                            </a>
+                          </li>
+                          <li>
+                            <a href={`https://${element.client_url}`} target="_BLANK" rel="noopener noreferrer">
+                              <p className="text-left" dangerouslySetInnerHTML={{__html: element.client_url}} />
+                            </a>
+                          </li>
+                        </ul>
                       </div>
                     </div>
                     <div className="col"></div>
@@ -356,7 +361,7 @@ class HomePage extends Component {
     )
   }
 }
-export default HomePage
+export default ContactPage
 
 export const pageQuery = graphql`
 query ContactQuery {

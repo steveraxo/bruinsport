@@ -13,7 +13,7 @@ button a{
     text-transform: uppercase;
 }
 button:disabled{
-    background: #a5a5a5;
+    background: #767676;
 }
 button.dark-btn{
     border: solid 2px #b02931;

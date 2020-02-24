@@ -67,7 +67,7 @@ class MediaPage extends Component {
             <div className="media__page">
                 <section className="container-fluid hero-bg media__featured">
                     <div className="page__background">
-                      <Img fluid={pageData.featured_media.localFile.childImageSharp.fluid} alt=" "/>
+                      <Img fluid={pageData.featured_media.localFile.childImageSharp.fluid} alt=""/>
                     </div>
                     <div className="row text-center">
                       <div className="page__title">
@@ -110,7 +110,7 @@ class MediaPage extends Component {
                 </section>
                 <section className="media__lists">
                   <div className="media__list__background">
-                    <img src={BruinLogo} alt={' '} />
+                    <img src={BruinLogo} alt={''} />
                   </div>
                   <div className="container">
                     <div className="row">

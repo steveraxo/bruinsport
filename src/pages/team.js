@@ -93,10 +93,10 @@ class MediaPage extends Component {
                 <section className={'main__section container-fluid'}>
                     <div className="page__background">
                         <div className={'fade__top'}></div>
-                        <Img fluid={pageData.featured_media.localFile.childImageSharp.fluid} alt={' '} tabIndex={-1}/>
+                        <Img fluid={pageData.featured_media.localFile.childImageSharp.fluid} alt={''} tabIndex={-1}/>
                     </div>
                     <div className="media__list__background">
-                        <img src={BruinLogo} alt={' '} />
+                        <img src={BruinLogo} alt={''} />
                     </div>
                     <div className={'container'}>
                         <div className={'row main__row'}>
@@ -125,7 +125,7 @@ class MediaPage extends Component {
                                                             pageAcf.popup_logos.map((element, index) => 
                                                                 <div className={'col-xs-6 col-sm-4 col-md-4 col-lg-4 d-flex justify-content-center align-items-center'} key={`logo-${index}`}>
                                                                     <a href={element.url} target={'_BLANK'} rel="noopener noreferrer">
-                                                                        <img src={element.logo.source_url} alt={' '} tabIndex={-1}/>
+                                                                        <img src={element.logo.source_url} alt={''} tabIndex={-1}/>
                                                                         <p className="featured__article__logo__desc" dangerouslySetInnerHTML={{__html: element.title}} />
                                                                     </a>
                                                                 </div>

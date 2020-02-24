@@ -95,7 +95,7 @@
     flex-direction: column;
 }
 button.type__selector{
-    background: #a5a5a5;
+    background: #767676;
 }
 button.type__selector.active{
     background: #b02931;

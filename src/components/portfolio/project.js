@@ -15,7 +15,7 @@ console.log(projectData)
                     projectData.project_layout === "diagonal"
                     ?   <div className={`our__approach featured__section container-fluid d-flex justify-content-center align-items-end ${projectData.project_layout} col-xl-12`} key={`0`}>
                             <div className="page__background">
-                                <Img fluid={projectData.project_background.localFile.childImageSharp.fluid} alt={' '} tabIndex={-1}/>
+                                <Img fluid={projectData.project_background.localFile.childImageSharp.fluid} alt={''} tabIndex={-1}/>
                             </div>
                             <div className="container">
                                 <div className="row">
@@ -34,7 +34,7 @@ console.log(projectData)
                     projectData.project_layout === "half-left"
                     ?   <div className={'col-md-12 col-lg-6 portfolio_half right__portfolio'} key={`2`}>
                             <div className={'portfolio__header'}>
-                                <Img fluid={projectData.project_background.localFile.childImageSharp.fluid} alt={' '} />
+                                <Img fluid={projectData.project_background.localFile.childImageSharp.fluid} alt={''} />
                             </div>
                             <div className={'portfolio__inner'}>
                                 <div className={'portfolio__logo'}>
@@ -55,7 +55,7 @@ console.log(projectData)
                     projectData.project_layout === "half-right"
                     ?   <div className={'col-md-12 col-lg-6 portfolio_half left__portfolio'} key={`1`}>
                             <div className={'portfolio__header'}>
-                                <Img fluid={projectData.project_background.localFile.childImageSharp.fluid} alt={' '} />
+                                <Img fluid={projectData.project_background.localFile.childImageSharp.fluid} alt={''} />
                             </div>
                             <div className={'portfolio__inner'}>
                                 <div className={'portfolio__logo'}>
@@ -76,7 +76,7 @@ console.log(projectData)
                     projectData.project_layout === "full-width"
                     ?   <div className={`col-md-12 col-lg-12 portfolio_full ${projectData.theme}`} key={`3`}>
                             <div className="page__background">
-                                <Img fluid={projectData.project_background.localFile.childImageSharp.fluid} alt={' '} tabIndex={-1}/>
+                                <Img fluid={projectData.project_background.localFile.childImageSharp.fluid} alt={''} tabIndex={-1}/>
                             </div>
                             <div className={'col-md-12 col-lg-6 first'}>
 

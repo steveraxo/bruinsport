@@ -81,6 +81,7 @@ fieldset {
 }
 .form__section h1{
     color: #000000;
+    padding-left: 8px;
 }
 
 .interested__wrapper > label, .name__wrapper > label, .email__wrapper > label, .message__wrapper > label{
@@ -101,11 +102,11 @@ fieldset {
 }
 input, textarea{
     text-transform: uppercase;
-    color: #a5a5a5;
+    color: #767676;
     font-size: 22px;
     font-weight: normal;
     border: none;
-    border-bottom: solid 2px #d5d5d5;
+    border-bottom: solid 2px #767676;
     padding-bottom: 5px;
     padding-top: 10px;
     background: transparent;

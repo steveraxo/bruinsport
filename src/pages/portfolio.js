@@ -24,7 +24,7 @@ class MediaPage extends Component {
             <div className={'portfolio__page'}>
                 <section className="our__approach container-fluid d-flex justify-content-center align-items-center">
                     <div className="floating__letter">
-                        <img src={BruinLogo} alt=" "/>
+                        <img src={BruinLogo} alt=""/>
                     </div>
                     <div className="container">
                         <div className="row">

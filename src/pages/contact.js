@@ -14,7 +14,6 @@ import MapBackground from "../components/master/map-background/mapBackground"
 class ContactPage extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       // form states
       name: '',
@@ -30,16 +29,12 @@ class ContactPage extends Component {
       submit: false, 
       showRecaptcha: true,
     };
-
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-
   }
-
   handleChange(event) {
     // we need the if statement
     const value = event.target.name.replace('your-', '');
-
     this.setState({[value]: event.target.value});
   }
   handleSubmit = async event => {
@@ -193,7 +188,7 @@ class ContactPage extends Component {
                         </div>
                       </div>
                       <div className={'col-md-12 col-lg-6 email__wrapper'}>
-                        <label htmlFor="email" className={'invisible'}>Email address</label>
+                        <label htmlFor="your-email" className={'invisible'}>Email address</label>
                         <input 
                           type="text" 
                           className={
@@ -205,7 +200,7 @@ class ContactPage extends Component {
                           } 
                           value={this.state.email} 
                           onChange={this.handleChange} 
-                          id="email" 
+                          id="your-email" 
                           name="your-email" 
                           required 
                           placeholder={'Email'}
@@ -240,12 +235,12 @@ class ContactPage extends Component {
                         </fieldset> 
                       </div>
                       <div className={'col-md-12 col-lg-6 message__wrapper'}>
-                        <label htmlFor="message" className={'invisible'}>Your Message</label>
+                        <label htmlFor="your-message" className={'invisible'}>Your Message</label>
                         <textarea 
                           value={message} 
                           className={message.length > 0 ? 'passed__field' : 'error__field'} 
                           onChange={this.handleChange} 
-                          id="message" 
+                          id="your-message" 
                           name="your-message" 
                           required 
                           

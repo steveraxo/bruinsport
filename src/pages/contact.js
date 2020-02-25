@@ -131,6 +131,7 @@ class ContactPage extends Component {
   }
 
   render() {
+
     const {loading, submit, name, message, verifiedEmail} = this.state
 
     // This variable will return all the fields related to the post
@@ -160,7 +161,7 @@ class ContactPage extends Component {
                   <div className={'container'}>
                     <div className={'row first__row'}>
                       <div className={'col-md-12 col-lg-6 name__wrapper'}>
-                        <label htmlFor="name">Your name</label><br></br>
+                        <label htmlFor="your-name"><span>Your name</span>
                         <input 
                           type="text" 
                           className={
@@ -172,11 +173,12 @@ class ContactPage extends Component {
                           } 
                           value={name} 
                           onChange={this.handleChange}  
-                          id="name" 
+                          id="your-name" 
                           name="your-name" 
                           required 
                           placeholder={'My Name Is'}
                         />
+                        </label>
                         <div className="validation__message">
                           {
                             submit === true
@@ -188,7 +190,7 @@ class ContactPage extends Component {
                         </div>
                       </div>
                       <div className={'col-md-12 col-lg-6 email__wrapper'}>
-                        <label htmlFor="your-email" className={'invisible'}>Email address</label>
+                        <label htmlFor="your-email" ><span className={'invisible'}>Email address</span>
                         <input 
                           type="text" 
                           className={
@@ -205,6 +207,7 @@ class ContactPage extends Component {
                           required 
                           placeholder={'Email'}
                         />
+                        </label>
                         <div className="validation__message">
                           {
                             submit === true
@@ -235,7 +238,7 @@ class ContactPage extends Component {
                         </fieldset> 
                       </div>
                       <div className={'col-md-12 col-lg-6 message__wrapper'}>
-                        <label htmlFor="your-message" className={'invisible'}>Your Message</label>
+                        <label htmlFor="your-message" ><span className={'invisible'}>Your Message</span>
                         <textarea 
                           value={message} 
                           className={message.length > 0 ? 'passed__field' : 'error__field'} 
@@ -248,6 +251,7 @@ class ContactPage extends Component {
                           tabIndex={0}
                         >
                         </textarea>
+                        </label>
                         <div className="validation__message">
                           {
                             submit === true

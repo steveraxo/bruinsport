@@ -89,16 +89,6 @@ class HomePage extends Component {
     // This variable will return all the fields related to the post
     const pageData = this.props.data.allWordpressPage.edges[0].node,
           newsData = this.props.data.allWordpressWpNews.edges;
-    let isDesktop = false,
-        isMobile = false;
-
-    if(window.innerWidth < 769){
-      isDesktop = false;
-      isMobile = true;
-    }else{
-      isDesktop = true;
-      isMobile = false;
-    }
 
     //Slick Setting
     let settings = {

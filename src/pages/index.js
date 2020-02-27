@@ -180,59 +180,59 @@ class HomePage extends Component {
               <div tabIndex={0} className="header__copy text-left" dangerouslySetInnerHTML={{__html: pageData.acf.main_copy}} />
             </div>
             <div className="container-fluid">
-
-                <div className="row clients__logos rotate__clients__logos">
-                {
-                  pageData.acf.header_logos.map( (element, index) => 
-                    <div className="col rotated__col" key={`header_logos-${element}-${index}`}>
-                      <Popup 
-                      onOpen={this.focusTrap} 
-                      onClose={this.changeBodyScroll} 
-                      modal 
-                      closeOnEscape 
-                      closeOnDocumentClick 
-                      trigger={
-                        <Img 
-                          className={`${this.state.mixBlend}`}
-                          tabIndex={0}
-                          fluid={element.icon.localFile.childImageSharp.fluid}
-                          alt={`Client ${element.title} logo`}
-                        />
-                      } 
-                      position="center center">
-                          {close => (
-                            <div>
-                              <div className="popup__inner featured__wrapper" id={'popup__inner'}>
-                                <div className="triangle__big"></div>
-                                <div className="triangle__small"></div>
-                                <div className="featured__article" key={index}>
-                                <img className="popup__inner__background" src={MapBackground} alt="" tabIndex="-1" />
-                                  <div className="featured__artitle__inner">
-                                    <div className="featured__article__top">
-                                      <div className="featured__article__title">
-                                        <h4>{element.title}</h4>
+                <div className="clients__logos__wrapper">
+                  <div className="row clients__logos rotate__clients__logos">
+                  {
+                    pageData.acf.header_logos.map( (element, index) => 
+                      <div className="col rotated__col" key={`header_logos-${element}-${index}`}>
+                        <Popup 
+                        onOpen={this.focusTrap} 
+                        onClose={this.changeBodyScroll} 
+                        modal 
+                        closeOnEscape 
+                        closeOnDocumentClick 
+                        trigger={
+                          <Img 
+                            className={`${this.state.mixBlend}`}
+                            tabIndex={0}
+                            fluid={element.icon.localFile.childImageSharp.fluid}
+                            alt={`Client ${element.title} logo`}
+                          />
+                        } 
+                        position="center center">
+                            {close => (
+                              <div>
+                                <div className="popup__inner featured__wrapper" id={'popup__inner'}>
+                                  <div className="triangle__big"></div>
+                                  <div className="triangle__small"></div>
+                                  <div className="featured__article" key={index}>
+                                  <img className="popup__inner__background" src={MapBackground} alt="" tabIndex="-1" />
+                                    <div className="featured__artitle__inner">
+                                      <div className="featured__article__top">
+                                        <div className="featured__article__title">
+                                          <h4>{element.title}</h4>
+                                        </div>
+                                        <div className="featured__article__content" dangerouslySetInnerHTML={{__html: element.first_copy}} />
                                       </div>
-                                      <div className="featured__article__content" dangerouslySetInnerHTML={{__html: element.first_copy}} />
+                                      <div className="featured__article__divider"></div>
+                                      <div className="featured__article__content" dangerouslySetInnerHTML={{__html: element.second_copy}} />
                                     </div>
-                                    <div className="featured__article__divider"></div>
-                                    <div className="featured__article__content" dangerouslySetInnerHTML={{__html: element.second_copy}} />
-                                  </div>
-                                  <div className="featured__article__bottom flex-end">
-                                      <div className="featured__article__cta">
-                                        <ExternalButton  redirectionLink={element.button_link} buttonText={element.button_text} buttonClass={'md-btn'}></ExternalButton>
-                                      </div>
+                                    <div className="featured__article__bottom flex-end">
+                                        <div className="featured__article__cta">
+                                          <ExternalButton  redirectionLink={element.button_link} buttonText={element.button_text} buttonClass={'md-btn'}></ExternalButton>
+                                        </div>
+                                    </div>
                                   </div>
                                 </div>
+                                <button className="close" tabIndex="0" onClick={close} onKeyPress={close} id="close__menu" ></button>
                               </div>
-                              <button className="close" tabIndex="0" onClick={close} onKeyPress={close} id="close__menu" ></button>
-                            </div>
-                          )}
-                      </Popup>
-                    </div>
-                  )
-                }
+                            )}
+                        </Popup>
+                      </div>
+                    )
+                  }
+                  </div>
                 </div>
-
             </div>
           </section>
           <section className="our__approach container-fluid">

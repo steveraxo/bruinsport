@@ -216,6 +216,24 @@
 .home__page .clients__logos .gatsby-image-wrapper > div {
     display: none;
 }
+.clients__logos.mobile__carrousel .featured__wrapper .mix-blend {
+    height: 100px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.clients__logos.mobile__carrousel .featured__wrapper.slick-slider{
+    position: absolute;
+    bottom: 0;
+    padding: 0 100px;
+    min-height: 120px;
+}
+.rotate__clients__logos{
+    transform: unset;
+}
+.rotated__col{
+    transform: unset;
+}
 @media(min-width: 1920px){
     .floating__letter {
         top: 13%;
@@ -374,6 +392,10 @@
     .home__page .popup-content {
         max-width: 80%!important;
     }
+    .home__page .popup-content .close {
+        right: 70px;
+        top: 32px;
+    }
     .home__page .featured__section .container {
         padding: 710px 0 50px;
     }
@@ -469,23 +491,61 @@
         top: 0px;
         transform: translateY(-0%);
         display: flex;
-        padding: 60px 10px;
+        padding: 60px 10px 30px;
         max-width: 1200px;
         
     }
     .home__page .media__featured {
         justify-content: center;
     }
+    .home__page .clients__logos::-webkit-scrollbar {
+        display: none;
+    }
     .home__page .clients__logos {
         flex-direction: row;
         flex-wrap: wrap;
+        height: 500px;
+        width: 100%;
+        overflow: scroll;
+        padding: 0;
+        margin: 0;
+        scroll-snap-type: x mandatory;
+        scroll-padding: 50%;        
+        margin-top: -310px;
+        top: 130px;
+    }
+    .home__page .media__featured .container-fluid{
+        padding-bottom: 0px!important;
+    }
+    .rotate__clients__logos{
+        transform: rotate(270deg) translateY(65px);
+        mix-blend-mode: difference;
+    }
+    .rotated__col{
+        transform: rotate(90deg) translateX(70px);
     }
     .home__page .clients__logos .col{
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        max-width: 100%;
+        flex-grow: unset;
+        flex-basis: unset;
+
+    }
+    .clients__logos .gatsby-image-wrapper{
+        margin: 35px 0px;
+        width: 47%;
+    }
+    .home__page .clients__logos.mobile__carrousel{
+        height: 170px;
+    }
+    .home__page .clients__logos.mobile__carrousel .col{
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 50%;
-        max-width: 50%;
+        width: 100%;
+        max-width: 100%;
         flex-grow: unset;
         flex-basis: unset;
     }

@@ -41,12 +41,15 @@
     .brand__wrapper .brand__svg__logo {
         height: auto;
         margin: 0;
-        width: 150px;
+        width: 150px!important;
+    }
+    .brand__wrapper .brand__svg__logo img{
+        object-fit: contain!important;
     }
 }
 @media (max-width:340px){
     .brand__wrapper .brand__svg__logo {
-        width: 120px;
+        width: 120px!important;
     }
     body h1 {
         font-size: 6.688rem;

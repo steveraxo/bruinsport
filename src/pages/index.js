@@ -17,11 +17,13 @@ import BruinLogo from "../components/master/bruin-letter-logo/bruinLetter"
 class HomePage extends Component {
   constructor(props) {
     super(props);
-    this.state = { mixBlend: 'mix-blend' };
+    this.state = { 
+      mixBlend: 'mix-blend',
+    };
   }
   focusTrap(){
     setTimeout(function(){ 
-    
+
     document.querySelectorAll('html')[0].classList.add('html__custom')
     // Focus the element on the burguer menu
     document.getElementById("close__menu").focus(); 
@@ -52,9 +54,14 @@ class HomePage extends Component {
               }
           }
       });
-    },10);
     
+    document.querySelectorAll('.clients__logos')[0].classList.remove('rotate__clients__logos');
 
+    [...document.querySelectorAll('.clients__logos .col')].map(el => (
+      el.classList.remove('rotated__col')
+    ))
+
+    },10);
   }
   endModal(e) {
     document.querySelectorAll('html')[0].classList.remove('html__custom')
@@ -71,11 +78,27 @@ class HomePage extends Component {
   changeBodyScroll(){
     // When the modal is hidden...
     document.querySelectorAll('html')[0].classList.remove('html__custom')
+
+    document.querySelectorAll('.clients__logos')[0].classList.add('rotate__clients__logos');
+
+    [...document.querySelectorAll('.clients__logos .col')].map(el => (
+      el.classList.add('rotated__col')
+    ))
   }
   render() {
     // This variable will return all the fields related to the post
-    const pageData = this.props.data.allWordpressPage.edges[0].node
-    const newsData = this.props.data.allWordpressWpNews.edges
+    const pageData = this.props.data.allWordpressPage.edges[0].node,
+          newsData = this.props.data.allWordpressWpNews.edges;
+    let isDesktop = false,
+        isMobile = false;
+
+    if(window.innerWidth < 769){
+      isDesktop = false;
+      isMobile = true;
+    }else{
+      isDesktop = true;
+      isMobile = false;
+    }
 
     //Slick Setting
     let settings = {
@@ -116,6 +139,40 @@ class HomePage extends Component {
       ]
     }
     
+    let settingsLogos = {
+      dots: false,
+      arrows: false,
+      infinite: true,
+      speed: 500,
+      cssEase: 'linear',
+      autoplay: true,
+      autoplaySpeed: 30000,
+      slidesToShow: 4,
+      slidesToScroll: 4,
+      responsive: [
+        {
+          breakpoint: 1000,
+          settings: {
+            slidesToShow: 4,
+            slidesToScroll: 4,
+          }
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 4,
+            slidesToScroll: 4,
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+          }
+        }
+      ]
+    }
     return (
       <Layout>
         <Helmet>
@@ -133,10 +190,11 @@ class HomePage extends Component {
               <div tabIndex={0} className="header__copy text-left" dangerouslySetInnerHTML={{__html: pageData.acf.main_copy}} />
             </div>
             <div className="container-fluid">
-              <div className="row clients__logos">
+
+                <div className="row clients__logos rotate__clients__logos">
                 {
                   pageData.acf.header_logos.map( (element, index) => 
-                    <div className="col" key={`header_logos-${element}-${index}`}>
+                    <div className="col rotated__col" key={`header_logos-${element}-${index}`}>
                       <Popup 
                       onOpen={this.focusTrap} 
                       onClose={this.changeBodyScroll} 
@@ -183,7 +241,8 @@ class HomePage extends Component {
                     </div>
                   )
                 }
-              </div>
+                </div>
+
             </div>
           </section>
           <section className="our__approach container-fluid">

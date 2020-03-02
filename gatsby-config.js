@@ -16,6 +16,23 @@ module.exports = {
     //   },
     // },
     {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Montserrat`,
+            variants: [`300`, `400`,`500`, `600`, `700`],
+            fontDisplay: `swap`,
+          },
+          {
+            family: `Muli`,
+            variants: [`300`,`400`,`500`,`600` ,`700`],
+            fontDisplay: `swap`,
+          },
+        ],
+      },
+    },
+    {
       resolve: 'gatsby-plugin-react-svg',
       options: {
         rule: {

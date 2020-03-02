@@ -7,7 +7,6 @@ import Footer from "../components/footer/footer"
 import MainMenu from "../components/menu/mainMenu"
 import "./index.css"
 import "./custom.css"
-import "../fonts/custom-fonts.css"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`

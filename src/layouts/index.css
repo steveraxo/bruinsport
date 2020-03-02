@@ -1,3 +1,22 @@
+.container{
+  max-width: 1371px;
+}
+@media (max-width: 1280px)
+{.container, .container-lg, .container-md, .container-sm, .container-xl {
+    max-width: 1140px;
+}}
+@media (max-width: 1024px)
+{.container, .container-lg, .container-md, .container-sm {
+    max-width: 900px;
+}}
+@media (max-width: 768px)
+{.container, .container-md, .container-sm {
+    max-width: 680px;
+}}
+@media (max-width: 576px)
+{.container, .container-sm {
+    max-width: 540px;
+}}
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -324,14 +343,14 @@ h6 {
   line-height: 1.1;
 }
 body h1{
-  font-size: 105px;
+  font-size: 70px;
   line-height: 90px;
   font-weight: 500;
   margin: 0;
   padding: 0;
 }
 body .mainText { 
-  font-size: 103px;
+  font-size: 70px;
   line-height: 90px;
   font-weight: 500;
   margin: 0;
@@ -344,35 +363,35 @@ body .mainText.--white{
   color: #ffffff;
 }
 body h2{
-  font-size: 114px;
-  line-height: 94px;
+  font-size: 50px;
+  line-height: 44px;
   font-weight: 500;
   margin: 0;
   padding: 0;
 }
 body h3{
-  font-size: 100px;
-  line-height: 86.96px;
+  font-size: 30px;
+  line-height: 30px;
   font-weight: 500;
   margin: 0;
   padding: 0;
 }
 body h4{
-  font-size: 45px;
+  font-size: 28px;
   line-height: 45px;
   font-weight: 500;
   margin: 0;
   padding: 0;
 }
 body h5{
-  font-size: 26.83px;
+  font-size: 25px;
   line-height: 32.2px;
   font-weight: 500;
   margin: 0;
   padding: 0;
 }
 body h6{
-  font-size: 21px;
+  font-size: 23px;
   font-weight: 500;
   margin: 0;
   padding: 0;
@@ -382,7 +401,8 @@ body p{
   
 }
 body p, body li{
-  font-size: 22px;
+  font-size: 21px;
+  line-height: 45px;
 }
 body small{
   font-size: 14.25px;
@@ -682,57 +702,61 @@ pre tt:after {
 }
 @media only screen and (max-width: 1024px) {
   body h1 {
-    font-size: 109px;
+    font-size: 70px;
+  }
+  body .mainText { 
+    font-size: 60px;
     line-height: 90px;
-}
-body .mainText { 
-  font-size: 109px;
-  line-height: 90px;
-}
+  }
+  body h2 {
+    font-size: 60px;
+    line-height: 55px;
+  }
   body h3 {
-    font-size: 80px;
-    line-height: 73.96px;
-}
-body h5 {
-  font-size: 1.25rem;
-  font-weight: 500;
-}
-}
-@media only screen and (max-width: 768px) {
-  body h1 {
-    font-size: 80px;
-    line-height: 90px;
+      font-size: 50px;
+      line-height: 73.96px;
   }
   body h4 {
     font-size: 35px;
   }
-
+  body h5 {
+    font-size: 1.25rem;
+    font-weight: 500;
+  }
 }
 @media only screen and (max-width: 568px) {
   html {
     font-size: 100%;
   }
-  body h1 {
-    font-size: 75px;
-    line-height: 60px;
-}
-body .mainText { 
-  font-size: 75px;
-  line-height: 60px;
-}
+  body p, body li {
+    font-size: 16px;
+  }
+  body h1{
+    font-size: 55px;
+    line-height: 55px;
+  }
+  body h2 {
+    font-size: 40px;
+    line-height: 40px;
+  }
   body h3 {
-    font-size: 50px;
-    line-height: 48.96px;
+    font-size: 35px;
+    line-height: 40px;
+  }
 }
-body h4 {
-  font-size: 30px;
-  line-height: 35px;
-}
-body p, body li {
-  font-size: 16px;
-}
+@media only screen and (max-width: 360px) {
+  body h1{
+    font-size: 45px;
+    line-height: 45px;
+  }
+  body h2 {
+    font-size: 30px;
+    line-height: 28px;
+  }
+  body h3 {
+    font-size: 25px;
+    line-height: 28px;
+  }
 }
 
-@media only screen and (max-width: 320px) {
 
-}

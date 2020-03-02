@@ -1,0 +1,249 @@
+.approach__header.about__header {
+    padding: 308px 0 708px !important;
+}
+.approach__copy .about__header__column__two {
+    display: flex;
+    align-items: flex-end;
+}
+.approach__copy{
+    margin-top: -160px;
+    margin-bottom: 150px;
+}
+.mis__vals__soc.approach_mvs{
+    margin-top: auto;
+}
+.approach_mvs .mission p {
+    max-width: 100%;
+}
+.approach_mvs .values__information .values__information__inner::after{
+    display: none;
+}
+.approach_mvs .values__information .values__information__inner > p {
+    text-transform: unset;
+}
+.approach_mvs .values__information {
+    cursor: unset;
+}
+.approach__testimonial .slick-list, .approach__testimonial .container-fluid, .approach__testimonial .testimonial__slider__element{
+    padding: 0!important;
+    margin: 0!important;
+}
+.approach__testimonial .featured__wrapper.slick-slider {
+    min-height: auto; 
+}
+.approach__testimonial .page__background {
+    z-index: -1;
+}
+.approach__testimonial .testimonial__slider__element{
+    padding: 100px 0px!important;
+    min-height: 740px;
+    display: flex!important;
+    justify-content: center;
+    align-items: center;
+}
+.testimonial__element__wrapper{
+    padding: 0 40px;
+}
+.testimonial__slider__element__testimonial{
+    max-width: 890px;
+    width: 100%;
+}
+.testimonial__element__wrapper .featured__article__divider {
+    margin: 80px 0 40px;
+}
+.testimonial__slider .slick-arrow.slick-next {
+    right: 47%!important;
+    z-index: 9;
+    bottom: 40px!important;
+    top: unset!important;
+
+}
+.testimonial__slider .slick-arrow.slick-prev {
+    left: 47%!important;
+    z-index: 9;
+    bottom: 40px!important;
+    top: unset!important;
+}
+.approach__slider__controls{
+    justify-content: center;
+    z-index: 3;
+    position: relative;
+}
+.mis__vals__soc.approach_mvs {
+    margin-top: 70px;
+}
+.approach__slider__wrapper{
+    top: -40px;
+    position: relative;
+    z-index: 2;
+}
+.approach__slider .container-fluid{
+    padding: 0!important;
+}
+.approach__first__slider__element{
+    display: none;
+}
+.approach__first__slider__element.--s-active{
+    display: flex;
+    min-height: 900px;
+    justify-content: center;
+    align-items: center;
+}
+.approach__first__slider{
+    width: 100%;
+}
+.approach__first__element__wrapper{
+    position: relative;
+}
+.approach__first__element__wrapper{
+    min-height: 600px;
+    padding: 200px 50px 200px;
+}
+.approach__first__slider__title h3{
+    margin-top: -20px;
+}
+.approach__first__slider__copy{
+    max-width: 840px;
+    width: 100%;
+    margin-top: 40px;
+}
+.approach__first__slider{
+    position: relative;
+}
+.approach__first__slider .next__button{
+    display: inline-block;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    width: 30px;
+    height: 30px;
+    transform: rotate(-45deg);
+    right: 30px;
+    top: 0px;
+    bottom: 0px;
+    margin: auto;
+    position: absolute;
+    cursor: pointer;
+}
+.approach__first__slider .prev__button{
+    display: inline-block;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    width: 30px;
+    height: 30px;
+    transform: rotate(130deg);
+    left: 60px;
+    top: 0px;
+    bottom: 0px;
+    margin: auto;
+    position: absolute;
+    z-index: 9;
+    cursor: pointer;
+}
+.approach__first__slider__title{
+    max-width: 600px;
+}
+.approach__first__slider__title h2{
+    margin-bottom: 30px;
+    left: -3px;
+    position: relative;
+}
+.approach__slider__controls .type__selector > * {
+    pointer-events: none;
+}
+.approach__slider__controls .type__selector:not(:first-child) > div {
+    position: relative;
+    left: 25px;
+}
+.approach__slider__controls .type__selector:last-child > div {
+    left: 10px;
+}
+@media(max-width: 1280px){
+    .about__header__column__one p br, .about__header__column__two p br{
+        display: none;
+    }
+    .arrow__button {
+        font-size: 15px;
+    }
+}
+@media(max-width: 1024px){
+    .arrow__button {
+        padding: 20px 27px;
+        font-size: 13px;
+    }
+    .approach__testimonial .testimonial__slider__element {
+        min-height: 790px;
+    }
+    .approach__testimonial .testimonial__slider__element img{
+        object-position: right!important;
+    }
+}
+@media(max-width: 768px){
+    .approach__slider__controls {
+        display: none;
+    }
+    .approach__header.about__header {
+        height: 1200px;
+    }
+    .approach__copy {
+        margin-top: -240px;
+    }
+    .approach__testimonial .testimonial__slider__element {
+        min-height: 920px;
+    }
+    .testimonial__slider .slick-arrow.slick-next {
+        right: 45%!important;
+    }
+    .testimonial__slider .slick-arrow.slick-prev {
+        left: 45%!important;
+    }
+}
+@media(max-width: 600px){
+    .approach .page__background .gatsby-image-wrapper {
+        left: 0px;
+    }
+    .approach__header.about__header {
+        height: 930px;
+        padding: 308px 0 338px !important;
+        clip-path: polygon(0 74%, 0 0, 100% 0, 100% 87%);
+    }
+    .approach__copy {
+        margin-top: -90px;
+    }
+    .approach__first__element__wrapper {
+        position: relative;
+        left: 20px;
+    }
+    .approach__first__slider .prev__button {
+        left: 45px;
+    }
+    .approach__first__slider .next__button {
+        right: 15px;
+    }
+    .testimonial__element__wrapper {
+        padding: 0 50px;
+        position: relative;
+        left: 20px;
+    }
+    .testimonial__slider .slick-arrow.slick-next {
+        right: 40%!important;
+    }
+    .approach__testimonial .testimonial__slider__element {
+        min-height: 1220px;
+    }
+}
+@media only screen and (max-width: 360px) {
+    .approach__testimonial .testimonial__slider__element {
+        min-height: 1420px;
+    }
+    .approach__testimonial .testimonial__slider__element img {
+        object-position: -2390px!important;
+    }
+}
+@media (max-width: 900px) and (orientation: landscape) {
+    .approach__slider__controls{
+        display: none;
+    }
+    .approach__testimonial .testimonial__slider__element {
+        min-height: 940px;
+    }
+}

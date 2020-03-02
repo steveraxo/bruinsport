@@ -129,40 +129,6 @@ class HomePage extends Component {
       ]
     }
     
-    let settingsLogos = {
-      dots: false,
-      arrows: false,
-      infinite: true,
-      speed: 500,
-      cssEase: 'linear',
-      autoplay: true,
-      autoplaySpeed: 30000,
-      slidesToShow: 4,
-      slidesToScroll: 4,
-      responsive: [
-        {
-          breakpoint: 1000,
-          settings: {
-            slidesToShow: 4,
-            slidesToScroll: 4,
-          }
-        },
-        {
-          breakpoint: 768,
-          settings: {
-            slidesToShow: 4,
-            slidesToScroll: 4,
-          }
-        },
-        {
-          breakpoint: 600,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 2,
-          }
-        }
-      ]
-    }
     return (
       <Layout>
         <Helmet>

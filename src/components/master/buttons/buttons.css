@@ -28,6 +28,57 @@ button.small-btn{
     padding: 10px 45px;
     font-size: 18.87px;
 }
+/* arrow buttons */
+.arrow__button{ 
+    background: #767676;
+    padding: 20px 50px;
+    position: relative;
+    font-size: 20px;
+    line-height: 22px;
+}
+.arrow__button::before{
+    width: 0;
+    height: 0;
+    border-top: 42px solid transparent;
+    border-bottom: 42px solid transparent;
+    border-left: 40px solid #767676;
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -40px;
+    z-index: 5;
+}
+.arrow__button.--active::before{
+    width: 0;
+    height: 0;
+    border-top: 42px solid transparent;
+    border-bottom: 42px solid transparent;
+    border-left: 40px solid #b02831;
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -40px;
+    z-index: 5;
+}
+.arrow__button::after{
+    width: 0;
+    height: 0;
+    border-top: 42px solid transparent;
+    border-bottom: 42px solid transparent;
+    border-left: 40px solid #ffffff;
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -44px;
+    z-index: 4;
+}
+
+.arrow__button.--square__end::after, .arrow__button.--square__end::before{ 
+    display:none
+}
+.arrow__button.--active{
+    background: #b02931;
+}
 @media(max-width: 1440px){
     .latest__news button.small-btn {
         padding: 10px 35px;

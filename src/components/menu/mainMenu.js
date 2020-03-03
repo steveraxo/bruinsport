@@ -2,6 +2,9 @@ import React from 'react';
 import { useStaticQuery, graphql } from "gatsby"
 import Link from "gatsby-link"
 import "./menus.css"
+import TwitterLogo from "../../images/logo/social/twitter.png"
+import FacebookLogo from "../../images/logo/social/facebook.png"
+import LinkedinLogo from "../../images/logo/social/linkedin.png"
 
 const MainMenu = (props) => {
   const data = useStaticQuery(graphql`
@@ -21,14 +24,27 @@ const MainMenu = (props) => {
           }
         }
       }
+      wordpressAcfOptions {
+        options {
+          social_networks {
+            profile_link
+            social_network
+          }
+        }
+      }
     }
   `)
 
   var menuItems = false; 
+  var socialItems = false;
   var menuId = false; 
+
   if(data.allWordpressMenusMenusItems){
     menuItems = data.allWordpressMenusMenusItems.edges[0].node.items;
     menuId  = data.allWordpressMenusMenusItems.edges[0].node.id;
+  }
+  if(data.wordpressAcfOptions){
+    socialItems = data.wordpressAcfOptions.options.social_networks
   }
   // The next function handles the open and close of the menu and also includes the logic for a11y trap inside the menu
   const handleMenu = (e => {
@@ -65,7 +81,7 @@ const MainMenu = (props) => {
               document.getElementById("close-menu").focus();     
               // Trap the focus loop inside the menu
               var element = document.getElementById("main-menu")
-              var focusableEls = document.querySelectorAll('#main-menu .menu__close__button, #main-menu .list__element a ');
+              var focusableEls = document.querySelectorAll('#main-menu .menu__close__button, #main-menu .list__element a, #main-menu .social_nav a ');
 
               var firstFocusableEl = focusableEls[0],  
                   lastFocusableEl = focusableEls[focusableEls.length - 1],
@@ -129,6 +145,33 @@ const MainMenu = (props) => {
           : ''
         }
       </ol>
+      <ul className={'social_nav'}>
+      {
+          socialItems
+          ? socialItems.map((network, index) => 
+              <a href={network.profile_link} target={'_BLANK'}  rel="noopener noreferrer">
+                <li key={`${network.social_network}-${index}`}  className={`social__item ${network.social_network}`}>
+                  {
+                    network.social_network === 'linkedin'
+                    ? <img src={LinkedinLogo} alt={'Linkedin Network Icon'} />
+                    : ""
+                  }
+                  {
+                    network.social_network === 'facebook'
+                    ? <img src={FacebookLogo} alt={'Facebook Network Icon'} />
+                    : ""
+                  }
+                  {
+                    network.social_network === 'twitter'
+                    ? <img src={TwitterLogo} alt={'Twitter Network Icon'} />
+                    : ""
+                  }
+                </li>
+              </a>
+            )
+          : ''
+        }
+      </ul>
     </nav>  
   )
 }

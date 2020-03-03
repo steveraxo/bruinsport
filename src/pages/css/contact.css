@@ -18,7 +18,6 @@
 }
 .contact__section__two h3{
     font-weight: normal;
-    width: 240px;
     margin-bottom: 30px;
 }
 .contact__section__two p{
@@ -26,8 +25,13 @@
     border-top: solid 2px #000000;
     padding: 18px 0;
     text-transform: uppercase;
+    font-weight: 400;
 }
-.column__data h4{
+.contact__section__three h2{
+    width: 310px;
+    font-weight: 600;
+}
+.column__data h3{
     color: #000000;
 }
 .contact__section__two .column__data div:last-child p{
@@ -42,13 +46,13 @@
     opacity: 0.4;
 }
 .contact__section__three{
-    padding: 50px 0!important;
+    padding: 80px 60px!important;
 }
 .contact__section__three__columns{
     margin: 20px 0 0;
 }
 .contact__section__three__columns .s__three__column{
-    padding: 50px 0px 20px;
+    padding: 0px 0px 20px;
     border-bottom: 3px solid #d5d5d5;
     display: flex;
     justify-content: center;
@@ -63,7 +67,7 @@
 }
 .contact__section__three__columns li{
     font-weight: 500;
-    margin: 30px 0;
+    margin: 20px 0;
     text-transform: none;
 }
 .contact__section__three .s__three__column .column__image{
@@ -83,20 +87,24 @@ fieldset {
     color: #000000;
     padding-left: 8px;
 }
-
+.async__form{
+    margin-top: 50px;
+}
 .interested__wrapper > label, .name__wrapper > label, .email__wrapper > label, .message__wrapper > label{
-    font-size: 40px;
-    line-height: 45px;
-    font-weight: 500;
+    font-size: 30px;
+    line-height: 30px;
+    font-weight: 600;
     text-transform: uppercase;
     color: #000000;
+    display: inline-grid;
+    width: 90%;
 }
 .floating__b__letter{
     background: white;
 }
-.column__data h4{
+.column__data h3{
     font-family: 'Muli';
-    font-weight: 500;
+    font-weight: 600;
     font-size: 30px;
     margin-bottom: 30px;
 }
@@ -110,10 +118,28 @@ input, textarea{
     padding-bottom: 5px;
     padding-top: 10px;
     background: transparent;
+    font-weight: 400;
 }
 .interested__wrapper #interest__group label{
     position: relative;
     cursor: pointer;
+    display: inherit;
+    width: 90%;
+    font-weight: 400;
+}
+label span{
+    margin-bottom: 10px;
+}
+#interest__option__one__label{
+    margin-top: 24px;
+    border-top: 2px solid #767676;
+    padding-top: 7px;
+    padding-bottom: 0px;
+}
+#interest__option__two__label{
+    border-top: 2px solid #767676;
+    border-bottom: 2px solid #767676;
+    padding: 8px 0;
 }
 .interested__wrapper #interest__group label h2{
     color: #767676;
@@ -125,9 +151,9 @@ input, textarea{
     line-height: 35px;
 }
 #interest__group legend{
-    font-size: 40px;
-    line-height: 45px;
-    font-weight: 500;
+    font-size: 30px;
+    line-height: 30px;
+    font-weight: 600;
     text-transform: uppercase;
     color: #000000;
     font-family: 'Muli', sans-serif;
@@ -157,7 +183,7 @@ input, textarea{
 }
 #interest__group input{
     position: absolute;
-    opacity: 1;
+    opacity: 0;
     top: 0;
     left: 0;
     width: 100%;
@@ -185,6 +211,9 @@ input, textarea{
     padding: 0;
     filter: contrast(4.51);
 }
+.async__form button{
+    width: 317px;
+}
 @media(min-width: 4000px){
     .contact__section__one .gatsby-image-wrapper {
         left: 0;
@@ -209,6 +238,9 @@ input, textarea{
     }
     .latest__article .content {
         min-height: 80px;
+    }
+    .contact__section__three {
+        padding: 80px 90px!important;
     }
 }
 @media(max-width: 1200px){
@@ -235,6 +267,12 @@ input, textarea{
         flex-direction: column;
         justify-content: flex-start;
     }
+    .contact__section__three h2 {
+        width: 470px;
+    }
+    .contact__section__three__columns .s__three__column:nth-last-child(-n+7) {
+        border-bottom: 3px solid #d5d5d5!important;
+    }
 }
 @media(max-width: 768px){
     .contact__section__two .column__data {
@@ -242,6 +280,9 @@ input, textarea{
     }
     .submit__wrapper {
         margin-top: 60px;
+    }
+    .contact__section__three {
+        padding: 80px 35px!important;
     }
     .interested__wrapper , .name__wrapper , .email__wrapper , .message__wrapper {
         display: flex;
@@ -299,6 +340,27 @@ input, textarea{
     }
     .contact__page form{
         margin-top: 30px;
+    }
+    .contact__section__three h2 {
+        width: auto;
+    }
+    .interested__wrapper #interest__group label {
+        width: 100%;
+    }
+    .interested__wrapper #interest__group label {
+        margin: 10px 0;
+    }
+    .async__form button {
+        width: 100%;
+    }
+    .submit__wrapper {
+        padding: 0;
+        margin-top: 0;
+    }
+    .form__section h1 {
+        padding: 0;
+        left: -5px;
+        position: relative;
     }
 }
 @media (max-width: 600px) and (orientation: landscape) {

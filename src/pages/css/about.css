@@ -4,6 +4,9 @@
     padding:208px 0 508px !important;
     
 }
+.about__header__top__subtitle{
+    margin: 40px 0 25px;
+}
 .about__header__top__title h1{
     max-width: 568px;
     line-height: 60px;
@@ -19,6 +22,13 @@
 }
 .about__header__column__one p, .about__header__column__two p{
     line-height: 45px;
+    font-weight: 500;
+}
+.about__header__top__subtitle h3{
+    font-weight: 600;
+}
+.mis__vals__soc{
+    color: black;
 }
 .about .history{
     position: relative;
@@ -29,12 +39,17 @@
     display: flex;
     align-items: center;
     max-width: 300px;
+    font-weight: 600;
 }
 .mission{
     margin-bottom: 80px;
 }
 .mission p{
     max-width: 544px;
+    font-weight: 500;
+}
+.values__description p, .social p{
+    font-weight: 500;
 }
 .values__information > .values__information__inner{
     border-top: 2px solid #999999;
@@ -131,6 +146,10 @@
 .history h2{
     position: relative;
     z-index: 9;
+    font-weight: 600;
+}
+.history__timeline__moment__description p{
+    font-weight: 500;
 }
 .history__timeline__moment{
     text-align: center;
@@ -212,7 +231,7 @@
         line-height: 70px;
     }
     .about__header__top__subtitle{
-        margin: 20px 0;
+        margin: 25px 0 15px;
     }
     .about__header__column__one p:nth-child(2), .about__header__column__two p:nth-child(2) {
         margin-top: 30px;
@@ -263,7 +282,13 @@
 }
 @media(max-width: 568px){
     .about__header__column__one p, .about__header__column__two p {
-        line-height: 50px;
+        line-height: 22px;
+    }
+    .values__description p {
+        line-height: 22px;
+    }
+    .social p {
+        line-height: 22px;
     }
     .about__header__top__title h1 {
         line-height: 60px;
@@ -293,13 +318,15 @@
         top: -65px;
     }
     .about__header {
-        clip-path: polygon(0 74%, 0 0, 100% 0, 100% 77%);
+        clip-path:polygon(0 63%, 0 0, 100% 0, 100% 67%);
         height: auto;
     }
     .mis__vals__soc {
         margin-top: -750px;
     }
-
+    .social p:nth-child(2), .social p {
+        margin-top: 30px;
+    }
 }
 @media(max-width: 414px){
     .social__logo__right .gatsby-image-wrapper {
@@ -316,10 +343,16 @@
         height: 60px!important;
     }
     .about__header {
-        clip-path: polygon(0 77%, 0 0, 100% 0, 100% 79%);
+        clip-path: polygon(0 64%, 0 0, 100% 0, 100% 67%);
     }
     .about__header__top__title h1 {
         line-height: 45px;
+    }
+    .values__information.\--open .values__information__inner::after {
+        top: 30px;
+    }
+    .values__information .values__information__inner::after {
+        top: 15px;
     }
 }
 @media (max-width: 823px) and (orientation: landscape) {

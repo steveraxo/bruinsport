@@ -258,6 +258,7 @@ query ApproachQuery {
             yoast_wpseo_canonical
           }
           acf {
+            page_subtitle
             first_column_block
             second_column_block
             first_slider_sections{

@@ -10,9 +10,9 @@
     color: white;
 }
 .top__menu a p{
-    font-family: 'Teko';
-    font-weight: 600;
-    font-size: 29.21px;
+    font-family: 'Muli';
+    font-weight: 400;
+    font-size: 25px;
     line-height: 35.05px;
 }
 /* Responsive for top menu*/
@@ -22,6 +22,15 @@
         padding: 0;
     }
     .top__menu a p {
-        font-size: 23.21px;
+        font-size: 18px;
     }
+    .menu__wrapper.main__menu ol li:after {
+        top: 38px;
+    }
+}
+@media(max-width: 360px){
+    .top__menu a p {
+        font-size: 14px;
+    }
+
 }

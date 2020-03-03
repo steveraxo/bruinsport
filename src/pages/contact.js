@@ -190,7 +190,7 @@ class ContactPage extends Component {
                         </div>
                       </div>
                       <div className={'col-md-12 col-lg-6 email__wrapper'}>
-                        <label htmlFor="your-email" ><span className={'invisible'}>Email address</span>
+                        <label htmlFor="your-email" ><span >Email address</span>
                         <input 
                           type="text" 
                           className={
@@ -238,7 +238,7 @@ class ContactPage extends Component {
                         </fieldset> 
                       </div>
                       <div className={'col-md-12 col-lg-6 message__wrapper'}>
-                        <label htmlFor="your-message" ><span className={'invisible'}>Your Message</span>
+                        <label htmlFor="your-message" ><span>Your Message</span>
                         <textarea 
                           value={message} 
                           className={message.length > 0 ? 'passed__field' : 'error__field'} 
@@ -298,7 +298,7 @@ class ContactPage extends Component {
                 {
                   pageAcf.three_columns_data.map((element, index) => 
                     <div className="col-sm-12 col-md-6 col-xl-4 text-left column__data" key={`three_columns_data-${element}-${index}`}>
-                      <h4 className="text-left" dangerouslySetInnerHTML={{__html: element.column_title}} />
+                      <h3 className="text-left" dangerouslySetInnerHTML={{__html: element.column_title}} />
                       {
                         element.column_element.map((subElement, index) => 
                           <div key={`column_element-${element}-${subElement}-${index}`}>
@@ -317,7 +317,7 @@ class ContactPage extends Component {
             <div className="container">
               <div className="row ">
                 <div className="col-sm-12 col-xl-6">
-                  <h2 className="mainText" dangerouslySetInnerHTML={{__html: pageAcf.portfolio_title}} />
+                  <h2 className="text-black" dangerouslySetInnerHTML={{__html: pageAcf.portfolio_title}} />
                 </div>
               </div>
               <div className="row contact__section__three__columns">

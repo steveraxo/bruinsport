@@ -7,7 +7,7 @@ import "./project.css"
 class Project extends Component {
     render() {
         const projectData = this.props.projectData; 
-console.log(projectData)
+
         return (
             <>
                 {
@@ -19,10 +19,10 @@ console.log(projectData)
                             </div>
                             <div className="container">
                                 <div className="row">
-                                    <div className={'col-md-12 col-lg-10 col-xl-10 text-left'}>
+                                    <div className={'col-md-12 col-lg-12 col-xl-12 text-left'}>
                                     <Img fixed={projectData.project_logo.localFile.childImageSharp.fixed} alt={'Client Logo'} tabIndex={0}/>
                                     <div dangerouslySetInnerHTML={{__html: projectData.project_description}} />
-                                    <ExternalButton buttonClass={'md-btn'} buttonText={'Learn More'} redirectionLink={projectData.project_link}></ExternalButton>
+                                    <ExternalButton buttonClass={'md-btn'} buttonText={projectData.button_text} redirectionLink={projectData.project_link}></ExternalButton>
                                     </div>
                                 </div>
                             </div>
@@ -44,7 +44,7 @@ console.log(projectData)
                                     <div dangerouslySetInnerHTML={{__html: projectData.project_description}} />
                                 </div>
                                 <div className={'portfolio__button'}>
-                                    <ExternalButton buttonClass={'md-btn'} buttonText={'Learn More'} redirectionLink={projectData.project_link}></ExternalButton>
+                                    <ExternalButton buttonClass={'md-btn'} buttonText={projectData.button_text} redirectionLink={projectData.project_link}></ExternalButton>
                                 </div>
                             </div>
                         </div>
@@ -65,7 +65,7 @@ console.log(projectData)
                                     <div dangerouslySetInnerHTML={{__html: projectData.project_description}} />
                                 </div>
                                 <div className={'portfolio__button'}>
-                                    <ExternalButton buttonClass={'md-btn'} buttonText={'Learn More'} redirectionLink={projectData.project_link}></ExternalButton>
+                                    <ExternalButton buttonClass={'md-btn'} buttonText={projectData.button_text} redirectionLink={projectData.project_link}></ExternalButton>
                                 </div>
                             </div>
                         </div>
@@ -91,7 +91,7 @@ console.log(projectData)
                                         <div dangerouslySetInnerHTML={{__html: projectData.project_description}} />
                                     </div>
                                     <div className={'portfolio__button'}>
-                                        <ExternalButton buttonClass={'md-btn'} buttonText={'Learn More'} redirectionLink={projectData.project_link}></ExternalButton>
+                                        <ExternalButton buttonClass={'md-btn'} buttonText={projectData.button_text} redirectionLink={projectData.project_link}></ExternalButton>
                                     </div>
                                 </div>
                             </div>

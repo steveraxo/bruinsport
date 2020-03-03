@@ -24,11 +24,12 @@
     padding: 15px 0;
 }
 .news__list_field{
-    font-weight: 500;
+    font-weight: 400;
     display: flex;
     justify-content: center;
     align-items: center;
     color: #000000;
+    text-transform: uppercase;
 }
 .news__list_field img{
     margin: 0 10px;

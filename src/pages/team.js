@@ -78,6 +78,14 @@ class MediaPage extends Component {
     document.querySelectorAll('html')[0].classList.remove('html__custom')
     document.querySelectorAll('.team__page .main__section')[0].classList.remove('no__clipPath')
   }
+
+  showContent(){
+      document.querySelectorAll('.team__extra__content')[0].classList.add('--show');
+      document.querySelectorAll('.team__page__first')[0].classList.add('--open');
+      document.querySelectorAll('.team__section')[0].classList.add('--open');
+
+      document.querySelectorAll('.team__page__first button')[0].classList.add('remove__content')
+  }
   render() {
     const pageData = this.props.data.allWordpressPage.edges[0].node
     const pageAcf = this.props.data.allWordpressPage.edges[0].node.acf
@@ -90,7 +98,7 @@ class MediaPage extends Component {
                 <link rel="canonical" href={pageData.yoast_meta.yoast_wpseo_canonical} />
             </Helmet>
             <div className={'team__page'}>
-                <section className={'main__section container-fluid'}>
+                <section className={'main__section container-fluid  team__page__first'}>
                     <div className="page__background">
                         <div className={'fade__top'}></div>
                         <Img fluid={pageData.featured_media.localFile.childImageSharp.fluid} alt={''} tabIndex={-1}/>
@@ -100,49 +108,31 @@ class MediaPage extends Component {
                     </div>
                     <div className={'container'}>
                         <div className={'row main__row'}>
-                            <div className={'col-md-12 col-xl-8'}>
+                            <div className={'col-md-12 col-xl-6'}>
                                 <div dangerouslySetInnerHTML={{__html: pageAcf.main_copy}} />
-                                <Popup onOpen={this.focusMain} onClose={this.changeBodyScroll} modal closeOnEscape closeOnDocumentClick trigger={<button className={'md-btn'}>Learn More</button>} position="center center">
-                                {close => (
-                                    <div>
-                                        <div className="popup__inner featured__wrapper team__main__popup" id={'popup__main'}>
-                                            <div className="triangle__big"></div>
-                                            <div className="triangle__small"></div>
-                                            <div className="featured__article row">
-                                                <div className={'col-md-12 col-lg-6'}>
-                                                    <div className="featured__artitle__inner">
-                                                        <div className="featured__article__top">
-                                                            <p className="featured__article__full__copy" dangerouslySetInnerHTML={{__html: pageAcf.full_copy}} />
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div className={'col-md-12 col-lg-6'}>
-                                                    <div className={'popup_iframe'}>
-                                                        <div className="featured__article__iframe" dangerouslySetInnerHTML={{__html: pageAcf.video_iframe}} />
-                                                    </div>
-                                                    <div className={'popup__logos row'}>
-                                                        {
-                                                            pageAcf.popup_logos.map((element, index) => 
-                                                                <div className={'col-xs-6 col-sm-4 col-md-4 col-lg-4 d-flex justify-content-center align-items-center'} key={`logo-${index}`}>
-                                                                    <a href={element.url} target={'_BLANK'} rel="noopener noreferrer">
-                                                                        <img src={element.logo.source_url} alt={''} tabIndex={-1}/>
-                                                                        <p className="featured__article__logo__desc" dangerouslySetInnerHTML={{__html: element.title}} />
-                                                                    </a>
-                                                                </div>
-                                                            )
-                                                        }
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>                                      
-                                        <button className="close" tabIndex="0" onClick={close} onKeyPress={close} id="close__menu" ></button>
-                                    </div>
-                                )}
-                            </Popup>
-
-     
                             </div>
-                            <div className={'col-md-12 col-xl-4'}></div>
+                            <div className={'col-md-12 col-xl-6 d-flex justify-element-end align-items-end'}>
+                                <div dangerouslySetInnerHTML={{__html: pageAcf.second_column_copy}} />
+                            </div>
+                            <div className="col-xl-12 ">
+                                <button class="md-btn" onClick={this.showContent}>Learn More</button>
+                            </div>
+                            <div className="col-xl-12 hidden team__extra__content">
+                                <div className={'iframe__team d-flex justify-content-center align-items-center'} dangerouslySetInnerHTML={{__html: pageAcf.video_iframe}} />
+                                <div className="popup__logos">
+                                    {
+                                        pageAcf.popup_logos.map((logo, index) => (
+                                            <div className="logo__wrapper" key={index}>
+                                                <a href={logo.url} target={'_BLANK'} rel="noopener noreferrer">
+                                                    <Img fixed={logo.logo.localFile.childImageSharp.fixed} alt={logo.title} />
+                                                </a>
+                                                <p className={'text-white'} dangerouslySetInnerHTML={{__html: logo.title}} />
+                                            </div>
+                                        ))
+                                    }
+                                </div>
+                            </div>
+
                         </div>
                     </div> 
                 </section>
@@ -253,6 +243,7 @@ query teamPageQuery {
         }
         acf {
             main_copy
+            second_column_copy
             full_copy
             video_iframe
             popup_logos{

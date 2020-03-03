@@ -42,6 +42,7 @@ section{
 .featured__wrapper .featured__article__title h4{
     font-weight: normal;
     color: black;
+    font-weight: 600;
 }
 .featured__wrapper .featured__article img{
     cursor: none;
@@ -49,13 +50,14 @@ section{
 }
 .featured__wrapper .featured__article__subtitle p{
     color:  #b02931;
-    font-weight: normal;
+    font-weight: 400;
+    text-transform: uppercase;
 }
 .featured__wrapper .featured__article__content{
     margin: 20px 0 30px;
 }
 .featured__article__subtitle{
-    margin-top: 20px;
+    margin-top: 0px;
 }
 .featured__wrapper .featured__article__content p{
     color: #000000;
@@ -68,6 +70,7 @@ section{
 }
 .featured__article__date{
     text-transform: uppercase;
+    font-weight: 400;
 }
 .featured__article__divider{
     background: #cccccc;

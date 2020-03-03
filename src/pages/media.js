@@ -79,7 +79,7 @@ class MediaPage extends Component {
                               <div className="featured__article" key={index}>
                                 <div className="featured__article__top">
                                   <div className="featured__article__title">
-                                    <h4>{element.post_title}</h4>
+                                    <h3>{element.post_title}</h3>
                                   </div>
                                   <div className="featured__article__subtitle">
                                     <p>{element.acf.subtitle}</p>
@@ -114,7 +114,7 @@ class MediaPage extends Component {
                   </div>
                   <div className="container">
                     <div className="row">
-                      <h2 className="mainText text-left" dangerouslySetInnerHTML={{__html: pageData.acf.news_section_title}} />
+                      <h2 className="text-black text-left" dangerouslySetInnerHTML={{__html: pageData.acf.news_section_title}} />
                       <div className="article__type__selector">
                         <button onClick={this.changeList} data-type={'news'} className="type__news type__selector active ">News</button>
                         <button onClick={this.changeList} data-type={'press'} className="type__press type__selector">Press Releases</button>

@@ -142,8 +142,10 @@ class HomePage extends Component {
             <div className="page__background">
               <Img fluid={pageData.featured_media.localFile.childImageSharp.fluid} alt={""} tabIndex={-1}/>
             </div>
-            <div className="container">
+            <div className="container-fluid">
               <div tabIndex={0} className="header__copy text-left" dangerouslySetInnerHTML={{__html: pageData.acf.main_copy}} />
+              <div className="featured__article__divider home__divider"></div>
+              <div tabIndex={0} className="home__copy text-left" dangerouslySetInnerHTML={{__html: pageData.acf.main_second_copy}} />
             </div>
             <div className="container-fluid">
                 <div className="clients__logos__wrapper">
@@ -208,7 +210,7 @@ class HomePage extends Component {
             <div className="container">
               <div className="row">
                 <div className={'col-md-12 col-lg-9'}>
-                  <h1 dangerouslySetInnerHTML={{__html: pageData.acf.our_approach_title}} />
+                  <h2 className={'text-black'} dangerouslySetInnerHTML={{__html: pageData.acf.our_approach_title}} />
                   <div dangerouslySetInnerHTML={{__html: pageData.acf.our_approach_content}} />
                   <InternalButton buttonText={pageData.acf.our_approach_button_text} redirectionLink={pageData.acf.our_approach_button_link}></InternalButton>
                 </div>
@@ -219,19 +221,19 @@ class HomePage extends Component {
             <Img className={'img__background'} fluid={pageData.acf.featured_background.localFile.childImageSharp.fluid} alt="" tabIndex={-1} />
             <div className="container">
               <div className="row">
-                <div className={'col-md-12 col-lg-4 col-xl-6'}></div>
-                <div className={'col-md-12 col-lg-8 col-xl-6 text-left'}>
-                  
-                  <h2 className={'mainText --white'} dangerouslySetInnerHTML={{__html: pageData.acf.featured_title}} />
+                <div className={'col-md-12 col-lg-4 col-xl-6 text-left'}>
+                  <h2 className={'text-white'} dangerouslySetInnerHTML={{__html: pageData.acf.featured_title}} />
                   <div dangerouslySetInnerHTML={{__html: pageData.acf.featured_content}} />
                   <InternalButton buttonText={pageData.acf.featured_button_text} redirectionLink={pageData.acf.featured_button_link}></InternalButton>
+                </div>
+                <div className={'col-md-12 col-lg-8 col-xl-6 '}>
                 </div>
               </div>
             </div>
           </section>
           <section className="container-fluid latest__news">
             <div className="container">
-              <h2 className={'mainText '} dangerouslySetInnerHTML={{__html: pageData.acf.latest_news_title}} />
+              <h2 className={'text-center text-black '} dangerouslySetInnerHTML={{__html: pageData.acf.latest_news_title}} />
             </div>  
             <div className="latest__news__wrapper">
             <Slider className="row featured__wrapper dark latest__news__wrapper" {...settings}>
@@ -300,6 +302,7 @@ query HomeQuery {
           get_started_title
           latest_news_title
           main_copy
+          main_second_copy
           our_approach_button_link
           our_approach_button_text
           our_approach_content

@@ -4,7 +4,7 @@ import { graphql } from "gatsby"
 import {Helmet} from "react-helmet";
 import "./css/index.css"
 import "./css/portfolio.css"
-import BruinLogo from "../images/media/bruin-letter.png"
+import BruinLogo from "../images/media/gray-b.png"
 import Project from "../components/portfolio/project"
 
 
@@ -28,8 +28,10 @@ class MediaPage extends Component {
                     </div>
                     <div className="container">
                         <div className="row">
-                            <div className={'col-md-12 col-lg-12'}>
+                            <div className={'col-md-12 col-lg-12 top__info'}>
                                 <h1 dangerouslySetInnerHTML={{__html: pageAcf.main_title}} />
+                                <div className="featured__article__divider "></div>
+                                <div dangerouslySetInnerHTML={{__html: pageAcf.main_second_title}} />
                             </div>
                         </div>
                     </div>
@@ -76,6 +78,7 @@ query portfolioPageQuery {
           }
         }
         acf {
+          main_second_title
           main_title
           project{
             project_background{
@@ -98,6 +101,7 @@ query portfolioPageQuery {
             }
             project_description
             project_link
+            button_text
             project_layout
             theme
           }

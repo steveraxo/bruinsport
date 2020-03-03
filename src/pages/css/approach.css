@@ -101,6 +101,21 @@
 }
 .approach__first__slider__title h3{
     margin-top: -20px;
+    font-weight: 600;
+}
+.approach__first__slider__copy p{
+    font-weight: 500;
+    line-height: 45px;
+}
+.testimonial__slider__element__testimonial p{
+    line-height: 45px;
+    font-weight: 500;
+}
+.testimonial__slider__element__info p:nth-child(1){
+    font-weight: 400;
+}
+.testimonial__slider__element__info p:nth-child(2){
+    font-weight: 500;
 }
 .approach__first__slider__copy{
     max-width: 840px;
@@ -146,6 +161,7 @@
     margin-bottom: 30px;
     left: -3px;
     position: relative;
+    font-weight: 600;
 }
 .approach__slider__controls .type__selector > * {
     pointer-events: none;
@@ -156,6 +172,9 @@
 }
 .approach__slider__controls .type__selector:last-child > div {
     left: 10px;
+}
+.approach__slider button {
+    font-weight: 600;
 }
 @media(max-width: 1280px){
     .about__header__column__one p br, .about__header__column__two p br{
@@ -173,9 +192,7 @@
     .approach__testimonial .testimonial__slider__element {
         min-height: 790px;
     }
-    .approach__testimonial .testimonial__slider__element img{
-        object-position: right!important;
-    }
+
 }
 @media(max-width: 768px){
     .approach__slider__controls {
@@ -200,6 +217,19 @@
 @media(max-width: 600px){
     .approach .page__background .gatsby-image-wrapper {
         left: 0px;
+    }
+    .approach__first__element__wrapper {
+        padding: 100px 20px 100px;
+        min-height: 400px;
+    }
+    .testimonial__slider__element__testimonial p {
+        line-height: 22px;
+    }
+    .approach__first__slider__element.\--s-active {
+        min-height: auto;
+    }
+    .approach__first__slider__copy p {
+        line-height: 22px;
     }
     .approach__header.about__header {
         height: 930px;
@@ -233,10 +263,10 @@
 }
 @media only screen and (max-width: 360px) {
     .approach__testimonial .testimonial__slider__element {
-        min-height: 1420px;
+        min-height: 930px;
     }
     .approach__testimonial .testimonial__slider__element img {
-        object-position: -2390px!important;
+        object-position: -1450px!important;
     }
 }
 @media (max-width: 900px) and (orientation: landscape) {

@@ -67,9 +67,9 @@
     line-height: 40.5px;
 }
 .menu__wrapper.main__menu ol li p{
-    font-family: 'Muli', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 20px;
-    font-weight: 900;
+    font-weight: 800;
 }
 .menu__wrapper.main__menu.--dark ol li a{
     color:white;

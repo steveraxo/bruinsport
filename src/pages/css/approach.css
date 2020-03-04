@@ -1,11 +1,22 @@
 .approach__header.about__header {
-    padding: 308px 0 708px !important;
+    padding: 188px 0 438px !important;
     position: relative;
 }
+.about__header.approach__header{
+    clip-path: polygon(0 41%, 0 0, 100% 0, 100% 100%);
+}
+.approach__header.about__header h3{
+    margin-top: 10px;
+}
+.approach .values__information .values__information__inner {
+    padding: 10px 0px 10px 11px;
+
+}
+
 .approach__header.about__header:before{
     content: "";
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background: #0000004d;
     position: absolute;
     top: 0;
@@ -23,11 +34,12 @@
     align-items: flex-end;
 }
 .approach__copy{
-    margin-top: -160px;
     margin-bottom: 150px;
+    margin-top: -100px;
 }
 .mis__vals__soc.approach_mvs{
     margin-top: auto;
+    margin-bottom: 100px;
 }
 .approach_mvs .mission p {
     max-width: 100%;
@@ -37,6 +49,8 @@
 }
 .approach_mvs .values__information .values__information__inner > p {
     text-transform: unset;
+    font-weight: 900;
+    font-size: 16px;
 }
 .approach_mvs .values__information {
     cursor: unset;
@@ -62,11 +76,11 @@
     padding: 0 40px;
 }
 .testimonial__slider__element__testimonial{
-    max-width: 890px;
+    max-width: 640px;
     width: 100%;
 }
 .testimonial__element__wrapper .featured__article__divider {
-    margin: 80px 0 40px;
+    margin: 30px 0 30px;
 }
 .testimonial__slider .slick-arrow.slick-next {
     right: 47%!important;
@@ -87,7 +101,13 @@
     position: relative;
 }
 .mis__vals__soc.approach_mvs {
-    margin-top: 70px;
+    margin-top: 30px;
+}
+.mis__vals__soc.approach_mvs h2{
+    margin-bottom: 10px;
+}
+.mis__vals__soc.approach_mvs .mission {
+    margin-bottom: 45px;
 }
 .approach__slider__wrapper{
     top: -40px;
@@ -122,20 +142,21 @@
 }
 .approach__first__slider__copy p{
     font-weight: 500;
-    line-height: 45px;
+    line-height: 40px;
 }
 .testimonial__slider__element__testimonial p{
-    line-height: 45px;
+    line-height: 40px;
     font-weight: 500;
 }
 .testimonial__slider__element__info p:nth-child(1){
-    font-weight: 400;
+    font-weight: 900;
 }
 .testimonial__slider__element__info p:nth-child(2){
-    font-weight: 500;
+    position: relative;
+    top: -12px;
 }
 .approach__first__slider__copy{
-    max-width: 840px;
+    max-width: 610px;
     width: 100%;
     margin-top: 40px;
 }
@@ -190,17 +211,69 @@
 .approach__slider__controls .type__selector:last-child > div {
     left: 10px;
 }
-.approach__slider button {
-    font-weight: 600;
+
+@media(max-width: 1600px){
+    .approach__copy {
+        margin-bottom: 115px;
+        margin-top: -70px;
+    }
+}
+@media(max-width: 1388px){
+    .approach .arrow__button {
+        font-size: 12px;
+        line-height: 12px;
+    }
+    .approach .arrow__button.--active::before, .approach .arrow__button::before {
+        border-top: 32px solid transparent;
+        border-bottom: 32px solid transparent;
+    }
+    .approach .arrow__button::after{
+        border-top: 32px solid transparent;
+        border-bottom: 32px solid transparent;       
+    }
 }
 @media(max-width: 1280px){
     .about__header__column__one p br, .about__header__column__two p br{
         display: none;
     }
-    .arrow__button {
-        font-size: 15px;
+    .approach__first__element__wrapper {
+        min-height: 600px;
+        padding: 200px 100px 200px;
     }
 }
+@media(max-width: 1200px){
+    .approach__copy {
+        margin-top: 30px;
+    }
+    .about__header__column__two {
+        padding-left: 18px;
+    }
+    .approach__copy {
+        padding: 0 100px!important;
+    }
+    .about__header__column__one br, .about__header__column__two br{
+        display: none;
+    }
+}
+@media(max-width: 1175px){
+    .approach .arrow__button {
+        padding: 20px 32px;
+    }
+    .approach .arrow__button {
+        font-size: 10px;
+        line-height: 10px;
+    }
+    .approach .arrow__button.--active::before, .approach .arrow__button::before {
+        border-top: 30px solid transparent;
+        border-bottom: 30px solid transparent;
+    }
+    .approach .arrow__button::after{
+        border-top: 30px solid transparent;
+        border-bottom: 30px solid transparent;       
+    }
+
+}
+
 @media(max-width: 1024px){
     .arrow__button {
         padding: 20px 27px;
@@ -216,7 +289,7 @@
         display: none;
     }
     .approach__header.about__header {
-        height: 1200px;
+        height: 900px;
     }
     .approach__copy {
         margin-top: -240px;
@@ -230,6 +303,9 @@
     .testimonial__slider .slick-arrow.slick-prev {
         left: 45%!important;
     }
+    .about__header.approach__header {
+        clip-path: polygon(0 50%, 0 0, 100% 0, 100% 70%);
+    }
 }
 @media(max-width: 600px){
     .approach .page__background .gatsby-image-wrapper {
@@ -240,13 +316,13 @@
         min-height: 400px;
     }
     .testimonial__slider__element__testimonial p {
-        line-height: 22px;
+        line-height: 30px;
     }
     .approach__first__slider__element.\--s-active {
         min-height: auto;
     }
     .approach__first__slider__copy p {
-        line-height: 22px;
+        line-height: 30px;
     }
     .approach__header.about__header {
         height: 930px;
@@ -275,7 +351,10 @@
         right: 40%!important;
     }
     .approach__testimonial .testimonial__slider__element {
-        min-height: 1220px;
+        min-height: 870px;
+    }
+    .approach__copy {
+        padding: 0 15px!important;
     }
 }
 @media only screen and (max-width: 360px) {

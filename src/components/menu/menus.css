@@ -52,11 +52,11 @@
 .menu__wrapper.main__menu ol li:after{
     content: "";
     width: 100%;
-    height: 3px;
-    background: white;
+    height: 2px;
+    background: #a3a3a3;
     position: absolute;
     left: 0;
-    opacity: 0.5;
+    opacity: 0.8;
     top: 50px;
 }
 .menu__wrapper.main__menu ol li a{
@@ -67,9 +67,9 @@
     line-height: 40.5px;
 }
 .menu__wrapper.main__menu ol li p{
-    font-family: Muli;
-    font-size: 25px;
-    font-weight: 400;
+    font-family: 'Muli';
+    font-size: 20px;
+    font-weight: 900;
 }
 .menu__wrapper.main__menu.--dark ol li a{
     color:white;

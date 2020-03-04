@@ -1,10 +1,10 @@
-.container{
+/* .container{
   max-width: 1371px;
-}
+} */
 .text-black{
   color: #000000;
 }
-@media (max-width: 1440px){
+/* @media (max-width: 1440px){
   .container{max-width: 1261px;}
 }
 
@@ -23,7 +23,7 @@
 @media (max-width: 576px)
 {.container, .container-sm {
     max-width: 540px;
-}}
+}} */
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -350,14 +350,14 @@ h6 {
   line-height: 1.1;
 }
 body h1{
-  font-size: 70px;
-  line-height: 65px;
+  font-size: 50px;
+  line-height: 50px;
   font-weight: 600;
   margin: 0;
   padding: 0;
 }
 body .mainText { 
-  font-size: 70px;
+  font-size: 63px;
   line-height: 65px;
   font-weight: 500;
   margin: 0;
@@ -370,15 +370,15 @@ body .mainText.--white{
   color: #ffffff;
 }
 body h2{
-  font-size: 50px;
+  font-size: 43px;
   line-height: 44px;
   font-weight: 500;
   margin: 0;
   padding: 0;
 }
 body h3{
-  font-size: 30px;
-  line-height: 30px;
+  font-size: 25px;
+  line-height: 35px;
   font-weight: 500;
   margin: 0;
   padding: 0;
@@ -403,13 +403,10 @@ body h6{
   margin: 0;
   padding: 0;
 }
-body p{
-  font-size: 22px;
-  
-}
 body p, body li{
-  font-size: 21px;
+  font-size: 17px;
   line-height: 36px;
+  font-weight: 600;
 }
 body small{
   font-size: 14.25px;
@@ -708,71 +705,21 @@ pre tt:after {
   content: "";
 }
 @media(max-width: 500px){
-  body h3 {
-    font-size: 35px;
-    line-height: 35px;
-  }
-  body p, body li {
-      line-height: 22px;
+  p{
+    line-height: 30px;
   }
 }
 @media only screen and (max-width: 1024px) {
-  body h1 {
-    font-size: 70px;
-  }
-  body .mainText { 
-    font-size: 60px;
-    line-height: 90px;
-  }
-  body h2 {
-    font-size: 50px;
-    line-height: 50px;
-  }
-  body h3 {
-      font-size: 30px;
-      line-height: 30px;
-  }
-  body h4 {
-    font-size: 28px;
-  }
-  body h5 {
-    font-size: 25px;
-    font-weight: 500;
-  }
+
 }
 @media only screen and (max-width: 568px) {
   html {
     font-size: 100%;
   }
-  body p, body li {
-    font-size: 16px;
-  }
-  body h1{
-    font-size: 55px;
-    line-height: 55px;
-  }
-  body h2 {
-    font-size: 40px;
-    line-height: 40px;
-  }
-  body h3 {
-    font-size: 35px;
-    line-height: 40px;
-  }
+
 }
 @media only screen and (max-width: 360px) {
-  body h1{
-    font-size: 45px;
-    line-height: 45px;
-  }
-  body h2 {
-    font-size: 30px;
-    line-height: 28px;
-  }
-  body h3 {
-    font-size: 25px;
-    line-height: 28px;
-  }
+
 }
 
 

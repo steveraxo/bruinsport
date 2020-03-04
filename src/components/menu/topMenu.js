@@ -46,7 +46,7 @@ const MainMenu = (props) => {
           : ''
         }
       </ul>
-      <div className="top__menu__divider mr-4 ml-4"></div>
+      <div className="top__menu__divider mr-3 ml-3"></div>
       <BurguerButton ></BurguerButton>
     </nav>  
   )

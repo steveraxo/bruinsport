@@ -133,7 +133,7 @@ button.type__news:after {
     height: 0;
     border-top: 37px solid transparent;
     border-bottom: 36px solid transparent;
-    border-left: 40px solid #ffffff;
+    border-left: 40px solid #cccccc;
     content: "";
     position: absolute;
     top: 0;

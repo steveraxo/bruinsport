@@ -223,8 +223,8 @@ label span{
 }
 @media(max-width: 1920px){
     .contact__section__one .gatsby-image-wrapper {
-        left: 0;
-        width: 40%;
+        left: -80px;
+        width: 50%;
     }
 }
 @media(max-width: 1445px){

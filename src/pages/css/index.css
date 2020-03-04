@@ -1,3 +1,7 @@
+a{
+    color: white;
+    font-weight: 900;
+}
 section{
     padding: 0!important;
     margin: 0;
@@ -26,13 +30,13 @@ section{
 }
 .featured__article{
     text-align: left;
-    padding: 40px 60px;
+    padding: 20px 40px 40px;
     display: flex!important;
     flex-direction: column;
     justify-content: center;
     border: solid 8px #cccccc;
     max-width: 1480px;
-    width: 100%;
+    width: 87%;
     background: white;
     margin: 0 auto;
 }
@@ -74,8 +78,8 @@ section{
 }
 .featured__article__divider{
     background: #cccccc;
-    width: 66px;
-    height: 14px;
+    width: 45px;
+    height: 11px;
     z-index: 9;
     position: relative;
     margin: 20px 0;
@@ -87,6 +91,9 @@ section{
 }
 .featured__article__bottom.flex-end{
     justify-content: flex-end;
+    position: absolute;
+    bottom: 50px;
+    right: 140px;
 }
 .img__background{
     position: absolute!important;

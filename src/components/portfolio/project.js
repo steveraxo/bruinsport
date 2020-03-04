@@ -1,6 +1,5 @@
 
 import React, { Component } from "react"
-import ExternalButton from "../../components/master/buttons/externalButton"
 import Img from "gatsby-image"
 import Popup from "reactjs-popup";
 

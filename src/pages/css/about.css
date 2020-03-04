@@ -1,7 +1,7 @@
 .about__header{
     position: relative;
     clip-path: polygon(0 63%, 0 0, 100% 0, 100% 100%);
-    padding:208px 0 508px !important;
+    padding:208px 0 728px !important;
     
 }
 .about__header__top__subtitle{
@@ -17,10 +17,10 @@
     padding-left: 40px;
 }
 .about__header__column__one p:nth-child(2), .about__header__column__two p:nth-child(2){
-    margin-top: 80px;
+    margin-top: 40px;
 }
 .about__header__column__one p, .about__header__column__two p{
-    line-height: 45px;
+    line-height: 40px;
     font-weight: 500;
 }
 .about__header__top__subtitle h3{
@@ -190,11 +190,6 @@
 .history__timeline .slick-slide.slick-current .history__timeline__moment__description{
     display: block;
 }
-.history__timeline .slick-slide.slick-current .history__timeline__moment__description{
-    width: 500px;
-    transform: translateX(-20%);
-    margin-top: 20px;
-}
 .history__timeline .slick-slide.slick-current .history__timeline__moment__date{
     color: #ffffff;
 }
@@ -209,6 +204,11 @@
 .history__timeline .featured__wrapper.slick-slider {
     padding: 0!important;
     margin: 0!important;
+}
+@media(max-width:2000px){
+    .about__header {
+        clip-path: polygon(0 75%, 0 0, 100% 0, 100% 100%);
+    }
 }
 @media(max-width: 1024px){
     .social {
@@ -242,8 +242,8 @@
         margin-top: 30px;
     }
     .about__header {
-        clip-path: polygon(0 63%, 0 0, 100% 0, 100% 80%);
-        padding: 118px 0 938px !important;
+        clip-path: polygon(0 74%, 0 0, 100% 0, 100% 85%);
+        padding: 208px 0 868px !important;
     }
     .mis__vals__soc {
         margin-top: -600px;
@@ -253,7 +253,7 @@
     .about__header {
         clip-path: polygon(0 63%, 0 0, 100% 0, 100% 73%);
         padding: 118px 0 938px !important;
-        height: 3000px;
+        height: 4300px;
     }
     .mis__vals__soc {
         margin-top: -800px;
@@ -281,15 +281,16 @@
         display: none;
     }
 }
+
 @media(max-width: 568px){
     .about__header__column__one p, .about__header__column__two p {
-        line-height: 22px;
+        line-height: 30px;
     }
     .values__description p {
-        line-height: 22px;
+        line-height: 30px;
     }
     .social p {
-        line-height: 22px;
+        line-height: 30px;
     }
     .about__header__top__title h1 {
         line-height: 60px;
@@ -323,20 +324,30 @@
         height: auto;
     }
     .mis__vals__soc {
-        margin-top: -750px;
+        margin-top: -1050px;
     }
     .social p:nth-child(2), .social p {
         margin-top: 30px;
     }
+
 }
 @media(max-width: 414px){
     .social__logo__right .gatsby-image-wrapper {
         height: 80px!important;
     }
+    .about__header {
+        height: 3310px;
+    }
 }
 @media(max-width: 375px){
     .social__logo__right .gatsby-image-wrapper {
         height: 70px!important;
+    }
+    .about__header {
+        height: 3710px;
+    }
+    .mis__vals__soc {
+        margin-top: -1220px;
     }
 }
 @media(max-width: 360px){
@@ -347,7 +358,7 @@
         clip-path: polygon(0 64%, 0 0, 100% 0, 100% 67%);
     }
     .about__header__top__title h1 {
-        line-height: 45px;
+        line-height: 40px;
     }
     .values__information.\--open .values__information__inner::after {
         top: 30px;
@@ -355,11 +366,15 @@
     .values__information .values__information__inner::after {
         top: 15px;
     }
+    .about__header {
+        height: 3880px;
+    }
 }
 @media (max-width: 823px) and (orientation: landscape) {
     .about__header {
         clip-path: polygon(0 69%, 0 0, 100% 0, 100% 77%);
         height: auto;
+        padding: 208px 0 1208px !important;
     }
     .social__logo__right .gatsby-image-wrapper {
         height: 150px!important;
@@ -371,13 +386,16 @@
     .history__timeline__moment__date p::after {
         display: none;
     }
+    .mis__vals__soc {
+        margin-top: -900px;
+    }
 }
 @media (max-width: 736px) and (orientation: landscape) {
     .about__header {
         clip-path: polygon(0 71%, 0 0, 100% 0, 100% 76%);
     }
     .mis__vals__soc {
-        margin-top: -750px;
+        margin-top: -980px;
     }
     .social__logo__right .gatsby-image-wrapper {
         height: 110px!important;
@@ -387,8 +405,20 @@
         width: auto;
     }
 }
+@media (max-width: 568px) and (orientation: landscape) {
+    .about__header {
+        padding: 208px 0 808px !important;
+    }
+    .mis__vals__soc {
+        margin-top: -580px;
+    }
+}
+
 @media (max-width: 480px) and (orientation: landscape) {
     .social__logo__right .gatsby-image-wrapper {
         height: 90px!important;
+    }
+    .mis__vals__soc {
+        margin-top: -650px;
     }
 }

@@ -1,8 +1,8 @@
 button{
-    font-size: 22px;
+    
     background: #b02931;
     color: white;
-    padding: 20px 85px;
+    padding: 16px 60px;
     letter-spacing: 1px;
     border: none;
     text-transform: uppercase;
@@ -12,7 +12,8 @@ button{
 }
 button a{
     color: white;
-    font-weight: normal;
+    font-size: 17px;
+    font-weight: 700;
     text-transform: uppercase;
 }
 button:disabled{
@@ -24,7 +25,7 @@ button.dark-btn{
     margin-top: 20px;
 }
 button.md-btn{
-    padding: 20px 45px;
+    padding: 13px 60px;
     font-size: 21px;
 }
 button.small-btn{
@@ -33,17 +34,17 @@ button.small-btn{
 }
 /* arrow buttons */
 .arrow__button{ 
-    background: #767676;
     padding: 20px 50px;
     position: relative;
-    font-size: 20px;
-    line-height: 22px;
+    font-size: 17px;
+    line-height: 16px;
+    font-weight: 700;
 }
 .arrow__button::before{
     width: 0;
     height: 0;
-    border-top: 42px solid transparent;
-    border-bottom: 42px solid transparent;
+    border-top: 36px solid transparent;
+    border-bottom: 36px solid transparent;
     border-left: 40px solid #767676;
     content: "";
     position: absolute;
@@ -54,8 +55,8 @@ button.small-btn{
 .arrow__button.--active::before{
     width: 0;
     height: 0;
-    border-top: 42px solid transparent;
-    border-bottom: 42px solid transparent;
+    border-top: 36px solid transparent;
+    border-bottom: 36px solid transparent;
     border-left: 40px solid #b02831;
     content: "";
     position: absolute;
@@ -66,8 +67,8 @@ button.small-btn{
 .arrow__button::after{
     width: 0;
     height: 0;
-    border-top: 42px solid transparent;
-    border-bottom: 42px solid transparent;
+    border-top: 36px solid transparent;
+    border-bottom: 36px solid transparent;
     border-left: 40px solid #ffffff;
     content: "";
     position: absolute;
@@ -92,6 +93,9 @@ button.small-btn{
         padding: 10px 25px;
         font-size: 1.125rem;
     }
+    button {
+        padding: 15px 45px;
+    }
 }
 @media (max-width: 1152px)
 {.latest__news button.small-btn {
@@ -107,7 +111,9 @@ button.small-btn{
         padding: 20px 60px;
         font-size: 16px;
     }
-
+    button {
+        padding: 15px 35px;
+    }
 }
 @media (max-width: 812px) and (orientation: landscape) {
     .latest__news button.small-btn {
@@ -120,9 +126,7 @@ button.small-btn{
 }
 
 @media (max-width: 500px){
-    button {
-        padding: 20px 45px;
-    }
+
     button.md-btn {
         padding: 15px 45px;
         font-size: 18px;

@@ -95,7 +95,7 @@
     }
     .team__page .main__section p{
         color: white;
-        line-height: 45px;
+        line-height: 40px;
         margin: 50px 0;
         font-weight: 500;
     }
@@ -147,7 +147,7 @@
         padding: 60px 90px;
     }
     .team__page .team__section p{
-        line-height: 45px;
+        line-height: 40px;
         margin-top: 25px;
         font-weight: 500;
     }

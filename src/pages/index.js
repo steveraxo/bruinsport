@@ -89,7 +89,7 @@ class HomePage extends Component {
     // This variable will return all the fields related to the post
     const pageData = this.props.data.allWordpressPage.edges[0].node,
           newsData = this.props.data.allWordpressWpNews.edges;
-
+    console.log(pageData)
     //Slick Setting
     let settings = {
       dots: false,
@@ -224,7 +224,7 @@ class HomePage extends Component {
                 <div className={'col-md-12 col-lg-4 col-xl-6 text-left'}>
                   <h2 className={'text-white'} dangerouslySetInnerHTML={{__html: pageData.acf.featured_title}} />
                   <div dangerouslySetInnerHTML={{__html: pageData.acf.featured_content}} />
-                  <InternalButton buttonText={pageData.acf.featured_button_text} redirectionLink={pageData.acf.featured_button_link}></InternalButton>
+                  <ExternalButton buttonText={pageData.acf.featured_button_text} redirectionLink={pageData.acf.featured_button_link.source_url}></ExternalButton>
                 </div>
                 <div className={'col-md-12 col-lg-8 col-xl-6 '}>
                 </div>
@@ -242,7 +242,7 @@ class HomePage extends Component {
                   <div className="latest__article" key={`newsData-${element}-${index}`}>
                     <div className={'title'} dangerouslySetInnerHTML={{__html: element.node.content}} />
                     <div className={'content'} dangerouslySetInnerHTML={{__html: element.node.content}} />
-                    <ExternalButton buttonClass={'small-btn'} buttonText={'Read More'} redirectionLink={element.node.acf.external_news_link} ></ExternalButton>
+                    <ExternalButton buttonClass={''} buttonText={'Read More'} redirectionLink={element.node.acf.external_news_link} ></ExternalButton>
                   </div>
                 )
               }
@@ -292,7 +292,9 @@ query HomeQuery {
           }
         }
         acf {
-          featured_button_link
+          featured_button_link {
+            source_url
+          }
           featured_button_text
           featured_content
           featured_title

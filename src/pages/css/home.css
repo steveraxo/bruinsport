@@ -24,7 +24,7 @@
     max-width: 500px;
 }
 .home__page .featured__section h4{
-    font-family: "Muli";
+    font-family: 'Muli', sans-serif;
     font-weight: normal;
     color: white;
 }
@@ -40,7 +40,7 @@
     -webkit-text-stroke: thin;
 }
 .home__page .latest__news .content p{
-    font-family: "Muli";
+    font-family: 'Muli', sans-serif;
     font-weight: 500;
     font-style: normal;
     line-height: 27px;

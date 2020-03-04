@@ -67,7 +67,7 @@
     line-height: 40.5px;
 }
 .menu__wrapper.main__menu ol li p{
-    font-family: 'Muli';
+    font-family: 'Muli', sans-serif;
     font-size: 20px;
     font-weight: 900;
 }

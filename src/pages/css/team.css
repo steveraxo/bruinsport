@@ -88,7 +88,7 @@
     .team__page .main__section h4{
         color: white;
         line-height: 30px;
-        font-family: 'Muli';
+        font-family: 'Muli', sans-serif;
         margin: 30px 0 20px;
         font-weight: 600;
         font-size: 30px;
@@ -166,7 +166,7 @@
     }
     .team__members .team__inside h4{
         margin-top: 20px;
-        font-family: 'Muli';
+        font-family: 'Muli', sans-serif;
         font-weight: 600;
         color: #000000;
         line-height: 30px;

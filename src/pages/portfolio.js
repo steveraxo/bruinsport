@@ -78,6 +78,7 @@ query portfolioPageQuery {
           }
         }
         acf {
+
           main_second_title
           main_title
           project{
@@ -98,6 +99,16 @@ query portfolioPageQuery {
                         }
                     }
                 }
+            }
+            popup_content
+            popup_background {
+              localFile {
+                childImageSharp {
+                    fluid(maxWidth: 4000, quality: 100) {
+                    ...GatsbyImageSharpFluid_withWebp
+                    }
+                }
+              }
             }
             project_description
             project_link

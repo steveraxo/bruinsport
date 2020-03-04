@@ -149,8 +149,8 @@ const MainMenu = (props) => {
       {
           socialItems
           ? socialItems.map((network, index) => 
-              <a href={network.profile_link} target={'_BLANK'}  rel="noopener noreferrer">
-                <li key={`${network.social_network}-${index}`}  className={`social__item ${network.social_network}`}>
+              <a href={network.profile_link} key={`${network.social_network}-${index}`}  target={'_BLANK'}  rel="noopener noreferrer">
+                <li  className={`social__item ${network.social_network}`}>
                   {
                     network.social_network === 'linkedin'
                     ? <img src={LinkedinLogo} alt={'Linkedin Network Icon'} />

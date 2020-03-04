@@ -39,7 +39,7 @@
     .team__extra__content.--show{
         display: block;
     }
-    #popup__team .featured__article .gatsby-image-wrapper{
+    .team__page #popup__team .featured__article .gatsby-image-wrapper{
         width: 100%!important;
         height: 100%!important;
         position: absolute!important;

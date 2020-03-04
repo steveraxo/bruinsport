@@ -17,7 +17,6 @@ class MediaPage extends Component {
     document.getElementById("close__menu").focus(); 
 
     document.querySelectorAll('html')[0].classList.add('html__custom')
-    
     // Trap the focus loop inside the menu
     var theElement = document.querySelectorAll('.popup__inner')[0].id; 
 

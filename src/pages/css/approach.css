@@ -315,6 +315,9 @@
         padding: 100px 20px 100px;
         min-height: 400px;
     }
+    .approach__header.about__header {
+        height: 920px;
+    }
     .testimonial__slider__element__testimonial p {
         line-height: 30px;
     }
@@ -326,7 +329,7 @@
     }
     .approach__header.about__header {
         height: 930px;
-        padding: 308px 0 338px !important;
+        padding: 218px 0 338px !important;
         clip-path: polygon(0 74%, 0 0, 100% 0, 100% 87%);
     }
     .approach__copy {
@@ -357,6 +360,7 @@
         padding: 0 15px!important;
     }
 }
+
 @media only screen and (max-width: 360px) {
     .approach__testimonial .testimonial__slider__element {
         min-height: 930px;
@@ -371,5 +375,26 @@
     }
     .approach__testimonial .testimonial__slider__element {
         min-height: 940px;
+    }
+}
+@media only screen and (max-width: 850px) and (orientation: landscape){
+    .about__header.approach__header {
+        clip-path: polygon(0 72%, 0 0, 100% 0, 100% 100%);
+    }
+}
+@media only screen and (max-width: 680px) and (orientation: landscape) {
+    .approach__header.about__header {
+        height: 520px;
+    }
+    .approach__copy {
+        margin-top: 0;
+    }
+    .approach__copy {
+        padding: 0 40px!important;
+    }
+}
+@media only screen and (max-width: 480px) and (orientation: landscape) {
+    .approach__header.about__header {
+        height: 780px;
     }
 }

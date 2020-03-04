@@ -372,15 +372,15 @@
     .home__page .featured__section {
         margin-top: -450px;
     }
-    .home__page .header__copy{
-        left: 120px;
-        top: 21%;
+    .home__page .header__copy {
+        left: 114px;
+        top: 28%;
     }
     .home__page .media__featured .featured__article__divider.home__divider {
-        left: 120px;
+        left: 117px;
     }
     .home__page .home__copy {
-        left: 120px;
+        left: 117px;
     }
 }
 @media(max-width: 1600px){
@@ -393,6 +393,7 @@
     .home__page .featured__section .container {
         padding: 420px 0 60px;
     }
+
 
 }
 @media(max-width: 1440px){

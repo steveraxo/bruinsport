@@ -97,11 +97,18 @@ button.small-btn{
         padding: 15px 45px;
     }
 }
-@media (max-width: 1152px)
-{.latest__news button.small-btn {
-    padding: 8px 15px;
-    font-size: 16px;
-}}
+@media (max-width: 1152px){
+        .latest__news button.small-btn {
+        padding: 8px 15px;
+        font-size: 16px;
+    }
+
+}
+@media (max-width: 1097px){
+    button {
+        padding: 15px 35px;
+    }
+}
 @media(max-width: 1024px){
     .latest__news button.small-btn {
         padding: 10px 21px;
@@ -113,6 +120,11 @@ button.small-btn{
     }
     button {
         padding: 15px 35px;
+    }
+}
+@media (max-width: 800px){
+    button {
+        padding: 15px 30px;
     }
 }
 @media (max-width: 812px) and (orientation: landscape) {

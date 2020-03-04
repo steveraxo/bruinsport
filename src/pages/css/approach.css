@@ -81,6 +81,7 @@
 }
 .testimonial__element__wrapper .featured__article__divider {
     margin: 30px 0 30px;
+    background: #3c3c3c;
 }
 .testimonial__slider .slick-arrow.slick-next {
     right: 47%!important;

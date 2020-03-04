@@ -3,6 +3,19 @@
     position: relative;
     color: #000000;
 }
+.portfolio__page .triangle__small{
+    display: none;
+}
+.portfolio__page .popup-content .close{
+    margin-top: 30px;
+    position: absolute;
+    top: 10px;
+    right: 160px;
+    opacity: 1;
+}
+.portfolio__page .popup-content .close:before, .portfolio__page .popup-content .close:after {
+    background-color: #ffffff;
+}
 .portfolio__page .our__approach {
     position: relative;
     background: #999999;

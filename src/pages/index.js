@@ -24,6 +24,8 @@ class HomePage extends Component {
   focusTrap(){
     setTimeout(function(){ 
 
+    document.getElementById("section-2").scrollIntoView();
+
     document.querySelectorAll('html')[0].classList.add('html__custom')
     // Focus the element on the burguer menu
     document.getElementById("close__menu").focus(); 
@@ -203,7 +205,7 @@ class HomePage extends Component {
                 </div>
             </div>
           </section>
-          <section className="our__approach container-fluid">
+          <section className="our__approach container-fluid" id="section-2">
             <div className="floating__letter">
               <BruinLogo />
             </div>

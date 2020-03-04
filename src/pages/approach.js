@@ -95,6 +95,7 @@ class ApproachPage extends Component {
                         <div className="col-xl-12 about__header__top">
                             <div className="">
                                 <h1 className={'text-white text-center'}>{pageData.title}</h1>
+                                <h3 className={'text-white text-center'}>{pageAcf.page_subtitle}</h3>
                             </div>
                         </div>
                     </div>

@@ -404,7 +404,9 @@
     .latest__article .content {
         min-height: 100px;
     }
-
+    .home__page .header__copy, .home__page .home__copy, .home__page .media__featured .featured__article__divider.home__divider {
+        left: 60px;
+    }
 }
 @media(max-width: 1428px){
     .home__page .header__copy {

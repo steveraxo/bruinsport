@@ -140,14 +140,21 @@ button.small-btn{
 @media (max-width: 500px){
 
     button.md-btn {
-        padding: 15px 45px;
+        padding: 15px 30px;
         font-size: 18px;
+        width: 100%;
     }
     .latest__news button.small-btn {
         font-size: 22px;
         padding: 20px 35px;
     }
 }
+@media (max-width: 900px) and (orientation: landscape) {
+    .media__page .featured__article {
+        height: auto; 
+    }
+}
+
 @media (max-width: 600px) and (orientation: landscape) {
     .latest__news button.small-btn {
         padding: 10px 15px;

@@ -95,7 +95,7 @@ class MediaPage extends Component {
                                       <p>{element.post_date}</p>
                                     </div>
                                     <div className="featured__article__source">
-                                      <p>{element.acf.source_text}</p>
+                                      <p><strong> Source </strong> {element.acf.source_text}</p>
                                     </div>
                                   </div>
                                   <div className="featured__article__cta">

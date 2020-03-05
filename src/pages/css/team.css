@@ -88,10 +88,8 @@
     .team__page .main__section h4{
         color: white;
         line-height: 30px;
-        font-family: 'Muli', sans-serif;
-        margin: 30px 0 20px;
+        margin: 20px 0 20px;
         font-weight: 600;
-        font-size: 30px;
     }
     .team__page .main__section p{
         color: white;
@@ -144,7 +142,7 @@
         width: 100%;
         top: 0;
         position: relative;
-        padding: 60px 90px;
+        padding: 40px 40px;
     }
     .team__page .team__section p{
         line-height: 40px;
@@ -154,8 +152,12 @@
     .team__page .team__section .featured__wrapper .featured__article__content {
         margin: 10px 0;
     }
-    .team__page .team__section .featured__wrapper .featured__article__cta button{
-        margin-top: 20px;
+    .team__page .popup-content .close{
+        position: absolute;
+        top: 40px;
+        right: 150px;
+        z-index: 9;
+        opacity: 1;
     }
     .team__members {
         padding-top: 100px;
@@ -167,24 +169,27 @@
     .team__members .team__inside h4{
         margin-top: 20px;
         font-family: 'Muli', sans-serif;
-        font-weight: 600;
+        font-weight: 700;
         color: #000000;
         line-height: 30px;
     }
     .team__page .featured__wrapper .featured__article__title h4 {
         line-height: 30px;
+        font-weight: 700;
     }
     .team__members .team__inside p{
         color: #b02931;
         text-transform: uppercase;
         margin-top: 12px;
         line-height: 26px;
+        font-weight: 900;
     }
     .team__page .team__section .featured__wrapper .featured__article__position{
         line-height: 25px;
         text-transform: uppercase;
         color: #b02931;
         margin: 12px 0;
+        font-weight: 900;
     }
     .team__section .team__members .col-sm-12 img{
         cursor: pointer;
@@ -239,7 +244,7 @@
     }
     .team__page .featured__article{
         position: relative;
-        height: 750px;
+        height: auto;
     }
     .team__page .featured__article:after{
         content: "";
@@ -397,7 +402,10 @@
         padding: 60px 50px;
     }
     .team__page .team__section .popup-content .close {
-        right: 90px;
+        right: 130px;
+    }
+    .team__page .team__section .featured__artitle__inner {
+        padding: 30px 30px;
     }
     .team__page .team__section .triangle__small {
         left: 15%;
@@ -433,17 +441,17 @@
         padding-top: 60px;
     }
     .team__page .main__section {
-        height: 5290px;
+        height: 4580px;
         clip-path: polygon(0 0, 100% 0, 100% 61%, 0 57%);
     }
     .team__section {
-        margin-top: -2050px;
+        margin-top: -1850px;
     }
     .team__page .main__section.--open {
-        height: 6725px;
+        height: 6065px;
     }
     .team__section.--open {
-        margin-top: -2740px;
+        margin-top: -2440px;
     }
     .team__page .team__section .triangle__small {
         left: 15.5%;
@@ -486,6 +494,10 @@
     .team__page .team__main__popup p {
         margin: 0px 0;
     }
+    .team__page #popup__team .featured__article .gatsby-image-wrapper {
+        height: 300px!important;
+        position: relative!important;
+    }
 }
 @media(max-width:600px){
     .team__page .main__section .container {
@@ -516,8 +528,8 @@
         top: 6px;
     }
     .team__page .team__section .popup-content .close {
-        right: 40px;
-        top: 0px;
+        right: -315px;
+        top: 10px;
     }
     .team__page .team__section .triangle__big {
         left: 13.8%;
@@ -563,7 +575,7 @@
         line-height: 25px;
     }
     .team__page .main__section p {
-        line-height: 40px;
+        line-height: 30px;
     }
     .team__page .main__section {
         height: 3020px;
@@ -621,7 +633,7 @@
         height: 7715px;
     }
     .team__page .team__section p {
-        line-height: 22px;
+        line-height: 30px;
     }
     .team__page .featured__article .col-md-12.col-lg-4{
         height: 300px;
@@ -720,6 +732,15 @@
     .team__main__popup .close {
         right: 60px!important;
     }
+    .team__page .team__section .featured__artitle__inner {
+        margin-top: 0px;
+    }
+    .team__page .team__section .featured__article {
+        height: 350px;
+    }
+    .team__page .team__section .triangle__small {
+        left: 15.5%;
+    }
   }
   @media (max-width: 960px) and (orientation: landscape) {
     .team__page .featured__article {
@@ -739,23 +760,51 @@
         clip-path: polygon(0 0, 100% 0, 100% 65%, 0 56%);
     }
     .team__section {
-        margin-top: -1880px;
+        margin-top: -1700px;
     }
     .team__page .main__section.--open {
         height: 6025px;
     }
     .team__section.--open {
-        margin-top: -2380px;
+        margin-top: -2300px;
+    }
+    .team__page .team__section .popup-content .close {
+        right: 80px;
+    }
+    .team__page #popup__team .featured__article .gatsby-image-wrapper {
+        height: 300px!important;
+        position: relative!important;
+        border: none;
+    }
+    .team__page .team__section .featured__wrapper .featured__article img {
+        border-right: none;
+    }
+    .featured__artitle__inner {
+        margin-top: 40px;
     }
   }
   @media (max-width: 768px) and (orientation: landscape) {
     .team__page .main__row {
         padding: 50px 0;
     }
-
+    .team__page .main__section.--open {
+        height: 6274px;
+        clip-path: polygon(0 0, 100% 0, 100% 63%, 0 59%);
+    }
     .team__section .container {
         padding: 50px 0;
     }
+    .team__section.--open {
+        margin-top: -2400px;
+    }
+    .team__page .main__section {
+        height: 5025px;
+        clip-path: polygon(0 0, 100% 0, 100% 60%, 0 58%);
+    }
+    .team__section {
+        margin-top: -2010px;
+    }
+
   }
 
   @media (max-width: 600px) and (orientation: landscape) {
@@ -764,6 +813,16 @@
     }
     .team__main__popup .close {
         right: 29px!important;
+    }
+    .team__page .team__section .featured__article {
+        height: 250px;
+    }
+    .team__page .team__section .popup-content .close {
+        right: 72px;
+        top: 30px;
+    }
+    .team__page .team__section .triangle__small {
+        left: 15.7%;
     }
   }
 

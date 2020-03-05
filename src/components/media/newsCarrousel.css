@@ -15,7 +15,7 @@
 }
 .news__list{
     padding: 0px;
-    margin: 60px 0 0 0;
+    margin: 50px 0 0 0;
     border-top: solid 2px white;
 }
 .news__list_element{
@@ -47,7 +47,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 60px 0 0;
+    padding: 40px 0 0;
 }
 .news__list__pagination div{
     margin: 0 25px;
@@ -55,8 +55,8 @@
 }
 .news__list__pagination .previous__page{
     display: inline-block;
-    border-right: 2px solid #000000;
-    border-bottom: 2px solid #000000;
+    border-right: 1px solid #000000;
+    border-bottom: 1px solid #000000;
     width: 20px;
     height: 20px;
     -webkit-transform: rotate(135deg);
@@ -65,8 +65,8 @@
 }
 .news__list__pagination .next__page{
     display: inline-block;
-    border-right: 2px solid #000000;
-    border-bottom: 2px solid #000000;
+    border-right: 1px solid #000000;
+    border-bottom: 1px solid #000000;
     width: 20px;
     height: 20px;
     -webkit-transform: rotate(135deg);
@@ -78,6 +78,19 @@
 }
 .media__featured .slick-list{
     width: 100%;
+}
+@media(max-width: 1200px){
+    .news__list_field.col-xl-2{
+        width: auto;
+    }
+}
+@media(max-width: 1024px){
+
+}
+@media(max-width: 768px){
+    .media__lists .row {
+        padding: 40px 30px 0px;
+    }
 }
 @media(max-width: 695px){
     .media__lists .row {

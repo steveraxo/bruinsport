@@ -115,7 +115,7 @@ class Header extends Component {
             {
                 newsArray.map((element, index) => 
                     <div className={`${this.props.elId} news__list_element`} key={`${this.props.elId}-${index}`} >
-                            <div className="news__list_field date col-sm-12 col-xl-2">
+                            <div className="news__list_field date col-xl-2">
                                 <p>{element.node.date}</p>
                             </div>
                             <div className="news__list_field subtitle col">
@@ -125,7 +125,7 @@ class Header extends Component {
                             <div className="news__list_field title col">
                                 <p>{element.node.acf.title}</p>
                             </div> */}
-                            <div className="news__list_field actions col-sm-12 col-xl-2">
+                            <div className="news__list_field actions col-xl-2">
                             {   
                                 this.props.elId === 'press'
                                 ? <>
@@ -136,10 +136,6 @@ class Header extends Component {
                                           </a>
                                         :''
                                     }
-
-                                    <a href={element.node.acf.external_news_link} target="_BLANK" rel="noopener noreferrer">
-                                        <img src={linkIcon} alt="Link to Press Release"/>
-                                    </a>
                                 </>
                                 : <>
                                     <a href={element.node.acf.external_news_link} target="_BLANK" rel="noopener noreferrer">

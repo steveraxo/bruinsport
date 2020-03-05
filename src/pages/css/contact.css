@@ -321,9 +321,6 @@ label span{
 @media(max-width: 500px){
     .contact__section__three__columns .s__three__column {
         padding: 10px 0px 50px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         text-align: center;
     }
     label span {
@@ -384,9 +381,11 @@ label span{
 @media (max-width: 600px) and (orientation: landscape) {
     .contact__section__three__columns .s__three__column {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
+
+    }
+    .interested__wrapper #interest__group {
+
+        width: 100%;
     }
     .contact__section__three__columns .s__three__column {
         padding: 10px 0px 50px;

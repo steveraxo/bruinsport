@@ -6,6 +6,10 @@
     position: relative;
     padding-bottom: 30px;
 }
+.media__page .slick-slide.slick-active.slick-current{
+    position: relative!important;
+    z-index: 999;
+}
 .media__page .featured__article {
     max-width: 1175px;
     padding: 90px;
@@ -92,6 +96,10 @@ line-height: 30px;
     height: 30px;
     transform: rotate(-45deg);
     right: 0px;
+    z-index: 999;
+}
+.featured__wrapper .slick-arrow.slick-prev{
+    z-index: 999;
 }
 .featured__wrapper .slick-arrow.slick-next:focus, .featured__wrapper .slick-arrow.slick-prev:focus{
     outline: 1px dotted;

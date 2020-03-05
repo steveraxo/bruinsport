@@ -51,9 +51,10 @@ class MediaPage extends Component {
       infinite: true,
       speed: 500,
       fade: true,
-      centerMode: true,
       autoplay: true,
-      autoplaySpeed: 9000,
+      autoplaySpeed: 90000,
+      slidesToShow: 1,
+      slidesToScroll: 1,
     };
     return (
       

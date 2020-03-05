@@ -80,21 +80,18 @@ class ContactPage extends Component {
     }
 
   }
-
   // Verify the Recaptcha and hide it
   onVerify = recaptchaResponse => {
     this.setState({
       verified: true,
       showRecaptcha: false
     });
-  };
-  
+  }; 
   // function for email validation
   validateEmail(email) {
       var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
       return re.test(String(email).toLowerCase());
   }
-
   changeRadioOption(event){
     let radioElement = event.target;
 
@@ -117,7 +114,6 @@ class ContactPage extends Component {
 
     radioElement.focus()
   }
-  
   changeRadioOnKeyboard(){
     var element = document.getElementById("interest__group"),
     KEYCODE_TAB = 9;
@@ -129,7 +125,6 @@ class ContactPage extends Component {
         }
     });
   }
-
   render() {
 
     const {loading, submit, name, message, verifiedEmail} = this.state
@@ -325,9 +320,9 @@ class ContactPage extends Component {
                   pageAcf.portfolio_data.map((element, index) => 
                   <>
                     <div className="col-md-4 col-xl-3 s__three__column" key={`portfolio_data-${element}-${index}`}>
-                      <a href={`https://${element.client_url}`} target="_BLANK" rel="noopener noreferrer">
+                      <a href={`${element.client_url}`} target="_BLANK" rel="noopener noreferrer">
                         <div className={'column__image'}>
-                          <Img fixed={element.cliente_logo.localFile.childImageSharp.fixed} alt={'Client Logo'} tabIndex={0}/>
+                          <img className={'contact__svg__logo'} src={element.cliente_logo.localFile.url} alt={'Client Logo'} tabIndex={0}/>
                         </div>
                       </a>
                       <div className={'column__info'}>
@@ -338,8 +333,8 @@ class ContactPage extends Component {
                             </a>
                           </li>
                           <li>
-                            <a href={`https://${element.client_url}`} target="_BLANK" rel="noopener noreferrer">
-                              <p className="text-left" dangerouslySetInnerHTML={{__html: element.client_url}} />
+                            <a href={`${element.client_url}`} target="_BLANK" rel="noopener noreferrer">
+                              <p className="text-left full__client__url" dangerouslySetInnerHTML={{__html: element.client_url.replace('https://','')}} />
                             </a>
                           </li>
                         </ul>
@@ -393,13 +388,8 @@ query ContactQuery {
             client_url
             cliente_logo {
               localFile {
-                childImageSharp {
-                  fixed(width: 200, quality: 100) {
-                    ...GatsbyImageSharpFixed_withWebp
-                  }
-                }
+                url
               }
-              source_url
             }
           }
           three_columns_data {

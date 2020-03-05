@@ -67,7 +67,7 @@ class HomePage extends Component {
   }
   endModal(e) {
     document.querySelectorAll('html')[0].classList.remove('html__custom')
-
+    document.getElementById('clients__logos').classList.remove('show__element');
     e.preventDefault() 
     if (e.type === 'keypress'){
       if(e.which === 32 || e.which === 13){
@@ -80,13 +80,21 @@ class HomePage extends Component {
   changeBodyScroll(){
     // When the modal is hidden...
     document.querySelectorAll('html')[0].classList.remove('html__custom')
-
+    document.getElementById('clients__logos').classList.remove('show__element');
     document.querySelectorAll('.clients__logos')[0].classList.add('rotate__clients__logos');
 
     [...document.querySelectorAll('.clients__logos .col')].map(el => (
       el.classList.add('rotated__col')
     ))
   }
+  triggerClientPopUp(event){
+    const idPopup = event.target.getAttribute('datatracknumber')
+
+    document.getElementById(idPopup).click();
+
+    document.getElementById('clients__logos').classList.add('show__element');
+  }
+
   render() {
     // This variable will return all the fields related to the post
     const pageData = this.props.data.allWordpressPage.edges[0].node,
@@ -130,7 +138,28 @@ class HomePage extends Component {
         }
       ]
     }
-    
+
+    let settingsClients = {
+      dots: false,
+      arrows: true,
+      infinite: true,
+      speed: 500,
+      cssEase: 'linear',
+      autoplay: true,
+      autoplaySpeed: 9000,
+      slidesToShow: 4,
+      slidesToScroll: 4,
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            arrows: true,
+            slidesToShow: 2,
+            slidesToScroll: 2,
+          }
+        }
+      ]
+    }
     return (
       <Layout>
         <Helmet>
@@ -150,8 +179,25 @@ class HomePage extends Component {
               <div tabIndex={0} className="home__copy text-left" dangerouslySetInnerHTML={{__html: pageData.acf.main_second_copy}} />
             </div>
             <div className="container-fluid">
-                <div className="clients__logos__wrapper">
-                  <div className="row clients__logos rotate__clients__logos">
+                <div className="clients__logos__wrapper" >
+                  <div className="clients__slider">
+                  <Slider  {...settingsClients}>
+                    {
+                      pageData.acf.header_logos.map( (element, index) => 
+                        <img 
+                          datatracknumber={`logo-client-${index}`}
+                          id={`logo-client-${index}-s`}
+                          tabIndex={0}
+                          src={element.icon.localFile.url}
+                          alt={`Client ${element.title} logo`}
+                          onClick={this.triggerClientPopUp}
+                        />
+                      )
+                    }
+                  </Slider>
+                  </div>
+
+                  <div className="row clients__logos rotate__clients__logos" id={'clients__logos'}>
                   {
                     pageData.acf.header_logos.map( (element, index) => 
                       <div className="col rotated__col" key={`header_logos-${element}-${index}`}>
@@ -162,10 +208,10 @@ class HomePage extends Component {
                         closeOnEscape 
                         closeOnDocumentClick 
                         trigger={
-                          <Img 
-                            className={`${this.state.mixBlend}`}
+                          <img 
+                            id={`logo-client-${index}`}
                             tabIndex={0}
-                            fluid={element.icon.localFile.childImageSharp.fluid}
+                            src={element.icon.localFile.url}
                             alt={`Client ${element.title} logo`}
                           />
                         } 
@@ -320,11 +366,7 @@ query HomeQuery {
             icon {
               source_url
               localFile {
-                childImageSharp{
-                  fluid(maxWidth: 200, quality: 100) {
-                    ...GatsbyImageSharpFluid_withWebp
-                  }
-                }
+                  url
               }
             }
           }

@@ -3,6 +3,9 @@
     position: relative;
     color: #000000;
 }
+.portfolio__page{
+    overflow: hidden;
+}
 .portfolio__page .triangle__small{
     display: none;
 }

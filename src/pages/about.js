@@ -117,7 +117,7 @@ class AboutPage extends Component {
                                         <div className="gray__line"></div>
                                     </div>
                                     <div className="col-lg-7 social__logo__right">
-                                        <Img fixed={pageAcf.social_logo.localFile.childImageSharp.fixed} alt={'Save the childran logo'}/> 
+                                        <Img fluid={pageAcf.social_logo.localFile.childImageSharp.fluid} alt={'Save the childran logo'}/> 
                                     </div>
                                 </div>
                                 
@@ -149,7 +149,9 @@ class AboutPage extends Component {
                                         <p>{element.date}</p>
                                     </div>
                                     <div className="history__timeline__moment__description">
-                                        <div className={'text-white'} dangerouslySetInnerHTML={{__html: element.description}} />
+                                        <a href={element.link} target={'_BLANK'} rel="noopener noreferrer" >
+                                            <div className={'text-white'} dangerouslySetInnerHTML={{__html: element.description}} />
+                                        </a>
                                     </div>
                                 </div>
                             ))
@@ -204,8 +206,8 @@ query AboutQuery {
             social_logo {
                 localFile {
                     childImageSharp {
-                        fixed(width: 300, quality: 100) {
-                        ...GatsbyImageSharpFixed_withWebp
+                        fluid(maxWidth: 300, quality: 100) {
+                        ...GatsbyImageSharpFluid_withWebp
                         }
                     }
                 }
@@ -214,6 +216,7 @@ query AboutQuery {
             history_timeline {
               date
               description
+              link
             }
             history_background {
                 localFile {

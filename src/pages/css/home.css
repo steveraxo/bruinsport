@@ -834,13 +834,13 @@
         line-height: 25px;
     }
     .home__page .home__copy {
-        top: 50%;
+        top: 40%;
     }
     .home__page .media__featured .featured__article__divider.home__divider {
-        top: 43%;
+        top: 33%;
     }
     .home__page .header__copy {
-        top: 110%;
+        top: 65%;
         left: 4px;
     }
     .home__copy h3 br{
@@ -926,7 +926,7 @@
         left: 30px;
     }
     .home__page .media__featured .featured__article__divider.home__divider {
-        left: 32px;
+        left: 62px;
     }
     .home__page .home__copy {
         left: 30px;

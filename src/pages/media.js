@@ -166,11 +166,7 @@ query mediaPageQuery {
             post_content
             acf {
               source_text
-              pdf_press_release {
-                url {
-                  source_url
-                }
-              }
+              pdf_press_release
               subtitle
               external_news_link
             }
@@ -186,11 +182,7 @@ query mediaPageQuery {
         date(formatString: "MMM/DD/YYYY")
         acf {
           external_news_link
-          pdf_press_release {
-            url {
-              source_url
-            }
-          }
+          pdf_press_release
           subtitle
           source_text
         }

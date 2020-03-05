@@ -91,14 +91,10 @@ query portfolioPageQuery {
                 }
               }
             }
-            project_logo{
-                localFile {
-                    childImageSharp {
-                        fixed(width: 220, quality: 100) {
-                            ...GatsbyImageSharpFixed_withWebp
-                        }
-                    }
-                }
+            project_logo {
+              localFile {
+                url
+              }
             }
             popup_content
             popup_background {
@@ -122,11 +118,7 @@ query portfolioPageQuery {
             post_content
             acf {
               source_text
-              pdf_press_release {
-                url {
-                  source_url
-                }
-              }
+              pdf_press_release
               subtitle
               external_news_link
             }

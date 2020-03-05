@@ -10,7 +10,8 @@
     padding: 60px 100px 0;
     top: unset;
     height: 400px;
-    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 .portfolio__page #popup__team .featured__article .popup__background.gatsby-image-wrapper {
     width: 100%!important;
@@ -40,7 +41,7 @@
 .popup-content .featured__wrapper .featured__article__content p{
     margin: 20px 0 60px;
 }
-@media(max-width: 1600px){
+@media(max-width: 2000px){
     .portfolio__page #popup__team .featured__article .popup__background.gatsby-image-wrapper {
 
         max-height: 300px;

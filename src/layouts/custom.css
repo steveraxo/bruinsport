@@ -4,8 +4,11 @@ h1, h2, h3, h4, ul, li, h5, h6 {
     margin: 10px 0;
     text-transform: uppercase;
 }
-p, small, i, label, input, textarea, button, select{
+p, small, i, label, input, textarea,  select{
     font-family: 'Muli', sans-serif;
+}
+button{
+    font-family: 'Montserrat';
 }
 p{
     margin: 0px;

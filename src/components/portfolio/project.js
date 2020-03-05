@@ -82,7 +82,7 @@ class Project extends Component {
                             <div className="container">
                                 <div className="row">
                                     <div className={'col-md-12 col-lg-12 col-xl-12 text-left'}>
-                                    <Img fixed={projectData.project_logo.localFile.childImageSharp.fixed} alt={'Client Logo'} tabIndex={0}/>
+                                    <img className={'svg__logo'} src={projectData.project_logo.localFile.url} alt={'Client Logo'} tabIndex={0}/>
                                     <div dangerouslySetInnerHTML={{__html: projectData.project_description}} />
 
                                     <Popup     
@@ -110,7 +110,7 @@ class Project extends Component {
                                                         alt={``}
                                                         className={'popup__background'}
                                                     />
-                                                    <Img className={'project__logo --floating'} fixed={projectData.project_logo.localFile.childImageSharp.fixed} alt={'Client Logo'} tabIndex={0}/>
+                                                    <img className={'project__logo --floating'} src={projectData.project_logo.localFile.url} alt={'Client Logo'} tabIndex={0}/>
                                                     </div>
                                                     <div className={'col-md-12 col-lg-12'}>
                                                         <div className="featured__artitle__inner">
@@ -140,7 +140,7 @@ class Project extends Component {
                             </div>
                             <div className={'portfolio__inner'}>
                                 <div className={'portfolio__logo'}>
-                                    <Img fixed={projectData.project_logo.localFile.childImageSharp.fixed} alt={'Client Logo'} tabIndex={0}/>
+                                    <img className={'svg__logo'} src={projectData.project_logo.localFile.url} alt={'Client Logo'} tabIndex={0}/>
                                 </div>
                                 <div className={'porftolio__description'}>
                                     <div dangerouslySetInnerHTML={{__html: projectData.project_description}} />
@@ -170,7 +170,7 @@ class Project extends Component {
                                                         alt={``}
                                                         className={'popup__background'}
                                                     />
-                                                    <Img className={'project__logo --floating'} fixed={projectData.project_logo.localFile.childImageSharp.fixed} alt={'Client Logo'} tabIndex={0}/>
+                                                    <img className={'project__logo --floating'} src={projectData.project_logo.localFile.url} alt={'Client Logo'} tabIndex={0}/>
                                                     </div>
                                                     <div className={'col-md-12 col-lg-12'}>
                                                         <div className="featured__artitle__inner">
@@ -198,7 +198,7 @@ class Project extends Component {
                             </div>
                             <div className={'portfolio__inner'}>
                                 <div className={'portfolio__logo'}>
-                                    <Img fixed={projectData.project_logo.localFile.childImageSharp.fixed} alt={'Client Logo'} tabIndex={0}/>
+                                    <img className={'svg__logo'} src={projectData.project_logo.localFile.url} alt={'Client Logo'} tabIndex={0}/>
                                 </div>
                                 <div className={'porftolio__description'}>
                                     <div dangerouslySetInnerHTML={{__html: projectData.project_description}} />
@@ -228,7 +228,7 @@ class Project extends Component {
                                                         alt={``}
                                                         className={'popup__background'}
                                                     />
-                                                    <Img className={'project__logo --floating'} fixed={projectData.project_logo.localFile.childImageSharp.fixed} alt={'Client Logo'} tabIndex={0}/>
+                                                    <img className={'project__logo --floating'} src={projectData.project_logo.localFile.url} alt={'Client Logo'} tabIndex={0}/>
                                                     </div>
                                                     <div className={'col-md-12 col-lg-12'}>
                                                         <div className="featured__artitle__inner">
@@ -261,7 +261,7 @@ class Project extends Component {
 
                                 <div className={'portfolio__inner'}>
                                     <div className={'portfolio__logo'}>
-                                        <Img fixed={projectData.project_logo.localFile.childImageSharp.fixed} alt={'Client Logo'} tabIndex={0}/>
+                                        <img className={'svg__logo'} src={projectData.project_logo.localFile.url} alt={'Client Logo'} tabIndex={0}/>
                                     </div>
                                     <div className={'porftolio__description'}>
                                         <div dangerouslySetInnerHTML={{__html: projectData.project_description}} />
@@ -291,7 +291,7 @@ class Project extends Component {
                                                         alt={``}
                                                         className={'popup__background'}
                                                     />
-                                                    <Img className={'project__logo --floating'} fixed={projectData.project_logo.localFile.childImageSharp.fixed} alt={'Client Logo'} tabIndex={0}/>
+                                                    <img className={'project__logo --floating'} src={projectData.project_logo.localFile.url} alt={'Client Logo'} tabIndex={0}/>
                                                     </div>
                                                     <div className={'col-md-12 col-lg-12'}>
                                                         <div className="featured__artitle__inner">

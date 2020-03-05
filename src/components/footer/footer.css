@@ -1,12 +1,13 @@
 .footer__wrapper{
-    padding:  38.14px 1.45rem;
+    padding:  27.14px 1.45rem;
     width: 100%;
     background: black;
 }
 .footer__content p{
     margin: 0;
     color: #a5a5a5;
-    font-size: 0.914rem;
+    font-size: 13px;
+    font-weight: 500;
 }
 .footer__content p a{
     color: #ffffff;

@@ -39,7 +39,7 @@
     margin: 20px 0;
 }
 .projects__section .our__approach p{
-    line-height: 45px;
+    line-height: 40px;
     font-weight: 500;
 }
 .portfolio_full.dark{
@@ -56,7 +56,6 @@
     min-height: 650px;
 }
 .projects__section .portfolio_half .portfolio__inner .portfolio__logo{
-    min-height: 200px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -83,10 +82,11 @@
     padding: 0px 4%;
 }
 .portfolio_full .porftolio__description{
-    margin: 40px 0;
+    margin: 20px 0 40px;
 }
+
 .portfolio_full.dark .porftolio__description {
-    margin: 0 0 40px 0;
+    margin: 20px 0 40px 0;
 }
 .porftolio__description{
     line-height: 50px;
@@ -102,16 +102,49 @@
     margin-top: -25%;
 }
 .portfolio__page .our__approach .top__info p{
-    width: 600px;
-    color:white;
+    width: 700px;
+    color: white;
     text-transform: uppercase;
-    font-size: 30px;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 40px;
 }
 .portfolio_full.dark img{
     mix-blend-mode: unset;
 }
 .portfolio__page button{
     max-width: 317px;
+}
+.our__approach.diagonal .svg__logo{
+    max-width: 300px;
+    width: 100%;
+}
+.portfolio_full .svg__logo{
+    max-width: 300px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.portfolio_half .svg__logo{
+    filter: invert(100%) sepia(93%) saturate(1352%) hue-rotate(87deg) brightness(119%) contrast(119%);
+    height: 120px;
+}
+.portfolio_full.light .svg__logo{
+    filter: invert(100%) sepia(93%) saturate(1352%) hue-rotate(87deg) brightness(119%) contrast(119%);
+
+}
+.projects__section div:nth-child(5) .svg__logo{
+    height: 50px;
+}
+.projects__section div:nth-child(6) .svg__logo{
+    height: 50px;
+}
+.portfolio__page .popup__inner .project__logo.--floating{
+    position: absolute;
+    top: 0; bottom: 0; right: 0; left: 0;
+    margin: auto;
+    max-width: 200px;
+    width: 100%;
 }
 @media(max-width: 4000px){
     .projects__section .our__approach {
@@ -170,7 +203,7 @@
         color: white;
     }
     .porftolio__description {
-        min-height: 330px;
+        min-height: 230px;
     }
     .porftolio__description br{
         display: none;
@@ -201,6 +234,9 @@
 @media(max-width: 768px){
     .porftolio__description {
         min-height: auto;
+    }
+    .portfolio__page .popup-content .close {
+        right: 100px;
     }
     .portfolio_full .first{
         display: none;
@@ -233,13 +269,13 @@
         width: 100%;
     }
     .porftolio__description p{
-        line-height: 22px;
+        line-height: 30px;
     }
     .porftolio__description p br{
         display: none;
     }
     .projects__section .our__approach p {
-        line-height: 22px;
+        line-height: 30px;
     }
 }
 @media(max-width: 500px){
@@ -271,12 +307,18 @@
         font-size: 40px;
         line-height: 35px;
     }
-    .portfolio__page .our__approach .top__info p{ width: 100%;
-    font-size: 30px;
-    line-height: 30px;
+    .portfolio__page .our__approach .top__info p{ 
+        width: 100%;
     }
     .projects__section.container-fluid {
         margin-top: -50px;
+    }
+    .portfolio__page .popup__inner .project__logo.--floating {
+        max-width: 100px;
+        width: 100%;
+    }
+    .portfolio__page .popup-content .close {
+        right: -250px;
     }
 }
 @media (max-width: 823px) and (orientation: landscape) {
@@ -286,6 +328,19 @@
     .portfolio__page .our__approach .top__info p {
         line-height: 30px;
     }
+    .porftolio__description {
+        min-height: auto;
+    }
+    .portfolio_full.light .first, .portfolio_full.dark .first{
+        display: none;
+    }
+    .projects__section .portfolio_half .portfolio__inner {
+        padding: 50px 7% 100px 7%;
+    }
+    .projects__section .portfolio_half .portfolio__inner {
+        border-right: 2px solid #cecece4d;
+        min-height: auto;
+    }
 }
 @media (max-width: 667px) and (orientation: landscape) {
     .our__approach h1 {
@@ -294,5 +349,9 @@
     }
     .portfolio__page .our__approach .top__info {
         margin-top: -55%;
+    }
+    .portfolio__page .popup__inner .project__logo.--floating {
+        max-width: 100px;
+        width: 100%;
     }
 }

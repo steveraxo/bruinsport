@@ -359,10 +359,14 @@
         left: 20px;
     }
     .approach__first__slider .prev__button {
-        left: 45px;
+        left: 38%;
+    top: unset;
+    bottom: 30px;
     }
     .approach__first__slider .next__button {
-        right: 15px;
+        right: 38%;
+    top: unset;
+    bottom: 30px;
     }
     .testimonial__element__wrapper {
         padding: 0 50px;
@@ -372,9 +376,7 @@
     .testimonial__slider .slick-arrow.slick-next {
         right: 40%!important;
     }
-    .approach__testimonial .testimonial__slider__element {
-        min-height: 870px;
-    }
+
     .approach__copy {
         padding: 0 15px!important;
     }

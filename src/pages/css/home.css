@@ -808,6 +808,11 @@
     }
     .latest__article {
         padding: 0 50px;
+        display: flex!important;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
     }
     .home__page .latest__news .content p{
         font-size: 16px;

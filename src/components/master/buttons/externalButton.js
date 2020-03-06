@@ -5,9 +5,9 @@ class ExternalButton extends Component {
     render() {
         const props = this.props; 
         return (
-            <button tabIndex={-1}  className={`btn-main ${props.buttonClass}`}>
-                <a  href={props.redirectionLink} target={'_BLANK'} rel="noopener noreferrer">{props.buttonText}</a>
-            </button>
+            <a  href={props.redirectionLink} target={'_BLANK'} rel="noopener noreferrer">
+                <button tabIndex={-1}  className={`btn-main ${props.buttonClass}`}>{props.buttonText}</button>
+            </a>
         )
     }
 }

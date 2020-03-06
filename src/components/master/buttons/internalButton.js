@@ -6,9 +6,11 @@ class InternalButton extends Component {
     render() {
         const props = this.props; 
         return (
-            <button tabIndex={-1}  className={props.buttonClass}>
-                <Link  to={props.redirectionLink}>{props.buttonText}</Link>
-            </button>
+            <Link  to={props.redirectionLink}>
+                <button tabIndex={-1}  className={props.buttonClass}>
+                    {props.buttonText}
+                </button>
+            </Link>
         )
     }
 }

@@ -336,19 +336,19 @@
         left: -45%;
     }
     .team__page .main__section {
-        height: 2845px;
+        height: 2585px;
     }
     .team__page .main__section.--open {
         height: 3725px;
     }
     .team__section.--open {
-        margin-top: -1155px;
+        margin-top: -1055px;
     }
     .team__section .container{
         padding: 50px 0 0px;
     }
     .team__section {
-        margin-top: -855px;
+        margin-top: -745px;
     }
     .team__page .main__section {
         clip-path: polygon(0 0, 100% 0, 100% 77%, 0 66%);
@@ -359,26 +359,26 @@
         clip-path: none;
     }
     .team__section {
-        margin-top: -1280px;
+        margin-top: -1110px;
     }
     .team__section.--open {
-        margin-top: -1680px;
+        margin-top: -1560px;
     }
     .team__page .main__section {
         clip-path: polygon(0 0, 100% 0, 100% 67%, 0 58%);
-        height: 3325px;
+        height: 2915px;
         padding: 90px 0 120px 0!important;
     }
     .team__page .main__section.--open {
-        height: 4385px;
+        height: 4085px;
     }
 }
 @media(max-width:1100px){ 
     .team__page .main__section {
-        height: 3525px;
+        height: 3125px;
     }
     .team__page .main__section.--open {
-        height: 4655px;
+        height: 4355px;
     }
 }
 @media(max-width:1024px){ 
@@ -390,16 +390,19 @@
         clip-path: polygon(0 0, 100% 0, 100% 66%, 0 58%);
     }
     .team__section {
-        margin-top: -1300px;
+        margin-top: -1200px;
+    }
+    .team__page .main__section {
+        height: 3225px;
     }
     .featured__article {
         width: 90%;
     }
     .team__page .main__section.--open {
-        height: 4925px;
+        height: 4625px;
     }
     .team__section.--open {
-        margin-top: -1820px;
+        margin-top: -1740px;
     }
     .team__section .team__members .col-sm-12 img {
         height: 390px;
@@ -448,17 +451,17 @@
         padding-top: 60px;
     }
     .team__page .main__section {
-        height: 4580px;
+        height: 3980px;
         clip-path: polygon(0 0, 100% 0, 100% 61%, 0 57%);
     }
     .team__section {
-        margin-top: -1850px;
+        margin-top: -1600px;
     }
     .team__page .main__section.--open {
-        height: 6065px;
+        height: 5365px;
     }
     .team__section.--open {
-        margin-top: -2440px;
+        margin-top: -2160px;
     }
     .team__page .team__section .triangle__small {
         left: 15.5%;
@@ -593,7 +596,7 @@
 }
 @media(max-width:414px){
     .team__page .main__section {
-        height: 5660px;
+        height: 4760px;
         clip-path: polygon(0 0, 100% 0, 100% 58%, 0 56%);
     }
     .iframe__team iframe {
@@ -608,25 +611,25 @@
         margin: 20px 0;
     }
     .team__section {
-        margin-top: -2330px; 
+        margin-top: -1940px; 
     }
     .team__page .main__section p {
         margin: 20px 0 50px 0;
     }
     .team__page .main__section.--open {
-        height: 7295px;
+        height: 6595px;
     }
     .team__section.--open {
-        margin-top: -3070px;
+        margin-top: -2750px;
     }
 }
 @media(max-width:375px){
     .team__page .main__section {
-        height: 6050px;
+        height: 5250px;
         clip-path: polygon(0 0, 100% 0, 100% 58%, 0 56%);
     }
     .team__section {
-        margin-top: -2500px;
+        margin-top: -2160px;
     }
     .team__page .main__section h4 {
         line-height: 28px;
@@ -634,10 +637,10 @@
         font-size: 19px;
     }
     .team__section.\--open {
-        margin-top: -3240px;
+        margin-top: -2910px;
     }
     .team__page .main__section.--open {
-        height: 7715px;
+        height: 7015px;
     }
     .team__page .team__section p {
         line-height: 30px;
@@ -648,30 +651,30 @@
 }
 @media(max-width:360px){
     .team__page .main__section {
-        height: 6360px;
+        height: 5360px;
     }
     .team__section {
-        margin-top: -2670px;
+        margin-top: -2200px;
     }
     .team__page .main__section.--open {
-        height: 7945px;
+        height: 7145px;
     }
     .team__section.--open {
-        margin-top: -3370px;
+        margin-top: -2970px;
     }
 }
 @media(max-width:320px){
     .team__page .main__section {
-        height: 7180px;
+        height: 6080px;
     }
     .team__section {
-        margin-top: -3000px;
+        margin-top: -2500px;
     }
     .team__page .main__section.--open {
-        height: 8845px;
+        height: 7845px;
     }
     .team__section.--open {
-        margin-top: -3700px;
+        margin-top: -3270px;
     }
     .team__page .team__section .featured__article {
         height: 380px;
@@ -756,24 +759,21 @@
         overflow-x: hidden;
     }
     .team__page .main__section {
-        height: 4625px;
+        height: 4025px;
     }
     .team__section {
-        margin-top: -2120px;
+        margin-top: -1500px;
     }
   }
   @media (max-width: 823px) and (orientation: landscape) {
     .team__page .main__section{
         clip-path: polygon(0 0, 100% 0, 100% 65%, 0 56%);
     }
-    .team__section {
-        margin-top: -1700px;
-    }
     .team__page .main__section.--open {
-        height: 6025px;
+        height: 5425px;
     }
     .team__section.--open {
-        margin-top: -2300px;
+        margin-top: -2040px;
     }
     .team__page .team__section .popup-content .close {
         right: -150px;

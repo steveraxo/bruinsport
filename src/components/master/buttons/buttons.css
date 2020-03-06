@@ -1,5 +1,5 @@
 button{
-    background: #b02931;
+    background: #a42931;
     color: white;
     padding: 16px 0px;
     letter-spacing: 1px;
@@ -24,7 +24,7 @@ button:disabled{
     background: #767676;
 }
 button.dark-btn{
-    border: solid 2px #b02931;
+    border: solid 2px #a42931;
     background: transparent;
     margin-top: 20px;
 }
@@ -85,7 +85,7 @@ button.small-btn{
     display:none
 }
 .arrow__button.--active{
-    background: #b02931;
+    background: #a42931;
 }
 @media(max-width: 1440px){
     .latest__news button.small-btn {

@@ -13,6 +13,8 @@ import ExternalButton from "../components/master/buttons/externalButton"
 import InternalButton from "../components/master/buttons/internalButton"
 import MapBackground  from "../images/home/home-map.png"
 import BruinLogo from "../components/master/bruin-letter-logo/bruinLetter"
+import { Scrollbars } from 'react-custom-scrollbars';
+
 
 class HomePage extends Component {
   constructor(props) {
@@ -228,7 +230,9 @@ class HomePage extends Component {
                                         <div className="featured__article__title">
                                           <h4>{element.title}</h4>
                                         </div>
-                                        <div className="featured__article__content" dangerouslySetInnerHTML={{__html: element.first_copy}} />
+                                        <Scrollbars style={{  height: 200 }}>
+                                          <div className="featured__article__content home__pop__content" dangerouslySetInnerHTML={{__html: element.first_copy}} />
+                                        </Scrollbars>
                                       </div>
                                       <div className="featured__article__divider"></div>
                                       <div className="featured__article__content" dangerouslySetInnerHTML={{__html: element.second_copy}} />

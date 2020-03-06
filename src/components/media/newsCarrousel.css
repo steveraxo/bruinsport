@@ -50,28 +50,27 @@
     padding: 40px 0 0;
 }
 .news__list__pagination div{
-    margin: 0 25px;
     color: transparent;
 }
 .news__list__pagination .previous__page{
     display: inline-block;
     border-right: 1px solid #000000;
     border-bottom: 1px solid #000000;
-    width: 20px;
-    height: 20px;
+    height: 37px;
     -webkit-transform: rotate(135deg);
-    transform: rotate(135deg);
-    left: 0px;
+    transform: rotate(135deg) scale(0.7);
+    left: -20px;
+    position: relative;
 }
 .news__list__pagination .next__page{
     display: inline-block;
     border-right: 1px solid #000000;
     border-bottom: 1px solid #000000;
-    width: 20px;
-    height: 20px;
+    height: 37px;
     -webkit-transform: rotate(135deg);
-    transform: rotate(-45deg);
-    right: 0px;
+    transform: rotate(-45deg) scale(0.7);
+    right: -20px;
+    position: relative;
 }
 .media__featured{
     overflow: hidden;

@@ -118,7 +118,6 @@ query portfolioPageQuery {
             post_content
             acf {
               source_text
-              pdf_press_release
               subtitle
               external_news_link
             }

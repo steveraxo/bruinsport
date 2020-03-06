@@ -4,6 +4,21 @@
     padding:208px 0 728px !important;
     
 }
+.about__header:after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent , black 30%);
+    top: 0; bottom: 0; right: 0; left: 0;
+    position: absolute;
+}
+.about__header .container {
+    position: relative;
+    z-index: 99;
+}
+.about__header .gatsby-image-wrapper img{
+    top: -350px;
+}
 .about{
     overflow: hidden;
 }
@@ -30,7 +45,6 @@
     margin-top: 40px;
 }
 .about__header__column__one p, .about__header__column__two p{
-    line-height: 40px;
     font-weight: 500;
 }
 .about__header__top__subtitle h3{
@@ -51,12 +65,14 @@
     align-items: center;
     max-width: 300px;
     font-weight: 600;
+    font-size: 35px;
+    line-height: 35px;
 }
 .mis__vals__soc .values h2{
     margin-bottom: 30px;
 }
 .mis__vals__soc .social h2{
-    margin-bottom: 40px;
+    margin-bottom: 25px;
 }
 .mission{
     margin-bottom: 80px;
@@ -108,9 +124,7 @@
 .social{
     padding-left: 40px;
 }
-.social p{
-    line-height: 40px;
-}
+
 .social p:nth-child(2){
     margin-top: 50px;
 }
@@ -162,7 +176,7 @@
     background: #999999;
 }
 .history{
-    padding: 100px 0 30px!important;
+    padding: 90px 0 0px!important;
 }
 .history h2{
     position: relative;
@@ -181,7 +195,7 @@
     text-transform: uppercase;
 }
 .history__timeline{
-    margin-top: -40px;
+    margin-top: -75px;
 }
 .history__timeline__moment__date p {
     position: relative;
@@ -218,11 +232,11 @@
 }
 .history__timeline .featured__wrapper .slick-arrow.slick-next {
     right: -50px;
-    top: 90px;
+    top: 115px;
 }
 .history__timeline .featured__wrapper .slick-arrow.slick-prev {
     left: -50px;
-    top: 90px;
+    top: 115px;
 }
 .history__timeline .featured__wrapper.slick-slider {
     padding: 0!important;
@@ -366,7 +380,12 @@
     /* .social__logo__right .gatsby-image-wrapper {
         height: 80px!important;
     } */
-
+    .history {
+        padding: 100px 0 40px!important;
+    }
+    .history__timeline {
+        margin-top: -40px;
+    }
 }
 @media(max-width: 375px){
     /* .social__logo__right .gatsby-image-wrapper {

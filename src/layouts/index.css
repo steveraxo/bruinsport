@@ -403,9 +403,9 @@ body h6{
   margin: 0;
   padding: 0;
 }
-body p, body li{
-  font-size: 19px;
-  line-height: 36px;
+body li, body p {
+  font-size: 16px;
+  line-height: 35px;
   font-weight: 500;
 }
 body small{

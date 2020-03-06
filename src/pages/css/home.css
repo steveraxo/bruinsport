@@ -2,6 +2,17 @@
 .home__page .media__featured{
     min-height: 820px;
 } 
+.home__page .header__copy, .home__copy{
+    outline: none!important;
+}
+.home__page .featured__article{
+    padding: 60px 100px 80px;
+}
+.home__page .home__pop__content::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
+
 .clients__logos.show__element{
     display: block!important;
 }
@@ -85,10 +96,13 @@
 
 }
 .home__page .featured__wrapper .featured__article__title h4 {
-    font-weight: 600;
+    font-weight: 700;
     line-height: 30px;
     max-width: 300px;
     width: 100%;
+}
+.home__page .featured__wrapper .featured__article__content strong{
+    font-weight: 900;
 }
 .our__approach{
     overflow: hidden;
@@ -116,11 +130,11 @@
 .home__page .popup-content {
     background: transparent!important;
     border: 0!important;
-    max-width: 1100px!important;
+    max-width: 1400px!important;
     width: 100%!important;
 }
 .home__page .featured__artitle__inner {
-    width: 50%;
+    width: 40%;
 }
 .home__page .popup-content .close{
     position: absolute;
@@ -154,7 +168,7 @@
 }
 .home__page .popup__inner__background{
     position: absolute;
-    width: 40%;
+    width: 50%;
     height: auto;
     top: 0;
     right: 100px;
@@ -256,7 +270,6 @@
 }
 .home__page .our__approach p{
     padding: 0;
-    line-height: 40px;
     z-index: 9;
     position: relative;
 }
@@ -631,6 +644,9 @@
 @media(max-width: 768px){
     .home__page .popup-content {
         max-width: 80%!important;
+    }
+    .home__page .featured__article {
+        padding: 60px 50px 60px;
     }
     .home__page .popup-content .close { 
         top: 32px;

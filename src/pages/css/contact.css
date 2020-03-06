@@ -144,7 +144,9 @@ label span{
     margin-top: 24px;
     border-top: 2px solid #767676;
     padding-top: 10px;
-    padding-bottom: 3px;
+    padding-bottom: 0px;
+    margin: 0;
+    padding: 12px 0;
 }
 #interest__option__two__label{
     border-top: 2px solid #767676;
@@ -159,10 +161,10 @@ label span{
     line-height: 35px;
     font-size: 20px;
     font-weight: 900;
+    background: white;
 }
 #interest__group legend{
-    font-size: 30px;
-    line-height: 30px;
+    font-size: 25px;
     font-weight: 700;
     text-transform: uppercase;
     color: #000000;
@@ -193,7 +195,6 @@ label span{
 }
 #interest__group input{
     position: absolute;
-    opacity: 0;
     top: 0;
     left: 0;
     width: 100%;
@@ -290,6 +291,15 @@ label span{
     .contact__section__two .column__data {
         padding: 30px 20px;
     }
+    .interested__wrapper #interest__group {
+        width: 100%;
+    }
+    .interested__wrapper #interest__group label h2 {
+        background: transparent;
+    }
+    #interest__group input{
+        opacity: 0;
+    }
     .submit__wrapper {
         margin-top: 60px;
     }
@@ -310,7 +320,6 @@ label span{
     }
     .interested__wrapper #interest__group label {
         font-size: 1.575rem;
-        margin: 20px 0;
 
     }
 
@@ -365,9 +374,6 @@ label span{
     }
     .interested__wrapper #interest__group label {
         width: 100%;
-    }
-    .interested__wrapper #interest__group label {
-        margin: 10px 0;
     }
     .async__form button {
         width: 100%;

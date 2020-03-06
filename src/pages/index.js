@@ -239,7 +239,7 @@ class HomePage extends Component {
                                     </div>
                                     <div className="featured__article__bottom flex-end">
                                         <div className="featured__article__cta">
-                                          <ExternalButton  redirectionLink={element.button_link} buttonText={element.button_text} buttonClass={'md-btn'}></ExternalButton>
+                                          <ExternalButton  redirectionLink={element.button_link} buttonText={element.button_text} buttonClass={''}></ExternalButton>
                                         </div>
                                     </div>
                                   </div>

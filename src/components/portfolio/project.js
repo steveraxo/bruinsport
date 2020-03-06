@@ -5,11 +5,15 @@ import Popup from "reactjs-popup";
 
 import "./project.css"
 class Project extends Component {
-    focusMain(){
+    focusMain(event){
         setTimeout(function(){ 
         // Focus the element on the burguer menu
         document.getElementById("close__menu").focus(); 
-    
+
+        if(event.target.getAttribute('class') === 'diagonal__button'){
+            document.getElementById("diagonal").scrollIntoView();
+        }
+        
         document.querySelectorAll('html')[0].classList.add('html__custom')
         document.querySelectorAll('.portfolio__page .diagonal')[0].classList.add('no__clipPath')
         // Trap the focus loop inside the menu
@@ -67,6 +71,7 @@ class Project extends Component {
         document.querySelectorAll('html')[0].classList.remove('html__custom')
         document.querySelectorAll('.portfolio__page .diagonal')[0].classList.remove('no__clipPath')
     }
+
     render() {
         const projectData = this.props.projectData; 
 
@@ -75,7 +80,7 @@ class Project extends Component {
                 {
                     // ======= Diagonal Project Layout =======
                     projectData.project_layout === "diagonal"
-                    ?   <div className={`our__approach featured__section container-fluid d-flex justify-content-center align-items-end ${projectData.project_layout} col-xl-12`} key={`0`}>
+                    ?   <div className={`our__approach featured__section container-fluid d-flex justify-content-center align-items-end ${projectData.project_layout} col-xl-12`} key={`0`} id={'diagonal'}>
                             <div className="page__background">
                                 <Img fluid={projectData.project_background.localFile.childImageSharp.fluid} alt={''} tabIndex={-1}/>
                             </div>
@@ -89,10 +94,11 @@ class Project extends Component {
                                             modal
                                             closeOnEscape
                                             closeOnDocumentClick
+                                            onClick={this.centerview}
                                             onOpen={this.focusMain}
                                             onClose={this.changeBodyScroll}
                                             trigger={
-                                                <button className={'md-btn'} >
+                                                <button className={'diagonal__button'} >
                                                     {projectData.button_text}
                                                 </button>
                                             }
@@ -152,7 +158,7 @@ class Project extends Component {
                                             onOpen={this.focusMain}
                                             onClose={this.changeBodyScroll}
                                             trigger={
-                                                <button className={'md-btn'} >
+                                                <button className={''} >
                                                     {projectData.button_text}
                                                 </button>
                                             }
@@ -210,7 +216,7 @@ class Project extends Component {
                                             onOpen={this.focusMain}
                                             onClose={this.changeBodyScroll}
                                             trigger={
-                                                <button className={'md-btn'} >
+                                                <button className={''} >
                                                     {projectData.button_text}
                                                 </button>
                                             }
@@ -273,7 +279,7 @@ class Project extends Component {
                                             onOpen={this.focusMain}
                                             onClose={this.changeBodyScroll}
                                             trigger={
-                                                <button className={'md-btn'} >
+                                                <button className={''} >
                                                     {projectData.button_text}
                                                 </button>
                                             }

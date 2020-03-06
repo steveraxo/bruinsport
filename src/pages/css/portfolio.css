@@ -13,7 +13,7 @@
     margin-top: 30px;
     position: absolute;
     top: 10px;
-    right: 160px;
+    right: -60px;
     opacity: 1;
 }
 .portfolio__page .popup-content .close:before, .portfolio__page .popup-content .close:after {
@@ -116,7 +116,7 @@
     mix-blend-mode: unset;
 }
 .portfolio__page button{
-    max-width: 317px;
+    max-width: 213px;
 }
 .our__approach.diagonal .svg__logo{
     max-width: 300px;
@@ -233,13 +233,19 @@
     .projects__section .our__approach {
         clip-path: polygon(0 60%, 140% 0,790% 130%,0 110%);
     }
+    .portfolio__page .popup-content .close {
+        right: -120px;
+    }
 }
 @media(max-width: 768px){
     .porftolio__description {
         min-height: auto;
     }
     .portfolio__page .popup-content .close {
-        right: 100px;
+        right: -100px;
+    }
+    .portfolio__page .popup__inner .project__logo.\--floating {
+        max-width: 150px;
     }
     .portfolio_full .first{
         display: none;
@@ -321,7 +327,7 @@
         width: 100%;
     }
     .portfolio__page .popup-content .close {
-        right: -250px;
+        right: -140px;
     }
 }
 @media (max-width: 823px) and (orientation: landscape) {

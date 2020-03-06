@@ -158,6 +158,9 @@ line-height: 30px;
 button.type__selector{
     background: #767676;
     font-weight: 600;
+    min-width: auto!important;
+    max-width: auto!important;
+    width: auto;
 }
 button.type__selector.active{
     background: #b02931;
@@ -169,8 +172,8 @@ button.type__news{
 button.type__news.active:before {
     width: 0;
     height: 0;
-    border-top: 34px solid transparent;
-    border-bottom: 33px solid transparent;
+    border-top: 32px solid transparent;
+    border-bottom: 32px solid transparent;
     border-left: 25px solid #b02831;
     content: "";
     position: absolute;
@@ -181,8 +184,8 @@ button.type__news.active:before {
 button.type__news:before {
     width: 0;
     height: 0;
-    border-top: 34px solid transparent;
-    border-bottom: 33px solid transparent;
+    border-top: 32px solid transparent;
+    border-bottom: 32px solid transparent;
     border-left: 25px solid #767676;
     content: "";
     position: absolute;
@@ -193,8 +196,8 @@ button.type__news:before {
 button.type__news:after {
     width: 0;
     height: 0;
-    border-top: 34px solid transparent;
-    border-bottom: 33px solid transparent;
+    border-top: 32px solid transparent;
+    border-bottom: 32px solid transparent;
     border-left: 25px solid #cccccc;
     content: "";
     position: absolute;
@@ -203,8 +206,9 @@ button.type__news:after {
     z-index: 4;
 }
 button.type__press{
-    padding: 20px 35px 20px 70px;
+    padding: 20px 35px 20px 30px;
     margin-left: 5px;
+
 }
 .news__list{
     position: relative;
@@ -251,6 +255,10 @@ button.type__press{
     }
     .media__page .featured__article {
         padding: 30px 20px;
+    }
+    .media__page .featured__wrapper.slick-slider{
+        width: 85%;
+        margin: auto;
     }
     .media__featured .row {
     padding: 50px 0px 120px;

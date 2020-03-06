@@ -114,7 +114,7 @@ class MediaPage extends Component {
                                 <div dangerouslySetInnerHTML={{__html: pageAcf.second_column_copy}} />
                             </div>
                             <div className="col-xl-12 ">
-                                <button class="md-btn" onClick={this.showContent}>Learn More</button>
+                                <button className="" onClick={this.showContent}>Learn More</button>
                             </div>
                             <div className="col-xl-12 hidden team__extra__content">
                                 <div className={'iframe__team d-flex justify-content-center align-items-center'} dangerouslySetInnerHTML={{__html: pageAcf.video_iframe}} />
@@ -187,7 +187,7 @@ class MediaPage extends Component {
                                                             <div className="featured__article__content" dangerouslySetInnerHTML={{__html: member.bio}} />
                                                             </div>
                                                             <div className="featured__article__cta">
-                                                                <ExternalButton  redirectionLink={member.member_link} buttonText={'Read More'} buttonClass={'md-btn'}></ExternalButton>
+                                                                <ExternalButton  redirectionLink={member.member_link} buttonText={'Read More'} buttonclassName={'md-btn'}></ExternalButton>
                                                             </div>
                                                         </div>
                                                     </div>

@@ -148,6 +148,8 @@
         line-height: 40px;
         margin-top: 25px;
         font-weight: 500;
+        max-width: 600px;
+        width: 100%;
     }
     .team__page .team__section .featured__wrapper .featured__article__content {
         margin: 10px 0;
@@ -155,7 +157,7 @@
     .team__page .popup-content .close{
         position: absolute;
         top: 40px;
-        right: 150px;
+        right: -70px;
         z-index: 9;
         opacity: 1;
     }
@@ -277,9 +279,7 @@
     .team__page .fade__top {
         right: 5%;
     }
-    .team__page .main__section {
-        height: 2300px;
-    }
+
     .team__section {
         margin-top: -676px;
     }
@@ -369,8 +369,16 @@
         height: 3325px;
         padding: 90px 0 120px 0!important;
     }
-    .team__page .main__section.\--open {
+    .team__page .main__section.--open {
         height: 4385px;
+    }
+}
+@media(max-width:1100px){ 
+    .team__page .main__section {
+        height: 3525px;
+    }
+    .team__page .main__section.--open {
+        height: 4655px;
     }
 }
 @media(max-width:1024px){ 
@@ -379,20 +387,19 @@
         top: 6px!important;
     }
     .team__page .main__section {
-        height: 4125px;
         clip-path: polygon(0 0, 100% 0, 100% 66%, 0 58%);
     }
     .team__section {
-        margin-top: -1580px;
+        margin-top: -1300px;
     }
     .featured__article {
         width: 90%;
     }
     .team__page .main__section.--open {
-        height: 5425px;
+        height: 4925px;
     }
     .team__section.--open {
-        margin-top: -2120px;
+        margin-top: -1820px;
     }
     .team__section .team__members .col-sm-12 img {
         height: 390px;
@@ -402,7 +409,7 @@
         padding: 60px 50px;
     }
     .team__page .team__section .popup-content .close {
-        right: 130px;
+        right: -100px;
     }
     .team__page .team__section .featured__artitle__inner {
         padding: 30px 30px;
@@ -528,7 +535,7 @@
         top: 6px;
     }
     .team__page .team__section .popup-content .close {
-        right: -315px;
+        right: -165px;
         top: 10px;
     }
     .team__page .team__section .triangle__big {
@@ -769,7 +776,7 @@
         margin-top: -2300px;
     }
     .team__page .team__section .popup-content .close {
-        right: 80px;
+        right: -150px;
     }
     .team__page #popup__team .featured__article .gatsby-image-wrapper {
         height: 300px!important;
@@ -818,7 +825,6 @@
         height: 250px;
     }
     .team__page .team__section .popup-content .close {
-        right: 72px;
         top: 30px;
     }
     .team__page .team__section .triangle__small {

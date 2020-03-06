@@ -124,7 +124,7 @@
 }
 .home__page .popup-content .close{
     position: absolute;
-    right: 110px;
+    right: 120px;
     top: 32px;
     width: 32px;
     height: 32px;
@@ -251,7 +251,7 @@
     padding-right: 0;
 }
 .home__page .our__approach h1, .home__page .our__approach h3, .home__page .our__approach button{
-    z-index: 9;
+    z-index: 99;
     position: relative;
 }
 .home__page .our__approach p{
@@ -536,7 +536,7 @@
         width: 100%;
     }
     .home__page .popup-content .close {
-        right: 80px;
+        right: 100px;
     }
     .latest__article .content {
         line-height: 1.2em;
@@ -633,7 +633,6 @@
         max-width: 80%!important;
     }
     .home__page .popup-content .close { 
-        right: 70px;
         top: 32px;
     }
     .home__page .featured__section .container {
@@ -738,7 +737,7 @@
         display: block;
     }
     .home__page .popup-content .close {
-        right: 30px;
+        right: 40px;
         top: 15px;
     }
     .get__started__content > div {

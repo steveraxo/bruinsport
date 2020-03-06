@@ -70,9 +70,6 @@
     .portfolio__page .popup-content .featured__artitle__inner {
         padding: 20px 20px 0;
     }
-    .portfolio__page .popup-content .featured__artitle__inner {
-        height: 520px;
-    }
 }
 @media(max-width: 360px){
     .portfolio__page .popup-content .featured__artitle__inner {

@@ -8,7 +8,7 @@ class Header extends Component {
     super(props);
     this.state = {
         currentPage: 1,
-        paginationSize: 2,
+        paginationSize: 5,
     };
   }
   // Constrols de arrow to next page of articles
@@ -156,7 +156,7 @@ class Header extends Component {
                      onClick={this.previousPage.bind(this)} 
                      key={`id-${this.props.elId}-1`} 
                      tabIndex={0}
-                     data-finalpage={`${newsArray.length / this.state.paginationSize}`}> back 
+                     data-finalpage={`${ Math.ceil(newsArray.length / this.state.paginationSize)}`}> back 
                 </div>
                 
                 <div className={'next__page'} 
@@ -164,7 +164,7 @@ class Header extends Component {
                      data-type={this.props.elId} 
                      data-page={this.state.currentPage} 
                      tabIndex={0}
-                     data-finalpage={`${newsArray.length / this.state.paginationSize}`}  
+                     data-finalpage={`${ Math.ceil(newsArray.length / this.state.paginationSize)}`}  
                      onClick={this.nextPage.bind(this)}> next 
                 </div>
             </div>

@@ -133,6 +133,7 @@
     position: absolute;
     transition: all 0.6s cubic-bezier(0.86, 0, 0.07, 1);
     transform-origin: center;
+    cursor: pointer;
 }
 .values__information.--open .values__information__inner::after{
     transform: rotate(225deg);

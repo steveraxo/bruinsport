@@ -15,13 +15,20 @@ class AboutPage extends Component {
     this.state = { };
   }
   handleAccordion(event){
+      [...document.querySelectorAll('.values__information')].map(element => {
+        if(element.classList.contains('--open')){
+            element.classList.remove('--open');
+        }
+      })
+
       if(event.target.classList.contains('--open')){
         event.target.classList.remove('--open');
       }else{
-        if([...document.querySelectorAll('.values__information.--open')].length > 1){
-            document.querySelectorAll('.values__information.--open')[0].classList.remove('--open')
-        }
         event.target.classList.add('--open');
+      }
+
+      if([...document.querySelectorAll('.values__information.--open')].length > 1){
+        document.querySelectorAll('.values__information.--open')[0].classList.remove('--open')
       }
 
   }

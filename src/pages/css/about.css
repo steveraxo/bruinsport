@@ -4,6 +4,9 @@
     padding:208px 0 728px !important;
     
 }
+.about{
+    overflow: hidden;
+}
 .history__timeline__moment__description span{
     color: white!important;
     text-decoration: underline;

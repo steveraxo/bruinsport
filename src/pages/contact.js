@@ -179,7 +179,7 @@ class ContactPage extends Component {
                             submit === true
                             ? name.length > 3
                               ? ''
-                              : <p><small>Please add your name and last name</small></p>
+                              : <p><small>Please add your name</small></p>
                             : ''
                           }
                         </div>
@@ -208,7 +208,7 @@ class ContactPage extends Component {
                             submit === true
                             ? verifiedEmail === true
                               ? ''
-                              : <p><small>Please add a valid email address!</small></p>
+                              : <p><small>Please add a valid email address</small></p>
                             : ''
                           }
                         </div>
@@ -252,7 +252,7 @@ class ContactPage extends Component {
                             submit === true
                             ? message.length > 20
                               ? ''
-                              : <p><small>Please add a longer message for our team</small></p>
+                              : <p><small>The message field is required</small></p>
                             : ''
                           }
                         </div>
@@ -266,13 +266,13 @@ class ContactPage extends Component {
                             loading === 'loading' ? <p>We are submitting your message</p> : ''
                           }
                           {
-                            loading === 'success' ? <p>Your message was sent!</p> : ''
+                            loading === 'success' ? <p>Your message was sent</p> : ''
                           }
                           {
                             loading === 'failed' ? <p>We could not send your message, please try again later</p> : ''
                           }
                           {
-                            loading === 'not__completed' ? <p>Please fill all the fields with the proper information</p> : ''
+                            loading === 'not__completed' ? <p>Please fill all the fields</p> : ''
                           }
                         </div>
                       </div>

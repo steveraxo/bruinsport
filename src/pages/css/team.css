@@ -145,7 +145,6 @@
         padding: 40px 40px;
     }
     .team__page .team__section p{
-        line-height: 40px;
         margin-top: 25px;
         font-weight: 500;
         max-width: 600px;
@@ -694,9 +693,6 @@
     .team__section .container {
         margin-top: 0px;
     }
-}
-.team__page p {
-    line-height: 50px;
 }
 .html__custom{
     overflow: hidden;

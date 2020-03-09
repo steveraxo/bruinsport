@@ -366,7 +366,7 @@
     .home__page .clients__logos {
         max-width: 1400px;
         margin: auto;
-        padding: 0px;
+        padding: 0px 50px;
     }
     .home__page .header__copy{
         left: 35.5%;

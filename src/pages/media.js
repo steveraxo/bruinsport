@@ -100,7 +100,7 @@ class MediaPage extends Component {
                                     </div>
                                   </div>
                                   <div className="featured__article__cta">
-                                    <ExternalButton redirectionLink={element.acf.external_news_link} buttonClass={'md-btn'} buttonText={'Read More'}></ExternalButton>
+                                    <ExternalButton redirectionLink={element.acf.external_news_link} buttonClass={''} buttonText={'Read More'}></ExternalButton>
                                   </div>
                                 </div>
                               </div>

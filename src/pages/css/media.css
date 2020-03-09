@@ -128,7 +128,6 @@ line-height: 30px;
 .featured__wrapper.dark .slick-arrow.slick-next{
     border-right: 1px solid black;
     border-bottom: 1px solid black;
-    transform: 
 }
 .featured__wrapper .slick-next:before, .featured__wrapper .slick-prev:before {
     content: '\2192';

@@ -16,7 +16,7 @@ const NotFoundPage = () => (
       <SEO title="404: Not found" />
       <h1>Ups!</h1>
       <p>We were not able to find the page you are looking for</p>
-      <InternalButton redirectionLink={'/'} buttonText={'Return to home'} buttonClass={'md-btn not__found__button'} />
+      <InternalButton redirectionLink={'/'} buttonText={'Return to home'} buttonClass={'not__found__button'} />
     </div>
   </Layout>
 )

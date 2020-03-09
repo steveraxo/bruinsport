@@ -187,7 +187,7 @@ class MediaPage extends Component {
                                                             <div className="featured__article__content" dangerouslySetInnerHTML={{__html: member.bio}} />
                                                             </div>
                                                             <div className="featured__article__cta">
-                                                                <ExternalButton  redirectionLink={member.member_link} buttonText={'Read More'} buttonclassName={'md-btn'}></ExternalButton>
+                                                                <ExternalButton  redirectionLink={member.member_link} buttonText={'Read More'} buttonclassName={''}></ExternalButton>
                                                             </div>
                                                         </div>
                                                     </div>

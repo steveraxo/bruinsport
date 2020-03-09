@@ -11,7 +11,13 @@
     top: unset;
     height: 400px;
     overflow-x: hidden;
-    overflow-y: scroll;
+    overflow-y: hidden;
+}
+.portfolio__page .featured__article__top{
+    position: relative;
+}
+.portfolio__page .popup-content .featured__wrapper .featured__article__content p{
+    padding-right: 30px;
 }
 .portfolio__page #popup__team .featured__article .popup__background.gatsby-image-wrapper {
     width: 100%!important;

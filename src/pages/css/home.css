@@ -12,7 +12,9 @@
     width: 0px;
     background: transparent; /* make scrollbar transparent */
 }
-
+.home__page .popup-content .featured__wrapper .featured__article__content p{
+    padding-right: 30px;
+}
 .clients__logos.show__element{
     display: block!important;
 }
@@ -134,7 +136,7 @@
     width: 100%!important;
 }
 .home__page .featured__artitle__inner {
-    width: 40%;
+    width: 43%;
 }
 .home__page .popup-content .close{
     position: absolute;

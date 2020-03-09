@@ -230,7 +230,15 @@ class HomePage extends Component {
                                         <div className="featured__article__title">
                                           <h4>{element.title}</h4>
                                         </div>
-                                        <Scrollbars style={{  height: 200 }}>
+                                        <Scrollbars 
+                                          renderTrackVertical={props => <div {...props} className="track-vertical"/>}
+                                          renderThumbVertical={props => <div {...props} className="thumb-vertical"/>}
+                                          style={{  height: 170 }}
+                                          autoHide
+                                          autoHideTimeout={1000}
+                                          autoHideDuration={200}
+                                     
+                                        >
                                           <div className="featured__article__content home__pop__content" dangerouslySetInnerHTML={{__html: element.first_copy}} />
                                         </Scrollbars>
                                       </div>

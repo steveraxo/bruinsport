@@ -4,6 +4,7 @@
 }
 .portfolio__page #popup__team h3{
     font-weight: 600;
+    max-width: 320px;
 }
 .approach{
     overflow: hidden;

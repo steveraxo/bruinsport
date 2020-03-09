@@ -2,6 +2,7 @@
 import React, { Component } from "react"
 import Img from "gatsby-image"
 import Popup from "reactjs-popup";
+import { Scrollbars } from 'react-custom-scrollbars';
 
 import "./project.css"
 class Project extends Component {
@@ -121,7 +122,16 @@ class Project extends Component {
                                                     <div className={'col-md-12 col-lg-12'}>
                                                         <div className="featured__artitle__inner">
                                                             <div className="featured__article__top">
-                                                            <div className="featured__article__content" dangerouslySetInnerHTML={{__html: projectData.popup_content}} />
+                                                            <div className={'col-md-12 col-lg-12'}>
+                                                            <Scrollbars 
+                                                                renderTrackVertical={props => <div {...props} className="track-vertical"/>}
+                                                                renderThumbVertical={props => <div {...props} className="thumb-vertical"/>}
+                                                                autoHeight
+                                                                        autoHide
+                                                            >
+                                                                <div className="featured__article__content" dangerouslySetInnerHTML={{__html: projectData.popup_content}} />
+                                                            </Scrollbars>
+                                                            </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -181,7 +191,14 @@ class Project extends Component {
                                                     <div className={'col-md-12 col-lg-12'}>
                                                         <div className="featured__artitle__inner">
                                                             <div className="featured__article__top">
-                                                            <div className="featured__article__content" dangerouslySetInnerHTML={{__html: projectData.popup_content}} />
+                                                            <Scrollbars 
+                                                                renderTrackVertical={props => <div {...props} className="track-vertical"/>}
+                                                                renderThumbVertical={props => <div {...props} className="thumb-vertical"/>}
+                                                                autoHeight
+                                                                        autoHideTimeout={1000}
+                                                            >
+                                                                <div className="featured__article__content" dangerouslySetInnerHTML={{__html: projectData.popup_content}} />
+                                                            </Scrollbars>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -239,7 +256,14 @@ class Project extends Component {
                                                     <div className={'col-md-12 col-lg-12'}>
                                                         <div className="featured__artitle__inner">
                                                             <div className="featured__article__top">
-                                                            <div className="featured__article__content" dangerouslySetInnerHTML={{__html: projectData.popup_content}} />
+                                                            <Scrollbars 
+                                                                renderTrackVertical={props => <div {...props} className="track-vertical"/>}
+                                                                renderThumbVertical={props => <div {...props} className="thumb-vertical"/>}
+                                                                autoHeight
+                                                                        autoHideDuration={200}
+                                                            >
+                                                                <div className="featured__article__content" dangerouslySetInnerHTML={{__html: projectData.popup_content}} />
+                                                            </Scrollbars>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -302,7 +326,17 @@ class Project extends Component {
                                                     <div className={'col-md-12 col-lg-12'}>
                                                         <div className="featured__artitle__inner">
                                                             <div className="featured__article__top">
-                                                            <div className="featured__article__content" dangerouslySetInnerHTML={{__html: projectData.popup_content}} />
+                                                            <Scrollbars 
+                                                                renderTrackVertical={props => <div {...props} className="track-vertical"/>}
+                                                                renderThumbVertical={props => <div {...props} className="thumb-vertical"/>}
+                                                                autoHeight
+                                                                autoHide
+                                                                autoHideTimeout={1000}
+                                                                autoHideDuration={200}
+                                                         
+                                                            >
+                                                                <div className="featured__article__content" dangerouslySetInnerHTML={{__html: projectData.popup_content}} />
+                                                            </Scrollbars>
                                                             </div>
                                                         </div>
                                                     </div>

@@ -7,6 +7,25 @@
 .popup-overlay {
     background: rgba(255, 255, 255, 0)!important;
 }
+.track-vertical{
+    position: absolute;
+    height: 100%;
+    background: #dedddd;
+    z-index: 9999;
+    right: 17px;
+    top: 10px;
+    width: 1px!important;
+}
+.thumb-vertical{
+    position: relative;
+    display: block;
+    transform: translateY(0px);
+    background: #c0c0c0;
+    border-radius: 102px;
+    right: 11px;
+    height: 21px!important;
+    width: 21px !important;
+}
 .slick-slider .slick-arrow{
     min-width: auto!important;
     max-width: auto!important;

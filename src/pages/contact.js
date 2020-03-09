@@ -260,7 +260,7 @@ class ContactPage extends Component {
                       </div>
                       <div className={'col-md-12 col-lg-12 submit__wrapper d-flex justify-content-start align-items-start flex-column'}>
                         <Reaptcha ref={e => (this.captcha = e)} tabindex={0} className={this.state.showRecaptcha ? '' : 'hidden__element'} sitekey={'6LdDd9cUAAAAAODEZ-CLPxm1CPpZyqmfo2NN58Yk'} onVerify={this.onVerify} />
-                        <button type="submit" style={{marginTop: '20px'}} className={'md-btn long-btn'} onClick={this.handleSubmit} disabled={!this.state.verified}>Send</button>
+                        <button type="submit" style={{marginTop: '20px'}} className={' long-btn'} onClick={this.handleSubmit} disabled={!this.state.verified}>Send</button>
                         <div className={'loading__status ' + loading }>
                           {
                             loading === 'loading' ? <p>We are submitting your message</p> : ''

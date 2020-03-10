@@ -21,7 +21,7 @@
     font-weight: 800;
     line-height: 22px;
 }
-.media__featured .row{
+.media__page .media__featured .row{
     padding: 90px 50px 120px;
 }
 .media__page .featured__wrapper .slick-dots li {
@@ -260,7 +260,7 @@ button.type__press{
         width: 85%;
         margin: auto;
     }
-    .media__featured .row {
+    .media__page .media__featured .row {
     padding: 50px 0px 120px;
     }
     .featured__wrapper .featured__article__bottom {

@@ -15,6 +15,9 @@
   .history__timeline {
       background: #ae2931;
   }
+.about .about__header {
+    background: #282322;
+}
 .about .about__header:after{
     content: "";
     width: 100%;

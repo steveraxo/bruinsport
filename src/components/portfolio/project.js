@@ -128,8 +128,16 @@ class Project extends Component {
                                                                 <Scrollbars 
                                                                     renderTrackVertical={props => <div {...props} className="track-vertical"/>}
                                                                     renderThumbVertical={props => <div {...props} className="thumb-vertical"/>}
+                                                                    onScroll={this.handleScroll}
+                                                                    onScrollFrame={this.handleScrollFrame}
+                                                                    onScrollStart={this.handleScrollStart}
+                                                                    onScrollStop={this.handleScrollStop}
+                                                                    onUpdate={this.handleUpdate}
+                                                                    renderView={this.renderView}
+
                                                                     autoHeight
-                                                                            
+                                                                    autoHeightMin={0}
+                                                                    universal={true} 
                                                                 >
                                                                     <div className="featured__article__content" dangerouslySetInnerHTML={{__html: projectData.popup_content}} />
                                                                 </Scrollbars>
@@ -203,7 +211,17 @@ class Project extends Component {
                                                                 <Scrollbars 
                                                                     renderTrackVertical={props => <div {...props} className="track-vertical"/>}
                                                                     renderThumbVertical={props => <div {...props} className="thumb-vertical"/>}
+                                                                    onScroll={this.handleScroll}
+                                                                    onScrollFrame={this.handleScrollFrame}
+                                                                    onScrollStart={this.handleScrollStart}
+                                                                    onScrollStop={this.handleScrollStop}
+                                                                    onUpdate={this.handleUpdate}
+                                                                    renderView={this.renderView}
+
                                                                     autoHeight
+                                                                    autoHeightMin={0}
+                                                                    universal={true} 
+                                                                    
                                                                             
                                                                 >
                                                                     <div className="featured__article__content" dangerouslySetInnerHTML={{__html: projectData.popup_content}} />
@@ -276,7 +294,17 @@ class Project extends Component {
                                                                 <Scrollbars 
                                                                     renderTrackVertical={props => <div {...props} className="track-vertical"/>}
                                                                     renderThumbVertical={props => <div {...props} className="thumb-vertical"/>}
+                                                                    onScroll={this.handleScroll}
+                                                                    onScrollFrame={this.handleScrollFrame}
+                                                                    onScrollStart={this.handleScrollStart}
+                                                                    onScrollStop={this.handleScrollStop}
+                                                                    onUpdate={this.handleUpdate}
+                                                                    renderView={this.renderView}
+
                                                                     autoHeight
+                                                                    autoHeightMin={0}
+                                                                    universal={true} 
+                                                                    
                                                                             
                                                                 >
                                                                     <div className="featured__article__content" dangerouslySetInnerHTML={{__html: projectData.popup_content}} />
@@ -354,7 +382,17 @@ class Project extends Component {
                                                                 <Scrollbars 
                                                                     renderTrackVertical={props => <div {...props} className="track-vertical"/>}
                                                                     renderThumbVertical={props => <div {...props} className="thumb-vertical"/>}
+                                                                    onScroll={this.handleScroll}
+                                                                    onScrollFrame={this.handleScrollFrame}
+                                                                    onScrollStart={this.handleScrollStart}
+                                                                    onScrollStop={this.handleScrollStop}
+                                                                    onUpdate={this.handleUpdate}
+                                                                    renderView={this.renderView}
+
                                                                     autoHeight
+                                                                    autoHeightMin={0}
+                                                                    universal={true} 
+                                                                    
 
                                                                 >
                                                                     <div className="featured__article__content" dangerouslySetInnerHTML={{__html: projectData.popup_content}} />

@@ -236,8 +236,16 @@ class HomePage extends Component {
                                         <Scrollbars 
                                           renderTrackVertical={props => <div {...props} className="track-vertical"/>}
                                           renderThumbVertical={props => <div {...props} className="thumb-vertical"/>}
-                                          style={{  height: 170 }}
-                                     
+                                          onScroll={this.handleScroll}
+                                          onScrollFrame={this.handleScrollFrame}
+                                          onScrollStart={this.handleScrollStart}
+                                          onScrollStop={this.handleScrollStop}
+                                          onUpdate={this.handleUpdate}
+                                          renderView={this.renderView}
+
+                                          autoHeight
+                                          autoHeightMin={0}
+                                          universal={true} 
                                         >
                                           <div className="featured__article__content home__pop__content" dangerouslySetInnerHTML={{__html: element.first_copy}} />
                                         </Scrollbars>

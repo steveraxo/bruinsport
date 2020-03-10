@@ -13,8 +13,6 @@ import ExternalButton from "../components/master/buttons/externalButton"
 import InternalButton from "../components/master/buttons/internalButton"
 import MapBackground  from "../images/home/home-map.png"
 import BruinLogo from "../components/master/bruin-letter-logo/bruinLetter"
-import { Scrollbars } from 'react-custom-scrollbars';
-
 
 class HomePage extends Component {
   constructor(props) {
@@ -231,22 +229,7 @@ class HomePage extends Component {
                                         <div className="featured__article__title">
                                           <h4>{element.title}</h4>
                                         </div>
-                                        <Scrollbars 
-                                          renderTrackVertical={props => <div {...props} className="track-vertical"/>}
-                                          renderThumbVertical={props => <div {...props} className="thumb-vertical"/>}
-                                          onScroll={this.handleScroll}
-                                          onScrollFrame={this.handleScrollFrame}
-                                          onScrollStart={this.handleScrollStart}
-                                          onScrollStop={this.handleScrollStop}
-                                          onUpdate={this.handleUpdate}
-                                          renderView={this.renderView}
-
-                                          autoHeight
-                                          autoHeightMin={0}
-                                          universal={true} 
-                                        >
                                           <div className="featured__article__content home__pop__content" dangerouslySetInnerHTML={{__html: element.first_copy}} />
-                                        </Scrollbars>
                                       </div>
                                       <div className="featured__article__divider"></div>
                                       <div className="featured__article__content" dangerouslySetInnerHTML={{__html: element.second_copy}} />

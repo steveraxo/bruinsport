@@ -2,6 +2,43 @@
 .home__page .media__featured{
     min-height: 820px;
 } 
+.home__page .home__pop__content p{
+    height: 150px;
+    overflow-y: scroll;
+}
+.home__page .home__pop__content p::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+.home__page .home__pop__content p::-webkit-scrollbar:vertical {
+    width: 10px;
+    background-color: white;
+    border-radius: 10px;
+}
+.home__page .home__pop__content p::-webkit-scrollbar:horizontal {
+    border-radius: 10px;
+    border: 1px solid blue;
+    width: 10px;
+}
+.home__page .home__pop__content p::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    background-color: #e0e0e0;
+    height:10px;
+}
+.home__page .popup-content .featured__wrapper .featured__article__content p {
+    margin: 20px 0 20px;
+}
+.home__page  .home__pop__content{
+    position: relative;
+}
+.home__page  .home__pop__content:after{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    background: #e0e0e0;
+    top: 0;
+    right: 4.4px;
+}
 .featured__section,
 .home__page .media__featured,
 .get__started {

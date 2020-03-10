@@ -8,6 +8,43 @@
 .portfolio_full.dark {
   background: #000;
 }
+.portfolio__page .featured__article__content{
+    height: 150px;
+    overflow-y: scroll;
+}
+.portfolio__page .featured__article__content::-webkit-scrollbar {
+    -webkit-appearance: none;
+    position: absolute;
+    left: 10px;
+}
+.portfolio__page .featured__article__content::-webkit-scrollbar:vertical {
+    width: 10px;
+    background-color: white;
+    border-radius: 10px;
+}
+.portfolio__page .featured__article__content::-webkit-scrollbar:horizontal {
+    border-radius: 10px;
+    border: 1px solid blue;
+    width: 10px;
+}
+.portfolio__page .featured__article__content::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    background-color: #e0e0e0;
+    height:10px;
+}
+.portfolio__page .featured__article__content{
+    position: relative;
+}
+.portfolio__page .line{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    background: #e0e0e0;
+    top: 0;
+    right: 4.5px;
+    z-index: 9;
+}
 .portfolio__page .popup-content .featured__artitle__inner {
     width: 100%;
     position: relative;

@@ -28,7 +28,14 @@
 }
 .portfolio__page .our__approach {
     position: relative;
-    background: #999999;
+    background: #f9f9f9;
+}
+.portfolio__page .our__approach .top__info p {
+    color: #222;  
+}
+
+.portfolio__page .our__approach.featured__section.diagonal {
+  background: #000;
 }
 .portfolio__page .our__approach .top__info p {
     line-height: 30px;
@@ -113,7 +120,6 @@
 }
 .portfolio__page .our__approach .top__info p{
     width: 700px;
-    color: white;
     text-transform: uppercase;
     font-size: 25px;
     font-weight: 700;

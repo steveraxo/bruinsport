@@ -172,9 +172,7 @@ class HomePage extends Component {
         </Helmet>
         <div className="home__page">
           <section className="container-fluid hero-bg media__featured">
-            <a href="#section-2">
-              <div className="down__arrow"></div>
-            </a>
+            <a href="#section-2"><div class="down__arrow"></div><span className={'invisible'}>Scroll down link</span></a>
             <div className="page__background">
               <Img fluid={pageData.featured_media.localFile.childImageSharp.fluid} alt={""} tabIndex={-1}/>
             </div>

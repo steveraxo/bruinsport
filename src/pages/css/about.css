@@ -7,7 +7,14 @@
 .about__header.approach__header {
     background: #282322;
   }
+
+  .history .page__background {
+    background: #ae2931;
+  }
   
+  .history__timeline {
+      background: #ae2931;
+  }
 .about .about__header:after{
     content: "";
     width: 100%;

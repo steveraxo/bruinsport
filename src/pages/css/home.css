@@ -11,6 +11,23 @@
 .home__page .clients__logos__wrapper img:hover{
     opacity: 0.5;
 }
+.home__page .hero-bg .down__arrow{
+    content: "";
+    position: absolute;
+    display: inline-block;
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+    width: 30px;
+    height: 30px;
+    transform: rotate(45deg) scale(0.9);
+    right: 0px;
+    z-index: 999;
+    left: 0;
+    bottom: 20%;
+    right: 0;
+    margin: auto;
+    cursor: pointer;
+}
 .home__page .featured__article{
     padding: 60px 100px 80px;
 }
@@ -910,7 +927,7 @@
     .home__page .header__copy {
         top: 65%;
         left: 4px;
-        margin-top: 20%;
+        margin-top: -42%;
     }
     .home__copy h3 br{
         display: none;

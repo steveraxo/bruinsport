@@ -79,6 +79,8 @@ class MediaPage extends Component {
   }
 
   showContent(){
+      document.querySelectorAll('.team__extra__copy')[0].classList.add('--show');
+      document.querySelectorAll('.team__extra__second__copy')[0].classList.add('--show');
       document.querySelectorAll('.team__extra__content')[0].classList.add('--show');
       document.querySelectorAll('.team__page__first')[0].classList.add('--open');
       document.querySelectorAll('.team__section')[0].classList.add('--open');
@@ -109,8 +111,9 @@ class MediaPage extends Component {
                         <div className={'row main__row'}>
                             <div className={'col-md-12 col-xl-6'}>
                                 <div dangerouslySetInnerHTML={{__html: pageAcf.main_copy}} />
+                                <div className={'team__extra__copy'} dangerouslySetInnerHTML={{__html: pageAcf.first_column_copy}} />
                             </div>
-                            <div className={'col-md-12 col-xl-6 d-flex justify-element-end align-items-end'}>
+                            <div className={'col-md-12 col-xl-6 d-flex justify-element-end align-items-end team__extra__second__copy'}>
                                 <div dangerouslySetInnerHTML={{__html: pageAcf.second_column_copy}} />
                             </div>
                             <div className="col-xl-12 ">
@@ -122,9 +125,12 @@ class MediaPage extends Component {
                                     {
                                         pageAcf.popup_logos.map((logo, index) => (
                                             <div className="logo__wrapper" key={index}>
+                                                <div className="team__logo__image">
                                                 <a href={logo.url} target={'_BLANK'} rel="noopener noreferrer">
                                                     <Img fixed={logo.logo.localFile.childImageSharp.fixed} alt={logo.title} />
                                                 </a>
+                                                </div>
+
                                                 <p className={'text-white'} dangerouslySetInnerHTML={{__html: logo.title}} />
                                             </div>
                                         ))
@@ -242,8 +248,8 @@ query teamPageQuery {
         }
         acf {
             main_copy
+            first_column_copy
             second_column_copy
-            full_copy
             video_iframe
             popup_logos{
                 logo {

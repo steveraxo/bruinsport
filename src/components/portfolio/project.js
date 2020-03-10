@@ -355,7 +355,7 @@ class Project extends Component {
                                                                     renderTrackVertical={props => <div {...props} className="track-vertical"/>}
                                                                     renderThumbVertical={props => <div {...props} className="thumb-vertical"/>}
                                                                     autoHeight
-                                                                    autoHide
+
                                                                 >
                                                                     <div className="featured__article__content" dangerouslySetInnerHTML={{__html: projectData.popup_content}} />
                                                                 </Scrollbars>

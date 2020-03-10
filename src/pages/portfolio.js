@@ -12,7 +12,7 @@ class MediaPage extends Component {
   render() {
     const pageData = this.props.data.allWordpressPage.edges[0].node
     const pageAcf = this.props.data.allWordpressPage.edges[0].node.acf
-
+    console.log(pageAcf)
     return (
         <Layout>
             <Helmet>
@@ -97,6 +97,7 @@ query portfolioPageQuery {
               }
             }
             popup_content
+            opens_popup
             popup_background {
               localFile {
                 childImageSharp {

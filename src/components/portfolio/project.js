@@ -3,6 +3,7 @@ import React, { Component } from "react"
 import Img from "gatsby-image"
 import Popup from "reactjs-popup";
 import { Scrollbars } from 'react-custom-scrollbars';
+import ExternalButton from '../master/buttons/externalButton';
 
 import "./project.css"
 class Project extends Component {
@@ -90,57 +91,61 @@ class Project extends Component {
                                     <div className={'col-md-12 col-lg-12 col-xl-12 text-left'}>
                                     <img className={'svg__logo'} src={projectData.project_logo.localFile.url} alt={'Client Logo'} tabIndex={0}/>
                                     <div dangerouslySetInnerHTML={{__html: projectData.project_description}} />
-
-                                    <Popup     
-                                            modal
-                                            closeOnEscape
-                                            closeOnDocumentClick
-                                            onClick={this.centerview}
-                                            onOpen={this.focusMain}
-                                            onClose={this.changeBodyScroll}
-                                            trigger={
-                                                <button className={'diagonal__button'} >
-                                                    {projectData.button_text}
-                                                </button>
-                                            }
-                                        >
-                                        {close => (
-                                        <div>
-                                            <div className="popup__inner featured__wrapper popup__portfolio" id={'popup__team'}>
-                                                <div className="triangle__big"></div>
-                                                <div className="triangle__small"></div>
-                                                <div className="featured__article row" >
-                                                    <div className={'col-md-12 col-lg-12'}>
-                                                    <Img 
-                                                        tabIndex={0}
-                                                        fluid={projectData.popup_background.localFile.childImageSharp.fluid}
-                                                        alt={``}
-                                                        className={'popup__background'}
-                                                    />
-                                                    <img className={'project__logo --floating'} src={projectData.project_logo.localFile.url} alt={'Client Logo'} tabIndex={0}/>
-                                                    </div>
-                                                    <div className={'col-md-12 col-lg-12'}>
-                                                        <div className="featured__artitle__inner">
-                                                            <div className="featured__article__top">
-                                                            <div className={'col-md-12 col-lg-12'}>
-                                                            <Scrollbars 
-                                                                renderTrackVertical={props => <div {...props} className="track-vertical"/>}
-                                                                renderThumbVertical={props => <div {...props} className="thumb-vertical"/>}
-                                                                autoHeight
-                                                                        autoHide
-                                                            >
-                                                                <div className="featured__article__content" dangerouslySetInnerHTML={{__html: projectData.popup_content}} />
-                                                            </Scrollbars>
-                                                            </div>
+                                    {
+                                        projectData.opens_popup === true 
+                                        ?<Popup     
+                                                modal
+                                                closeOnEscape
+                                                closeOnDocumentClick
+                                                onClick={this.centerview}
+                                                onOpen={this.focusMain}
+                                                onClose={this.changeBodyScroll}
+                                                trigger={
+                                                    <button className={'diagonal__button'} >
+                                                        {projectData.button_text}
+                                                    </button>
+                                                }
+                                            >
+                                            {close => (
+                                            <div>
+                                                <div className="popup__inner featured__wrapper popup__portfolio" id={'popup__team'}>
+                                                    <div className="triangle__big"></div>
+                                                    <div className="triangle__small"></div>
+                                                    <div className="featured__article row" >
+                                                        <div className={'col-md-12 col-lg-12'}>
+                                                        <Img 
+                                                            tabIndex={0}
+                                                            fluid={projectData.popup_background.localFile.childImageSharp.fluid}
+                                                            alt={``}
+                                                            className={'popup__background'}
+                                                        />
+                                                        <img className={'project__logo --floating'} src={projectData.project_logo.localFile.url} alt={'Client Logo'} tabIndex={0}/>
+                                                        </div>
+                                                        <div className={'col-md-12 col-lg-12'}>
+                                                            <div className="featured__artitle__inner">
+                                                                <div className="featured__article__top">
+                                                                <div className={'col-md-12 col-lg-12'}>
+                                                                <Scrollbars 
+                                                                    renderTrackVertical={props => <div {...props} className="track-vertical"/>}
+                                                                    renderThumbVertical={props => <div {...props} className="thumb-vertical"/>}
+                                                                    autoHeight
+                                                                            
+                                                                >
+                                                                    <div className="featured__article__content" dangerouslySetInnerHTML={{__html: projectData.popup_content}} />
+                                                                </Scrollbars>
+                                                                </div>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <button className="close" tabIndex="0" onClick={close} onKeyPress={close}       id="close__menu" ></button>
                                             </div>
-                                            <button className="close" tabIndex="0" onClick={close} onKeyPress={close}       id="close__menu" ></button>
-                                         </div>
-                                        )}
-                                    </Popup>
+                                            )}
+                                        </Popup>
+                                        :
+                                        <ExternalButton redirectionLink={projectData.project_link} buttonText={projectData.button_text} buttonClass={'diagonal__button'} />
+                                    }
                                     </div>
                                 </div>
                             </div>
@@ -161,53 +166,61 @@ class Project extends Component {
                                 <div className={'porftolio__description'}>
                                     <div dangerouslySetInnerHTML={{__html: projectData.project_description}} />
                                 </div>
-                                    <Popup     
-                                            modal
-                                            closeOnEscape
-                                            closeOnDocumentClick
-                                            onOpen={this.focusMain}
-                                            onClose={this.changeBodyScroll}
-                                            trigger={
-                                                <button className={''} >
-                                                    {projectData.button_text}
-                                                </button>
-                                            }
-                                        >
-                                        {close => (
-                                        <div>
-                                            <div className="popup__inner featured__wrapper popup__portfolio" id={'popup__team'}>
-                                                <div className="triangle__big"></div>
-                                                <div className="triangle__small"></div>
-                                                <div className="featured__article row" >
-                                                    <div className={'col-md-12 col-lg-12'}>
-                                                    <Img 
-                                                        tabIndex={0}
-                                                        fluid={projectData.popup_background.localFile.childImageSharp.fluid}
-                                                        alt={``}
-                                                        className={'popup__background'}
-                                                    />
-                                                    <img className={'project__logo --floating'} src={projectData.project_logo.localFile.url} alt={'Client Logo'} tabIndex={0}/>
-                                                    </div>
-                                                    <div className={'col-md-12 col-lg-12'}>
-                                                        <div className="featured__artitle__inner">
-                                                            <div className="featured__article__top">
-                                                            <Scrollbars 
-                                                                renderTrackVertical={props => <div {...props} className="track-vertical"/>}
-                                                                renderThumbVertical={props => <div {...props} className="thumb-vertical"/>}
-                                                                autoHeight
-                                                                        autoHideTimeout={1000}
-                                                            >
-                                                                <div className="featured__article__content" dangerouslySetInnerHTML={{__html: projectData.popup_content}} />
-                                                            </Scrollbars>
+                                {
+                                        projectData.opens_popup === true 
+                                        ?<Popup     
+                                                modal
+                                                closeOnEscape
+                                                closeOnDocumentClick
+                                                onClick={this.centerview}
+                                                onOpen={this.focusMain}
+                                                onClose={this.changeBodyScroll}
+                                                trigger={
+                                                    <button className={''} >
+                                                        {projectData.button_text}
+                                                    </button>
+                                                }
+                                            >
+                                            {close => (
+                                            <div>
+                                                <div className="popup__inner featured__wrapper popup__portfolio" id={'popup__team'}>
+                                                    <div className="triangle__big"></div>
+                                                    <div className="triangle__small"></div>
+                                                    <div className="featured__article row" >
+                                                        <div className={'col-md-12 col-lg-12'}>
+                                                        <Img 
+                                                            tabIndex={0}
+                                                            fluid={projectData.popup_background.localFile.childImageSharp.fluid}
+                                                            alt={``}
+                                                            className={'popup__background'}
+                                                        />
+                                                        <img className={'project__logo --floating'} src={projectData.project_logo.localFile.url} alt={'Client Logo'} tabIndex={0}/>
+                                                        </div>
+                                                        <div className={'col-md-12 col-lg-12'}>
+                                                            <div className="featured__artitle__inner">
+                                                                <div className="featured__article__top">
+                                                                <div className={'col-md-12 col-lg-12'}>
+                                                                <Scrollbars 
+                                                                    renderTrackVertical={props => <div {...props} className="track-vertical"/>}
+                                                                    renderThumbVertical={props => <div {...props} className="thumb-vertical"/>}
+                                                                    autoHeight
+                                                                            
+                                                                >
+                                                                    <div className="featured__article__content" dangerouslySetInnerHTML={{__html: projectData.popup_content}} />
+                                                                </Scrollbars>
+                                                                </div>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <button className="close" tabIndex="0" onClick={close} onKeyPress={close}       id="close__menu" ></button>
                                             </div>
-                                            <button className="close" tabIndex="0" onClick={close} onKeyPress={close}       id="close__menu" ></button>
-                                         </div>
-                                        )}
-                                    </Popup>
+                                            )}
+                                        </Popup>
+                                        :
+                                        <ExternalButton redirectionLink={projectData.project_link} buttonText={projectData.button_text} buttonClass={''} />
+                                    }
                             </div>
                         </div>
                     :''
@@ -226,53 +239,61 @@ class Project extends Component {
                                 <div className={'porftolio__description'}>
                                     <div dangerouslySetInnerHTML={{__html: projectData.project_description}} />
                                 </div>
-                                    <Popup     
-                                            modal
-                                            closeOnEscape
-                                            closeOnDocumentClick
-                                            onOpen={this.focusMain}
-                                            onClose={this.changeBodyScroll}
-                                            trigger={
-                                                <button className={''} >
-                                                    {projectData.button_text}
-                                                </button>
-                                            }
-                                        >
-                                        {close => (
-                                        <div>
-                                            <div className="popup__inner featured__wrapper popup__portfolio" id={'popup__team'}>
-                                                <div className="triangle__big"></div>
-                                                <div className="triangle__small"></div>
-                                                <div className="featured__article row" >
-                                                    <div className={'col-md-12 col-lg-12'}>
-                                                    <Img 
-                                                        tabIndex={0}
-                                                        fluid={projectData.popup_background.localFile.childImageSharp.fluid}
-                                                        alt={``}
-                                                        className={'popup__background'}
-                                                    />
-                                                    <img className={'project__logo --floating'} src={projectData.project_logo.localFile.url} alt={'Client Logo'} tabIndex={0}/>
-                                                    </div>
-                                                    <div className={'col-md-12 col-lg-12'}>
-                                                        <div className="featured__artitle__inner">
-                                                            <div className="featured__article__top">
-                                                            <Scrollbars 
-                                                                renderTrackVertical={props => <div {...props} className="track-vertical"/>}
-                                                                renderThumbVertical={props => <div {...props} className="thumb-vertical"/>}
-                                                                autoHeight
-                                                                        autoHideDuration={200}
-                                                            >
-                                                                <div className="featured__article__content" dangerouslySetInnerHTML={{__html: projectData.popup_content}} />
-                                                            </Scrollbars>
+                                {
+                                        projectData.opens_popup === true 
+                                        ?<Popup     
+                                                modal
+                                                closeOnEscape
+                                                closeOnDocumentClick
+                                                onClick={this.centerview}
+                                                onOpen={this.focusMain}
+                                                onClose={this.changeBodyScroll}
+                                                trigger={
+                                                    <button className={''} >
+                                                        {projectData.button_text}
+                                                    </button>
+                                                }
+                                            >
+                                            {close => (
+                                            <div>
+                                                <div className="popup__inner featured__wrapper popup__portfolio" id={'popup__team'}>
+                                                    <div className="triangle__big"></div>
+                                                    <div className="triangle__small"></div>
+                                                    <div className="featured__article row" >
+                                                        <div className={'col-md-12 col-lg-12'}>
+                                                        <Img 
+                                                            tabIndex={0}
+                                                            fluid={projectData.popup_background.localFile.childImageSharp.fluid}
+                                                            alt={``}
+                                                            className={'popup__background'}
+                                                        />
+                                                        <img className={'project__logo --floating'} src={projectData.project_logo.localFile.url} alt={'Client Logo'} tabIndex={0}/>
+                                                        </div>
+                                                        <div className={'col-md-12 col-lg-12'}>
+                                                            <div className="featured__artitle__inner">
+                                                                <div className="featured__article__top">
+                                                                <div className={'col-md-12 col-lg-12'}>
+                                                                <Scrollbars 
+                                                                    renderTrackVertical={props => <div {...props} className="track-vertical"/>}
+                                                                    renderThumbVertical={props => <div {...props} className="thumb-vertical"/>}
+                                                                    autoHeight
+                                                                            
+                                                                >
+                                                                    <div className="featured__article__content" dangerouslySetInnerHTML={{__html: projectData.popup_content}} />
+                                                                </Scrollbars>
+                                                                </div>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <button className="close" tabIndex="0" onClick={close} onKeyPress={close}       id="close__menu" ></button>
                                             </div>
-                                            <button className="close" tabIndex="0" onClick={close} onKeyPress={close}       id="close__menu" ></button>
-                                         </div>
-                                        )}
-                                    </Popup>
+                                            )}
+                                        </Popup>
+                                        :
+                                        <ExternalButton redirectionLink={projectData.project_link} buttonText={projectData.button_text} buttonClass={''} />
+                                    }
                             </div>
                         </div>
                     :''
@@ -296,56 +317,61 @@ class Project extends Component {
                                     <div className={'porftolio__description'}>
                                         <div dangerouslySetInnerHTML={{__html: projectData.project_description}} />
                                     </div>
-                                    <Popup     
-                                            modal
-                                            closeOnEscape
-                                            closeOnDocumentClick
-                                            onOpen={this.focusMain}
-                                            onClose={this.changeBodyScroll}
-                                            trigger={
-                                                <button className={''} >
-                                                    {projectData.button_text}
-                                                </button>
-                                            }
-                                        >
-                                        {close => (
-                                        <div>
-                                            <div className="popup__inner featured__wrapper popup__portfolio" id={'popup__team'}>
-                                                <div className="triangle__big"></div>
-                                                <div className="triangle__small"></div>
-                                                <div className="featured__article row" >
-                                                    <div className={'col-md-12 col-lg-12'}>
-                                                    <Img 
-                                                        tabIndex={0}
-                                                        fluid={projectData.popup_background.localFile.childImageSharp.fluid}
-                                                        alt={``}
-                                                        className={'popup__background'}
-                                                    />
-                                                    <img className={'project__logo --floating'} src={projectData.project_logo.localFile.url} alt={'Client Logo'} tabIndex={0}/>
-                                                    </div>
-                                                    <div className={'col-md-12 col-lg-12'}>
-                                                        <div className="featured__artitle__inner">
-                                                            <div className="featured__article__top">
-                                                            <Scrollbars 
-                                                                renderTrackVertical={props => <div {...props} className="track-vertical"/>}
-                                                                renderThumbVertical={props => <div {...props} className="thumb-vertical"/>}
-                                                                autoHeight
-                                                                autoHide
-                                                                autoHideTimeout={1000}
-                                                                autoHideDuration={200}
-                                                         
-                                                            >
-                                                                <div className="featured__article__content" dangerouslySetInnerHTML={{__html: projectData.popup_content}} />
-                                                            </Scrollbars>
+                                    {
+                                        projectData.opens_popup === true 
+                                        ?<Popup     
+                                                modal
+                                                closeOnEscape
+                                                closeOnDocumentClick
+                                                onClick={this.centerview}
+                                                onOpen={this.focusMain}
+                                                onClose={this.changeBodyScroll}
+                                                trigger={
+                                                    <button className={''} >
+                                                        {projectData.button_text}
+                                                    </button>
+                                                }
+                                            >
+                                            {close => (
+                                            <div>
+                                                <div className="popup__inner featured__wrapper popup__portfolio" id={'popup__team'}>
+                                                    <div className="triangle__big"></div>
+                                                    <div className="triangle__small"></div>
+                                                    <div className="featured__article row" >
+                                                        <div className={'col-md-12 col-lg-12'}>
+                                                        <Img 
+                                                            tabIndex={0}
+                                                            fluid={projectData.popup_background.localFile.childImageSharp.fluid}
+                                                            alt={``}
+                                                            className={'popup__background'}
+                                                        />
+                                                        <img className={'project__logo --floating'} src={projectData.project_logo.localFile.url} alt={'Client Logo'} tabIndex={0}/>
+                                                        </div>
+                                                        <div className={'col-md-12 col-lg-12'}>
+                                                            <div className="featured__artitle__inner">
+                                                                <div className="featured__article__top">
+                                                                <div className={'col-md-12 col-lg-12'}>
+                                                                <Scrollbars 
+                                                                    renderTrackVertical={props => <div {...props} className="track-vertical"/>}
+                                                                    renderThumbVertical={props => <div {...props} className="thumb-vertical"/>}
+                                                                    autoHeight
+                                                                    autoHide
+                                                                >
+                                                                    <div className="featured__article__content" dangerouslySetInnerHTML={{__html: projectData.popup_content}} />
+                                                                </Scrollbars>
+                                                                </div>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <button className="close" tabIndex="0" onClick={close} onKeyPress={close}       id="close__menu" ></button>
                                             </div>
-                                            <button className="close" tabIndex="0" onClick={close} onKeyPress={close}       id="close__menu" ></button>
-                                         </div>
-                                        )}
-                                    </Popup>
+                                            )}
+                                        </Popup>
+                                        :
+                                        <ExternalButton redirectionLink={projectData.project_link} buttonText={projectData.button_text} buttonClass={''} />
+                                    }
                                 </div>
                             </div>
                         </div>

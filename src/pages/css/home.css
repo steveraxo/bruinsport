@@ -711,6 +711,13 @@
         min-height: 600px;
 
     }
+    .home__page .featured__article {
+        height: 480px;
+        overflow: scroll;
+    }
+    .home__page .our__approach.featured__section .img__background img{
+        object-position: 60%!important;
+    }
     .home__page .featured__artitle__inner{
         width: 100%;
         height: 430px;

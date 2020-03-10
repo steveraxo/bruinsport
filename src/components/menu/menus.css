@@ -151,7 +151,16 @@
         height: 100vh;
     }
     .menu__wrapper.main__menu ol li p {
-        font-size: 23.21px;
+        font-size: 15.21px;
+    }
+    .menu__wrapper.main__menu ol li {
+        margin: 5px 0;
+    }
+    .menu__wrapper.main__menu ol li:after {
+        top: 40px;
+    }
+    .social_nav {
+        width: 205px;
     }
 }
 @media (max-width: 812px) and (orientation: landscape) {

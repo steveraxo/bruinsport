@@ -299,6 +299,21 @@ button.type__press{
         border-top: 44px solid transparent;
         border-bottom: 44px solid transparent;
     }
+    .news__list_field {
+        text-align: center;
+    }
+    .media__page .news__list_field.subtitle {
+        padding: 5px 0; 
+        margin: 5px 0; 
+        justify-content: center; 
+        text-align: center; 
+        height: auto; 
+    }
+    .news__list_field.col {
+        flex-basis: unset!important;
+        flex-grow: unset!important; 
+        max-width: unset!important; 
+    }
     .media__page .featured__wrapper .slick-arrow.slick-next {
         right: 25px;
     }

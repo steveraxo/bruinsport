@@ -6,6 +6,13 @@
 .portfolio__page{
     overflow: hidden;
 }
+.portfolio__page .projects__section .porftolio__description{
+    max-width: 500px;
+    width: 100%;
+}
+.portfolio__page .projects__section .row > div:nth-child(2) .porftolio__description, .portfolio__page .projects__section .row > div:nth-child(3) .porftolio__description{
+    min-height: 120px;
+}
 .portfolio__page .triangle__small{
     display: none;
 }

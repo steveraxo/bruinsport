@@ -366,24 +366,24 @@
         line-height: 30px;
     }
     .approach__header.about__header {
-        height: 930px;
-        padding: 218px 0 338px !important;
+        height: 630px;
+        padding: 118px 0 338px !important;
         clip-path: polygon(0 74%, 0 0, 100% 0, 100% 87%);
     }
     .approach__copy {
-        margin-top: -90px;
+        margin-top: -60px;
     }
     .approach__first__element__wrapper {
         position: relative;
         left: 20px;
     }
     .approach__first__slider .prev__button {
-        left: 38%;
+        left: 35%;
     top: unset;
     bottom: 30px;
     }
     .approach__first__slider .next__button {
-        right: 38%;
+        right: 32%;
     top: unset;
     bottom: 30px;
     }
@@ -398,6 +398,9 @@
 
     .approach__copy {
         padding: 0 15px!important;
+    }
+    .values__wrapper .values__information:last-child .values__information__inner {
+        border-bottom: none;
     }
 }
 

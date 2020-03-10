@@ -529,6 +529,9 @@
     .team__page .team__section .featured__artitle__inner {
         padding: 10px 15px;
     }
+    .team__page .main__section {
+        padding: 90px 0 70px 0!important;
+    }
     .team__page .team__section .featured__wrapper .featured__article img {
         height: 290px;
     }
@@ -587,59 +590,45 @@
         line-height: 30px;
     }
     .team__page .main__section {
-        height: 3020px;
-    }
-    .team__section {
-        margin-top: -1180px;
-    }
-}
-@media(max-width:414px){
-    .team__page .main__section {
-        height: 4760px;
-        clip-path: polygon(0 0, 100% 0, 100% 58%, 0 56%);
+        height: auto;
+        clip-path: unset;
     }
     .iframe__team iframe {
         height: auto;
         margin-bottom: 60px;
         margin-top: 0;
     }
+    .team__page .main__section button {
+        margin-top: 0px;
+    }
+    .team__section {
+        margin-top: 100px;
+    }
+}
+@media(max-width:414px){
+
     .team__page .popup__logos {
         flex-direction: column;
     }
     .team__page .popup__logos .logo__wrapper{
         margin: 20px 0;
     }
-    .team__section {
-        margin-top: -1940px; 
-    }
+
     .team__page .main__section p {
         margin: 20px 0 50px 0;
     }
-    .team__page .main__section.--open {
-        height: 6595px;
-    }
     .team__section.--open {
-        margin-top: -2750px;
+        margin-top: 100px;
+    }
+    .team__page .main__section.--open {
+        height: auto;
     }
 }
 @media(max-width:375px){
-    .team__page .main__section {
-        height: 5250px;
-        clip-path: polygon(0 0, 100% 0, 100% 58%, 0 56%);
-    }
-    .team__section {
-        margin-top: -2160px;
-    }
     .team__page .main__section h4 {
         line-height: 28px;
         margin: 20px 0 0;
         font-size: 19px;
-    }
-    .team__section.\--open {
-        margin-top: -2910px;
-    }
-    .team__page .main__section.--open {
-        height: 7015px;
     }
     .team__page .team__section p {
         line-height: 30px;
@@ -648,33 +637,9 @@
         height: 300px;
     }
 }
-@media(max-width:360px){
-    .team__page .main__section {
-        height: 5360px;
-    }
-    .team__section {
-        margin-top: -2200px;
-    }
-    .team__page .main__section.--open {
-        height: 7145px;
-    }
-    .team__section.--open {
-        margin-top: -2970px;
-    }
-}
+
 @media(max-width:320px){
-    .team__page .main__section {
-        height: 6080px;
-    }
-    .team__section {
-        margin-top: -2500px;
-    }
-    .team__page .main__section.--open {
-        height: 7845px;
-    }
-    .team__section.--open {
-        margin-top: -3270px;
-    }
+
     .team__page .team__section .featured__article {
         height: 380px;
     }

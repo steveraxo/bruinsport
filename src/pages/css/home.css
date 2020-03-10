@@ -5,6 +5,12 @@
 .home__page .header__copy, .home__copy{
     outline: none!important;
 }
+.home__page .clients__logos__wrapper img{
+    transition: all ease-in-out 0.3s;
+}
+.home__page .clients__logos__wrapper img:hover{
+    opacity: 0.5;
+}
 .home__page .featured__article{
     padding: 60px 100px 80px;
 }

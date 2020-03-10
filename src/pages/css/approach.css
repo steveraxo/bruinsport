@@ -10,6 +10,11 @@
     overflow: hidden;
 }
 
+.approach__first__slider,
+.approach__testimonial .featured__wrapper.slick-slider
+{
+  background: #000;
+}
 .approach__slider__controls button{
     width: auto;
     min-width: auto;

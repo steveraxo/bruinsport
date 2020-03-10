@@ -4,7 +4,10 @@
     width: 80%!important;
     max-width: 1480px;
 }
-
+.projects__section .our__approach,
+.portfolio_full.dark {
+  background: #000;
+}
 .portfolio__page .popup-content .featured__artitle__inner {
     width: 100%;
     position: relative;

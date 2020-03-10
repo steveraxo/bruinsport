@@ -4,6 +4,10 @@
     padding:208px 0 728px !important;
     
 }
+.about__header.approach__header {
+    background: #282322;
+  }
+  
 .about .about__header:after{
     content: "";
     width: 100%;

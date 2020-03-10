@@ -2,6 +2,11 @@
 .home__page .media__featured{
     min-height: 820px;
 } 
+.featured__section,
+.home__page .media__featured,
+.get__started {
+    background: #000;
+}
 .home__page .header__copy, .home__copy{
     outline: none!important;
 }
@@ -921,6 +926,7 @@
     .home__page .home__copy {
         top: 40%;
     }
+    
     .home__page .media__featured .featured__article__divider.home__divider {
         top: 33%;
     }

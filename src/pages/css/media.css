@@ -6,6 +6,10 @@
     position: relative;
     padding-bottom: 30px;
 }
+.media__page .media__featured {
+    overflow: hidden;
+    background: #1b1b1f;
+}
 .media__page .slick-slide.slick-active.slick-current{
     position: relative!important;
     z-index: 999;

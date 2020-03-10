@@ -336,6 +336,33 @@
     .portfolio__page .popup-content .close {
         right: -140px;
     }
+    .portfolio__page .portfolio_full.light{
+        flex-direction: column;
+        padding: 20px 0;
+    }
+    .portfolio__page .portfolio_full.light .page__background{
+        position: relative;
+        clip-path: polygon(0 100%, 0 0, 250% 0, -2% 100%);
+        -moz-transform: scale(1, -1);
+        -webkit-transform: scale(1, -1);
+        -o-transform: scale(1, -1);
+        -ms-transform: scale(1, -1);
+        transform: scale(-1, 1);
+    }
+    .projects__section .row div:nth-child(5) .portfolio__header{
+        -moz-transform: scale(1, -1);
+        -webkit-transform: scale(1, -1);
+        -o-transform: scale(1, -1);
+        -ms-transform: scale(1, -1);
+        transform: scale(-1, 1);
+    }
+    .projects__section .row div:nth-child(6) .portfolio__header{
+        -moz-transform: scale(1, -1);
+        -webkit-transform: scale(1, -1);
+        -o-transform: scale(1, -1);
+        -ms-transform: scale(1, -1);
+        transform: scale(-1, 1);
+    }
 }
 @media (max-width: 823px) and (orientation: landscape) {
     .portfolio__page .our__approach .top__info {

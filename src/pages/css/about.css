@@ -244,7 +244,7 @@
 @media(max-width:2000px){
     .about__header {
         clip-path: polygon(0 75%, 0 0, 100% 0, 100% 100%);
-        padding: 165px 0 485px !important;
+        padding: 165px 0 425px !important;
     }
     .mis__vals__soc {
         margin-top: -190px;
@@ -283,7 +283,7 @@
     }
     .about__header {
         clip-path: polygon(0 74%, 0 0, 100% 0, 100% 85%);
-        padding: 208px 0 620px !important;
+        padding: 208px 0 530px !important;
     }
     .mis__vals__soc {
         margin-top: -300px;
@@ -292,7 +292,7 @@
 @media(max-width: 768px){
     .about__header {
         clip-path: polygon(0 63%, 0 0, 100% 0, 100% 73%);
-        padding: 118px 0 998px !important;
+        padding: 118px 0 878px !important;
     }
     .mis__vals__soc {
         margin-top: -650px;
@@ -359,7 +359,8 @@
         top: -65px;
     }
     .about__header {
-        padding: 118px 0 1258px !important;
+        padding: 118px 0 1128px !important;
+        clip-path: polygon(0 64%, 0 0, 100% 0, 100% 69%);
         height: auto;
     }
     .mis__vals__soc {
@@ -408,10 +409,18 @@
         top: 15px;
     }
     .about__header {
-        padding: 118px 0 1458px !important;
+        padding: 118px 0 1108px !important;
     }
     .mis__vals__soc {
-        margin-top: -1200px;
+        margin-top: -900px;
+    }
+}
+@media(max-width: 320px){
+    .about__header {
+        padding: 118px 0 1198px !important;
+    }
+    .mis__vals__soc {
+        margin-top: -1000px;
     }
 }
 @media (max-width: 823px) and (orientation: landscape) {

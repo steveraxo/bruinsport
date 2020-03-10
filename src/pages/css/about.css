@@ -359,12 +359,12 @@
         top: -65px;
     }
     .about__header {
-        padding: 118px 0 1128px !important;
-        clip-path: polygon(0 64%, 0 0, 100% 0, 100% 69%);
+        padding: 118px 0 95px !important;
+        clip-path: unset;
         height: auto;
     }
     .mis__vals__soc {
-        margin-top: -850px;
+        margin-top: 80px;
     }
     .social p:nth-child(2), .social p {
         margin-top: 30px;

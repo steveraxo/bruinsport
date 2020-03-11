@@ -49,7 +49,7 @@ const SocialMenu = ({  }) => {
           menuItems.map((item, index) => 
             <li key={item.network_channel-index} className={`social__menu__tem`}>
               <a href={item.network_link} target="_blank" rel="noopener noreferrer">
-                <i class={`fab fa-`+item.network_channel}>{item.network_channel}</i>
+                <i className={`fab fa-`+item.network_channel}>{item.network_channel}</i>
               </a>
             </li>
           )

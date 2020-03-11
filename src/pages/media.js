@@ -55,6 +55,7 @@ class MediaPage extends Component {
       autoplaySpeed: 90000,
       slidesToShow: 1,
       slidesToScroll: 1,
+      lazyLoad: 'ondemand',
     };
     return (
       

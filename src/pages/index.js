@@ -110,7 +110,8 @@ class HomePage extends Component {
       autoplay: true,
       autoplaySpeed: 9000,
       slidesToShow: 4,
-      slidesToScroll: 4,
+      slidesToScroll: 1,
+      lazyLoad: 'ondemand',
       responsive: [
         {
           breakpoint: 1000,
@@ -170,8 +171,8 @@ class HomePage extends Component {
         </Helmet>
         <div className="home__page">
           <section className="container-fluid hero-bg media__featured">
-            <a href="#section-2"><div class="down__arrow"></div><span className={'invisible'}>Scroll down link</span></a>
-            <div className="page__background">
+            <a href="#section-2" tabIndex={0} className="down__arrow"><div  tabIndex={-1} aria-hidden="true"></div><span aria-hidden="true" className={'opacity-0'} tabIndex={-1}>Scroll down link</span></a>
+            <div className="page__background" aria-hidden="true">
               <Img fluid={pageData.featured_media.localFile.childImageSharp.fluid} alt={""} tabIndex={-1}/>
             </div>
             <div className="container-fluid">

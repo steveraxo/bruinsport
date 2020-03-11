@@ -400,6 +400,7 @@
 }
 .clients__slider{
     display: none;
+    visibility: hidden;
 }
 @media(min-width: 1920px){
     .floating__letter {
@@ -561,9 +562,11 @@
 @media(max-width: 1024px){
     .clients__logos{
         display: none!important;
+        visibility: hidden;
     }
     .clients__slider{
         display: block;
+        visibility: unset;
     }
     .clients__slider img{
         max-width: 85%;

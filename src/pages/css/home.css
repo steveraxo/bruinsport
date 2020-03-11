@@ -9,9 +9,10 @@
 .home__page .home__pop__content p::-webkit-scrollbar {
     -webkit-appearance: none;
 }
+
 .home__page .home__pop__content p::-webkit-scrollbar:vertical {
     width: 10px;
-    background-color: white;
+    background-color: transparent;
     border-radius: 10px;
 }
 .home__page .home__pop__content p::-webkit-scrollbar:horizontal {
@@ -234,13 +235,18 @@
     transform: rotate(45deg);
 }
 .home__page .popup__inner__background{
-    position: absolute;
+    position: absolute!important;
     width: 50%;
     height: auto;
     top: 0;
-    right: 100px;
+    right: 103px;
     bottom: 0;
     margin: auto!important;
+}
+.home__page .popup__inner__background img{
+    object-fit: contain!important;
+    width: 100%!important;
+    max-width: 100%!important;
 }
 .triangle__big {
     width: 0;
@@ -562,7 +568,6 @@
 @media(max-width: 1024px){
     .clients__logos{
         display: none!important;
-        visibility: hidden;
     }
     .clients__slider{
         display: block;

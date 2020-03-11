@@ -11,7 +11,6 @@ import Img from "gatsby-image"
 import Popup from "reactjs-popup";
 import ExternalButton from "../components/master/buttons/externalButton"
 import InternalButton from "../components/master/buttons/internalButton"
-import MapBackground  from "../images/home/home-map.png"
 import BruinLogo from "../components/master/bruin-letter-logo/bruinLetter"
 
 class HomePage extends Component {
@@ -171,7 +170,7 @@ class HomePage extends Component {
         </Helmet>
         <div className="home__page">
           <section className="container-fluid hero-bg media__featured">
-            <a href="#section-2" tabIndex={0} className="down__arrow"><div  tabIndex={-1} aria-hidden="true"></div><span aria-hidden="true" className={'opacity-0'} tabIndex={-1}>Scroll down link</span></a>
+            <a href="#section-2" tabIndex={0} className="down__arrow"><div  tabIndex={-1} aria-hidden="true"></div><span className={'opacity-0'} tabIndex={-1}>Scroll down link</span></a>
             <div className="page__background" aria-hidden="true">
               <Img fluid={pageData.featured_media.localFile.childImageSharp.fluid} alt={""} tabIndex={-1}/>
             </div>
@@ -232,7 +231,7 @@ class HomePage extends Component {
                                   <div className="triangle__big"></div>
                                   <div className="triangle__small"></div>
                                   <div className="featured__article" key={index}>
-                                  <img className="popup__inner__background" src={MapBackground} alt="" tabIndex="-1" />
+                                  <Img className={'popup__inner__background'} fluid={element.map.localFile.childImageSharp.fluid} alt="" tabIndex={-1} />
                                     <div className="featured__artitle__inner">
                                       <div className="featured__article__top">
                                         <div className="featured__article__title">
@@ -420,6 +419,15 @@ query HomeQuery {
             first_copy
             second_copy
             title
+            map{
+              localFile {
+                childImageSharp{
+                  fluid(maxWidth: 2000, quality: 100) {
+                    ...GatsbyImageSharpFluid_withWebp
+                  }
+                }
+              }
+            }
             icon {
               source_url
               localFile {

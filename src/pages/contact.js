@@ -133,6 +133,8 @@ class ContactPage extends Component {
     const pageData = this.props.data.allWordpressPage.edges[0].node
     const pageAcf = this.props.data.allWordpressPage.edges[0].node.acf
 
+
+    
     return (
       <Layout>
         <Helmet>
@@ -333,7 +335,7 @@ class ContactPage extends Component {
                     <div className="col-md-4 col-xl-3 s__three__column" key={`portfolio_data-${element}-${index}`}>
                       <a href={`${element.client_url}`} target="_BLANK" rel="noopener noreferrer">
                         <div className={'column__image'}>
-                          <img className={'contact__svg__logo'} src={element.cliente_logo.localFile.url} alt={'Client Logo'} tabIndex={0}/>
+                          <img className={'contact__svg__logo'} loading="lazy" src={element.cliente_logo.localFile.url} alt={'Client Logo'} tabIndex={0}/>
                         </div>
                       </a>
                       <div className={'column__info'}>
@@ -405,7 +407,7 @@ query ContactQuery {
           portfolio_data {
             client_email
             client_url
-            cliente_logo {
+            cliente_logo{
               localFile {
                 url
               }

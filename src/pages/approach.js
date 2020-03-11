@@ -17,24 +17,28 @@ class ApproachPage extends Component {
         nextPage: 0,
     };
   }
+  handleSliderKeyboard(e){
+    e.preventDefault();
+    if (e.type === 'keypress'){
+        if(e.which === 32 || e.which === 13 || e.which === 37 || e.which === 39){
+            this.handleSlider(e)
+        }
+    }
+  }
   handleSlider(event){
     // get the next page
     let toPage = event.target.getAttribute('topage');
     // get total page count
     let totalPages = event.target.getAttribute('totalpage');
-
     // remove the active from the item and the menu item
     document.querySelectorAll('.--s-active')[0].classList.remove('--s-active');
     document.querySelectorAll('.--active')[0].classList.remove('--active');
-
     // add the active class to the selected element and menu item
     document.getElementById(`${toPage}`).classList.add('--s-active');
     document.querySelectorAll(`.${toPage}`)[0].classList.add('--active');
-
     // create variables for next and prev pages
     let theNextPage = parseInt(toPage.substr(toPage.indexOf("-")).replace('-',''))+1, 
         thePrevPage = parseInt(toPage.substr(toPage.indexOf("-")).replace('-',''))-1;
-
         totalPages = parseInt(totalPages.substr(totalPages.indexOf("-")).replace('-',''))
 
     // we trap the slider in a loop
@@ -169,8 +173,9 @@ class ApproachPage extends Component {
                                     </div>
                                 ))
                             }
-                            <div className="next__button" totalpage={`slide-${pageAcf.first_slider_content.length}`} topage={`slide-${this.state.nextPage}`} onClick={this.handleSlider.bind(this)}></div>
-                            <div className="prev__button" totalpage={`slide-${pageAcf.first_slider_content.length}`} topage={`slide-${this.state.prevPage}`} onClick={this.handleSlider.bind(this)}></div>
+                            <div className="prev__button" totalpage={`slide-${pageAcf.first_slider_content.length}`} topage={`slide-${this.state.prevPage}`} aria-label="Previous slide" onClick={this.handleSlider.bind(this)} onKeyPress={this.handleSliderKeyboard.bind(this)} tabIndex={0}></div>
+                            <div className="next__button" totalpage={`slide-${pageAcf.first_slider_content.length}`} topage={`slide-${this.state.nextPage}`} aria-label="Next slide"  onClick={this.handleSlider.bind(this)} onKeyPress={this.handleSliderKeyboard.bind(this)} tabIndex={0}></div>
+
                         </div>
                     </div>
                 </div>

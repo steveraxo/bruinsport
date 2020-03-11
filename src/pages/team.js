@@ -110,11 +110,24 @@ class MediaPage extends Component {
                     <div className={'container'}>
                         <div className={'row main__row'}>
                             <div className={'col-md-12 col-xl-6'}>
-                                <div dangerouslySetInnerHTML={{__html: pageAcf.main_copy}} />
-                                <div className={'team__extra__copy'} dangerouslySetInnerHTML={{__html: pageAcf.first_column_copy}} />
+                                {   
+                                    pageAcf.main_copy.length > 0
+                                    ?<div dangerouslySetInnerHTML={{__html: pageAcf.main_copy}} />
+                                    : ""
+                                } 
+                                {   
+                                    pageAcf.first_column_copy.length > 0
+                                    ?<div className={'team__extra__copy'} dangerouslySetInnerHTML={{__html: pageAcf.first_column_copy}} />
+                                    : ""
+                                }   
                             </div>
                             <div className={'col-md-12 col-xl-6 d-flex justify-element-end align-items-end team__extra__second__copy'}>
-                                <div dangerouslySetInnerHTML={{__html: pageAcf.second_column_copy}} />
+                                {   
+                                    pageAcf.second_column_copy.length > 0
+                                    ?<div dangerouslySetInnerHTML={{__html: pageAcf.second_column_copy}} />
+                                    : ""
+                                } 
+                                
                             </div>
                             <div className="col-xl-12 ">
                                 <button className="" onClick={this.showContent}>Learn More</button>
@@ -130,8 +143,11 @@ class MediaPage extends Component {
                                                     <Img fixed={logo.logo.localFile.childImageSharp.fixed} alt={logo.title} />
                                                 </a>
                                                 </div>
-
-                                                <p className={'text-white'} dangerouslySetInnerHTML={{__html: logo.title}} />
+                                                {   
+                                                    logo.title.length > 0
+                                                    ?<p className={'text-white'} dangerouslySetInnerHTML={{__html: logo.title}} />
+                                                    : ""
+                                                } 
                                             </div>
                                         ))
                                     }
@@ -146,7 +162,11 @@ class MediaPage extends Component {
                     <div className={'container'}>
                         <div className={'row'}>
                             <div className={'col-md-12 col-xl-6'}>
-                                <div dangerouslySetInnerHTML={{__html: pageAcf.team_copy}} />
+                                {   
+                                    pageAcf.team_copy.length > 0
+                                    ?<div dangerouslySetInnerHTML={{__html: pageAcf.team_copy}} />
+                                    : ""
+                                } 
                             </div>
                             <div className={'col-md-12 col-xl-6'}></div>
                         </div>
@@ -187,10 +207,22 @@ class MediaPage extends Component {
                                                         <div className="featured__artitle__inner">
                                                             <div className="featured__article__top">
                                                             <div className="featured__article__title">
-                                                                <h4 className="featured__article__name" dangerouslySetInnerHTML={{__html: member.name}} />
-                                                                <p className="featured__article__position" dangerouslySetInnerHTML={{__html: member.position}} />
+                                                                {   
+                                                                    member.name.length > 0
+                                                                    ?<h4 className="featured__article__name" dangerouslySetInnerHTML={{__html: member.name}} />
+                                                                    : ""
+                                                                } 
+                                                                {   
+                                                                    member.position.length > 0
+                                                                    ?<p className="featured__article__position" dangerouslySetInnerHTML={{__html: member.position}} />
+                                                                    : ""
+                                                                }  
                                                             </div>
-                                                            <div className="featured__article__content" dangerouslySetInnerHTML={{__html: member.bio}} />
+                                                            {   
+                                                                member.bio.length > 0
+                                                                ?<div className="featured__article__content" dangerouslySetInnerHTML={{__html: member.bio}} />
+                                                                : ""
+                                                            }  
                                                             </div>
                                                             <div className="featured__article__cta">
                                                                 <ExternalButton  redirectionLink={member.member_link} buttonText={'Read More'} buttonclassName={''}></ExternalButton>
@@ -205,10 +237,17 @@ class MediaPage extends Component {
                                         )}
                                         </Popup>
                                         <div className={'team__inside'}>
-                                            <h4 dangerouslySetInnerHTML={{__html: member.name}} />
-                                            <p dangerouslySetInnerHTML={{__html: member.position}} />
+                                            {   
+                                                member.name.length > 0
+                                                ?<h4 dangerouslySetInnerHTML={{__html: member.name}} />
+                                                : ""
+                                            } 
+                                            {   
+                                                member.position.length > 0
+                                                ?<p dangerouslySetInnerHTML={{__html: member.position}} />
+                                                : ""
+                                            } 
                                         </div>
-
                                     </div>
                                 )
                             }

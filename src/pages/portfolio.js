@@ -29,9 +29,17 @@ class MediaPage extends Component {
                     <div className="container">
                         <div className="row">
                             <div className={'col-md-12 col-lg-12 top__info'}>
-                                <h1 dangerouslySetInnerHTML={{__html: pageAcf.main_title}} />
+                                {   
+                                    pageAcf.main_title.length > 0
+                                    ?<h1 dangerouslySetInnerHTML={{__html: pageAcf.main_title}} />
+                                    : ""
+                                }    
                                 <div className="featured__article__divider "></div>
-                                <div dangerouslySetInnerHTML={{__html: pageAcf.main_second_title}} />
+                                {   
+                                    pageAcf.main_second_title.length > 0
+                                    ?<div dangerouslySetInnerHTML={{__html: pageAcf.main_second_title}} />
+                                    : ""
+                                }  
                             </div>
                         </div>
                     </div>

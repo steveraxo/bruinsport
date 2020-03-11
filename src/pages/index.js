@@ -175,9 +175,17 @@ class HomePage extends Component {
               <Img fluid={pageData.featured_media.localFile.childImageSharp.fluid} alt={""} tabIndex={-1}/>
             </div>
             <div className="container-fluid">
-              <div tabIndex={0} className="header__copy text-left" dangerouslySetInnerHTML={{__html: pageData.acf.main_copy}} />
+              {   
+                  pageData.acf.main_copy.length > 0
+                  ?<div tabIndex={0} className="header__copy text-left" dangerouslySetInnerHTML={{__html: pageData.acf.main_copy}} />
+                  : ""
+              }
               <div className="featured__article__divider home__divider"></div>
-              <div tabIndex={0} className="home__copy text-left" dangerouslySetInnerHTML={{__html: pageData.acf.main_second_copy}} />
+              {   
+                  pageData.acf.main_second_copy.length > 0
+                  ?<div tabIndex={0} className="home__copy text-left" dangerouslySetInnerHTML={{__html: pageData.acf.main_second_copy}} />
+                  : ""
+              }
             </div>
             <div className="container-fluid">
                 <div className="clients__logos__wrapper" >
@@ -227,12 +235,25 @@ class HomePage extends Component {
                                     <div className="featured__artitle__inner">
                                       <div className="featured__article__top">
                                         <div className="featured__article__title">
-                                          <h4>{element.title}</h4>
+                                        {   
+                                            element.title.length > 0
+                                            ?<h4>{element.title}</h4>
+                                            : ""
+                                        }
                                         </div>
-                                          <div className="featured__article__content home__pop__content" dangerouslySetInnerHTML={{__html: element.first_copy}} />
+                                        {   
+                                            element.first_copy.length > 0
+                                            ?<div className="featured__article__content home__pop__content" dangerouslySetInnerHTML={{__html: element.first_copy}} />
+                                            : ""
+                                        }
                                       </div>
                                       <div className="featured__article__divider"></div>
-                                      <div className="featured__article__content" dangerouslySetInnerHTML={{__html: element.second_copy}} />
+                                      {   
+                                          element.second_copy.length > 0
+                                          ?<div className="featured__article__content" dangerouslySetInnerHTML={{__html: element.second_copy}} />
+                                          : ""
+                                      }
+                                      
                                     </div>
                                     <div className="featured__article__bottom flex-end">
                                         <div className="featured__article__cta">
@@ -259,8 +280,16 @@ class HomePage extends Component {
             <div className="container">
               <div className="row">
                 <div className={'col-md-12 col-lg-9'}>
-                  <h2 className={'text-black'} dangerouslySetInnerHTML={{__html: pageData.acf.our_approach_title}} />
-                  <div dangerouslySetInnerHTML={{__html: pageData.acf.our_approach_content}} />
+                  {   
+                      pageData.acf.our_approach_title.length > 0
+                      ?<h2 className={'text-black'} dangerouslySetInnerHTML={{__html: pageData.acf.our_approach_title}} />
+                      : ""
+                  }
+                  {   
+                      pageData.acf.our_approach_content.length > 0
+                      ?<div dangerouslySetInnerHTML={{__html: pageData.acf.our_approach_content}} />
+                      : ""
+                  }
                   <InternalButton buttonText={pageData.acf.our_approach_button_text} redirectionLink={pageData.acf.our_approach_button_link}></InternalButton>
                 </div>
               </div>
@@ -271,8 +300,16 @@ class HomePage extends Component {
             <div className="container">
               <div className="row">
                 <div className={'col-md-12 col-lg-4 col-xl-6 text-left'}>
-                  <h2 className={'text-white'} dangerouslySetInnerHTML={{__html: pageData.acf.featured_title}} />
-                  <div dangerouslySetInnerHTML={{__html: pageData.acf.featured_content}} />
+                  {   
+                      pageData.acf.featured_title.length > 0
+                      ?<h2 className={'text-white'} dangerouslySetInnerHTML={{__html: pageData.acf.featured_title}} />
+                      : ""
+                  }
+                  {   
+                      pageData.acf.featured_content.length > 0
+                      ?<div dangerouslySetInnerHTML={{__html: pageData.acf.featured_content}} />
+                      : ""
+                  }
                   <ExternalButton buttonText={pageData.acf.featured_button_text} redirectionLink={pageData.acf.featured_button_link.source_url}></ExternalButton>
                 </div>
                 <div className={'col-md-12 col-lg-8 col-xl-6 '}>
@@ -282,15 +319,27 @@ class HomePage extends Component {
           </section>
           <section className="container-fluid latest__news">
             <div className="container">
-              <h2 className={'text-center text-black '} dangerouslySetInnerHTML={{__html: pageData.acf.latest_news_title}} />
+              {   
+                  pageData.acf.latest_news_title.length > 0
+                  ?<h2 className={'text-center text-black '} dangerouslySetInnerHTML={{__html: pageData.acf.latest_news_title}} />
+                  : ""
+              }
             </div>  
             <div className="latest__news__wrapper">
             <Slider className="row featured__wrapper dark latest__news__wrapper" {...settings}>
               {
                 newsData.map((element, index) => 
                   <div className="latest__article" key={`newsData-${element}-${index}`}>
-                    <div className={'title'} dangerouslySetInnerHTML={{__html: element.node.content}} />
-                    <div className={'content'} dangerouslySetInnerHTML={{__html: element.node.content}} />
+                    {   
+                        element.node.content.length > 0
+                        ?<div className={'title'} dangerouslySetInnerHTML={{__html: element.node.content}} />
+                        : ""
+                    }
+                    {   
+                        element.node.content.length > 0
+                        ?<div className={'content'} dangerouslySetInnerHTML={{__html: element.node.content}} />
+                        : ""
+                    }
                     <ExternalButton buttonClass={''} buttonText={'Read More'} redirectionLink={element.node.acf.external_news_link} ></ExternalButton>
                   </div>
                 )
@@ -302,11 +351,17 @@ class HomePage extends Component {
             <Img className={'img__background'} fluid={pageData.acf.get_started_background.localFile.childImageSharp.fluid} alt="" tabIndex={-1} />
             <div className="container get__started__content">
               <div className="row d-flex justify-content-center align-items-center flex-column">
-                <h2 style={{lineHeight: '100px'}} dangerouslySetInnerHTML={{__html: pageData.acf.get_started_title}} />
-                <p>{pageData.acf.get_started_copy}</p>
-                <InternalButton redirectionLink={pageData.acf.get_started_button_link} buttonText={pageData.acf.get_started_button_text} buttonClass={'dark-btn'}>
-
-                </InternalButton>
+                  {   
+                      pageData.acf.get_started_title.length > 0
+                      ?<h2 style={{lineHeight: '100px'}} dangerouslySetInnerHTML={{__html: pageData.acf.get_started_title}} />
+                      : ""
+                  }
+                  {   
+                      pageData.acf.get_started_copy.length > 0
+                      ?<p>{pageData.acf.get_started_copy}</p>
+                      : ""
+                  }
+                <InternalButton redirectionLink={pageData.acf.get_started_button_link} buttonText={pageData.acf.get_started_button_text} buttonClass={'dark-btn'}></InternalButton>
               </div>
             </div>
           </section>

@@ -150,9 +150,12 @@ class ContactPage extends Component {
                 
                 </div>
                 <div className="col-sm-12 col-md-12 col-xl-9 form__section">
-                  <h1 className="text-left" dangerouslySetInnerHTML={{__html: pageAcf.main_title}} />
+                  {   
+                      pageAcf.main_title.length > 0
+                      ?<h1 className="text-left" dangerouslySetInnerHTML={{__html: pageAcf.main_title}} />
+                      : ""
+                  } 
                   <form className={'async__form'} id={'async__form'}>
-                  
                   <div className={'container'}>
                     <div className={'row first__row'}>
                       <div className={'col-md-12 col-lg-6 name__wrapper'}>
@@ -293,7 +296,11 @@ class ContactPage extends Component {
                 {
                   pageAcf.three_columns_data.map((element, index) => 
                     <div className="col-sm-12 col-md-6 col-xl-4 text-left column__data" key={`three_columns_data-${element}-${index}`}>
-                      <h3 className="text-left" dangerouslySetInnerHTML={{__html: element.column_title}} />
+                      {
+                          element.column_title.length > 0
+                          ? <h3 className="text-left" dangerouslySetInnerHTML={{__html: element.column_title}} />
+                          : ""
+                      }  
                       {
                         element.column_element.map((subElement, index) => 
                           <div key={`column_element-${element}-${subElement}-${index}`}>
@@ -312,7 +319,11 @@ class ContactPage extends Component {
             <div className="container">
               <div className="row ">
                 <div className="col-sm-12 col-xl-6">
-                  <h2 className="text-black" dangerouslySetInnerHTML={{__html: pageAcf.portfolio_title}} />
+                  {
+                      pageAcf.portfolio_title.length > 0
+                      ? <h2 className="text-black" dangerouslySetInnerHTML={{__html: pageAcf.portfolio_title}} />
+                      : ""
+                  }  
                 </div>
               </div>
               <div className="row contact__section__three__columns">
@@ -328,13 +339,21 @@ class ContactPage extends Component {
                       <div className={'column__info'}>
                         <ul>
                           <li>
-                            <a href={`mailto:${element.client_email}`} target="_BLANK" rel="noopener noreferrer">
-                              <p className="text-left" dangerouslySetInnerHTML={{__html: element.client_email}} />
-                            </a>
+                            {   
+                                element.client_email.length > 0
+                                ?<a href={`mailto:${element.client_email}`} target="_BLANK" rel="noopener noreferrer">
+                                  <p className="text-left" dangerouslySetInnerHTML={{__html: element.client_email}} />
+                                 </a>
+                                : ""
+                            } 
                           </li>
                           <li>
                             <a href={`${element.client_url}`} target="_BLANK" rel="noopener noreferrer">
-                              <p className="text-left full__client__url" dangerouslySetInnerHTML={{__html: element.client_url.replace('https://','')}} />
+                              {
+                                  element.client_url.length > 0
+                                  ? <p className="text-left full__client__url" dangerouslySetInnerHTML={{__html: element.client_url.replace('https://','')}} />
+                                  : ""
+                              } 
                             </a>
                           </li>
                         </ul>

@@ -72,17 +72,33 @@ class AboutPage extends Component {
                     <div className="row">
                         <div className="col-xl-12 about__header__top">
                             <div className="about__header__top__title">
-                                <h1 className={'text-white'}>{pageAcf.title}</h1>
+                                {   
+                                    pageAcf.title.length > 0
+                                    ?<h1 className={'text-white'}>{pageAcf.title}</h1>
+                                    : ""
+                                } 
                             </div>
                             <div className="about__header__top__subtitle">
-                                <h3 className="text-white">{pageAcf.subtitle}</h3>
+                                {   
+                                    pageAcf.subtitle.length > 0
+                                    ?<h3 className="text-white">{pageAcf.subtitle}</h3>
+                                    : ""
+                                } 
                             </div>
                         </div>
                         <div className="col-md-12 col-xl-6 about__header__column__one">
-                            <div className={'text-white'} dangerouslySetInnerHTML={{__html: pageAcf.first_column_text}} />
+                            {   
+                                pageAcf.first_column_text.length > 0
+                                ?<div className={'text-white'} dangerouslySetInnerHTML={{__html: pageAcf.first_column_text}} />
+                                : ""
+                            } 
                         </div>
                         <div className="col-md-12 col-xl-6 about__header__column__two">
-                            <div className={'text-white'} dangerouslySetInnerHTML={{__html: pageAcf.second_column_text}} />
+                            {   
+                                pageAcf.second_column_text.length > 0
+                                ?<div className={'text-white'} dangerouslySetInnerHTML={{__html: pageAcf.second_column_text}} />
+                                : ""
+                            } 
                         </div>
                     </div>
                 </div>
@@ -92,19 +108,42 @@ class AboutPage extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-xl-12 mission">
-                            <h2 className=" ">{pageAcf.mission_title}</h2>
-                            <div dangerouslySetInnerHTML={{__html: pageAcf.mission_copy}} />
+                            {   
+                                pageAcf.mission_title}.length > 0
+                                ?<h2 className=" ">{pageAcf.mission_title}</h2>
+                                : ""
+                            }
+                            
+                            {   
+                                pageAcf.mission_copy.length > 0
+                                ?<div dangerouslySetInnerHTML={{__html: pageAcf.mission_copy}} />
+                                : ""
+                            }
+                            
                         </div>
                         <div className="col-md-12 col-xl-6 values">
-                            <h2 className=" ">{pageAcf.values_title}</h2>
+                            {   
+                                pageAcf.values_title.length > 0
+                                ?<h2 className=" ">{pageAcf.values_title}</h2>
+                                : ""
+                            }
+                            
                             <div className="values__wrapper">
                                 {
                                     pageAcf.values_blocks.map((value, index) => (
                                         <div className={`values__information ${index === 0 ? "--open" : " "} `} key={`${value.title}-${index}`} onClick={this.handleAccordion}>
                                             <div className="values__information__inner">
-                                                <p>{value.title}</p>
+                                                {   
+                                                    value.title.length > 0
+                                                    ?<p>{value.title}</p>
+                                                    : ""
+                                                }
                                                 <div className="values__description">
-                                                    <div dangerouslySetInnerHTML={{__html: value.description}} />
+                                                    {   
+                                                        value.description.length > 0
+                                                        ?<div dangerouslySetInnerHTML={{__html: value.description}} />
+                                                        : ""
+                                                    }
                                                 </div>
                                             </div>
                                         </div>
@@ -113,8 +152,16 @@ class AboutPage extends Component {
                             </div>
                         </div>
                         <div className="col-md-12 col-xl-6 social">
-                            <h2 >{pageAcf.social_title}</h2>
-                            <div dangerouslySetInnerHTML={{__html: pageAcf.social_copy}} />
+                            {   
+                                pageAcf.social_title.length > 0
+                                ?<h2 >{pageAcf.social_title}</h2>
+                                : ""
+                            }
+                            {   
+                                pageAcf.social_copy.length > 0
+                                ?<div dangerouslySetInnerHTML={{__html: pageAcf.social_copy}} />
+                                : ""
+                            }
                             <div className="social__logo">
                                 <div className="row">
                                     <div className="col-lg-5 social__logo__left">
@@ -135,9 +182,11 @@ class AboutPage extends Component {
                     <div className="container">
                         <div className="row">
                             <div className="col-xl-12">
-                                <h2 className="text-center">
-                                    {pageAcf.history_title}
-                                </h2>
+                                {   
+                                    pageAcf.history_title.length > 0
+                                    ?<h2 className="text-center">{pageAcf.history_title}</h2>
+                                    : ""
+                                }
                             </div>
                         </div>
                     </div>
@@ -150,12 +199,22 @@ class AboutPage extends Component {
                             pageAcf.history_timeline.map((element, index) => (
                                 <div className="history__timeline__moment col-md-12" key={`${element.date}-${index}`}>
                                     <div className="history__timeline__moment__date">
-                                        <p>{element.date}</p>
+                                        {   
+                                            element.date.length > 0
+                                            ?<p>{element.date}</p>
+                                            : ""
+                                        }
+                                        
                                     </div>
                                     <div className="history__timeline__moment__description">
-                                        <a href={element.link} target={'_BLANK'} rel="noopener noreferrer" >
-                                            <div className={'text-white'} dangerouslySetInnerHTML={{__html: element.description}} />
-                                        </a>
+                                        {   
+                                            element.description.length > 0
+                                            ?<a href={element.link} target={'_BLANK'} rel="noopener noreferrer" >
+                                                <div className={'text-white'} dangerouslySetInnerHTML={{__html: element.description}} />
+                                             </a>
+                                            : ""
+                                        }
+                                        
                                     </div>
                                 </div>
                             ))

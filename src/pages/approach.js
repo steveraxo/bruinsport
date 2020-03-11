@@ -146,11 +146,23 @@ class ApproachPage extends Component {
                                         </div>
                                         <div className="approach__first__element__wrapper container">
                                             <div className="approach__first__slider__title">
-                                                <h2 className={'text-white'}>{element.title}</h2>
-                                                <h3 className={'text-white'}>{element.subtitle}</h3>
+                                                {
+                                                    element.title.length > 0
+                                                    ? <h2 className={'text-white'}>{element.title}</h2>
+                                                    : ""
+                                                }
+                                                {
+                                                    element.subtitle.length > 0
+                                                    ? <h3 className={'text-white'}>{element.subtitle}</h3>
+                                                    : ""
+                                                }    
                                             </div>
                                             <div className="approach__first__slider__copy">
-                                                <div className={'text-white'} dangerouslySetInnerHTML={{__html: element.copy}} />
+                                                {
+                                                    element.copy.length > 0
+                                                    ? <div className={'text-white'} dangerouslySetInnerHTML={{__html: element.copy}} />
+                                                    : ""
+                                                }                                                   
                                             </div>
                                         </div>
                                     </div>
@@ -167,8 +179,16 @@ class ApproachPage extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12 col-xl-12 mission">
-                            <h2 className=" ">{pageAcf.capabilities_title}</h2>
-                            <p>{pageAcf.capabilities_subtitle}</p>
+                            {
+                                pageAcf.capabilities_title.length > 0
+                                ? <h2 className=" ">{pageAcf.capabilities_title}</h2>
+                                : ""
+                            } 
+                            {
+                                pageAcf.capabilities_subtitle.length > 0
+                                ? <p>{pageAcf.capabilities_subtitle}</p>
+                                : ""
+                            }     
                         </div>
                         <div className="col-md-12 col-xl-6 values">
                             <div className="values__wrapper">
@@ -219,8 +239,6 @@ class ApproachPage extends Component {
                                             <p className={'text-white '} dangerouslySetInnerHTML={{__html: element.position}} />
                                         </div>
                                     </div>
-  
-                                    
                                 </div>
                             ))
                         }

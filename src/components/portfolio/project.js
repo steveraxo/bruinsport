@@ -125,9 +125,12 @@ class Project extends Component {
                                                             <div className="featured__artitle__inner">
                                                                 <div className="featured__article__top">
                                                                 <div className={'col-md-12 col-lg-12'}>
-                                                                     <div className={'line'}></div>
-                                                                    <div className="featured__article__content" dangerouslySetInnerHTML={{__html: projectData.popup_content}} />
-                                                                
+                                                                    <div className={'line'}></div>
+                                                                    {   
+                                                                        projectData.popup_content.length > 0
+                                                                        ?<div className="featured__article__content" dangerouslySetInnerHTML={{__html: projectData.popup_content}} />
+                                                                        : ""
+                                                                    } 
                                                                 </div>
                                                                 </div>
                                                             </div>
@@ -159,7 +162,11 @@ class Project extends Component {
                                     <img className={'svg__logo'} src={projectData.project_logo.localFile.url} alt={'Client Logo'} tabIndex={0}/>
                                 </div>
                                 <div className={'porftolio__description'}>
-                                    <div dangerouslySetInnerHTML={{__html: projectData.project_description}} />
+                                    {   
+                                        projectData.project_description.length > 0
+                                        ?<div dangerouslySetInnerHTML={{__html: projectData.project_description}} />
+                                        : ""
+                                    }  
                                 </div>
                                 {
                                         projectData.opens_popup === true 
@@ -195,9 +202,12 @@ class Project extends Component {
                                                             <div className="featured__artitle__inner">
                                                                 <div className="featured__article__top">
                                                                 <div className={'col-md-12 col-lg-12'}>
- <div className={'line'}></div>
-                                                                    <div className="featured__article__content" dangerouslySetInnerHTML={{__html: projectData.popup_content}} />
-                                                                
+                                                                    <div className={'line'}></div>
+                                                                    {   
+                                                                        projectData.popup_content.length > 0
+                                                                        ?<div className="featured__article__content" dangerouslySetInnerHTML={{__html: projectData.popup_content}} />
+                                                                        : ""
+                                                                    } 
                                                                 </div>
                                                                 </div>
                                                             </div>
@@ -227,7 +237,11 @@ class Project extends Component {
                                     <img className={'svg__logo'} src={projectData.project_logo.localFile.url} alt={'Client Logo'} tabIndex={0}/>
                                 </div>
                                 <div className={'porftolio__description'}>
-                                    <div dangerouslySetInnerHTML={{__html: projectData.project_description}} />
+                                    {   
+                                        projectData.project_description.length > 0
+                                        ?<div dangerouslySetInnerHTML={{__html: projectData.project_description}} />
+                                        : ""
+                                    }  
                                 </div>
                                 {
                                         projectData.opens_popup === true 
@@ -263,9 +277,12 @@ class Project extends Component {
                                                             <div className="featured__artitle__inner">
                                                                 <div className="featured__article__top">
                                                                 <div className={'col-md-12 col-lg-12'}>
- <div className={'line'}></div>
-                                                                    <div className="featured__article__content" dangerouslySetInnerHTML={{__html: projectData.popup_content}} />
-                                                                
+                                                                    <div className={'line'}></div>
+                                                                    {   
+                                                                        projectData.popup_content.length > 0
+                                                                        ?<div className="featured__article__content" dangerouslySetInnerHTML={{__html: projectData.popup_content}} />
+                                                                        : ""
+                                                                    } 
                                                                 </div>
                                                                 </div>
                                                             </div>
@@ -300,7 +317,11 @@ class Project extends Component {
                                         <img className={'svg__logo'} src={projectData.project_logo.localFile.url} alt={'Client Logo'} tabIndex={0}/>
                                     </div>
                                     <div className={'porftolio__description'}>
-                                        <div dangerouslySetInnerHTML={{__html: projectData.project_description}} />
+                                        {   
+                                            projectData.project_description.length > 0
+                                            ?<div dangerouslySetInnerHTML={{__html: projectData.project_description}} />
+                                            : ""
+                                        }  
                                     </div>
                                     {
                                         projectData.opens_popup === true 
@@ -336,9 +357,12 @@ class Project extends Component {
                                                             <div className="featured__artitle__inner">
                                                                 <div className="featured__article__top">
                                                                 <div className={'col-md-12 col-lg-12'}>
- <div className={'line'}></div>
-                                                                    <div className="featured__article__content" dangerouslySetInnerHTML={{__html: projectData.popup_content}} />
-                                                                
+                                                                    <div className={'line'}></div>
+                                                                    {   
+                                                                        projectData.popup_content.length > 0
+                                                                        ?<div className="featured__article__content" dangerouslySetInnerHTML={{__html: projectData.popup_content}} />
+                                                                        : ""
+                                                                    } 
                                                                 </div>
                                                                 </div>
                                                             </div>

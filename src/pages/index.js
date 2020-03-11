@@ -87,11 +87,14 @@ class HomePage extends Component {
     ))
   }
   triggerClientPopUp(event){
-    const idPopup = event.target.getAttribute('datatracknumber')
+    const idPopup = event.target.getAttribute('datatracknumber');
 
     document.getElementById(idPopup).click();
-
-    document.getElementById('clients__logos').classList.add('show__element');
+    
+    if (window.innerWidth < 768) {
+      document.getElementById('clients__logos').classList.add('show__element');
+    }
+    
   }
 
   render() {
@@ -200,6 +203,7 @@ class HomePage extends Component {
                           src={element.icon.localFile.url}
                           alt={`Client ${element.title} logo`}
                           onClick={this.triggerClientPopUp}
+                          onKeyPress={this.triggerClientPopUp}
                         />
                       )
                     }
@@ -222,6 +226,8 @@ class HomePage extends Component {
                             tabIndex={0}
                             src={element.icon.localFile.url}
                             alt={`Client ${element.title} logo`}
+                            onKeyPress={this.triggerClientPopUp}
+                            datatracknumber={`logo-client-${index}`}
                           />
                         } 
                         position="center center">

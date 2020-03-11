@@ -238,7 +238,7 @@
     display: none;
 }
 .history__timeline .slick-slide.slick-current .history__timeline__moment__description{
-    display: block;
+    display: initial;
 }
 .history__timeline .slick-slide.slick-current .history__timeline__moment__date{
     color: #ffffff;

@@ -4,6 +4,9 @@
 * {
     outline-color: #b02931!important;
 }
+.history__timeline button:focus , .history__timeline .history__timeline__moment__description:focus{
+    outline-color: #00f3ff!important;
+}
 .popup-overlay {
     background: rgba(255, 255, 255, 0)!important;
 }

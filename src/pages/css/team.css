@@ -526,6 +526,9 @@
     }
 }
 @media(max-width:600px){
+    .team__page .popup-content .close:before, .team__page .popup-content .close:after {
+        background-color: #ffffff;
+    }
     .team__page .main__section .container {
         padding: 0 40px;
     }

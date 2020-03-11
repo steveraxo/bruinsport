@@ -87,6 +87,25 @@ class MediaPage extends Component {
 
       document.querySelectorAll('.team__page__first button')[0].classList.add('remove__content')
   }
+
+  triggerClientPopUp(event){
+    event.preventDefault() 
+    if(document.getElementsByClassName('popup-overlay ').length > 0){
+        let idPopup = window.localStorage.getItem('last-team-member');
+        document.getElementById(idPopup).focus();
+    }else{
+        if (event.type === 'keypress'){
+            if(event.which === 32 || event.which === 13){
+              let idPopup = event.target.getAttribute('datatracknumber');
+              document.getElementsByClassName(idPopup)[0].childNodes[1].childNodes[2].click()
+
+              window.localStorage.setItem('last-team-member', idPopup);
+
+            }
+        }
+    }
+
+  }
   render() {
     const pageData = this.props.data.allWordpressPage.edges[0].node
     const pageAcf = this.props.data.allWordpressPage.edges[0].node.acf
@@ -173,7 +192,7 @@ class MediaPage extends Component {
                         <div className={'row team__members'}>
                             {
                                 pageAcf.team_members.map((member, index) => 
-                                    <div className={'col-sm-12 col-md-6 col-xl-4'} key={`${member.name}-${index}`}>
+                                    <div className={'col-sm-12 col-md-6 col-xl-4'} key={`${member.name}-${index}`} tabIndex={0} onKeyPress={this.triggerClientPopUp.bind(this)} datatracknumber={`team-${index}`} id={`team-${index}`}>
                                         <Popup     
                                             modal
                                             closeOnEscape
@@ -186,6 +205,7 @@ class MediaPage extends Component {
                                                     tabIndex={0}
                                                     fixed={member.photo.localFile.childImageSharp.fixed}
                                                     alt={`${member.name}, member Bruin Sport Capital Team`}
+                                                    className={`team-${index}`}
                                                 />
                                             }
                                         >

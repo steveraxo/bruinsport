@@ -204,6 +204,7 @@ class HomePage extends Component {
                           alt={`Client ${element.title} logo`}
                           onClick={this.triggerClientPopUp}
                           onKeyPress={this.triggerClientPopUp}
+                          loading="lazy"
                         />
                       )
                     }
@@ -228,6 +229,7 @@ class HomePage extends Component {
                             alt={`Client ${element.title} logo`}
                             onKeyPress={this.triggerClientPopUp}
                             datatracknumber={`logo-client-${index}`}
+                            loading="lazy"
                           />
                         } 
                         position="center center">

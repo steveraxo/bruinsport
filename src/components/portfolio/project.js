@@ -89,7 +89,7 @@ class Project extends Component {
                             <div className="container">
                                 <div className="row">
                                     <div className={'col-md-12 col-lg-12 col-xl-12 text-left'}>
-                                    <img className={'svg__logo'} src={projectData.project_logo.localFile.url} alt={'Client Logo'} tabIndex={0}/>
+                                    <img className={'svg__logo'} loading="lazy" src={projectData.project_logo.localFile.url} alt={'Client Logo'} tabIndex={0}/>
                                     <div dangerouslySetInnerHTML={{__html: projectData.project_description}} />
                                     {
                                         projectData.opens_popup === true 
@@ -159,7 +159,7 @@ class Project extends Component {
                             </div>
                             <div className={'portfolio__inner'}>
                                 <div className={'portfolio__logo'}>
-                                    <img className={'svg__logo'} src={projectData.project_logo.localFile.url} alt={'Client Logo'} tabIndex={0}/>
+                                    <img className={'svg__logo'} loading="lazy" src={projectData.project_logo.localFile.url} alt={'Client Logo'} tabIndex={0}/>
                                 </div>
                                 <div className={'porftolio__description'}>
                                     {   
@@ -234,7 +234,7 @@ class Project extends Component {
                             </div>
                             <div className={'portfolio__inner'}>
                                 <div className={'portfolio__logo'}>
-                                    <img className={'svg__logo'} src={projectData.project_logo.localFile.url} alt={'Client Logo'} tabIndex={0}/>
+                                    <img className={'svg__logo'} loading="lazy" src={projectData.project_logo.localFile.url} alt={'Client Logo'} tabIndex={0}/>
                                 </div>
                                 <div className={'porftolio__description'}>
                                     {   
@@ -314,7 +314,7 @@ class Project extends Component {
 
                                 <div className={'portfolio__inner'}>
                                     <div className={'portfolio__logo'}>
-                                        <img className={'svg__logo'} src={projectData.project_logo.localFile.url} alt={'Client Logo'} tabIndex={0}/>
+                                        <img className={'svg__logo'} loading="lazy" src={projectData.project_logo.localFile.url} alt={'Client Logo'} tabIndex={0}/>
                                     </div>
                                     <div className={'porftolio__description'}>
                                         {   

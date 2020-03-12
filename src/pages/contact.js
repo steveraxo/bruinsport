@@ -27,7 +27,7 @@ class ContactPage extends Component {
       verified: false,
       recaptchaKey: `${process.env.GOOGLE_REV2_KEY}`,
       submit: false, 
-      showRecaptcha: true,
+      showRecaptcha: false,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -87,6 +87,9 @@ class ContactPage extends Component {
       showRecaptcha: false
     });
   }; 
+  componentDidMount(){
+    this.setState({showRecaptcha: true});
+  }
   // function for email validation
   validateEmail(email) {
       var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -264,7 +267,11 @@ class ContactPage extends Component {
 
                       </div>
                       <div className={'col-md-12 col-lg-12 submit__wrapper d-flex justify-content-start align-items-start flex-column'}>
-                        <Reaptcha ref={e => (this.captcha = e)} tabindex={0} className={this.state.showRecaptcha ? '' : 'hidden__element'} sitekey={'6LdDd9cUAAAAAODEZ-CLPxm1CPpZyqmfo2NN58Yk'} onVerify={this.onVerify} />
+                        {
+                          this.state.showRecaptcha
+                          ? <Reaptcha ref={e => (this.captcha = e)} tabindex={0} className={this.state.showRecaptcha ? '' : 'hidden__element'} sitekey={'6LdDd9cUAAAAAODEZ-CLPxm1CPpZyqmfo2NN58Yk'} onVerify={this.onVerify} />
+                          : ""
+                        }   
                         <button type="submit" style={{marginTop: '20px'}} className={' long-btn'} onClick={this.handleSubmit} disabled={!this.state.verified}>Send</button>
                         <div className={'loading__status ' + loading }>
                           {

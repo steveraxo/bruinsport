@@ -110,7 +110,7 @@ class AboutPage extends Component {
                     <div className="row">
                         <div className="col-xl-12 mission">
                             {   
-                                pageAcf.mission_title}.length > 0
+                                pageAcf.mission_title.length > 0
                                 ?<h2 className=" ">{pageAcf.mission_title}</h2>
                                 : ""
                             }

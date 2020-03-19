@@ -9,10 +9,20 @@ import Project from "../components/portfolio/project"
 
 
 class MediaPage extends Component {
+
+  componentDidMount(){
+    let projectUrl = window.location.href.split('#')[1];
+
+    if(projectUrl){
+      document.getElementById(projectUrl).scrollIntoView();
+    }
+
+  }
+
   render() {
     const pageData = this.props.data.allWordpressPage.edges[0].node
     const pageAcf = this.props.data.allWordpressPage.edges[0].node.acf
-    console.log(pageAcf)
+
     return (
         <Layout>
             <Helmet>
@@ -49,7 +59,10 @@ class MediaPage extends Component {
                   <div className={'row'}>
                     {
                         pageAcf.project.map((element, index) => (
-                            <Project projectData={element} key={index}  />
+                          
+                            <Project projectData={element} key={index}  dataid={`project-${index}`}/>
+                          
+                            
                         ))
                     }
                   </div>

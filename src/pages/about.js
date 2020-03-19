@@ -79,6 +79,7 @@ class AboutPage extends Component {
                                     : ""
                                 } 
                             </div>
+                            <div className="featured__article__divider "></div>
                             <div className="about__header__top__subtitle">
                                 {   
                                     pageAcf.subtitle.length > 0

@@ -40,14 +40,26 @@ class Header extends Component {
     setTimeout(function(){ 
       document.querySelectorAll('.main__menu')[0].style.visibility = "hidden";
     }, 500);
+
+    window.onscroll = function() {
+      var header = document.getElementById("header__navbar");     
+      
+      if (window.pageYOffset > 1) {
+        header.classList.add("fixed-top");
+      } else {
+        header.classList.remove("fixed-top");
+      }
+      
+    };
   }
+
   render() {
       let wpLogo = false; 
       if(this.props.siteLogo){
         wpLogo = this.props.siteLogo
       }
       return (
-        <div className="header__wrapper">
+        <div className="navbar  header__wrapper" id="header__navbar">
           <div className="brand__wrapper" id="brand__logo">
             <Link to="/" className="brand__link">
               {

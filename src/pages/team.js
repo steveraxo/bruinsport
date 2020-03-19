@@ -88,6 +88,16 @@ class MediaPage extends Component {
       document.querySelectorAll('.team__page__first button')[0].classList.add('remove__content')
   }
 
+  hideContent(){
+    document.querySelectorAll('.team__extra__copy')[0].classList.remove('--show');
+    document.querySelectorAll('.team__extra__second__copy')[0].classList.remove('--show');
+    document.querySelectorAll('.team__extra__content')[0].classList.remove('--show');
+    document.querySelectorAll('.team__page__first')[0].classList.remove('--open');
+    document.querySelectorAll('.team__section')[0].classList.remove('--open');
+
+    document.querySelectorAll('.team__page__first button')[0].classList.remove('remove__content')
+  }
+
   triggerClientPopUp(event){
     event.preventDefault() 
     if(document.getElementsByClassName('popup-overlay ').length > 0){
@@ -171,6 +181,9 @@ class MediaPage extends Component {
                                         ))
                                     }
                                 </div>
+                                <div className="col-xl-12 d-flex justify-content-center align-items-center">
+                                    <button className="" onClick={this.hideContent}>Close</button>
+                                </div>
                             </div>
 
                         </div>
@@ -238,15 +251,24 @@ class MediaPage extends Component {
                                                                     : ""
                                                                 }  
                                                             </div>
+                                                            
                                                             {   
                                                                 member.bio.length > 0
-                                                                ?<div className="featured__article__content" dangerouslySetInnerHTML={{__html: member.bio}} />
+                                                                ?<div className="featured__article__content" >
+                                                                    <div className={'line'}></div>
+                                                                    <div dangerouslySetInnerHTML={{__html: member.bio}} />
+                                                                 </div>
                                                                 : ""
                                                             }  
                                                             </div>
-                                                            <div className="featured__article__cta">
-                                                                <ExternalButton  redirectionLink={member.member_link} buttonText={'Read More'} buttonclassName={''}></ExternalButton>
-                                                            </div>
+                                                            {
+                                                                member.member_link
+                                                                ? <div className="featured__article__cta">
+                                                                    <ExternalButton  redirectionLink={member.member_link} buttonText={'Read More'} buttonclassName={''}></ExternalButton>
+                                                                  </div>
+                                                                : ""
+                                                            }
+                                                         
                                                         </div>
                                                     </div>
                                                 </div>

@@ -98,17 +98,17 @@ class HomePage extends Component {
   }
   componentDidMount(){
     setTimeout(function(){ 
-      var link = document.createElement('link');
-      link.id = 'montserrat__font';
-      link.rel = 'stylesheet';
-      link.href = 'https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap';
-      document.head.appendChild(link);
+      var linkMont = document.createElement('link');
+      linkMont.id = 'montserrat__font';
+      linkMont.rel = 'stylesheet';
+      linkMont.href = 'https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap';
+      document.head.appendChild(linkMont);
   
-      var link = document.createElement('link');
-      link.id = 'muli__font';
-      link.rel = 'stylesheet';
-      link.href = 'https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600;700;800;900&display=swap';
-      document.head.appendChild(link);
+      var linkMul = document.createElement('link');
+      linkMul.id = 'muli__font';
+      linkMul.rel = 'stylesheet';
+      linkMul.href = 'https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600;700;800;900&display=swap';
+      document.head.appendChild(linkMul);
     }, 100);
   }
   render() {

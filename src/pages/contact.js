@@ -88,7 +88,11 @@ class ContactPage extends Component {
     });
   }; 
   componentDidMount(){
-    this.setState({showRecaptcha: true});
+    setTimeout(function(){ 
+      this.setState({
+        showRecaptcha: true,
+      });
+    }.bind(this), 100);
   }
   // function for email validation
   validateEmail(email) {

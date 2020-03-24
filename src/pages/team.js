@@ -11,6 +11,13 @@ import BruinLogo from "../images/media/bruin-letter.png"
 
 
 class MediaPage extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { 
+        pageIsLoaded: false,
+    };
+  }
+    
   focusMain(){
     setTimeout(function(){ 
     // Focus the element on the burguer menu
@@ -57,7 +64,6 @@ class MediaPage extends Component {
         });
      },1);
   }
-
   endModal(e) {
     document.querySelectorAll('html')[0].classList.remove('html__custom')
     document.querySelectorAll('.team__page .main__section')[0].classList.remove('no__clipPath')
@@ -71,13 +77,11 @@ class MediaPage extends Component {
         [...document.querySelectorAll('.popup-overlay')][0].remove()
     }
   }
-  
   changeBodyScroll(){
     // When the modal is hidden...
     document.querySelectorAll('html')[0].classList.remove('html__custom')
     document.querySelectorAll('.team__page .main__section')[0].classList.remove('no__clipPath')
   }
-
   showContent(){
       document.querySelectorAll('.team__extra__copy')[0].classList.add('--show');
       document.querySelectorAll('.team__extra__second__copy')[0].classList.add('--show');
@@ -87,7 +91,6 @@ class MediaPage extends Component {
 
       document.querySelectorAll('.team__page__first button')[0].classList.add('remove__content')
   }
-
   hideContent(){
     document.querySelectorAll('.team__extra__copy')[0].classList.remove('--show');
     document.querySelectorAll('.team__extra__second__copy')[0].classList.remove('--show');
@@ -97,7 +100,6 @@ class MediaPage extends Component {
 
     document.querySelectorAll('.team__page__first button')[0].classList.remove('remove__content')
   }
-
   triggerClientPopUp(event){
     event.preventDefault() 
     if(document.getElementsByClassName('popup-overlay ').length > 0){
@@ -115,6 +117,13 @@ class MediaPage extends Component {
         }
     }
 
+  }
+  componentDidMount(){
+    setTimeout(function(){ 
+        this.setState({
+            pageIsLoaded: true,
+        });
+    }.bind(this), 100);
   }
   render() {
     const pageData = this.props.data.allWordpressPage.edges[0].node
@@ -162,14 +171,19 @@ class MediaPage extends Component {
                                 <button className="" onClick={this.showContent}>Learn More</button>
                             </div>
                             <div className="col-xl-12 hidden team__extra__content">
-                                <div className={'iframe__team d-flex justify-content-center align-items-center'} dangerouslySetInnerHTML={{__html: pageAcf.video_iframe}} />
+                                {
+                                    this.state.pageIsLoaded
+                                    ? <div className={'iframe__team d-flex justify-content-center align-items-center'} dangerouslySetInnerHTML={{__html: pageAcf.video_iframe}} />
+                                    : ""
+                                }
+
                                 <div className="popup__logos">
                                     {
                                         pageAcf.popup_logos.map((logo, index) => (
                                             <div className="logo__wrapper" key={index}>
                                                 <div className="team__logo__image">
                                                 <a href={logo.url} target={'_BLANK'} rel="noopener noreferrer">
-                                                    <Img fixed={logo.logo.localFile.childImageSharp.fixed} alt={logo.title} />
+                                                    <Img fixed={logo.logo.localFile.childImageSharp.fixed} alt={logo.title} loading="lazy" />
                                                 </a>
                                                 </div>
                                                 {   
@@ -219,6 +233,7 @@ class MediaPage extends Component {
                                                     fixed={member.photo.localFile.childImageSharp.fixed}
                                                     alt={`${member.name}, member Bruin Sport Capital Team`}
                                                     className={`team-${index}`}
+                                                    loading="lazy"
                                                 />
                                             }
                                         >

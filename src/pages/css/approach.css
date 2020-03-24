@@ -1,10 +1,19 @@
 .approach__header.about__header {
-    padding: 188px 0 438px !important;
+    padding: 140px 0 300px !important;
     position: relative;
+}
+.approach__header .about__header__top h3{
+    max-width: 410px;
+}
+.approach__header .about__header__top h1{
+    max-width: 270px;
 }
 .portfolio__page #popup__team h3{
     font-weight: 600;
     max-width: 320px;
+}
+.portfolio__page #popup__team h1{
+    max-width: 270px;
 }
 .approach{
     overflow: hidden;
@@ -25,7 +34,7 @@
     z-index: 0;
 }
 .about__header.approach__header{
-    clip-path: polygon(0 41%, 0 0, 100% 0, 100% 100%);
+    clip-path: polygon(0 0, 0 100%, 100% 34%, 100% 0);
 }
 .approach__header.about__header h3{
     margin-top: 10px;
@@ -68,10 +77,16 @@
 }
 .approach__copy .about__header__column__two {
     display: flex;
+}
+.approach .about__header__column__one p, .approach .about__header__column__two p {
+    margin-top: 0px; 
+}
+.approach__copy .about__header__column__one {
+    display: flex;
     align-items: flex-end;
 }
 .approach__copy {
-    margin-bottom: 150px;
+    margin-bottom: 70px;
     margin-top: -150px;
 }
 .mis__vals__soc.approach_mvs{
@@ -258,7 +273,7 @@
 
 @media(max-width: 1600px){
     .approach__copy {
-        margin-top: -200px;
+        margin-top: -150px;
     }
 }
 @media(max-width: 1388px){
@@ -347,7 +362,7 @@
         left: 45%!important;
     }
     .about__header.approach__header {
-        clip-path: polygon(0 50%, 0 0, 100% 0, 100% 70%);
+        clip-path: polygon(0 0, -94% 100%, 100% 36%, 101% 0%);
     }
 }
 @media(max-width: 600px){
@@ -357,9 +372,15 @@
     .approach .page__background .gatsby-image-wrapper {
         left: 0px;
     }
+    .approach__header .about__header__top h1 {
+        max-width: 213px;
+    }
     .approach__first__element__wrapper {
-        padding: 100px 20px 100px;
+        padding: 100px 26px 100px;
         min-height: 400px;
+    }
+    .approach .mis__vals__soc.approach_mvs {
+        padding: 0 20px!important;
     }
     .approach__header.about__header {
         height: 920px;
@@ -374,12 +395,16 @@
         line-height: 30px;
     }
     .approach__header.about__header {
-        height: 630px;
+        height: 615px;
         padding: 118px 0 338px !important;
-        clip-path: polygon(0 74%, 0 0, 100% 0, 100% 87%);
+        clip-path: unset;
     }
     .approach__copy {
-        margin-top: -60px;
+        margin-top: 75px;
+        margin-bottom: 115px;
+    }
+    .approach .about__header__top{
+        padding: 0 20px;
     }
     .approach__first__element__wrapper {
         position: relative;

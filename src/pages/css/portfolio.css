@@ -20,8 +20,9 @@
     margin-top: 30px;
     position: absolute;
     top: 10px;
-    right: -60px;
+    right: 115px;
     opacity: 1;
+    max-width: 35px;
 }
 .portfolio__page .popup-content .close:before, .portfolio__page .popup-content .close:after {
     background-color: #ffffff;
@@ -247,15 +248,12 @@
         clip-path: polygon(0 60%, 140% 0,790% 130%,0 110%);
     }
     .portfolio__page .popup-content .close {
-        right: -120px;
+        right: 40px;
     }
 }
 @media(max-width: 768px){
     .porftolio__description {
         min-height: auto;
-    }
-    .portfolio__page .popup-content .close {
-        right: -100px;
     }
     .portfolio__page .popup__inner .project__logo.\--floating {
         max-width: 150px;
@@ -305,7 +303,7 @@
         clip-path: polygon(0 35%, 310% 0,790% 130%,0 110%);
     }
     .projects__section .our__approach {
-        padding: 130px 40px 60px 40px!important;
+        padding: 430px 40px 60px 40px!important;
     }
     .portfolio_half .portfolio__inner {
         padding: 15px 50px 60px 50px!important;
@@ -340,7 +338,7 @@
         width: 100%;
     }
     .portfolio__page .popup-content .close {
-        right: -140px;
+        right: 10px;
     }
     .portfolio__page .portfolio_full.light{
         flex-direction: column;
@@ -369,6 +367,21 @@
         -ms-transform: scale(1, -1);
         transform: scale(-1, 1);
     }
+    .portfolio__page .featured__article__content {
+        height: auto;
+    }
+    .portfolio__page .popup-content .col-lg-12:nth-child(1) {
+        height: 100%;
+    }
+    .portfolio__page .featured__article__top {
+        height: 100%;
+    }
+    .portfolio__page .popup-content .featured__artitle__inner {
+        height: 380px;
+    }
+    .portfolio__page .featured__article__content {
+        height: 100%;
+    }
 }
 @media (max-width: 823px) and (orientation: landscape) {
     .portfolio__page .our__approach .top__info {
@@ -390,6 +403,7 @@
         border-right: 2px solid #cecece4d;
         min-height: auto;
     }
+
 }
 @media (max-width: 667px) and (orientation: landscape) {
     .our__approach h1 {

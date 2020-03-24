@@ -1,6 +1,54 @@
-@import url('https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Montserrat:500,600,700,800,900&display=swap');
-
+/* @import url('https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500,600,700,800,900&display=swap'); */
+.position-absolute{
+    position: absolute!important;
+}
+.position-relative{
+    position: relative!important;
+}
+.position-static{
+    position: static!important;
+}
+.position-fixed{
+    position: fixed!important;
+}
+.text-white{
+    color:white;
+}
+.justify-content-center{
+    justify-content: center!important;
+}
+.justify-content-start{
+    justify-content: start!important;
+}
+.justify-content-end{
+    justify-content: end!important;
+}
+.align-items-center{
+    align-items: center!important;
+}
+.align-items-start{
+    align-items: start!important;
+}
+.align-items-end{
+    align-items: end!important;
+}
+.text-center{
+    text-align: center!important;
+}
+.text-left{
+    text-align: left!important;
+}
+.text-right{
+    text-align: right!important;
+}
+.popup-content .close{
+    background: transparent!important;
+    min-width: auto!important;
+}
+.d-flex{
+    display: flex!important;
+}
 * {
     outline-color: #b02931!important;
 }

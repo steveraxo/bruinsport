@@ -96,7 +96,21 @@ class HomePage extends Component {
     }
     
   }
-
+  componentDidMount(){
+    setTimeout(function(){ 
+      var link = document.createElement('link');
+      link.id = 'montserrat__font';
+      link.rel = 'stylesheet';
+      link.href = 'https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap';
+      document.head.appendChild(link);
+  
+      var link = document.createElement('link');
+      link.id = 'muli__font';
+      link.rel = 'stylesheet';
+      link.href = 'https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600;700;800;900&display=swap';
+      document.head.appendChild(link);
+    }, 100);
+  }
   render() {
     // This variable will return all the fields related to the post
     const pageData = this.props.data.allWordpressPage.edges[0].node,

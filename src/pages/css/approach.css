@@ -351,6 +351,9 @@
     }
 }
 @media(max-width: 600px){
+    .approach .testimonial__slider__element img {
+        object-position: -1300px!important;
+    }
     .approach .page__background .gatsby-image-wrapper {
         left: 0px;
     }

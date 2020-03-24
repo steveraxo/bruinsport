@@ -183,9 +183,10 @@
     .team__page .popup-content .close{
         position: absolute;
         top: 40px;
-        right: -70px;
+        right: 129px;
         z-index: 9;
         opacity: 1;
+        width: 25px;
     }
     .team__members {
         padding-top: 100px;
@@ -438,7 +439,7 @@
         padding: 60px 50px;
     }
     .team__page .team__section .popup-content .close {
-        right: -100px;
+        right: 50px;
     }
     .team__page .team__section .featured__artitle__inner {
         padding: 30px 30px;
@@ -567,7 +568,7 @@
         top: 6px;
     }
     .team__page .team__section .popup-content .close {
-        right: -165px;
+        right: 5px;
         top: 10px;
     }
     .team__page .team__section .triangle__big {

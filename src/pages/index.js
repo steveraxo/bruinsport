@@ -115,7 +115,6 @@ class HomePage extends Component {
     // This variable will return all the fields related to the post
     const pageData = this.props.data.allWordpressPage.edges[0].node,
           newsData = this.props.data.allWordpressWpNews.edges;
-    console.log(pageData)
     //Slick Setting
     let settings = {
       dots: false,
@@ -220,6 +219,7 @@ class HomePage extends Component {
                           onClick={this.triggerClientPopUp}
                           onKeyPress={this.triggerClientPopUp}
                           loading="lazy"
+                          key={`${index}-logo`}
                         />
                       )
                     }

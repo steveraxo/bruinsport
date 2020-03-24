@@ -976,9 +976,9 @@
         top: 33%;
     }
     .home__page .header__copy {
-        top: 65%;
+        top: 52%;
         left: 4px;
-        margin-top: -42%;
+        margin-top: 18%;
     }
     .home__copy h3 br{
         display: none;
@@ -990,6 +990,7 @@
     }
     .home__page .header__copy {
         top: 89%;
+        margin-top: 11%;
     }
     .get__started__content button {
         width: 100%;

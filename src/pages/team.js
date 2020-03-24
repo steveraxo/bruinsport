@@ -16,6 +16,7 @@ class MediaPage extends Component {
     this.state = { 
         pageIsLoaded: false,
     };
+    this.showContent = this.showContent.bind(this);
   }
     
   focusMain(){
@@ -90,6 +91,10 @@ class MediaPage extends Component {
       document.querySelectorAll('.team__section')[0].classList.add('--open');
 
       document.querySelectorAll('.team__page__first button')[0].classList.add('remove__content')
+
+      this.setState({
+        pageIsLoaded: true,
+      });
   }
   hideContent(){
     document.querySelectorAll('.team__extra__copy')[0].classList.remove('--show');
@@ -118,13 +123,7 @@ class MediaPage extends Component {
     }
 
   }
-  componentDidMount(){
-    setTimeout(function(){ 
-        this.setState({
-            pageIsLoaded: true,
-        });
-    }.bind(this), 100);
-  }
+
   render() {
     const pageData = this.props.data.allWordpressPage.edges[0].node
     const pageAcf = this.props.data.allWordpressPage.edges[0].node.acf

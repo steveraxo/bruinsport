@@ -138,9 +138,15 @@ class Header extends Component {
                                     }
                                 </>
                                 : <>
-                                    <a href={element.node.acf.external_news_link} target="_BLANK" rel="noopener noreferrer">
-                                        <img src={linkIcon} alt="Link to Press Release"/>
-                                    </a>
+                                    {
+                                        element.node.acf !== null
+                                        ?<a href={element.node.acf.external_news_link} target="_BLANK" rel="noopener noreferrer">
+                                            <img src={linkIcon} alt="Link to Press Release"/>
+                                         </a>
+                                        : ""
+
+                                    }
+                                    
                                 </>
                             }
                             </div>

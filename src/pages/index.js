@@ -115,6 +115,8 @@ class HomePage extends Component {
     // This variable will return all the fields related to the post
     const pageData = this.props.data.allWordpressPage.edges[0].node,
           newsData = this.props.data.allWordpressWpNews.edges;
+
+          console.log(pageData)
     //Slick Setting
     let settings = {
       dots: false,
@@ -363,7 +365,12 @@ class HomePage extends Component {
                         ?<div className={'content'} dangerouslySetInnerHTML={{__html: element.node.content}} />
                         : ""
                     }
-                    <ExternalButton buttonClass={''} buttonText={'Read More'} redirectionLink={element.node.acf.external_news_link} ></ExternalButton>
+                    {
+                      element.node.acf !== null
+                      ? <ExternalButton buttonClass={''} buttonText={'Read More'} redirectionLink={element.node.acf.external_news_link} ></ExternalButton>
+                      : ""
+                    }
+                    
                   </div>
                 )
               }

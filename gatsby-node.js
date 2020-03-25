@@ -6,8 +6,8 @@ const _ = require(`lodash`)
 const Promise = require(`bluebird`)
 const path = require(`path`)
 const slash = require(`slash`)
-const queryAll = require(`./src/queries/queryAll.js`)
-const createPaginatedPages = require(`gatsby-paginate`)
+// const queryAll = require(`./src/queries/queryAll.js`)
+// const createPaginatedPages = require(`gatsby-paginate`)
 // exports.createPages = ({ graphql, actions }) => {
 //     const { createPage } = actions;
 //     return new Promise((resolve, reject) => {

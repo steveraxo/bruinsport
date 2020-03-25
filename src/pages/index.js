@@ -115,8 +115,7 @@ class HomePage extends Component {
     // This variable will return all the fields related to the post
     const pageData = this.props.data.allWordpressPage.edges[0].node,
           newsData = this.props.data.allWordpressWpNews.edges;
-
-          console.log(pageData)
+console.log(newsData);
     //Slick Setting
     let settings = {
       dots: false,
@@ -354,24 +353,31 @@ class HomePage extends Component {
             <Slider className="row featured__wrapper dark latest__news__wrapper" {...settings}>
               {
                 newsData.map((element, index) => 
-                  <div className="latest__article" key={`newsData-${element}-${index}`}>
-                    {   
-                        element.node.content.length > 0
-                        ?<div className={'title'} dangerouslySetInnerHTML={{__html: element.node.content}} />
-                        : ""
-                    }
-                    {   
-                        element.node.content.length > 0
-                        ?<div className={'content'} dangerouslySetInnerHTML={{__html: element.node.content}} />
-                        : ""
-                    }
-                    {
-                      element.node.acf !== null
-                      ? <ExternalButton buttonClass={''} buttonText={'Read More'} redirectionLink={element.node.acf.external_news_link} ></ExternalButton>
+                (
+                  element.node.acf
+                  ?                  <div className={`latest__article`} key={`newsData-${element}-${index}`}>
+                  {   
+                      element.node.title.length > 0
+                      ?<div className={'title'}  >
+                          <p dangerouslySetInnerHTML={{__html: element.node.title}} />
+                        </div>
                       : ""
-                    }
-                    
-                  </div>
+                  }
+                  {   
+                      element.node.content.length > 0
+                      ?<div className={'content'} dangerouslySetInnerHTML={{__html: element.node.content}} />
+                      : ""
+                  }
+                  {
+                    element.node.acf !== null
+                    ? <ExternalButton buttonClass={''} buttonText={'Read More'} redirectionLink={element.node.acf.external_news_link} ></ExternalButton>
+                    : ""
+                  }
+                  
+                </div>
+                  : ""
+                )
+
                 )
               }
             </Slider>

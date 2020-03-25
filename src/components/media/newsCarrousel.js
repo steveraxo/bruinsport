@@ -114,14 +114,19 @@ class Header extends Component {
         <div className={`news__list ${this.props.state}`} id={this.props.elId}>
             {
                 newsArray.map((element, index) => 
-                    <div className={`${this.props.elId} news__list_element`} key={`${this.props.elId}-${index}`} >
+                    <div className={`${this.props.elId} news__list_element ${element.node.acf !== null ?  "" : "hidden"}`} key={`${this.props.elId}-${index}`} >
                             <div className="news__list_field date col-xl-2">
                                 <p>{element.node.date}</p>
                             </div>
-                            <div className="news__list_field subtitle col">
-                                <p>{element.node.acf.subtitle}</p>
-                            </div>
-{/*                             
+                            {
+                                element.node.acf !== null
+                                ?<div className="news__list_field subtitle col">
+                                    <p>{element.node.acf.subtitle}</p>
+                                 </div>
+                                : ""
+                            }
+                           
+                            {/*                             
                             <div className="news__list_field title col">
                                 <p>{element.node.acf.title}</p>
                             </div> */}
@@ -130,7 +135,7 @@ class Header extends Component {
                                 this.props.elId === 'press'
                                 ? <>
                                     {
-                                        element.node.acf.pdf_press_release
+                                        element.node.acf !== null && element.node.acf.pdf_press_release
                                         ? <a href={element.node.acf.pdf_press_release.url.source_url} download target="_BLANK" rel="noopener noreferrer">
                                             <img src={downloadIcon} alt="Download the PDF attachment"/>
                                           </a>

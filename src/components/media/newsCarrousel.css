@@ -18,6 +18,9 @@
     margin: 50px 0 0 0;
     border-top: solid 2px white;
 }
+.news.news__list_element.hidden{
+    display: none;
+}
 .news__list_element{
     justify-content: space-between;
     border-bottom: solid 2px white;

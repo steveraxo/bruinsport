@@ -93,7 +93,7 @@ class MediaPage extends Component {
                                   </div>
                                   <div className="featured__article__subtitle">
                                     {   
-                                        element.acf.subtitle.length > 0
+                                        element.acf !== null & element.acf.subtitle.length > 0
                                         ?<p>{element.acf.subtitle}</p>
                                         : ""
                                     }
@@ -119,14 +119,19 @@ class MediaPage extends Component {
                                     </div>
                                     <div className="featured__article__source">
                                       {   
-                                          element.acf.source_text.length > 0
+                                          element.acf !== null & element.acf.source_text.length > 0
                                           ?<p><strong> Source </strong> {element.acf.source_text}</p>
                                           : ""
                                       }
                                     </div>
                                   </div>
                                   <div className="featured__article__cta">
-                                    <ExternalButton redirectionLink={element.acf.external_news_link} buttonClass={''} buttonText={'Read More'}></ExternalButton>
+                                    {
+                                      element.acf !== null
+                                      ? <ExternalButton redirectionLink={element.acf.external_news_link} buttonClass={''} buttonText={'Read More'}></ExternalButton>
+                                      : ""
+                                    }
+                                    
                                   </div>
                                 </div>
                               </div>

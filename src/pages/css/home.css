@@ -10,7 +10,7 @@
     -webkit-appearance: none;
 }
 .home__page .latest__article .title{
-    min-height: 60px;
+    min-height: 100px;
 }
 .home__page .home__pop__content p::-webkit-scrollbar:vertical {
     width: 10px;
@@ -128,10 +128,6 @@
     line-height: 23.2px;
     text-transform: uppercase;
     -webkit-text-stroke: thin;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
 }
 .home__page .latest__news .content p{
     font-family: 'Muli', sans-serif;

@@ -355,7 +355,7 @@ console.log(newsData);
                 newsData.map((element, index) => 
                 (
                   element.node.acf
-                  ?                  <div className={`latest__article`} key={`newsData-${element}-${index}`}>
+                  ?<div className={`latest__article`} key={`newsData-${element}-${index}`}>
                   {   
                       element.node.title.length > 0
                       ?<div className={'title'}  >
@@ -363,11 +363,11 @@ console.log(newsData);
                         </div>
                       : ""
                   }
-                  {   
+                  {/* {   
                       element.node.content.length > 0
                       ?<div className={'content'} dangerouslySetInnerHTML={{__html: element.node.content}} />
                       : ""
-                  }
+                  } */}
                   {
                     element.node.acf !== null
                     ? <ExternalButton buttonClass={''} buttonText={'Read More'} redirectionLink={element.node.acf.external_news_link} ></ExternalButton>
@@ -495,7 +495,7 @@ query HomeQuery {
       }
     }
   }
-  allWordpressWpNews(limit: 18) {
+  allWordpressWpNews {
     edges {
       node {
         acf {

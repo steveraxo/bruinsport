@@ -210,7 +210,7 @@ query mediaPageQuery {
       }
     }
   }
-  allWordpressWpPressreleases(limit: 18) {
+  allWordpressWpPressreleases {
     edges {
       node {
         title
@@ -228,7 +228,7 @@ query mediaPageQuery {
       }
     }
   }
-  allWordpressWpNews(limit: 18) {
+  allWordpressWpNews {
     edges {
       node {
         title

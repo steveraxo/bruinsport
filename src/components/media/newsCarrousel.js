@@ -121,7 +121,7 @@ class Header extends Component {
                             {
                                 element.node.title !== null
                                 ?<div className="news__list_field subtitle col">
-                                    <p>{element.node.title}</p>
+                                    <p dangerouslySetInnerHTML={{__html: element.node.title}} />
                                  </div>
                                 : ""
                             }

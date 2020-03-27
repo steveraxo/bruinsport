@@ -115,8 +115,8 @@ class HomePage extends Component {
     // This variable will return all the fields related to the post
     const pageData = this.props.data.allWordpressPage.edges[0].node,
           newsData = this.props.data.allWordpressWpNews.edges;
-console.log(newsData);
-    //Slick Setting
+
+          //Slick Setting
     let settings = {
       dots: false,
       arrows: true,
@@ -130,11 +130,11 @@ console.log(newsData);
       lazyLoad: 'ondemand',
       responsive: [
         {
-          breakpoint: 1000,
+          breakpoint: 1025,
           settings: {
             arrows: true,
             slidesToShow: 3,
-            slidesToScroll: 3,
+            slidesToScroll: 1,
           }
         },
         {
@@ -165,14 +165,14 @@ console.log(newsData);
       autoplay: true,
       autoplaySpeed: 9000,
       slidesToShow: 4,
-      slidesToScroll: 4,
+      slidesToScroll: 1,
       responsive: [
         {
           breakpoint: 768,
           settings: {
             arrows: true,
             slidesToShow: 2,
-            slidesToScroll: 2,
+            slidesToScroll: 1,
           }
         }
       ]

@@ -4,6 +4,12 @@
     padding:208px 0 728px !important;
     
 }
+.history__timeline .slick-initialized .slick-slide {
+    display: block;
+    min-height: 300px;
+    top: 97px;
+    position: relative;
+}
 .about__header.approach__header {
     background: #282322;
   }
@@ -351,6 +357,9 @@
 @media(max-width: 568px){
     .about__header__column__one p, .about__header__column__two p {
         line-height: 30px;
+    }
+    .history__timeline .slick-initialized .slick-slide {
+        top: 55px;
     }
     .social__logo {
         width: 100%;

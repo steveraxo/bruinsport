@@ -37,6 +37,9 @@
 
 .portfolio__page .our__approach.featured__section.diagonal {
   background: #000;
+    display: flex!important;
+    justify-content: center!important;
+    align-items: center!important;
 }
 .portfolio__page .our__approach .top__info p {
     line-height: 30px;

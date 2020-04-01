@@ -313,6 +313,7 @@
 }
 .home__page .latest__article .content {
     text-transform: capitalize;
+    padding-right: 50px;
 }
 .home__page .featured__wrapper.slick-slider{
     min-height: auto;

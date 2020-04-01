@@ -9,7 +9,7 @@
   background: #000;
 }
 .portfolio__page .featured__article__content{
-    height: 150px;
+    height: 190px;
     overflow-y: scroll;
 }
 .portfolio__page .featured__article__content::-webkit-scrollbar {
@@ -48,7 +48,7 @@
 .portfolio__page .popup-content .featured__artitle__inner {
     width: 100%;
     position: relative;
-    padding: 60px 100px 0;
+    padding: 20px 100px 0;
     top: unset;
     height: 300px;
     overflow-x: hidden;

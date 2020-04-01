@@ -130,7 +130,7 @@ class HomePage extends Component {
       lazyLoad: 'ondemand',
       responsive: [
         {
-          breakpoint: 1025,
+          breakpoint: 1180,
           settings: {
             arrows: true,
             slidesToShow: 3,
@@ -356,18 +356,25 @@ class HomePage extends Component {
                 (
                   element.node.acf
                   ?<div className={`latest__article`} key={`newsData-${element}-${index}`}>
+
+                  {   
+                      element.node.categories !== null
+                      ?<div className={'title'}  >
+                          <p dangerouslySetInnerHTML={{__html: element.node.categories[0].name}} />
+                        </div>
+                      : <div className={'title'}>
+                          <p>Uncategorized</p>
+                        </div>
+                  }
+                  <div className={'title date__title'}  >
+                    <p dangerouslySetInnerHTML={{__html: element.node.date}} />
+                  </div>
+
                   {   
                       element.node.title.length > 0
-                      ?<div className={'title'}  >
-                          <p dangerouslySetInnerHTML={{__html: element.node.title}} />
-                        </div>
+                      ?<p className={'content'} dangerouslySetInnerHTML={{__html: element.node.title.toLowerCase(element.node.title.charAt(0).toUpperCase() + element.node.title.slice(1))}} />
                       : ""
                   }
-                  {/* {   
-                      element.node.content.length > 0
-                      ?<div className={'content'} dangerouslySetInnerHTML={{__html: element.node.content}} />
-                      : ""
-                  } */}
                   {
                     element.node.acf !== null
                     ? <ExternalButton buttonClass={''} buttonText={'Read More'} redirectionLink={element.node.acf.external_news_link} ></ExternalButton>
@@ -505,6 +512,10 @@ query HomeQuery {
         }
         title
         content
+        categories {
+          name
+        }
+        date(formatString: "DD.MM.YYYY")
       }
     }
   }

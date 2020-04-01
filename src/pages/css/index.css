@@ -65,9 +65,7 @@
     opacity: 0;
     font-size: 1px;
 }
-.slick-slide{
-    visibility: hidden;
-}
+
 .slick-slide.slick-active{
     visibility: visible;
 }

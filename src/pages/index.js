@@ -354,7 +354,7 @@ class HomePage extends Component {
               {
                 newsData.map((element, index) => 
                 (
-                  element.node.acf
+                  element.node.acf 
                   ?<div className={`latest__article`} key={`newsData-${element}-${index}`}>
 
                   {   
@@ -376,8 +376,8 @@ class HomePage extends Component {
                       : ""
                   }
                   {
-                    element.node.acf !== null
-                    ? <ExternalButton buttonClass={''} buttonText={'Read More'} redirectionLink={element.node.acf.external_news_link} ></ExternalButton>
+                    element.node.acf.external_news_link !== null
+                    ? <ExternalButton buttonClass={''} buttonText={'Read More'} redirectionLink={element.node.acf.external_news_link.source_url} ></ExternalButton>
                     : ""
                   }
                   
@@ -506,9 +506,9 @@ query HomeQuery {
     edges {
       node {
         acf {
-          external_news_link
-          source_text
-          subtitle
+          external_news_link {
+            source_url
+          }
         }
         title
         content

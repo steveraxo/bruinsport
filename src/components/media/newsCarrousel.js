@@ -109,7 +109,6 @@ class Header extends Component {
   }
   render() {
     let newsArray = this.props.newsArray 
-
     return (
         <div className={`news__list ${this.props.state}`} id={this.props.elId}>
             {
@@ -125,11 +124,6 @@ class Header extends Component {
                                  </div>
                                 : ""
                             }
-                           
-                            {/*                             
-                            <div className="news__list_field title col">
-                                <p>{element.node.acf.title}</p>
-                            </div> */}
                             <div className="news__list_field actions col-xl-2">
                             {   
                                 this.props.elId === 'press'
@@ -143,16 +137,22 @@ class Header extends Component {
                                     }
                                 </>
                                 : <>
-                                    {
-                                        element.node.acf !== null
-                                        ?<a href={element.node.acf.external_news_link} target="_BLANK" rel="noopener noreferrer">
-                                            <img src={linkIcon} alt="Link to Press Release"/>
-                                         </a>
-                                        : ""
-
-                                    }
-                                    
-                                </>
+                                {
+                                    element.node.acf !== null 
+                                    ?
+                                    <>
+                                        {
+                                            element.node.acf.external_news_link  !== null 
+                                            ? <a href={element.node.acf.external_news_link.source_url} target="_BLANK" rel="noopener noreferrer">
+                                                <img src={linkIcon} alt="Link to Press Release"/>
+                                              </a>
+                                            : ""
+                                        }  
+                                    </>
+                                    : ""
+                                }
+                                
+                            </>
                             }
                             </div>
                     </div>

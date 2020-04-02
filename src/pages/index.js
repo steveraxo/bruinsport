@@ -516,7 +516,7 @@ query HomeQuery {
         categories {
           name
         }
-        date(formatString: "DD.MM.YYYY")
+        date(formatString: "MM.DD.YYYY")
       }
     }
   }

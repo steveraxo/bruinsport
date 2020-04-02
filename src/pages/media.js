@@ -232,7 +232,7 @@ query mediaPageQuery {
     edges {
       node {
         title
-        date(formatString: "MMM/DD/YYYY")
+        date(formatString: "MM.DD.YYYY")
         acf {
           external_link_file
           external_news_link{

@@ -234,7 +234,8 @@ query mediaPageQuery {
         title
         date(formatString: "MMM/DD/YYYY")
         acf {
-          external_news_link {
+          external_link_file
+          external_news_link{
             source_url
           }
         }

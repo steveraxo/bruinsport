@@ -365,7 +365,7 @@ class HomePage extends Component {
                           <p>Uncategorized</p>
                         </div>
                   }
-                  <div className={'title date__title'}  >
+                  <div className={'date__title'}  >
                     <p dangerouslySetInnerHTML={{__html: element.node.date}} />
                   </div>
 

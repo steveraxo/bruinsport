@@ -819,12 +819,7 @@
         justify-content: center;
         align-items: center;
     }
-    .home__page .latest__news__wrapper .slick-slide{
-        opacity: 0;
-    }
-    .home__page .latest__news__wrapper .slick-slide.slick-current{
-        opacity: 1;
-    }
+
     .home__page .featured__article {
         height: 480px;
         overflow: scroll;

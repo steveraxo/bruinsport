@@ -298,7 +298,13 @@
 .home__page .latest__news .slick-arrow.slick-prev.slick-disabled{
     opacity: 0;
 }
+.home__page .latest__news .slick-arrow.slick-next.slick-disabled{
+    opacity: 0;
+}
 .home__page .latest__news .slick-arrow.slick-prev{
+    opacity: 1;
+}
+.home__page .latest__news .slick-arrow.slick-next{
     opacity: 1;
 }
 .home__page .latest__news__wrapper{

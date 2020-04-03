@@ -131,7 +131,6 @@
     font-weight: 600;
     font-size: 19px;
     line-height: 23.2px;
-    text-transform: uppercase;
     -webkit-text-stroke: thin;
     min-height: 50px;
 }
@@ -296,8 +295,14 @@
 .home .featured__wrapper.slick-slider {
     min-height: auto;
 }
+.home__page .latest__news .slick-arrow.slick-prev.slick-disabled{
+    opacity: 0;
+}
+.home__page .latest__news .slick-arrow.slick-prev{
+    opacity: 1;
+}
 .home__page .latest__news__wrapper{
-    padding: 10px 50px 0px;
+    padding: 10px 50px 5px;
 }
 .home__page .featured__wrapper .slick-arrow.slick-next{
     top: 35%; 

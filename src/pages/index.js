@@ -118,13 +118,14 @@ class HomePage extends Component {
     console.log(newsData);
           //Slick Setting
     let settings = {
-      dots: false,
-      arrows: true,
-      infinite: true,
       speed: 500,
       cssEase: 'linear',
       autoplay: true,
       autoplaySpeed: 9000,
+      arrows: true,
+      dots: false,
+      infinite: false,
+      speed: 300,
       slidesToShow: 4,
       slidesToScroll: 1,
       responsive: [
@@ -501,7 +502,7 @@ query HomeQuery {
       }
     }
   }
-  allWordpressWpNews {
+  allWordpressWpNews(limit: 12) {
     edges {
       node {
         acf {

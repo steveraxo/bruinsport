@@ -127,7 +127,6 @@ class HomePage extends Component {
       autoplaySpeed: 9000,
       slidesToShow: 4,
       slidesToScroll: 1,
-      lazyLoad: 'ondemand',
       responsive: [
         {
           breakpoint: 1180,

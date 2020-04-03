@@ -66,9 +66,6 @@
     font-size: 1px;
 }
 
-.slick-slide.slick-active{
-    visibility: visible;
-}
 .track-vertical{
     position: absolute;
     height: 100%;
@@ -209,6 +206,7 @@ section{
     .featured__article {
         padding: 20px;
     }
+
     .featured__wrapper .featured__article__bottom {
         flex-direction: column;
     }

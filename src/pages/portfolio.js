@@ -99,7 +99,6 @@ query portfolioPageQuery {
           }
         }
         acf {
-
           main_second_title
           main_title
           project{
@@ -133,16 +132,6 @@ query portfolioPageQuery {
             button_text
             project_layout
             theme
-          }
-          featured_media {
-            post_date(formatString: "MMM DD  YYYY")
-            post_title
-            post_content
-            acf {
-              source_text
-              subtitle
-              external_news_link
-            }
           }
         }
       }

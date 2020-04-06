@@ -44,7 +44,7 @@ class MediaPage extends Component {
     const PressData = this.props.data.allWordpressWpPressreleases.edges
     const NewsData = this.props.data.allWordpressWpNews.edges
     const featuredArticles = pageData.acf.featured_media;
-
+    console.log(featuredArticles);
     //Slick Setting
     let settings = {
       dots: true,
@@ -58,7 +58,7 @@ class MediaPage extends Component {
       lazyLoad: 'ondemand',
     };
     return (
-      
+        
         <Layout>
             <Helmet>
                 <meta charSet="utf-8" />
@@ -127,12 +127,11 @@ class MediaPage extends Component {
                                   </div>
                                   <div className="featured__article__cta">
                                     {
-                                      element.acf !== null
-                                      ? <ExternalButton redirectionLink={element.acf.external_news_link} buttonClass={''} buttonText={'Read More'}></ExternalButton>
-                                      : ""
+                                      element.acf !== null && element.acf.external_news_link !== null && element.acf.external_news_link !== "#" 
+                                      ? <ExternalButton buttonClass={''} buttonText={'Read More'} redirectionLink={element.acf.external_news_link} ></ExternalButton>
+                                      : <ExternalButton buttonClass={''} buttonText={'Read More'} redirectionLink={element.acf.pdf_press_release.url.source_url} ></ExternalButton>
                                     }
-                                    
-                                  </div>
+                                    </div>
                                 </div>
                               </div>
                           )
@@ -204,6 +203,11 @@ query mediaPageQuery {
               source_text
               subtitle
               external_news_link
+              pdf_press_release {
+                url {
+                  source_url
+                }
+              }
             }
           }
         }

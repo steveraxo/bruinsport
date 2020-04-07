@@ -125,7 +125,6 @@ class HomePage extends Component {
       arrows: true,
       dots: false,
       infinite: false,
-      speed: 300,
       slidesToShow: 4,
       slidesToScroll: 1,
       responsive: [
@@ -189,9 +188,13 @@ class HomePage extends Component {
           <section className="container-fluid hero-bg media__featured">
             { /*
             <a href="#section-2" tabIndex={0} className="down__arrow"><div  tabIndex={-1} aria-hidden="true"></div><span className={'opacity-0'} tabIndex={-1}>Scroll down link</span></a> */}
-            <div className="page__background" aria-hidden="true">
-              <Img fluid={pageData.featured_media.localFile.childImageSharp.fluid} alt={""} tabIndex={-1}/>
-            </div>
+            {
+              pageData.featured_media
+              ?<div className="page__background" aria-hidden="true">
+                <Img fluid={pageData.featured_media.localFile.childImageSharp.fluid} alt={""} tabIndex={-1}/>
+              </div>
+              :" "
+            }
             <div className="container-fluid">
               {   
                   pageData.acf.main_copy.length > 0
@@ -205,97 +208,101 @@ class HomePage extends Component {
                   : ""
               }
             </div>
-            <div className="container-fluid">
-                <div className="clients__logos__wrapper" >
-                  <div className="clients__slider">
-                  <Slider  {...settingsClients}>
-                    {
-                      pageData.acf.header_logos.map( (element, index) => 
-                        <img 
-                          datatracknumber={`logo-client-${index}`}
-                          id={`logo-client-${index}-s`}
-                          tabIndex={0}
-                          src={element.icon.localFile.url}
-                          alt={`Client ${element.title} logo`}
-                          onClick={this.triggerClientPopUp}
-                          onKeyPress={this.triggerClientPopUp}
-                          loading="lazy"
-                          key={`${index}-logo`}
-                        />
-                      )
-                    }
-                  </Slider>
-                  </div>
-
-                  <div className="row clients__logos rotate__clients__logos" id={'clients__logos'}>
-                  {
-                    pageData.acf.header_logos.map( (element, index) => 
-                      <div className="col rotated__col" key={`header_logos-${element}-${index}`}>
-                        <Popup 
-                        onOpen={this.focusTrap} 
-                        onClose={this.changeBodyScroll} 
-                        modal 
-                        closeOnEscape 
-                        closeOnDocumentClick 
-                        trigger={
+            {
+              pageData.acf.header_logos
+              ?<div className="container-fluid">
+                  <div className="clients__logos__wrapper" >
+                    <div className="clients__slider">
+                    <Slider  {...settingsClients}>
+                      {
+                        pageData.acf.header_logos.map( (element, index) => 
                           <img 
-                            id={`logo-client-${index}`}
+                            datatracknumber={`logo-client-${index}`}
+                            id={`logo-client-${index}-s`}
                             tabIndex={0}
                             src={element.icon.localFile.url}
                             alt={`Client ${element.title} logo`}
+                            onClick={this.triggerClientPopUp}
                             onKeyPress={this.triggerClientPopUp}
-                            datatracknumber={`logo-client-${index}`}
                             loading="lazy"
+                            key={`${index}-logo`}
                           />
-                        } 
-                        position="center center">
-                            {close => (
-                              <div>
-                                <div className="popup__inner featured__wrapper" id={'popup__inner'}>
-                                  <div className="triangle__big"></div>
-                                  <div className="triangle__small"></div>
-                                  <div className="featured__article" key={index}>
-                                  <Img className={'popup__inner__background'} fluid={element.map.localFile.childImageSharp.fluid} alt="" tabIndex={-1} />
-                                    <div className="featured__artitle__inner">
-                                      <div className="featured__article__top">
-                                        <div className="featured__article__title">
-                                        {   
-                                            element.title.length > 0
-                                            ?<h4>{element.title}</h4>
-                                            : ""
-                                        }
+                        )
+                      }
+                    </Slider>
+                    </div>
+
+                    <div className="row clients__logos rotate__clients__logos" id={'clients__logos'}>
+                    {
+                      pageData.acf.header_logos.map( (element, index) => 
+                        <div className="col rotated__col" key={`header_logos-${element}-${index}`}>
+                          <Popup 
+                          onOpen={this.focusTrap} 
+                          onClose={this.changeBodyScroll} 
+                          modal 
+                          closeOnEscape 
+                          closeOnDocumentClick 
+                          trigger={
+                            <img 
+                              id={`logo-client-${index}`}
+                              tabIndex={0}
+                              src={element.icon.localFile.url}
+                              alt={`Client ${element.title} logo`}
+                              onKeyPress={this.triggerClientPopUp}
+                              datatracknumber={`logo-client-${index}`}
+                              loading="lazy"
+                            />
+                          } 
+                          position="center center">
+                              {close => (
+                                <div>
+                                  <div className="popup__inner featured__wrapper" id={'popup__inner'}>
+                                    <div className="triangle__big"></div>
+                                    <div className="triangle__small"></div>
+                                    <div className="featured__article" key={index}>
+                                    <Img className={'popup__inner__background'} fluid={element.map.localFile.childImageSharp.fluid} alt="" tabIndex={-1} />
+                                      <div className="featured__artitle__inner">
+                                        <div className="featured__article__top">
+                                          <div className="featured__article__title">
+                                          {   
+                                              element.title.length > 0
+                                              ?<h4>{element.title}</h4>
+                                              : ""
+                                          }
+                                          </div>
+                                          {   
+                                              element.first_copy.length > 0
+                                              ?<div className="featured__article__content home__pop__content" dangerouslySetInnerHTML={{__html: element.first_copy}} />
+                                              : ""
+                                          }
                                         </div>
+                                        <div className="featured__article__divider"></div>
                                         {   
-                                            element.first_copy.length > 0
-                                            ?<div className="featured__article__content home__pop__content" dangerouslySetInnerHTML={{__html: element.first_copy}} />
+                                            element.second_copy.length > 0
+                                            ?<div className="featured__article__content" dangerouslySetInnerHTML={{__html: element.second_copy}} />
                                             : ""
                                         }
+                                        
                                       </div>
-                                      <div className="featured__article__divider"></div>
-                                      {   
-                                          element.second_copy.length > 0
-                                          ?<div className="featured__article__content" dangerouslySetInnerHTML={{__html: element.second_copy}} />
-                                          : ""
-                                      }
-                                      
-                                    </div>
-                                    <div className="featured__article__bottom flex-end">
-                                        <div className="featured__article__cta">
-                                          <ExternalButton  redirectionLink={element.button_link} buttonText={element.button_text} buttonClass={''}></ExternalButton>
-                                        </div>
+                                      <div className="featured__article__bottom flex-end">
+                                          <div className="featured__article__cta">
+                                            <ExternalButton  redirectionLink={element.button_link} buttonText={element.button_text} buttonClass={''}></ExternalButton>
+                                          </div>
+                                      </div>
                                     </div>
                                   </div>
+                                  <button className="close" tabIndex="0" onClick={close} onKeyPress={close} id="close__menu" ></button>
                                 </div>
-                                <button className="close" tabIndex="0" onClick={close} onKeyPress={close} id="close__menu" ></button>
-                              </div>
-                            )}
-                        </Popup>
-                      </div>
-                    )
-                  }
+                              )}
+                          </Popup>
+                        </div>
+                      )
+                    }
+                    </div>
                   </div>
-                </div>
-            </div>
+              </div>
+              : ""
+            }
           </section>
           <section className="our__approach container-fluid" id="section-2">
             <div className="floating__letter">
@@ -314,13 +321,22 @@ class HomePage extends Component {
                       ?<div dangerouslySetInnerHTML={{__html: pageData.acf.our_approach_content}} />
                       : ""
                   }
-                  <InternalButton buttonText={pageData.acf.our_approach_button_text} redirectionLink={pageData.acf.our_approach_button_link}></InternalButton>
+                  {
+                    pageData.acf.our_approach_button_link
+                    ?<InternalButton buttonText={pageData.acf.our_approach_button_text} redirectionLink={pageData.acf.our_approach_button_link}></InternalButton>
+                    :""
+                  }
+                  
                 </div>
               </div>
             </div>
           </section>
           <section className="our__approach featured__section container-fluid">
-            <Img className={'img__background'} fluid={pageData.acf.featured_background.localFile.childImageSharp.fluid} alt="" tabIndex={-1} />
+            {
+              pageData.acf.featured_background
+              ?<Img className={'img__background'} fluid={pageData.acf.featured_background.localFile.childImageSharp.fluid} alt="" tabIndex={-1} />
+              : ""
+            }
             <div className="container">
               <div className="row">
                 <div className={'col-md-12 col-lg-4 col-xl-6 text-left'}>
@@ -334,77 +350,93 @@ class HomePage extends Component {
                       ?<div dangerouslySetInnerHTML={{__html: pageData.acf.featured_content}} />
                       : ""
                   }
-                  <ExternalButton buttonText={pageData.acf.featured_button_text} redirectionLink={pageData.acf.featured_button_link.source_url}></ExternalButton>
+                  {
+                    pageData.acf.featured_button_link
+                    ?<ExternalButton buttonText={pageData.acf.featured_button_text} redirectionLink={pageData.acf.featured_button_link.source_url}></ExternalButton>
+                    :""
+                  }
                 </div>
                 <div className={'col-md-12 col-lg-8 col-xl-6 '}>
                 </div>
               </div>
             </div>
           </section>
-          <section className="container-fluid latest__news">
-            <div className="container">
-              {   
-                  pageData.acf.latest_news_title.length > 0
-                  ?<h2 className={'text-center text-black '} dangerouslySetInnerHTML={{__html: pageData.acf.latest_news_title}} />
-                  : ""
-              }
-            </div>  
-            <div className="latest__news__wrapper">
-            <Slider className="row featured__wrapper dark latest__news__wrapper" {...settings}>
-              {
-                newsData.map((element, index) => 
-                (
-                  element.node.acf 
-                  ?<div className={`latest__article`} key={`newsData-${element}-${index}`}>
+          {
+            newsData
+            ?<section className="container-fluid latest__news">
+              <div className="container">
+                {   
+                    pageData.acf.latest_news_title.length > 0
+                    ?<h2 className={'text-center text-black '} dangerouslySetInnerHTML={{__html: pageData.acf.latest_news_title}} />
+                    : ""
+                }
+              </div>  
+              <div className="latest__news__wrapper">
+              <Slider className="row featured__wrapper dark latest__news__wrapper" {...settings}>
+                {
+                  newsData.map((element, index) => 
+                  (
+                    element.node.acf 
+                    ?<div className={`latest__article`} key={`newsData-${element}-${index}`}>
 
-                  {   
-                      element.node.categories !== null
-                      ?<div className={'title'}  >
-                          <p dangerouslySetInnerHTML={{__html: element.node.categories[0].name}} />
-                        </div>
-                      : <div className={'title'}>
-                          <p>Uncategorized</p>
-                        </div>
-                  }
-                  <div className={'date__title'}  >
-                    <p dangerouslySetInnerHTML={{__html: element.node.date}} />
+                    {   
+                        element.node.categories !== null
+                        ?<div className={'title'}  >
+                            <p dangerouslySetInnerHTML={{__html: element.node.categories[0].name}} />
+                          </div>
+                        : <div className={'title'}>
+                            <p>Uncategorized</p>
+                          </div>
+                    }
+                    <div className={'date__title'}  >
+                      <p dangerouslySetInnerHTML={{__html: element.node.date}} />
+                    </div>
+
+                    {   
+                        element.node.title.length > 0
+                        ?<p className={'content'} dangerouslySetInnerHTML={{__html: element.node.title }} />
+                        : ""
+                    }
+                    {
+                      element.node.acf !== null && element.node.acf.external_news_link !== null 
+                      ? <ExternalButton buttonClass={''} buttonText={'Read More'} redirectionLink={element.node.acf.external_news_link.source_url} ></ExternalButton>
+                      : <ExternalButton buttonClass={''} buttonText={'Read More'} redirectionLink={element.node.acf.external_link_file} ></ExternalButton>
+                    }
+                    
                   </div>
+                    : ""
+                  )
 
-                  {   
-                      element.node.title.length > 0
-                      ?<p className={'content'} dangerouslySetInnerHTML={{__html: element.node.title }} />
-                      : ""
-                  }
-                  {
-                    element.node.acf !== null && element.node.acf.external_news_link !== null 
-                    ? <ExternalButton buttonClass={''} buttonText={'Read More'} redirectionLink={element.node.acf.external_news_link.source_url} ></ExternalButton>
-                    : <ExternalButton buttonClass={''} buttonText={'Read More'} redirectionLink={element.node.acf.external_link_file} ></ExternalButton>
-                  }
-                  
-                </div>
-                  : ""
-                )
-
-                )
-              }
-            </Slider>
-            </div> 
-          </section>
+                  )
+                }
+              </Slider>
+              </div> 
+            </section>
+            :""
+          }
           <section className="container-fluid get__started">
-            <Img className={'img__background'} fluid={pageData.acf.get_started_background.localFile.childImageSharp.fluid} alt="" tabIndex={-1} />
+            {
+              pageData.acf.get_started_background
+              ? <Img className={'img__background'} fluid={pageData.acf.get_started_background.localFile.childImageSharp.fluid} alt="" tabIndex={-1} />
+              : ""
+            }
             <div className="container get__started__content">
               <div className="row d-flex justify-content-center align-items-center flex-column">
-                  {   
-                      pageData.acf.get_started_title.length > 0
-                      ?<h2 style={{lineHeight: '100px'}} dangerouslySetInnerHTML={{__html: pageData.acf.get_started_title}} />
-                      : ""
-                  }
-                  {   
-                      pageData.acf.get_started_copy.length > 0
-                      ?<p>{pageData.acf.get_started_copy}</p>
-                      : ""
-                  }
-                <InternalButton redirectionLink={pageData.acf.get_started_button_link} buttonText={pageData.acf.get_started_button_text} buttonClass={'dark-btn'}></InternalButton>
+                {   
+                    pageData.acf.get_started_title.length > 0
+                    ?<h2 style={{lineHeight: '100px'}} dangerouslySetInnerHTML={{__html: pageData.acf.get_started_title}} />
+                    : ""
+                }
+                {   
+                    pageData.acf.get_started_copy.length > 0
+                    ?<p>{pageData.acf.get_started_copy}</p>
+                    : ""
+                }
+                {
+                  pageData.acf.get_started_button_link
+                  ?<InternalButton redirectionLink={pageData.acf.get_started_button_link} buttonText={pageData.acf.get_started_button_text} buttonClass={'dark-btn'}></InternalButton>
+                  : ""
+                }
               </div>
             </div>
           </section>

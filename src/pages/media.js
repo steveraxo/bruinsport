@@ -40,11 +40,16 @@ class MediaPage extends Component {
   }
   render() {
 
+    var featuredArticles = false; 
+
     const pageData = this.props.data.allWordpressPage.edges[0].node
     const PressData = this.props.data.allWordpressWpPressreleases.edges
     const NewsData = this.props.data.allWordpressWpNews.edges
-    const featuredArticles = pageData.acf.featured_media;
-    console.log(featuredArticles);
+    
+    if(pageData.acf.featured_media){
+      featuredArticles = pageData.acf.featured_media;
+    }  
+
     //Slick Setting
     let settings = {
       dots: true,
@@ -67,78 +72,96 @@ class MediaPage extends Component {
                 <link rel="canonical" href={pageData.yoast_meta.yoast_wpseo_canonical} />
             </Helmet>
             <div className="media__page">
-                <section className="container-fluid hero-bg media__featured">
-                    <div className="page__background">
-                      <Img fluid={pageData.featured_media.localFile.childImageSharp.fluid} alt=""/>
-                    </div>
-                    <div className="row text-center">
-                      <div className="page__title">
-                        {   
-                            pageData.acf.page_title.length > 0
-                            ?<h1>{pageData.acf.page_title}</h1>
-                            : ""
-                        } 
-                      </div>
-                      <Slider className="featured__wrapper" {...settings}>
+                {
+                  featuredArticles
+                    ?<section className={`container-fluid hero-bg media__featured ${featuredArticles ? "" : "hidden-el" }`}>
                         {
-                          featuredArticles.map((element, index) => 
-                              <div className="featured__article" key={index}>
-                                <div className="featured__article__top">
-                                  <div className="featured__article__title">
-                                    {   
-                                        element.post_title.length > 0
-                                        ?<h3>{element.post_title}</h3>
-                                        : ""
-                                    }
-                                  </div>
-                                  <div className="featured__article__subtitle">
-                                    {   
-                                        element.acf !== null & element.acf.subtitle.length > 0
-                                        ?<p>{element.acf.subtitle}</p>
-                                        : ""
-                                    }
-                                    
-                                  </div>
-                                  <div className="featured__article__content">
-                                    {   
-                                        element.post_content.length > 0
-                                        ?<p className="text-left" dangerouslySetInnerHTML={{__html: element.post_content}} />
-                                        : ""
-                                    }
-                                  </div>
-                                </div>
-                                <div className="featured__article__divider"></div>
-                                <div className="featured__article__bottom">
-                                  <div className="featured__article__meta">
-                                    <div className="featured__article__date">
-                                      {   
-                                          element.post_date.length > 0
-                                          ?<p>{element.post_date}</p>
-                                          : ""
-                                      }
-                                    </div>
-                                    <div className="featured__article__source">
-                                      {   
-                                          element.acf !== null & element.acf.source_text.length > 0
-                                          ?<p><strong> Source </strong> {element.acf.source_text}</p>
-                                          : ""
-                                      }
-                                    </div>
-                                  </div>
-                                  <div className="featured__article__cta">
-                                    {
-                                      element.acf !== null && element.acf.external_news_link !== null && element.acf.external_news_link !== "#" 
-                                      ? <ExternalButton buttonClass={''} buttonText={'Read More'} redirectionLink={element.acf.external_news_link} ></ExternalButton>
-                                      : <ExternalButton buttonClass={''} buttonText={'Read More'} redirectionLink={element.acf.pdf_press_release.url.source_url} ></ExternalButton>
-                                    }
-                                    </div>
-                                </div>
-                              </div>
-                          )
+                          pageData.featured_media
+                          ?<div className="page__background">
+                            <Img fluid={pageData.featured_media.localFile.childImageSharp.fluid} alt=""/>
+                          </div>
+                          : ""
                         }
-                      </Slider>
-                    </div>
-                </section>
+                        <div className="row text-center">
+                          <div className="page__title">
+                            {   
+                                pageData.acf.page_title.length > 0
+                                ?<h1>{pageData.acf.page_title}</h1>
+                                : ""
+                            } 
+                          </div>
+                          {
+                            featuredArticles.length > 0
+                            ? <Slider className="featured__wrapper" {...settings}>
+                              {
+                                featuredArticles.map((element, index) => 
+                                    <div className="featured__article" key={index}>
+                                      <div className="featured__article__top">
+                                        <div className="featured__article__title">
+                                          {   
+                                              element.post_title.length > 0
+                                              ?<h3>{element.post_title}</h3>
+                                              : ""
+                                          }
+                                        </div>
+                                        <div className="featured__article__subtitle">
+                                          {   
+                                              element.acf !== null & element.acf.subtitle.length > 0
+                                              ?<p>{element.acf.subtitle}</p>
+                                              : ""
+                                          }
+                                        </div>
+                                        <div className="featured__article__content">
+                                          {   
+                                              element.post_content.length > 0
+                                              ?<p className="text-left" dangerouslySetInnerHTML={{__html: element.post_content}} />
+                                              : ""
+                                          }
+                                        </div>
+                                      </div>
+                                      <div className="featured__article__divider"></div>
+                                      <div className="featured__article__bottom">
+                                        <div className="featured__article__meta">
+                                          <div className="featured__article__date">
+                                            {   
+                                                element.post_date.length > 0
+                                                ?<p>{element.post_date}</p>
+                                                : ""
+                                            }
+                                          </div>
+                                          <div className="featured__article__source">
+                                            {   
+                                                element.acf !== null & element.acf.source_text.length > 0
+                                                ?<p><strong> Source </strong> {element.acf.source_text}</p>
+                                                : ""
+                                            }
+                                          </div>
+                                        </div>
+                                        <div className="featured__article__cta">
+                                          {
+                                            element.acf !== null && element.acf.external_news_link !== null && element.acf.external_news_link !== "#" 
+                                            ? <ExternalButton buttonClass={''} buttonText={'Read More'} redirectionLink={element.acf.external_news_link} ></ExternalButton>
+                                            : <>
+                                              {
+                                                element.acf.pdf_press_release
+                                                ? <ExternalButton buttonClass={''} buttonText={'Read More'} redirectionLink={element.acf.pdf_press_release.url.source_url} ></ExternalButton>
+                                                : ""
+                                              }
+                                              </>
+                                          }
+                                          </div>
+                                      </div>
+                                    </div>
+                                )
+                              }
+                            </Slider>
+                            : ""
+                          }
+                        </div>
+                    </section>
+                    : ""
+                }
+
                 <section className="media__lists">
                   <div className="media__list__background">
                     <img src={BruinLogo} alt={''} />
@@ -151,11 +174,27 @@ class MediaPage extends Component {
                           : ""
                       }
                       <div className="article__type__selector">
-                        <button onClick={this.changeList} data-type={'news'} className="type__news type__selector active ">News</button>
-                        <button onClick={this.changeList} data-type={'press'} className="type__press type__selector">Press Releases</button>
+                        {
+                          NewsData
+                          ? <button onClick={this.changeList} data-type={'news'} className="type__news type__selector active ">News</button>
+                          : ""
+                        }
+                        {
+                          PressData
+                          ? <button onClick={this.changeList} data-type={'press'} className="type__press type__selector">Press Releases</button>
+                          : ""
+                        }
                       </div>
-                      <NewsCarrousel  newsArray={NewsData} state={'active'} elId={'news'} />
-                      <NewsCarrousel  newsArray={PressData} state={'not__active'} elId={'press'} />
+                      {
+                        NewsData
+                        ? <NewsCarrousel  newsArray={NewsData} state={'active'} elId={'news'} />
+                        : ""
+                      }
+                      {
+                        PressData
+                        ? <NewsCarrousel  newsArray={PressData} state={'not__active'} elId={'press'} />
+                        : ""
+                      }
                     </div>
                   </div>
 

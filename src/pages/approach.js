@@ -92,16 +92,29 @@ class ApproachPage extends Component {
         </Helmet>
         <div className="approach">
             <section className="about__header approach__header">
-                <div className="page__background">
-                    <Img fluid={pageData.featured_media.localFile.childImageSharp.fluid} alt={''} tabIndex={-1}/>
-                </div>
+                {
+                    pageData.featured_media
+                    ? <div className="page__background">
+                        <Img fluid={pageData.featured_media.localFile.childImageSharp.fluid} alt={''} tabIndex={-1}/>
+                    </div>
+                    : ""
+                }
                 <div className="container">
                     <div className="row">
                         <div className="col-xl-12 about__header__top">
                             <div className="">
-                                <h1 className={'text-white text-left'}>{pageData.title}</h1>
-                                <div className="featured__article__divider "></div>
-                                <h3 className={'text-white text-left'}>{pageAcf.page_subtitle}</h3>
+                                {
+                                    pageData.title.length > 0
+                                    ?<><h1 className={'text-white text-left'}>{pageData.title}</h1>
+                                    <div className="featured__article__divider "></div></>
+                                    : ""
+                                }
+
+                                {
+                                    pageAcf.page_subtitle.length > 0
+                                    ?<h3 className={'text-white text-left'}>{pageAcf.page_subtitle}</h3>
+                                    : ""
+                                }
                             </div>
                         </div>
                     </div>
@@ -111,77 +124,92 @@ class ApproachPage extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12 col-xl-6 about__header__column__one">
-                            <div className={'text-black'} dangerouslySetInnerHTML={{__html: pageAcf.first_column_block}} />
+                            {
+                                pageAcf.first_column_block.length > 0
+                                ?<div className={'text-black'} dangerouslySetInnerHTML={{__html: pageAcf.first_column_block}} />
+                                : ""
+                            }
                         </div>
                         <div className="col-md-12 col-xl-6 about__header__column__two">
-                            <div className={'text-black'} dangerouslySetInnerHTML={{__html: pageAcf.second_column_block}} />
+                            {
+                                pageAcf.second_column_block.length > 0
+                                ?<div className={'text-black'} dangerouslySetInnerHTML={{__html: pageAcf.second_column_block}} />
+                                :""
+                            }
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section className="approach__slider">
-                <div className="container-fluid">
-                    <div className="row approach__slider__controls">
-                        {
-                            pageAcf.first_slider_sections.map((slide, index) => (
-                                <button 
-                                className={`
-                                    ${index === 0 ? "arrow__button --active" : "arrow__button"} 
-                                    ${index+1 === pageAcf.first_slider_content.length ? "--square__end" : ""} 
-                                    slide-${index+1}
-                                    type__selector 
-                                `} 
-                                key={`${slide.title}-${index}`} 
-                                totalpage={`slide-${pageAcf.first_slider_content.length}`}
-                                topage={`slide-${index+1}`} 
-                                onClick={this.handleSlider.bind(this)}
-                                >
-                                    <div dangerouslySetInnerHTML={{__html: slide.title}} />
-                                </button>
-                            ))
-                        }
-                    </div>
-                    <div className="row approach__slider__wrapper">
-                        <div className="row featured__wrapper approach__first__slider">
+            {
+                pageAcf.first_slider_sections.length > 0
+                ?<section className="approach__slider">
+                    <div className="container-fluid">
+                        <div className="row approach__slider__controls">
                             {
-                                pageAcf.first_slider_content.map((element, index) => (
-                                    <div className={`approach__first__slider__element col-md-12 ${index === 0 ? "--s-active" : ""}  `} key={`the_element_slider-${index}`} id={`slide-${index+1}`}>
-                                        <div className="approach__first__slider__element__background page__background">
-                                            <Img fluid={element.background.localFile.childImageSharp.fluid} alt={''} tabIndex={-1}/>
-                                        </div>
-                                        <div className="approach__first__element__wrapper container">
-                                            <div className="approach__first__slider__title">
-                                                {
-                                                    element.title.length > 0
-                                                    ? <h2 className={'text-white'}>{element.title}</h2>
-                                                    : ""
-                                                }
-                                                {
-                                                    element.subtitle.length > 0
-                                                    ? <h3 className={'text-white'}>{element.subtitle}</h3>
-                                                    : ""
-                                                }    
-                                            </div>
-                                            <div className="approach__first__slider__copy">
-                                                {
-                                                    element.copy.length > 0
-                                                    ? <div className={'text-white'} dangerouslySetInnerHTML={{__html: element.copy}} />
-                                                    : ""
-                                                }                                                   
-                                            </div>
-                                        </div>
-                                    </div>
+                                pageAcf.first_slider_sections.map((slide, index) => (
+                                    <button 
+                                    className={`
+                                        ${index === 0 ? "arrow__button --active" : "arrow__button"} 
+                                        ${index+1 === pageAcf.first_slider_content.length ? "--square__end" : ""} 
+                                        slide-${index+1}
+                                        type__selector 
+                                    `} 
+                                    key={`${slide.title}-${index}`} 
+                                    totalpage={`slide-${pageAcf.first_slider_content.length}`}
+                                    topage={`slide-${index+1}`} 
+                                    onClick={this.handleSlider.bind(this)}
+                                    >
+                                        <div dangerouslySetInnerHTML={{__html: slide.title}} />
+                                    </button>
                                 ))
                             }
-                            <div className="prev__button" totalpage={`slide-${pageAcf.first_slider_content.length}`} topage={`slide-${this.state.prevPage}`} aria-label="Previous slide" onClick={this.handleSlider.bind(this)} onKeyPress={this.handleSliderKeyboard.bind(this)} tabIndex={0}></div>
-                            <div className="next__button" totalpage={`slide-${pageAcf.first_slider_content.length}`} topage={`slide-${this.state.nextPage}`} aria-label="Next slide"  onClick={this.handleSlider.bind(this)} onKeyPress={this.handleSliderKeyboard.bind(this)} tabIndex={0}></div>
+                        </div>
+                        <div className="row approach__slider__wrapper">
+                            <div className="row featured__wrapper approach__first__slider">
+                                {
+                                    pageAcf.first_slider_content.map((element, index) => (
+                                        <div className={`approach__first__slider__element col-md-12 ${index === 0 ? "--s-active" : ""}  `} key={`the_element_slider-${index}`} id={`slide-${index+1}`}>
+                                            <div className="approach__first__slider__element__background page__background">
+                                                {
+                                                    element.background
+                                                    ?<Img fluid={element.background.localFile.childImageSharp.fluid} alt={''} tabIndex={-1}/>
+                                                    : ""
+                                                }
+                                            </div>
+                                            <div className="approach__first__element__wrapper container">
+                                                <div className="approach__first__slider__title">
+                                                    {
+                                                        element.title.length > 0
+                                                        ? <h2 className={'text-white'}>{element.title}</h2>
+                                                        : ""
+                                                    }
+                                                    {
+                                                        element.subtitle.length > 0
+                                                        ? <h3 className={'text-white'}>{element.subtitle}</h3>
+                                                        : ""
+                                                    }    
+                                                </div>
+                                                <div className="approach__first__slider__copy">
+                                                    {
+                                                        element.copy.length > 0
+                                                        ? <div className={'text-white'} dangerouslySetInnerHTML={{__html: element.copy}} />
+                                                        : ""
+                                                    }                                                   
+                                                </div>
+                                            </div>
+                                        </div>
+                                    ))
+                                }
+                                <div className="prev__button" totalpage={`slide-${pageAcf.first_slider_content.length}`} topage={`slide-${this.state.prevPage}`} aria-label="Previous slide" onClick={this.handleSlider.bind(this)} onKeyPress={this.handleSliderKeyboard.bind(this)} tabIndex={0}></div>
+                                <div className="next__button" totalpage={`slide-${pageAcf.first_slider_content.length}`} topage={`slide-${this.state.nextPage}`} aria-label="Next slide"  onClick={this.handleSlider.bind(this)} onKeyPress={this.handleSliderKeyboard.bind(this)} tabIndex={0}></div>
 
+                            </div>
                         </div>
                     </div>
-                </div>
-            </section>
-
+                </section>
+                : ""
+            }
             <section className="mis__vals__soc approach_mvs">
                 <div className="container">
                     <div className="row">
@@ -197,62 +225,78 @@ class ApproachPage extends Component {
                                 : ""
                             }     
                         </div>
-                        <div className="col-md-12 col-xl-6 values">
-                            <div className="values__wrapper">
-                                {
-                                    pageAcf.capabilities_first_block.map((value, index) => (
-                                        <div className={`values__information`} key={`${value.title}-${index}`} >
-                                            <div className="values__information__inner">
-                                                <p>{value.title}</p>
+                        {
+                            pageAcf.capabilities_first_block.length > 0
+                            ?<div className="col-md-12 col-xl-6 values">
+                                <div className="values__wrapper">
+                                    {
+                                        pageAcf.capabilities_first_block.map((value, index) => (
+                                            <div className={`values__information`} key={`${value.title}-${index}`} >
+                                                <div className="values__information__inner">
+                                                    <p>{value.title}</p>
+                                                </div>
                                             </div>
-                                        </div>
-                                    ))
-                                }
+                                        ))
+                                    }
+                                </div>
                             </div>
-                        </div>
-                        <div className="col-md-12 col-xl-6 values">
-                            <div className="values__wrapper">
-                                {
-                                    pageAcf.capabilities_second_block.map((value, index) => (
-                                        <div className={`values__information`} key={`${value.title}-${index}`} >
-                                            <div className="values__information__inner">
-                                                <p>{value.title}</p>
+                            : ""
+                        }
+                        {
+                            pageAcf.capabilities_second_block.length > 0
+                            ?<div className="col-md-12 col-xl-6 values">
+                                <div className="values__wrapper">
+                                    {
+                                        pageAcf.capabilities_second_block.map((value, index) => (
+                                            <div className={`values__information`} key={`${value.title}-${index}`} >
+                                                <div className="values__information__inner">
+                                                    <p>{value.title}</p>
+                                                </div>
                                             </div>
-                                        </div>
-                                    ))
-                                }
+                                        ))
+                                    }
+                                </div>
                             </div>
-                        </div>
+                            : ""
+                        }
                     </div>
                 </div>
             </section>
-            <section className={'approach__testimonial'}>
-              <div className="container-fluid">
-                  <div className="row">
-                    <Slider className="row featured__wrapper testimonial__slider" {...settings}>
-                        {
-                            pageAcf.second_slider.map((element, index) => (
-                                <div className="testimonial__slider__element col-md-12" key={`${element.name}-${index}`}>
-                                    <div className="testimonial__slider__element__background page__background">
-                                        <Img fluid={element.background.localFile.childImageSharp.fluid} alt={''} tabIndex={-1}/>
-                                    </div>
-                                    <div className="testimonial__element__wrapper container">
-                                        <div className="testimonial__slider__element__testimonial">
-                                            <div className={'text-white'} dangerouslySetInnerHTML={{__html: element.copy}} />
+            {
+                pageAcf.second_slider.length > 0
+                ?<section className={'approach__testimonial'}>
+                <div className="container-fluid">
+                    <div className="row">
+                        <Slider className="row featured__wrapper testimonial__slider" {...settings}>
+                            {
+                                pageAcf.second_slider.map((element, index) => (
+                                    <div className="testimonial__slider__element col-md-12" key={`${element.name}-${index}`}>
+                                        <div className="testimonial__slider__element__background page__background">
+                                            {
+                                                element.background
+                                                ?<Img fluid={element.background.localFile.childImageSharp.fluid} alt={''} tabIndex={-1}/>
+                                                : ""
+                                            }
                                         </div>
-                                        <div className="featured__article__divider"></div>
-                                        <div className="testimonial__slider__element__info">
-                                            <p className={'text-white text-uppercase'} dangerouslySetInnerHTML={{__html: element.name}} />
-                                            <p className={'text-white '} dangerouslySetInnerHTML={{__html: element.position}} />
+                                        <div className="testimonial__element__wrapper container">
+                                            <div className="testimonial__slider__element__testimonial">
+                                                <div className={'text-white'} dangerouslySetInnerHTML={{__html: element.copy}} />
+                                            </div>
+                                            <div className="featured__article__divider"></div>
+                                            <div className="testimonial__slider__element__info">
+                                                <p className={'text-white text-uppercase'} dangerouslySetInnerHTML={{__html: element.name}} />
+                                                <p className={'text-white '} dangerouslySetInnerHTML={{__html: element.position}} />
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            ))
-                        }
-                    </Slider>
-                  </div>
-              </div>
-            </section>
+                                ))
+                            }
+                        </Slider>
+                    </div>
+                </div>
+                </section>
+                :""
+            }
         </div>
       </Layout>
     )

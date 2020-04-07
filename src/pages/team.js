@@ -139,7 +139,11 @@ class MediaPage extends Component {
                 <section className={'main__section container-fluid  team__page__first'}>
                     <div className="page__background">
                         <div className={'fade__top'}></div>
-                        <Img fluid={pageData.featured_media.localFile.childImageSharp.fluid} alt={''} tabIndex={-1}/>
+                        {
+                            pageData.featured_media
+                            ?<Img fluid={pageData.featured_media.localFile.childImageSharp.fluid} alt={''} tabIndex={-1}/>
+                            : ""
+                        }
                     </div>
                     <div className="media__list__background">
                         <img src={BruinLogo} alt={''} />
@@ -172,28 +176,41 @@ class MediaPage extends Component {
                             <div className="col-xl-12 hidden team__extra__content">
                                 {
                                     this.state.pageIsLoaded
-                                    ? <div className={'iframe__team d-flex justify-content-center align-items-center'} dangerouslySetInnerHTML={{__html: pageAcf.video_iframe}} />
+                                    ? <>
+                                       {
+                                        pageAcf.video_iframe
+                                        ? <div className={'iframe__team d-flex justify-content-center align-items-center'} dangerouslySetInnerHTML={{__html: pageAcf.video_iframe}} />              
+                                        :""
+                                       }
+                                      </> 
                                     : ""
                                 }
-
-                                <div className="popup__logos">
-                                    {
-                                        pageAcf.popup_logos.map((logo, index) => (
-                                            <div className="logo__wrapper" key={index}>
-                                                <div className="team__logo__image">
-                                                <a href={logo.url} target={'_BLANK'} rel="noopener noreferrer">
-                                                    <Img fixed={logo.logo.localFile.childImageSharp.fixed} alt={logo.title} loading="lazy" />
-                                                </a>
+                                {
+                                    pageAcf.popup_logos
+                                    ?<div className="popup__logos">
+                                        {
+                                            pageAcf.popup_logos.map((logo, index) => (
+                                                <div className="logo__wrapper" key={index}>
+                                                    {
+                                                        logo.logo
+                                                        ?<div className="team__logo__image">
+                                                            <a href={logo.url} target={'_BLANK'} rel="noopener noreferrer">
+                                                                <Img fixed={logo.logo.localFile.childImageSharp.fixed} alt={logo.title} loading="lazy" />
+                                                            </a>
+                                                        </div>
+                                                        : ""
+                                                    }
+                                                    {   
+                                                        logo.title.length > 0
+                                                        ?<p className={'text-white'} dangerouslySetInnerHTML={{__html: logo.title}} />
+                                                        : ""
+                                                    } 
                                                 </div>
-                                                {   
-                                                    logo.title.length > 0
-                                                    ?<p className={'text-white'} dangerouslySetInnerHTML={{__html: logo.title}} />
-                                                    : ""
-                                                } 
-                                            </div>
-                                        ))
-                                    }
-                                </div>
+                                            ))
+                                        }
+                                    </div>
+                                    : ""
+                                }
                                 <div className="col-xl-12 d-flex justify-content-center align-items-center">
                                     <button className="" onClick={this.hideContent}>Close</button>
                                 </div>
@@ -202,114 +219,122 @@ class MediaPage extends Component {
                         </div>
                     </div> 
                 </section>
-
-                <section className={'team__section container-fluid'}>
-                    <div className={'container'}>
-                        <div className={'row'}>
-                            <div className={'col-md-12 col-xl-6'}>
-                                {   
-                                    pageAcf.team_copy.length > 0
-                                    ?<div dangerouslySetInnerHTML={{__html: pageAcf.team_copy}} />
-                                    : ""
-                                } 
+                {
+                    pageAcf.team_members
+                    ?<section className={'team__section container-fluid'}>
+                        <div className={'container'}>
+                            <div className={'row'}>
+                                <div className={'col-md-12 col-xl-6'}>
+                                    {   
+                                        pageAcf.team_copy.length > 0
+                                        ?<div dangerouslySetInnerHTML={{__html: pageAcf.team_copy}} />
+                                        : ""
+                                    } 
+                                </div>
+                                <div className={'col-md-12 col-xl-6'}></div>
                             </div>
-                            <div className={'col-md-12 col-xl-6'}></div>
-                        </div>
-                        <div className={'row team__members'}>
-                            {
-                                pageAcf.team_members.map((member, index) => 
-                                    <div className={'col-sm-12 col-md-6 col-xl-4'} key={`${member.name}-${index}`} tabIndex={0} onKeyPress={this.triggerClientPopUp.bind(this)} datatracknumber={`team-${index}`} id={`team-${index}`}>
-                                        <Popup     
-                                            modal
-                                            closeOnEscape
-                                            closeOnDocumentClick
-                                            onOpen={this.focusMain}
-                                            onClose={this.changeBodyScroll}
-                                            key={`d-${index}`}
-                                            trigger={
-                                                <Img 
-                                                    tabIndex={0}
-                                                    fixed={member.photo.localFile.childImageSharp.fixed}
-                                                    alt={`${member.name}, member Bruin Sport Capital Team`}
-                                                    className={`team-${index}`}
-                                                    loading="lazy"
-                                                />
-                                            }
-                                        >
-                                        {close => (
-                                        <div>
-                                            <div className="popup__inner featured__wrapper" id={'popup__team'}>
-                                                <div className="triangle__big"></div>
-                                                <div className="triangle__small"></div>
-                                                
-                                                <div className="featured__article row" key={index}>
-                                                    <div className={'col-md-12 col-lg-4'}>
+                            <div className={'row team__members'}>
+                                {
+                                    pageAcf.team_members.map((member, index) => 
+                                        <div className={'col-sm-12 col-md-6 col-xl-4'} key={`${member.name}-${index}`} tabIndex={0} onKeyPress={this.triggerClientPopUp.bind(this)} datatracknumber={`team-${index}`} id={`team-${index}`}>
+                                            <Popup     
+                                                modal
+                                                closeOnEscape
+                                                closeOnDocumentClick
+                                                onOpen={this.focusMain}
+                                                onClose={this.changeBodyScroll}
+                                                key={`d-${index}`}
+                                                trigger={
                                                     <Img 
                                                         tabIndex={0}
                                                         fixed={member.photo.localFile.childImageSharp.fixed}
                                                         alt={`${member.name}, member Bruin Sport Capital Team`}
+                                                        className={`team-${index}`}
+                                                        loading="lazy"
                                                     />
-                                                    </div>
-                                                    <div className={'col-md-12 col-lg-8'}>
-                                                        <div className="featured__artitle__inner">
-                                                            <div className="featured__article__top">
-                                                            <div className="featured__article__title">
+                                                    
+                                                }
+                                            >
+                                            {close => (
+                                            <div>
+                                                <div className="popup__inner featured__wrapper" id={'popup__team'}>
+                                                    <div className="triangle__big"></div>
+                                                    <div className="triangle__small"></div>
+                                                    
+                                                    <div className="featured__article row" key={index}>
+                                                        <div className={'col-md-12 col-lg-4'}>
+                                                        {
+                                                            member.photo
+                                                            ?<Img 
+                                                                tabIndex={0}
+                                                                fixed={member.photo.localFile.childImageSharp.fixed}
+                                                                alt={`${member.name}, member Bruin Sport Capital Team`}
+                                                            />
+                                                            : ""
+                                                        }
+                                                        </div>
+                                                        <div className={'col-md-12 col-lg-8'}>
+                                                            <div className="featured__artitle__inner">
+                                                                <div className="featured__article__top">
+                                                                <div className="featured__article__title">
+                                                                    {   
+                                                                        member.name.length > 0
+                                                                        ?<h4 className="featured__article__name" dangerouslySetInnerHTML={{__html: member.name}} />
+                                                                        : ""
+                                                                    } 
+                                                                    {   
+                                                                        member.position.length > 0
+                                                                        ?<p className="featured__article__position" dangerouslySetInnerHTML={{__html: member.position}} />
+                                                                        : ""
+                                                                    }  
+                                                                </div>
+                                                                
                                                                 {   
-                                                                    member.name.length > 0
-                                                                    ?<h4 className="featured__article__name" dangerouslySetInnerHTML={{__html: member.name}} />
-                                                                    : ""
-                                                                } 
-                                                                {   
-                                                                    member.position.length > 0
-                                                                    ?<p className="featured__article__position" dangerouslySetInnerHTML={{__html: member.position}} />
+                                                                    member.bio.length > 0
+                                                                    ?<div className="featured__article__content" >
+                                                                        <div className={'line'}></div>
+                                                                        <div dangerouslySetInnerHTML={{__html: member.bio}} />
+                                                                    </div>
                                                                     : ""
                                                                 }  
-                                                            </div>
+                                                                </div>
+                                                                {
+                                                                    member.member_link
+                                                                    ? <div className="featured__article__cta">
+                                                                        <ExternalButton  redirectionLink={member.member_link} buttonText={'Read More'} buttonclassName={''}></ExternalButton>
+                                                                    </div>
+                                                                    : ""
+                                                                }
                                                             
-                                                            {   
-                                                                member.bio.length > 0
-                                                                ?<div className="featured__article__content" >
-                                                                    <div className={'line'}></div>
-                                                                    <div dangerouslySetInnerHTML={{__html: member.bio}} />
-                                                                 </div>
-                                                                : ""
-                                                            }  
                                                             </div>
-                                                            {
-                                                                member.member_link
-                                                                ? <div className="featured__article__cta">
-                                                                    <ExternalButton  redirectionLink={member.member_link} buttonText={'Read More'} buttonclassName={''}></ExternalButton>
-                                                                  </div>
-                                                                : ""
-                                                            }
-                                                         
                                                         </div>
                                                     </div>
                                                 </div>
+                                            
+                                                <button className="close" tabIndex="0" onClick={close} onKeyPress={close}       id="close__menu" ></button>
                                             </div>
-                                           
-                                            <button className="close" tabIndex="0" onClick={close} onKeyPress={close}       id="close__menu" ></button>
-                                         </div>
-                                        )}
-                                        </Popup>
-                                        <div className={'team__inside'}>
-                                            {   
-                                                member.name.length > 0
-                                                ?<h4 dangerouslySetInnerHTML={{__html: member.name}} />
-                                                : ""
-                                            } 
-                                            {   
-                                                member.position.length > 0
-                                                ?<p dangerouslySetInnerHTML={{__html: member.position}} />
-                                                : ""
-                                            } 
+                                            )}
+                                            </Popup>
+                                            <div className={'team__inside'}>
+                                                {   
+                                                    member.name.length > 0
+                                                    ?<h4 dangerouslySetInnerHTML={{__html: member.name}} />
+                                                    : ""
+                                                } 
+                                                {   
+                                                    member.position.length > 0
+                                                    ?<p dangerouslySetInnerHTML={{__html: member.position}} />
+                                                    : ""
+                                                } 
+                                            </div>
                                         </div>
-                                    </div>
-                                )
-                            }
+                                    )
+                                }
+                            </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
+                    :""
+                }               
             </div>
         </Layout>
     )

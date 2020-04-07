@@ -152,7 +152,11 @@ class ContactPage extends Component {
         </Helmet>
         <div className="contact__page">
           <section className="container-fluid contact__section__one position-relative">
-            <Img className={'position-absolute floating__b__letter'} fluid={pageData.featured_media.localFile.childImageSharp.fluid} alt={''} tabIndex={-1}/>
+            {
+              pageData.featured_media
+              ?<Img className={'position-absolute floating__b__letter'} fluid={pageData.featured_media.localFile.childImageSharp.fluid} alt={''} tabIndex={-1}/>
+              : ""
+            }
             <div className="container">
               <div className="row">
                 <div className="col-sm-12 col-md-12 col-xl-3">
@@ -300,88 +304,103 @@ class ContactPage extends Component {
             </div>
           </section>
 
-          <section className="container-fluid contact__section__two position-relative d-flex justify-content-center align-items-center">
-            <div className="img__background">
-              <MapBackground  />
-            </div>
-            <div className="container">
-              <div className="row">
-                {
-                  pageAcf.three_columns_data.map((element, index) => 
-                    <div className="col-sm-12 col-md-6 col-xl-4 text-left column__data" key={`three_columns_data-${element}-${index}`}>
-                      {
-                          element.column_title.length > 0
-                          ? <h3 className="text-left" dangerouslySetInnerHTML={{__html: element.column_title}} />
-                          : ""
-                      }  
-                      {
-                        element.column_element.map((subElement, index) => 
-                          <div key={`column_element-${element}-${subElement}-${index}`}>
-                          <p >{subElement.element_title}</p>
-                          </div>
-                        )
-                      }
-                    </div>
-                  )
-                }
-              </div>
-            </div>
-          </section>
-
-          <section className="container-fluid contact__section__three">
-            <div className="container">
-              <div className="row ">
-                <div className="col-sm-12 col-xl-6">
-                  {
-                      pageAcf.portfolio_title.length > 0
-                      ? <h2 className="text-black" dangerouslySetInnerHTML={{__html: pageAcf.portfolio_title}} />
-                      : ""
-                  }  
+          {
+            pageAcf.three_columns_data
+              ?<section className="container-fluid contact__section__two position-relative d-flex justify-content-center align-items-center">
+                <div className="img__background">
+                  <MapBackground  />
                 </div>
-              </div>
-              <div className="row contact__section__three__columns">
-              {
-                  pageAcf.portfolio_data.map((element, index) => 
-                  <>
-                    <div className="col-md-4 col-xl-3 s__three__column" key={`portfolio_data-${element}-${index}`}>
-                      <a href={`${element.client_url}`} target="_BLANK" rel="noopener noreferrer">
-                        <div className={'column__image'}>
-                          <img className={'contact__svg__logo'} loading="lazy" src={element.cliente_logo.localFile.url} alt={'Client Logo'} tabIndex={0}/>
+                <div className="container">
+                  <div className="row">
+                    {
+                      pageAcf.three_columns_data.map((element, index) => 
+                        <div className="col-sm-12 col-md-6 col-xl-4 text-left column__data" key={`three_columns_data-${element}-${index}`}>
+                          {
+                              element.column_title.length > 0
+                              ? <h3 className="text-left" dangerouslySetInnerHTML={{__html: element.column_title}} />
+                              : ""
+                          }  
+                          {
+                            element.column_element.map((subElement, index) => 
+                              <div key={`column_element-${element}-${subElement}-${index}`}>
+                              <p >{subElement.element_title}</p>
+                              </div>
+                            )
+                          }
                         </div>
-                      </a>
-                      <div className={'column__info'}>
-                        <ul>
-                          <li>
-                            {   
-                                element.client_email.length > 0
-                                ?<a href={`mailto:${element.client_email}`} target="_BLANK" rel="noopener noreferrer">
-                                  <p className="text-left" dangerouslySetInnerHTML={{__html: element.client_email}} />
-                                 </a>
-                                : ""
-                            } 
-                          </li>
-                          <li>
-                            <a href={`${element.client_url}`} target="_BLANK" rel="noopener noreferrer">
-                              {
-                                  element.client_url.length > 0
-                                  ? <p className="text-left full__client__url" dangerouslySetInnerHTML={{__html: element.client_url.replace('https://','')}} />
+                      )
+                    }
+                  </div>
+                </div>
+              </section>
+            : ""
+          }             
+
+          {
+            pageAcf.portfolio_data.length > 0
+            ?<section className="container-fluid contact__section__three">
+              <div className="container">
+                <div className="row ">
+                  <div className="col-sm-12 col-xl-6">
+                    {
+                        pageAcf.portfolio_title.length > 0
+                        ? <h2 className="text-black" dangerouslySetInnerHTML={{__html: pageAcf.portfolio_title}} />
+                        : ""
+                    }  
+                  </div>
+                </div>
+                <div className="row contact__section__three__columns">
+                {
+                    pageAcf.portfolio_data.map((element, index) => 
+                    <>
+                      <div className="col-md-4 col-xl-3 s__three__column" key={`portfolio_data-${element}-${index}`}>
+                          {
+                            element.cliente_logo
+                            ?
+                              <>
+                              <a href={`${element.client_url}`} target="_BLANK" rel="noopener noreferrer">
+                                <div className={'column__image'}>
+                                  <img className={'contact__svg__logo'} loading="lazy" src={element.cliente_logo.localFile.url} alt={'Client Logo'} tabIndex={0}/>
+                                </div>
+                              </a>
+                              </>
+                            : ""
+                          }
+                        <div className={'column__info'}>
+                          <ul>
+                            <li>
+                              {   
+                                  element.client_email.length > 0
+                                  ?<a href={`mailto:${element.client_email}`} target="_BLANK" rel="noopener noreferrer">
+                                    <p className="text-left" dangerouslySetInnerHTML={{__html: element.client_email}} />
+                                  </a>
                                   : ""
                               } 
-                            </a>
-                          </li>
-                        </ul>
+                            </li>
+                            <li>
+                              <a href={`${element.client_url}`} target="_BLANK" rel="noopener noreferrer">
+                                {
+                                    element.client_url.length > 0
+                                    ? <p className="text-left full__client__url" dangerouslySetInnerHTML={{__html: element.client_url.replace('https://','')}} />
+                                    : ""
+                                } 
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
                       </div>
-                    </div>
-                    <div className="col"></div>
-                  </>
-                  )
-                }
-                <div className="col-sm-12 col-md-6 col-xl-4">
+                      <div className="col"></div>
+                    </>
+                    )
+                  }
+                  <div className="col-sm-12 col-md-6 col-xl-4">
 
+                  </div>
                 </div>
               </div>
-            </div>
-          </section>
+            </section>
+            : ""
+          }
         </div>
       </Layout>
     )

@@ -54,19 +54,19 @@ class MediaPage extends Component {
                         </div>
                     </div>
                 </section>
-
-                <section className={'projects__section container-fluid'}>
-                  <div className={'row'}>
-                    {
+                {
+                  pageAcf.project.length > 0
+                  ?<section className={'projects__section container-fluid'}>
+                    <div className={'row'}>
+                      {
                         pageAcf.project.map((element, index) => (
-                          
-                            <Project projectData={element} key={index}  dataid={`project-${index}`}/>
-                          
-                            
+                          <Project projectData={element} key={index}  dataid={`project-${index}`}/>
                         ))
-                    }
-                  </div>
-                </section> 
+                      }
+                    </div>
+                  </section> 
+                  : ""
+                }                 
             </div>
         </Layout>
     )

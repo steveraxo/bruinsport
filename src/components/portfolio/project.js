@@ -82,13 +82,21 @@ class Project extends Component {
                     // ======= Diagonal Project Layout =======
                     projectData.project_layout === "diagonal"
                     ?   <div className={`our__approach featured__section container-fluid d-flex justify-content-center align-items-end ${projectData.project_layout} col-xl-12`} id={this.props.dataid} key={`0`} >
-                            <div className="page__background">
-                                <Img fluid={projectData.project_background.localFile.childImageSharp.fluid} alt={''} tabIndex={-1}/>
-                            </div>
+                            {
+                                projectData.project_background
+                                ?<div className="page__background">
+                                    <Img fluid={projectData.project_background.localFile.childImageSharp.fluid} alt={''} tabIndex={-1}/>
+                                </div>
+                                : ""
+                            }
                             <div className="container">
                                 <div className="row">
                                     <div className={'col-md-12 col-lg-12 col-xl-12 text-left'}>
-                                    <img className={'svg__logo'} loading="lazy" src={projectData.project_logo.localFile.url} alt={'Client Logo'} tabIndex={0}/>
+                                    {
+                                        projectData.project_logo
+                                        ? <img className={'svg__logo'} loading="lazy" src={projectData.project_logo.localFile.url} alt={'Client Logo'} tabIndex={0}/>
+                                        : ""
+                                    }
                                     <div dangerouslySetInnerHTML={{__html: projectData.project_description}} />
                                     {
                                         projectData.opens_popup === true 
@@ -112,13 +120,22 @@ class Project extends Component {
                                                     <div className="triangle__small"></div>
                                                     <div className="featured__article row" >
                                                         <div className={'col-md-12 col-lg-12'}>
-                                                        <Img 
-                                                            tabIndex={0}
-                                                            fluid={projectData.popup_background.localFile.childImageSharp.fluid}
-                                                            alt={``}
-                                                            className={'popup__background'}
-                                                        />
-                                                        <img className={'project__logo --floating'} src={projectData.project_logo.localFile.url} alt={'Client Logo'} tabIndex={0}/>
+                                                            {
+                                                                projectData.popup_background
+                                                                ?<Img 
+                                                                    tabIndex={0}
+                                                                    fluid={projectData.popup_background.localFile.childImageSharp.fluid}
+                                                                    alt={``}
+                                                                    className={'popup__background'}
+                                                                />
+                                                                : ""
+                                                            }
+                                                            {
+                                                                projectData.project_logo
+                                                                ?<img className={'project__logo --floating'} src={projectData.project_logo.localFile.url} alt={'Client Logo'} tabIndex={0}/>
+                                                                :""
+
+                                                            }
                                                         </div>
                                                         <div className={'col-md-12 col-lg-12'}>
                                                             <div className="featured__artitle__inner">
@@ -140,8 +157,13 @@ class Project extends Component {
                                             </div>
                                             )}
                                         </Popup>
-                                        :
-                                        <ExternalButton redirectionLink={projectData.project_link} buttonText={projectData.button_text} buttonClass={'diagonal__button'} />
+                                        : <>
+                                            {
+                                                projectData.project_link.length > 0 && projectData.project_link !== "#"
+                                                ?<ExternalButton redirectionLink={projectData.project_link} buttonText={projectData.button_text} buttonClass={'diagonal__button'} />
+                                                : ""
+                                            }
+                                          </>
                                     }
                                     </div>
                                 </div>
@@ -153,13 +175,21 @@ class Project extends Component {
                     // ======= Half Left Project Layout =======
                     projectData.project_layout === "half-left"
                     ?   <div className={'col-md-12 col-lg-6 portfolio_half right__portfolio'} id={this.props.dataid} key={`2`}>
-                            <div className={'portfolio__header'}>
-                                <Img fluid={projectData.project_background.localFile.childImageSharp.fluid} alt={''} />
-                            </div>
-                            <div className={'portfolio__inner'}>
-                                <div className={'portfolio__logo'}>
-                                    <img className={'svg__logo'} loading="lazy" src={projectData.project_logo.localFile.url} alt={'Client Logo'} tabIndex={0}/>
+                            {
+                                projectData.project_background
+                                ?<div className={'portfolio__header'}>
+                                    <Img fluid={projectData.project_background.localFile.childImageSharp.fluid} alt={''} />
                                 </div>
+                                : ""
+                            }
+                            <div className={'portfolio__inner'}>
+                                {
+                                    projectData.project_logo
+                                    ?<div className={'portfolio__logo'}>
+                                        <img className={'svg__logo'} loading="lazy" src={projectData.project_logo.localFile.url} alt={'Client Logo'} tabIndex={0}/>
+                                    </div>
+                                    :""
+                                }
                                 <div className={'porftolio__description'}>
                                     {   
                                         projectData.project_description.length > 0
@@ -189,13 +219,21 @@ class Project extends Component {
                                                     <div className="triangle__small"></div>
                                                     <div className="featured__article row" >
                                                         <div className={'col-md-12 col-lg-12'}>
-                                                        <Img 
-                                                            tabIndex={0}
-                                                            fluid={projectData.popup_background.localFile.childImageSharp.fluid}
-                                                            alt={``}
-                                                            className={'popup__background'}
-                                                        />
-                                                        <img className={'project__logo --floating'} src={projectData.project_logo.localFile.url} alt={'Client Logo'} tabIndex={0}/>
+                                                        {
+                                                            projectData.popup_background
+                                                            ?<Img 
+                                                                tabIndex={0}
+                                                                fluid={projectData.popup_background.localFile.childImageSharp.fluid}
+                                                                alt={``}
+                                                                className={'popup__background'}
+                                                            />
+                                                            :""
+                                                        }
+                                                        {
+                                                            projectData.project_logo
+                                                            ? <img className={'project__logo --floating'} src={projectData.project_logo.localFile.url} alt={'Client Logo'} tabIndex={0}/>
+                                                            : ""
+                                                        }
                                                         </div>
                                                         <div className={'col-md-12 col-lg-12'}>
                                                             <div className="featured__artitle__inner">
@@ -228,13 +266,21 @@ class Project extends Component {
                     // ======= Half Right Project Layout =======
                     projectData.project_layout === "half-right"
                     ?   <div className={'col-md-12 col-lg-6 portfolio_half left__portfolio'} id={this.props.dataid} key={`1`}>
-                            <div className={'portfolio__header'}>
-                                <Img fluid={projectData.project_background.localFile.childImageSharp.fluid} alt={''} />
-                            </div>
-                            <div className={'portfolio__inner'}>
-                                <div className={'portfolio__logo'}>
-                                    <img className={'svg__logo'} loading="lazy" src={projectData.project_logo.localFile.url} alt={'Client Logo'} tabIndex={0}/>
+                            {
+                                projectData.project_background
+                                ?<div className={'portfolio__header'}>
+                                    <Img fluid={projectData.project_background.localFile.childImageSharp.fluid} alt={''} />
                                 </div>
+                                : ""
+                            }
+                            <div className={'portfolio__inner'}>
+                                {
+                                    projectData.project_logo
+                                    ? <div className={'portfolio__logo'}>
+                                        <img className={'svg__logo'} loading="lazy" src={projectData.project_logo.localFile.url} alt={'Client Logo'} tabIndex={0}/>
+                                    </div>
+                                    : ""
+                                }
                                 <div className={'porftolio__description'}>
                                     {   
                                         projectData.project_description.length > 0
@@ -264,13 +310,21 @@ class Project extends Component {
                                                     <div className="triangle__small"></div>
                                                     <div className="featured__article row" >
                                                         <div className={'col-md-12 col-lg-12'}>
-                                                        <Img 
-                                                            tabIndex={0}
-                                                            fluid={projectData.popup_background.localFile.childImageSharp.fluid}
-                                                            alt={``}
-                                                            className={'popup__background'}
-                                                        />
-                                                        <img className={'project__logo --floating'} src={projectData.project_logo.localFile.url} alt={'Client Logo'} tabIndex={0}/>
+                                                        {
+                                                            projectData.popup_background
+                                                            ?<Img 
+                                                                tabIndex={0}
+                                                                fluid={projectData.popup_background.localFile.childImageSharp.fluid}
+                                                                alt={``}
+                                                                className={'popup__background'}
+                                                            />
+                                                            :""
+                                                        }
+                                                        {
+                                                            projectData.project_logo
+                                                            ? <img className={'project__logo --floating'} src={projectData.project_logo.localFile.url} alt={'Client Logo'} tabIndex={0}/>
+                                                            : ""
+                                                        }
                                                         </div>
                                                         <div className={'col-md-12 col-lg-12'}>
                                                             <div className="featured__artitle__inner">
@@ -303,18 +357,26 @@ class Project extends Component {
                     // ======= Full Width Project Layout =======
                     projectData.project_layout === "full-width"
                     ?   <div className={`col-md-12 col-lg-12 portfolio_full ${projectData.theme}`} id={this.props.dataid} key={`3`}>
-                            <div className="page__background">
-                                <Img fluid={projectData.project_background.localFile.childImageSharp.fluid} alt={''} tabIndex={-1}/>
-                            </div>
+                            {
+                                projectData.project_background
+                                ?<div className="page__background">
+                                    <Img fluid={projectData.project_background.localFile.childImageSharp.fluid} alt={''} tabIndex={-1}/>
+                                </div>
+                                : ""  
+                            }
                             <div className={'col-md-12 col-lg-6 first'}>
 
                             </div>
                             <div className={'col-md-12 col-lg-6 second'}>
 
                                 <div className={'portfolio__inner'}>
-                                    <div className={'portfolio__logo'}>
-                                        <img className={'svg__logo'} loading="lazy" src={projectData.project_logo.localFile.url} alt={'Client Logo'} tabIndex={0}/>
-                                    </div>
+                                    {
+                                        projectData.project_logo
+                                        ?<div className={'portfolio__logo'}>
+                                            <img className={'svg__logo'} loading="lazy" src={projectData.project_logo.localFile.url} alt={'Client Logo'} tabIndex={0}/>
+                                        </div>
+                                        : ""
+                                    }
                                     <div className={'porftolio__description'}>
                                         {   
                                             projectData.project_description.length > 0
@@ -344,13 +406,21 @@ class Project extends Component {
                                                     <div className="triangle__small"></div>
                                                     <div className="featured__article row" >
                                                         <div className={'col-md-12 col-lg-12'}>
-                                                        <Img 
-                                                            tabIndex={0}
-                                                            fluid={projectData.popup_background.localFile.childImageSharp.fluid}
-                                                            alt={``}
-                                                            className={'popup__background'}
-                                                        />
-                                                        <img className={'project__logo --floating'} src={projectData.project_logo.localFile.url} alt={'Client Logo'} tabIndex={0}/>
+                                                        {
+                                                            projectData.popup_background
+                                                            ?<Img 
+                                                                tabIndex={0}
+                                                                fluid={projectData.popup_background.localFile.childImageSharp.fluid}
+                                                                alt={``}
+                                                                className={'popup__background'}
+                                                            />
+                                                            :""
+                                                        }
+                                                        {
+                                                            projectData.project_logo
+                                                            ? <img className={'project__logo --floating'} src={projectData.project_logo.localFile.url} alt={'Client Logo'} tabIndex={0}/>
+                                                            : ""
+                                                        }
                                                         </div>
                                                         <div className={'col-md-12 col-lg-12'}>
                                                             <div className="featured__artitle__inner">

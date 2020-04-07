@@ -66,20 +66,27 @@ class AboutPage extends Component {
         </Helmet>
         <div className="about">
             <section className="about__header">
-                <div className="page__background">
-                    <Img fluid={pageData.featured_media.localFile.childImageSharp.fluid} alt={''} tabIndex={-1}/>
-                </div>
+                {
+                    pageData.featured_media
+                    ?<div className="page__background">
+                        <Img fluid={pageData.featured_media.localFile.childImageSharp.fluid} alt={''} tabIndex={-1}/>
+                    </div>
+                    : ""
+                }
                 <div className="container">
                     <div className="row">
                         <div className="col-xl-12 about__header__top">
                             <div className="about__header__top__title">
                                 {   
                                     pageAcf.title.length > 0
-                                    ?<h1 className={'text-white'}>{pageAcf.title}</h1>
+                                    ?<>
+                                        <h1 className={'text-white'}>{pageAcf.title}</h1>
+                                        <div className="featured__article__divider "></div>
+                                    </>
                                     : ""
                                 } 
                             </div>
-                            <div className="featured__article__divider "></div>
+                            
                             <div className="about__header__top__subtitle">
                                 {   
                                     pageAcf.subtitle.length > 0
@@ -115,44 +122,47 @@ class AboutPage extends Component {
                                 ?<h2 className=" ">{pageAcf.mission_title}</h2>
                                 : ""
                             }
-                            
                             {   
                                 pageAcf.mission_copy.length > 0
                                 ?<div dangerouslySetInnerHTML={{__html: pageAcf.mission_copy}} />
                                 : ""
                             }
-                            
                         </div>
-                        <div className="col-md-12 col-xl-6 values">
-                            {   
-                                pageAcf.values_title.length > 0
-                                ?<h2 className=" ">{pageAcf.values_title}</h2>
-                                : ""
-                            }
-                            
-                            <div className="values__wrapper">
-                                {
-                                    pageAcf.values_blocks.map((value, index) => (
-                                        <div className={`values__information ${index === 0 ? "--open" : " "} `} key={`${value.title}-${index}`} onClick={this.handleAccordion}>
-                                            <div className="values__information__inner">
-                                                {   
-                                                    value.title.length > 0
-                                                    ?<p>{value.title}</p>
-                                                    : ""
-                                                }
-                                                <div className="values__description">
+                        {
+                            pageAcf.values_blocks
+                            ?<div className="col-md-12 col-xl-6 values">
+                                {   
+                                    pageAcf.values_title.length > 0
+                                    ?<h2 className=" ">{pageAcf.values_title}</h2>
+                                    : ""
+                                }
+                                
+                                <div className="values__wrapper">
+                                    {
+                                        pageAcf.values_blocks.map((value, index) => (
+                                            <div className={`values__information ${index === 0 ? "--open" : " "} `} key={`${value.title}-${index}`} onClick={this.handleAccordion}>
+                                                <div className="values__information__inner">
                                                     {   
-                                                        value.description.length > 0
-                                                        ?<div dangerouslySetInnerHTML={{__html: value.description}} />
+                                                        value.title.length > 0
+                                                        ?<p>{value.title}</p>
                                                         : ""
                                                     }
+                                                    <div className="values__description">
+                                                        {   
+                                                            value.description.length > 0
+                                                            ?<div dangerouslySetInnerHTML={{__html: value.description}} />
+                                                            : ""
+                                                        }
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    ))
-                                }
+                                        ))
+                                    }
+                                </div>
                             </div>
-                        </div>
+                            : ""
+                        }
+
                         <div className="col-md-12 col-xl-6 social">
                             {   
                                 pageAcf.social_title.length > 0
@@ -170,7 +180,11 @@ class AboutPage extends Component {
                                         <div className="gray__line"></div>
                                     </div>
                                     <div className="col-lg-7 social__logo__right">
-                                        <Img fluid={pageAcf.social_logo.localFile.childImageSharp.fluid} alt={'Save the childran logo'}/> 
+                                        {
+                                            pageAcf.social_logo
+                                            ?<Img fluid={pageAcf.social_logo.localFile.childImageSharp.fluid} alt={'Save the childran logo'}/> 
+                                            : ""
+                                        }
                                     </div>
                                 </div>
                                 
@@ -180,7 +194,9 @@ class AboutPage extends Component {
                 </div>
             </section>
         
-            <section className="history">
+            {
+                pageAcf.history_timeline
+                ?<section className="history">
                     <div className="container">
                         <div className="row">
                             <div className="col-xl-12">
@@ -192,38 +208,44 @@ class AboutPage extends Component {
                             </div>
                         </div>
                     </div>
-                    <div className="page__background">
-                        <Img fluid={pageAcf.history_background.localFile.childImageSharp.fluid} alt={''} tabIndex={-1}/>
-                    </div>
+                    {
+                        pageAcf.history_background
+                        ?<div className="page__background">
+                            <Img fluid={pageAcf.history_background.localFile.childImageSharp.fluid} alt={''} tabIndex={-1}/>
+                        </div>
+                        :""
+                    }
                     <div className="container history__timeline">
-                    <Slider className="row featured__wrapper" {...settings}>
-                        {
-                            pageAcf.history_timeline.map((element, index) => (
-                                <div className="history__timeline__moment col-md-12" key={`${element.date}-${index}`}>
-                                    <div className="history__timeline__moment__date">
-                                        {   
-                                            element.date.length > 0
-                                            ?<p>{element.date}</p>
-                                            : ""
-                                        }
-                                        
+                        <Slider className="row featured__wrapper" {...settings}>
+                            {
+                                pageAcf.history_timeline.map((element, index) => (
+                                    <div className="history__timeline__moment col-md-12" key={`${element.date}-${index}`}>
+                                        <div className="history__timeline__moment__date">
+                                            {   
+                                                element.date.length > 0
+                                                ?<p>{element.date}</p>
+                                                : ""
+                                            }
+                                            
+                                        </div>
+                                        <div className="history__timeline__moment__description">
+                                            {   
+                                                element.description.length > 0
+                                                ?<a href={element.link} target={'_BLANK'} rel="noopener noreferrer" >
+                                                    <div className={'text-white'} dangerouslySetInnerHTML={{__html: element.description}} />
+                                                </a>
+                                                : ""
+                                            }
+                                            
+                                        </div>
                                     </div>
-                                    <div className="history__timeline__moment__description">
-                                        {   
-                                            element.description.length > 0
-                                            ?<a href={element.link} target={'_BLANK'} rel="noopener noreferrer" >
-                                                <div className={'text-white'} dangerouslySetInnerHTML={{__html: element.description}} />
-                                             </a>
-                                            : ""
-                                        }
-                                        
-                                    </div>
-                                </div>
-                            ))
-                        }
-                    </Slider>
-                </div>
-            </section>
+                                ))
+                            }
+                        </Slider>
+                    </div>
+                </section>  
+                : ""          
+            }
         </div>
       </Layout>
     )

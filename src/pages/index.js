@@ -397,12 +397,30 @@ class HomePage extends Component {
                         ?<p className={'content'} dangerouslySetInnerHTML={{__html: element.node.title }} />
                         : ""
                     }
+
                     {
-                      element.node.acf !== null && element.node.acf.external_news_link !== null 
-                      ? <ExternalButton buttonClass={''} buttonText={'Read More'} redirectionLink={element.node.acf.external_news_link.source_url} ></ExternalButton>
-                      : <ExternalButton buttonClass={''} buttonText={'Read More'} redirectionLink={element.node.acf.external_link_file} ></ExternalButton>
-                    }
-                    
+                      element.node.acf !== null
+                      ? <>
+                          {
+                            element.node.acf.media_file
+                            ? <ExternalButton buttonClass={''} buttonText={'Read More'} redirectionLink={element.node.acf.media_file.localFile.url} ></ExternalButton>
+                            : <>
+                              {
+                                element.node.acf.external_news_link !== null 
+                                ? <ExternalButton buttonClass={''} buttonText={'Read More'} redirectionLink={element.node.acf.external_news_link.source_url} ></ExternalButton>
+                                : <>
+                                  {
+                                    element.node.acf.external_link_file.length > 0
+                                    ?<ExternalButton buttonClass={''} buttonText={'Read More'} redirectionLink={element.node.acf.external_link_file} ></ExternalButton>
+                                    :""
+                                  }
+                                  </>
+                              }
+                              </>
+                          }
+                        </>
+                      : ""
+                    }                    
                   </div>
                     : ""
                   )
@@ -541,6 +559,11 @@ query HomeQuery {
           external_link_file
           external_news_link{
             source_url
+          }
+          media_file {
+            localFile {
+              url
+            }
           }
         }
         title

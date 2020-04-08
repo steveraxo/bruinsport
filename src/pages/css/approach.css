@@ -79,7 +79,8 @@
     display: flex;
 }
 .approach .about__header__column__one p, .approach .about__header__column__two p {
-    margin-top: 0px; 
+    margin-top: 0px;
+    margin-bottom: 25px;
 }
 .approach__copy .about__header__column__one {
     display: flex;

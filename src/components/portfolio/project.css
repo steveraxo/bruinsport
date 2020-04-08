@@ -59,6 +59,13 @@
 }
 .portfolio__page .popup-content .featured__wrapper .featured__article__content p{
     padding-right: 30px;
+    margin: 20px 0 10px;
+}
+.portfolio__page .popup-content .featured__wrapper .featured__article__content li, .portfolio__page .popup-content .featured__wrapper .featured__article__content ul{
+    text-transform: unset;
+}
+.portfolio__page .popup-content .featured__wrapper .featured__article__content h2{
+    margin-top: 20px;
 }
 .portfolio__page #popup__team .featured__article .popup__background.gatsby-image-wrapper {
     width: 100%!important;

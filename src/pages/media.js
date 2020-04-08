@@ -281,6 +281,11 @@ query mediaPageQuery {
           external_news_link{
             source_url
           }
+          media_file {
+            localFile {
+              url
+            }
+          }
         }
       }
     }

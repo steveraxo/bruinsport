@@ -210,7 +210,9 @@ section{
     .featured__article {
         padding: 20px;
     }
-
+    .media__page h1 {
+        font-size: 35px;
+    }
     .featured__wrapper .featured__article__bottom {
         flex-direction: column;
     }

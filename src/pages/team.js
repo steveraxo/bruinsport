@@ -236,7 +236,7 @@ class MediaPage extends Component {
                             <div className={'row team__members'}>
                                 {
                                     pageAcf.team_members.map((member, index) => 
-                                        <div className={'col-sm-12 col-md-6 col-xl-4'} key={`${member.name}-${index}`} tabIndex={0} onKeyPress={this.triggerClientPopUp.bind(this)} datatracknumber={`team-${index}`} id={`team-${index}`}>
+                                        <div className={'col-xs-6 col-sm-6 col-md-6 col-xl-4 team-wrapper'} key={`${member.name}-${index}`} tabIndex={0} onKeyPress={this.triggerClientPopUp.bind(this)} datatracknumber={`team-${index}`} id={`team-${index}`}>
                                             <Popup     
                                                 modal
                                                 closeOnEscape

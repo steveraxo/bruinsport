@@ -406,7 +406,27 @@
         border-right: 2px solid #cecece4d;
         min-height: auto;
     }
-
+    .portfolio__page .our__approach {
+        min-height: 810px;
+    }
+    .portfolio__page .our__approach .top__info p {
+        width: 100%;
+        font-size: 18px;
+        max-width: 400px;
+    }
+}
+@media (max-width: 750px) and (orientation: landscape) {
+    .portfolio__page .our__approach .top__info p {
+        width: 100%;
+        font-size: 18px;
+        max-width: 400px;
+    }
+    .portfolio__page .our__approach {
+        min-height: 750px;
+    }
+    .projects__section.container-fluid {
+        margin-top: -60px;
+    }
 }
 @media (max-width: 667px) and (orientation: landscape) {
     .our__approach h1 {

@@ -42,18 +42,18 @@ class AboutPage extends Component {
         speed: 500,
         slidesToShow: 3,
         slidesToScroll: 1,
-        lazyLoad: 'ondemand',
         centerMode: true,
         responsive: [
             {
-              breakpoint: 769,
-              settings: {
-                arrows: true,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-              }
+                breakpoint: 825,
+                settings: {
+                    arrows: true,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    centerMode: false,
+                }
             },
-          ]
+        ]
     }
 
     return (
@@ -219,7 +219,7 @@ class AboutPage extends Component {
                         <Slider className="row featured__wrapper" {...settings}>
                             {
                                 pageAcf.history_timeline.map((element, index) => (
-                                    <div className="history__timeline__moment col-md-12" key={`${element.date}-${index}`}>
+                                    <div className="history__timeline__moment col-xs-12 col-sm-12 col-md-12 col-xl-12" key={`${element.date}-${index}`}>
                                         <div className="history__timeline__moment__date">
                                             {   
                                                 element.date.length > 0

@@ -347,4 +347,7 @@ button.type__press{
     .media__lists .row {
         padding: 40px 35px 20px;
     }
+    .media__page .featured__article {
+        padding: 40px 50px;
+    }
   }

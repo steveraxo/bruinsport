@@ -459,6 +459,17 @@
         clip-path: polygon(0 -9%, -28% 100%, 138% 34%, 100% 0);
     }
 }
+@media only screen and (max-width: 780px) and (orientation: landscape) {
+    .approach__copy {
+        margin-top: -101px;
+    }
+    .approach__first__element__wrapper {
+        padding: 100px 0px 100px;
+    }
+    .approach__testimonial .testimonial__slider__element {
+        min-height: 740px;
+    }
+}
 @media only screen and (max-width: 680px) and (orientation: landscape) {
     .approach__header.about__header {
         height: auto;
@@ -468,6 +479,9 @@
     }
     .approach__copy {
         padding: 0 40px!important;
+    }
+    .approach__first__element__wrapper {
+        padding: 100px 30px 100px;
     }
 }
 @media only screen and (max-width: 480px) and (orientation: landscape) {

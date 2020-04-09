@@ -1168,7 +1168,7 @@
     }
     .home__page .clients__logos__wrapper {
         position: relative;
-        top: 60px;
+        top: 20px;
     }
 }
 @media (max-width: 667px) and (orientation: landscape) {

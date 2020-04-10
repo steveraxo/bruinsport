@@ -6,7 +6,6 @@
     margin-bottom: 35px;
 }
 .team-wrapper img{
-    filter: grayscale(1);
     cursor: pointer;
 
 }

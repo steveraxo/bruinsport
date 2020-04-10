@@ -2,7 +2,9 @@
 .team__page{
     overflow: hidden;
 }
-
+.team-wrapper{
+    margin-bottom: 35px;
+}
 @media(max-width:4000px){
     .team__page .fade__top{
         width: 23%;
@@ -21,7 +23,8 @@
     }
     .iframe__team iframe{
         max-width: 1000px;
-        margin-top: 100px;
+        margin-top: 50px;
+        margin-bottom: 90px;
     }
     .team__section h2{
         font-weight: 600;
@@ -195,6 +198,7 @@
     }
     .team__members {
         padding-top: 100px;
+        padding-bottom: 60px;
     }
     .team__members .col-sm-12{
         margin-bottom: 80px;

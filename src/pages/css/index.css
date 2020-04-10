@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:500,600,700,800,900&display=swap'); */
 .master__wrapper{
     position: relative;
-    top: 103px;
+    top: 95px;
 }
 .hidden-el{
     display: none;

@@ -4,10 +4,11 @@
 }
 .team-wrapper{
     margin-bottom: 35px;
-    cursor: pointer;
 }
 .team-wrapper img{
     filter: grayscale(1);
+    cursor: pointer;
+
 }
 @media(max-width:4000px){
     .team__page .fade__top{

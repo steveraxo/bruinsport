@@ -406,7 +406,7 @@ class HomePage extends Component {
                             ? <ExternalButton buttonClass={''} buttonText={'Read More'} redirectionLink={element.node.acf.media_file.localFile.url} ></ExternalButton>
                             : <>
                               {
-                                element.node.acf.external_news_link !== null 
+                                element.node.acf.external_news_link.length > 0
                                 ? <ExternalButton buttonClass={''} buttonText={'Read More'} redirectionLink={element.node.acf.external_news_link} ></ExternalButton>
                                 : <>
                                   {

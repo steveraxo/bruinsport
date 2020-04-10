@@ -149,7 +149,7 @@ class Header extends Component {
                                         : <>
                                         {
                                             element.node.acf.external_news_link !== null 
-                                            ? <a href={element.node.acf.external_news_link.source_url} target="_BLANK" rel="noopener noreferrer">
+                                            ? <a href={element.node.acf.external_news_link} target="_BLANK" rel="noopener noreferrer">
                                                 <img src={linkIcon} alt="Link to Press Release"/>
                                             </a>
                                             : <>

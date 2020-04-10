@@ -406,8 +406,8 @@ class HomePage extends Component {
                             ? <ExternalButton buttonClass={''} buttonText={'Read More'} redirectionLink={element.node.acf.media_file.localFile.url} ></ExternalButton>
                             : <>
                               {
-                                element.node.acf.external_news_link.length > 0
-                                ? <ExternalButton buttonClass={''} buttonText={'Read More'} redirectionLink={element.node.acf.external_news_link} ></ExternalButton>
+                                element.node.acf.external_news_link !== null
+                                ? <ExternalButton buttonClass={''} buttonText={'Read More'} redirectionLink={element.node.acf.external_news_link.source_url} ></ExternalButton>
                                 : <>
                                   {
                                     element.node.acf.external_link_file.length > 0
@@ -557,7 +557,9 @@ query HomeQuery {
       node {
         acf {
           external_link_file
-          external_news_link
+          external_news_link {
+            source_url
+          }
           media_file {
             localFile {
               url

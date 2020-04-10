@@ -5,6 +5,8 @@
 .team-wrapper{
     margin-bottom: 35px;
     cursor: pointer;
+}
+.team-wrapper img{
     filter: grayscale(1);
 }
 @media(max-width:4000px){

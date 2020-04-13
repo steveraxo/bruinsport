@@ -10,6 +10,7 @@
     "gatsby": "^2.17.11",
     "gatsby-image": "^2.2.31",
     "gatsby-paginate": "^1.1.1",
+    "gatsby-plugin-google-analytics": "^2.2.2",
     "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-mailchimp": "^5.1.2",
     "gatsby-plugin-manifest": "^2.2.27",

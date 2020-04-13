@@ -20,6 +20,7 @@ class HomePage extends Component {
       mixBlend: 'mix-blend',
     };
   }
+  
   focusTrap(){
     setTimeout(function(){ 
 

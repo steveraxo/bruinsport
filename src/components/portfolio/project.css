@@ -113,6 +113,21 @@
         padding: 60px 20px 0;
     }
 }
+@media(max-width: 500px){
+    .portfolio_full.dark  .gatsby-image-wrapper:before{
+        position: absolute;
+        content: "";
+        top: 0px;
+        background: rgba(0, 0, 0, 0.22);
+        z-index: 9;
+        width: 100%;
+        height: 100%;
+    }
+    .portfolio_full.dark .portfolio__inner {
+        position: relative;
+        z-index: 10;
+    }
+}
 @media(max-width: 414px){
     .portfolio__page .popup-content {
         width: 100%!important;
@@ -128,8 +143,9 @@
         object-position: 44%!important;
     }
     .portfolio_full.dark img {
-        object-position: 55%!important;
+        object-position: 82%!important;
     }
+
     .featured__article__top > div > div {
         max-height: 100%;
     }

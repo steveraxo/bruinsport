@@ -305,6 +305,9 @@
     .projects__section .our__approach {
         clip-path: polygon(0 35%, 310% 0,790% 130%,0 110%);
     }
+    .portfolio_full .second{
+        display: block;
+    }
     .projects__section .our__approach {
         padding: 430px 40px 60px 40px!important;
     }

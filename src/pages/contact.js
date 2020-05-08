@@ -61,7 +61,7 @@ class ContactPage extends Component {
       form.set('field-interested', document.querySelectorAll('.checked input')[0].value)
       form.set('field-message', state.message)
   
-      axios.post('https://bruinsp.raxo.dev/wp-json/contact-form-7/v1/contact-forms/14/feedback', form, {
+      axios.post('https://cms.bruinsportscapital.com//wp-json/contact-form-7/v1/contact-forms/14/feedback', form, {
         headers: { 'Content-Type': 'multipart/form-data' },
       }).then(response => {
           this.setState({loading: 'success'});

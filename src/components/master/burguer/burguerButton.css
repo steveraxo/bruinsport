@@ -1,26 +1,27 @@
-.burguer__button{
-    cursor: pointer;
+.burguer__button {
+  cursor: pointer;
+  outline: none;
 }
-.burguer__wrapper{
-    height: 21px;
-    top: 4px;
-    position: relative;
+.burguer__wrapper {
+  height: 21px;
+  top: 4px;
+  position: relative;
 }
-.burguer__line{
-    position: relative;
-    width: 18.47px;
-    height: 3.33px;
-    background: white;
+.burguer__line {
+  position: relative;
+  width: 18.47px;
+  height: 3.33px;
+  background: white;
 }
-.burguer__line.line-one{
-    top: -2px;
-    height: 2px;
+.burguer__line.line-one {
+  top: -2px;
+  height: 2px;
 }
-.burguer__line.line-two{
-    top: 4px;
-    height: 2px;
+.burguer__line.line-two {
+  top: 4px;
+  height: 2px;
 }
-.burguer__line.line-three{
-    top: 10px;
-    height: 2px;
+.burguer__line.line-three {
+  top: 10px;
+  height: 2px;
 }

@@ -10,6 +10,11 @@
   padding: 12% 0;
 }
 
+#terms-conditions .hero-terms p {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
 #terms-conditions .terms-content {
   margin-top: 12%;
 }

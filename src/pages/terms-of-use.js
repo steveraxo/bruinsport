@@ -31,7 +31,7 @@ export default function Terms(props) {
               <h1 className="terms-title">
                 Bruin Capital <br /> Terms of Use
               </h1>
-              <p>last-updated: 13123</p>
+              <p>Last Updated: {pageData.date}</p>
             </div>
           </div>
         </div>

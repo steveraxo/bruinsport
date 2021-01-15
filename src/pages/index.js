@@ -61,7 +61,6 @@ class HomePage extends Component {
       document
         .querySelectorAll(".clients__logos")[0]
         .classList.remove("rotate__clients__logos")
-
       ;[...document.querySelectorAll(".clients__logos .col")].map(el =>
         el.classList.remove("rotated__col")
       )
@@ -86,7 +85,6 @@ class HomePage extends Component {
     document
       .querySelectorAll(".clients__logos")[0]
       .classList.add("rotate__clients__logos")
-
     ;[...document.querySelectorAll(".clients__logos .col")].map(el =>
       el.classList.add("rotated__col")
     )
@@ -603,10 +601,6 @@ export const pageQuery = graphql`
             featured_button_text
             featured_content
             featured_title
-            get_started_button_link
-            get_started_button_text
-            get_started_copy
-            get_started_title
             latest_news_title
             main_copy
             main_second_copy
@@ -633,16 +627,6 @@ export const pageQuery = graphql`
                 source_url
                 localFile {
                   url
-                }
-              }
-            }
-            get_started_background {
-              source_url
-              localFile {
-                childImageSharp {
-                  fluid(maxWidth: 4000, quality: 100) {
-                    ...GatsbyImageSharpFluid_withWebp
-                  }
                 }
               }
             }

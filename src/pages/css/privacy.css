@@ -1,0 +1,64 @@
+#terms-conditions .hero-terms {
+  background: url("../../images/terms-conditions-privacy-policy/privacy.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 70vh;
+}
+
+#terms-conditions .hero-terms .container {
+  padding: 12% 0;
+}
+
+#terms-conditions .hero-terms p {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+#terms-conditions .terms-content {
+  margin-top: 12%;
+}
+
+#terms-conditions .terms-content .content h2 {
+  margin: 50px auto;
+  font-size: 30px;
+  line-height: 32px;
+}
+
+#terms-conditions .terms-content .content h2 > span {
+  color: rgb(209, 41, 49);
+}
+
+#terms-conditions .terms-content .content p {
+  font-weight: 500;
+  margin: 30px auto;
+  font-family: "Muli";
+  font-size: 22px;
+  color: #000;
+  line-height: 36px;
+}
+
+@media (max-width: 4000px) {
+  #terms-conditions .terms-content {
+    margin-top: 5%;
+  }
+}
+
+@media (max-width: 1440px) {
+  #terms-conditions .terms-content .content p {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 1024px) {
+  #terms-conditions .hero-terms .container {
+    padding: 35% 0;
+  }
+}
+
+@media (max-width: 400px) {
+  #terms-conditions .hero-terms .container .terms-title {
+    font-size: 30px;
+    line-height: 30px;
+  }
+}

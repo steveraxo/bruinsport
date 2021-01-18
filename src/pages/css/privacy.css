@@ -1,4 +1,4 @@
-#terms-conditions .hero-terms {
+#terms-conditions .hero-privacy {
   background: url("../../images/terms-conditions-privacy-policy/privacy.png");
   background-size: cover;
   background-repeat: no-repeat;
@@ -6,11 +6,11 @@
   height: 70vh;
 }
 
-#terms-conditions .hero-terms .container {
+#terms-conditions .hero-privacy .container {
   padding: 12% 0;
 }
 
-#terms-conditions .hero-terms p {
+#terms-conditions .hero-privacy p {
   text-transform: uppercase;
   font-weight: bold;
 }

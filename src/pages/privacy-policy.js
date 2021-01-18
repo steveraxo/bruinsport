@@ -22,7 +22,7 @@ export default function Privacy(props) {
       </Helmet>
 
       <section id="terms-conditions">
-        <div className="hero-terms">
+        <div className="hero-privacy">
           <div className="container">
             <div className="col-sm-12 col-md-12">
               <h1 className="terms-title">

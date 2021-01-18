@@ -299,6 +299,11 @@ export const pageQuery = graphql`
                 source_text
                 subtitle
                 external_news_link
+                pdf_press_release {
+                  url {
+                    source_url
+                  }
+                }
               }
             }
           }
@@ -314,6 +319,11 @@ export const pageQuery = graphql`
             external_news_link
             subtitle
             source_text
+            pdf_press_release {
+              url {
+                source_url
+              }
+            }
           }
         }
       }

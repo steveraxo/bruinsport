@@ -47,7 +47,7 @@ export default function Privacy(props) {
 }
 
 export const pageQuery = graphql`
-  query termsPageQuery {
+  query privacyPageQuery {
     allWordpressPage(filter: { path: { eq: "/privacy-policy/" } }) {
       edges {
         node {

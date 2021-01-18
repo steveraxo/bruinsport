@@ -14,6 +14,10 @@
   text-transform: uppercase;
   font-weight: bold;
 }
+#terms-conditions .hero-privacy .terms-title {
+  font-weight: 600 !important;
+  font-family: "Montserrat", sans-serif !important;
+}
 
 #terms-conditions .terms-content {
   margin-top: 12%;

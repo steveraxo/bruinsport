@@ -15,23 +15,23 @@ module.exports = {
     //       endpoint: `${process.env.MAILCHIMP_KEY}`,
     //   },
     // },
-    {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: `Montserrat`,
-            variants: [`300`, `400`, `500`, `600`, `700`, `800`],
-            fontDisplay: `swap`,
-          },
-          {
-            family: `Muli`,
-            variants: [`300`, `400`, `500`, `600`, `700`, `800`],
-            fontDisplay: `swap`,
-          },
-        ],
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-prefetch-google-fonts`,
+    //   options: {
+    //     fonts: [
+    //       {
+    //         family: `Montserrat`,
+    //         variants: [`300`, `400`,`500`, `600`, `700`, `800`],
+    //         fontDisplay: `swap`,
+    //       },
+    //       {
+    //         family: `Muli`,
+    //         variants: [`300`,`400`,`500`,`600` ,`700`, `800`],
+    //         fontDisplay: `swap`,
+    //       },
+    //     ],
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {

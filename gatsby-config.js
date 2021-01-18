@@ -1,4 +1,4 @@
-require("dotenv").config({path: `.env.${process.env.NODE_ENV}`})
+require("dotenv").config({ path: `.env.${process.env.NODE_ENV}` })
 
 module.exports = {
   // The site metadata below its not goin the be used because we are pulling this data from wordpress
@@ -12,26 +12,26 @@ module.exports = {
     // {
     //   resolve: `gatsby-plugin-mailchimp`,
     //   options: {
-    //       endpoint: `${process.env.MAILCHIMP_KEY}`, 
+    //       endpoint: `${process.env.MAILCHIMP_KEY}`,
     //   },
     // },
-    // {
-    //   resolve: `gatsby-plugin-prefetch-google-fonts`,
-    //   options: {
-    //     fonts: [
-    //       {
-    //         family: `Montserrat`,
-    //         variants: [`300`, `400`,`500`, `600`, `700`, `800`],
-    //         fontDisplay: `swap`,
-    //       },
-    //       {
-    //         family: `Muli`,
-    //         variants: [`300`,`400`,`500`,`600` ,`700`, `800`],
-    //         fontDisplay: `swap`,
-    //       },
-    //     ],
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Montserrat`,
+            variants: [`300`, `400`, `500`, `600`, `700`, `800`],
+            fontDisplay: `swap`,
+          },
+          {
+            family: `Muli`,
+            variants: [`300`, `400`, `500`, `600`, `700`, `800`],
+            fontDisplay: `swap`,
+          },
+        ],
+      },
+    },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
@@ -40,12 +40,12 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-react-svg',
+      resolve: "gatsby-plugin-react-svg",
       options: {
         rule: {
           include: /images\/.*\.svg/,
-        }
-      }
+        },
+      },
     },
     {
       resolve: `gatsby-plugin-nprogress`,

@@ -28,6 +28,8 @@
   margin: 50px auto;
   font-size: 30px;
   line-height: 32px;
+  font-weight: 600 !important;
+  font-family: "Montserrat", sans-serif;
 }
 
 #terms-conditions .terms-content .content h2 > span {

@@ -14,7 +14,7 @@ export default function Privacy(props) {
           name="description"
           content={pageData.yoast_meta.yoast_wpseo_metadesc}
         />
-        <title>{pageData.yoast_meta.yoast_wpseo_title}</title>
+        <title>Privacy Policy | Bruin Capital</title>
         <link
           rel="canonical"
           href={pageData.yoast_meta.yoast_wpseo_canonical}

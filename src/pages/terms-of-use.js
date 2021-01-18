@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React from "react"
 import Layout from "../layouts"
 import "./css/terms.css"
 import Helmet from "react-helmet"
@@ -6,9 +6,6 @@ import { graphql } from "gatsby"
 export default function Terms(props) {
   const pageData = props.data.allWordpressPage.edges[0].node
 
-  useEffect(() => {
-    console.log(pageData)
-  })
   return (
     <Layout>
       <Helmet>
@@ -17,7 +14,7 @@ export default function Terms(props) {
           name="description"
           content={pageData.yoast_meta.yoast_wpseo_metadesc}
         />
-        <title>{pageData.yoast_meta.yoast_wpseo_title}</title>
+        <title>Terms of Use | Bruin Capital</title>
         <link
           rel="canonical"
           href={pageData.yoast_meta.yoast_wpseo_canonical}

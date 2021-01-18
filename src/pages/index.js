@@ -188,7 +188,7 @@ class HomePage extends Component {
             name="description"
             content={pageData.yoast_meta.yoast_wpseo_metadesc}
           />
-          <title>{pageData.yoast_meta.yoast_wpseo_title}</title>
+          <title>Home | Bruin Capital</title>
           <link
             rel="canonical"
             href={pageData.yoast_meta.yoast_wpseo_canonical}

@@ -41,7 +41,8 @@ const Footer = () => {
             <div className="footer__content">
               {footerOptions.copyright.length > 0 ? (
                 <p>
-                  {footerOptions.copyright} {new Date().getFullYear()}
+                  {footerOptions.copyright} {new Date().getFullYear()}[•]. All
+                  Rights Reserved
                 </p>
               ) : (
                 ""

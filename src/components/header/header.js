@@ -57,14 +57,15 @@ class Header extends Component {
     let wpLogo = false
     if (this.props.siteLogo) {
       wpLogo = this.props.siteLogo
+      console.log(wpLogo)
     }
     return (
       <div className="navbar  header__wrapper" id="header__navbar">
         <div className="brand__wrapper" id="brand__logo">
           <Link to="/" className="brand__link">
             {wpLogo ? (
-              <Img
-                fixed={wpLogo.localFile.childImageSharp.fixed}
+              <img
+                src={wpLogo.source_url}
                 backgroundColor={"#000000"}
                 className={"brand__svg__logo wp__logo"}
                 alt={"Bruin Capital"}

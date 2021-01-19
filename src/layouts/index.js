@@ -21,20 +21,24 @@ const Layout = ({ children }) => {
           }
         }
       }
-      logo: allWordpressWpMedia(filter: {title: {eq: "logo"}}) {
+      logo: allWordpressWpMedia(filter: { title: { eq: "logo" } }) {
         nodes {
           source_url
           title
           localFile {
-            childImageSharp{
-              fixed(width: 200, quality: 100) {
-                ...GatsbyImageSharpFixed_withWebp
+            childImageSharp {
+              fluid(maxWidth: 200, quality: 100) {
+                base64
+                sizes
+                src
+                srcSet
+                srcSetWebp
               }
             }
           }
         }
       }
-      favicon: allWordpressWpMedia(filter: {title: {eq: "favicon"}}) {
+      favicon: allWordpressWpMedia(filter: { title: { eq: "favicon" } }) {
         nodes {
           source_url
           title
@@ -43,14 +47,14 @@ const Layout = ({ children }) => {
     }
   `)
   const siteData = data.allWordpressSiteMetadata.edges[0].node
-  let siteLogo = false, 
-      siteFavicon = false
+  let siteLogo = false,
+    siteFavicon = false
 
-  if(data.logo.nodes.length > 0){
+  if (data.logo.nodes.length > 0) {
     siteLogo = data.logo.nodes[0]
   }
 
-  if(data.favicon.nodes.length > 0){
+  if (data.favicon.nodes.length > 0) {
     siteFavicon = data.favicon.nodes[0].source_url
   }
 
@@ -60,10 +64,10 @@ const Layout = ({ children }) => {
         <link rel="icon" href={siteFavicon} />
         <html lang="en" />
       </Helmet>
-      <Header  siteTitle={siteData.name} siteLogo={siteLogo} />
+      <Header siteTitle={siteData.name} siteLogo={siteLogo} />
       <div className="master__wrapper">
-        <main >{children}</main>
-        <MainMenu ></MainMenu>
+        <main>{children}</main>
+        <MainMenu></MainMenu>
         <Footer />
       </div>
     </>

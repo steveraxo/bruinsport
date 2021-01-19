@@ -1,5 +1,6 @@
 import PropTypes from "prop-types"
 import React from "react"
+import Link from "gatsby-link"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import "./footer.css"
@@ -37,7 +38,37 @@ const Footer = () => {
       <footer className="footer__wrapper">
         <div className="footer__container container">
           <div className="row text-center justify-content-center align-items-center">
-            <div className="footer__logo d-flex justify-content-center align-items-center"></div>
+            <div className="footer-menu d-flex justify-content-around align-items-around">
+              <Link className="footer-link" to="/">
+                Home
+              </Link>
+              <Link className="footer-link" to="/about">
+                About Us
+              </Link>
+              <Link className="footer-link" to="/approach">
+                Our Approach
+              </Link>
+              <Link className="footer-link" to="/portfolio">
+                Investments
+              </Link>
+              <Link className="footer-link" to="/team">
+                Our Team
+              </Link>
+              <Link className="footer-link" to="/media">
+                News/Press Releases
+              </Link>
+              <Link className="footer-link" to="/contact">
+                Contact
+              </Link>
+              <Link className="footer-link" to="/terms">
+                Terms Of Use
+              </Link>
+              <Link className="footer-link" to="/privacy">
+                Privacy Policy
+              </Link>
+            </div>
+          </div>
+          <div className="row text-center justify-content-center align-items-center">
             <div className="footer__content">
               {footerOptions.copyright.length > 0 ? (
                 <p>

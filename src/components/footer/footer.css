@@ -13,3 +13,39 @@
 .footer__content p a {
   color: #ffffff;
 }
+
+.footer-menu {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
+
+.footer-menu .footer-link {
+  font-size: 15px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: auto 5px;
+  color: #fff;
+}
+
+.footer-menu .footer-link:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+@media (max-width: 1024px) {
+  .footer-menu .footer-link {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 800px) {
+  .footer-menu {
+    flex-direction: column;
+  }
+  .footer-menu .footer-link {
+    margin: 0;
+  }
+}

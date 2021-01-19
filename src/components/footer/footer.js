@@ -39,23 +39,8 @@ const Footer = () => {
         <div className="footer__container container">
           <div className="row text-center justify-content-center align-items-center">
             <div className="footer-menu d-flex justify-content-around align-items-around">
-              <Link className="footer-link" to="/">
-                Home
-              </Link>
               <Link className="footer-link" to="/about">
                 About Us
-              </Link>
-              <Link className="footer-link" to="/approach">
-                Our Approach
-              </Link>
-              <Link className="footer-link" to="/portfolio">
-                Investments
-              </Link>
-              <Link className="footer-link" to="/team">
-                Our Team
-              </Link>
-              <Link className="footer-link" to="/media">
-                News/Press Releases
               </Link>
               <Link className="footer-link" to="/contact">
                 Contact

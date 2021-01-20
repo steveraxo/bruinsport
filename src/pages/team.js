@@ -225,7 +225,7 @@ class MediaPage extends Component {
                 </div>
                 <div className="col-xl-12 ">
                   <button className="" onClick={this.showContent}>
-                    Learn More
+                    Continued
                   </button>
                 </div>
                 <div className="col-xl-12 hidden team__extra__content">

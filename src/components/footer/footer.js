@@ -2,7 +2,6 @@ import PropTypes from "prop-types"
 import React from "react"
 import Link from "gatsby-link"
 import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
 import "./footer.css"
 
 const Footer = () => {
@@ -39,17 +38,17 @@ const Footer = () => {
         <div className="footer__container container">
           <div className="row text-center justify-content-start align-items-center">
             <div className="footer-menu d-flex justify-content-start align-items-around">
-              <Link className="footer-link" to="/about">
+              <Link className="footer-link" to="/approach">
                 About Us
-              </Link>
-              <Link className="footer-link" to="/contact">
-                Contact
               </Link>
               <Link className="footer-link" to="/terms">
                 Terms Of Use
               </Link>
               <Link className="footer-link" to="/privacy">
                 Privacy Policy
+              </Link>
+              <Link className="footer-link" to="/contact">
+                Contact Us
               </Link>
             </div>
           </div>

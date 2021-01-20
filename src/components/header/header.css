@@ -1,58 +1,58 @@
-.header__wrapper{
-    background: black;
-    padding: 13.87px 46px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 100%;
-    margin: 0 auto;
-    width: 100%;
-    z-index: 9999;
-    position: fixed;
+.header__wrapper {
+  background: black;
+  padding: 13.87px 46px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%;
+  margin: 0 auto;
+  width: 100%;
+  z-index: 9999;
+  position: fixed;
 }
-.brand__wrapper{
-    background-color: #000000;
+.brand__wrapper {
+  background-color: #000000;
 }
-.brand__wrapper .brand__link{
-    color: white;
-    text-decoration: none;
+.brand__wrapper .brand__link {
+  color: white;
+  text-decoration: none;
 }
-.brand__wrapper .brand__name{
-    font-size: 20px; 
-    margin: 0px;
+.brand__wrapper .brand__name {
+  font-size: 20px;
+  margin: 0px;
 }
-.brand__wrapper .brand__logo{
-    max-width: 120px;
+.brand__wrapper .brand__logo {
+  max-width: 150px;
+  margin: 0;
+  image-rendering: -moz-crisp-edges; /* Firefox */
+  image-rendering: -o-crisp-edges; /* Opera */
+  image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
+}
+.brand__wrapper .brand__svg__logo {
+  height: 50px;
+  margin: 0;
+}
+/* Responsive for header block*/
+@media (max-width: 500px) {
+  .header__wrapper {
+    padding: 10px 20px;
+  }
+  .brand__wrapper .brand__svg__logo {
+    height: auto;
     margin: 0;
-    image-rendering: -moz-crisp-edges; /* Firefox */
-    image-rendering: -o-crisp-edges; /* Opera */
-    image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
-    image-rendering: crisp-edges;
-    -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
+    width: 150px !important;
+  }
+  .brand__wrapper .brand__svg__logo img {
+    object-fit: contain !important;
+  }
 }
-.brand__wrapper .brand__svg__logo{
-    height: 40px;
-    margin: 0;
-}
-/* Responsive for header block*/ 
-@media (max-width: 500px){
-    .header__wrapper {
-        padding: 10px 20px;
-    }
-    .brand__wrapper .brand__svg__logo {
-        height: auto;
-        margin: 0;
-        width: 150px!important;
-    }
-    .brand__wrapper .brand__svg__logo img{
-        object-fit: contain!important;
-    }
-}
-@media (max-width:340px){
-    .brand__wrapper .brand__svg__logo {
-        width: 120px!important;
-    }
-    body h1 {
-        font-size: 6.688rem;
-    }
+@media (max-width: 340px) {
+  .brand__wrapper .brand__svg__logo {
+    width: 120px !important;
+  }
+  body h1 {
+    font-size: 6.688rem;
+  }
 }

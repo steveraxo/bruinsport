@@ -14,8 +14,8 @@
 .home__page .home__pop__content p::-webkit-scrollbar {
   -webkit-appearance: none;
 }
-.home__page .latest__article .title {
-}
+/* .home__page .latest__article .title {
+} */
 .home__page .home__pop__content p::-webkit-scrollbar:vertical {
   width: 10px;
   background-color: transparent;
@@ -445,10 +445,39 @@
 .home__page .featured__wrapper button {
   width: auto;
 }
+
 .clients__slider {
-  display: none;
-  visibility: hidden;
+  max-height: 150px;
+  height: 100%;
 }
+
+.clients__slider div {
+  max-height: 150px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-self: center;
+}
+
+.clients__slider img {
+  max-width: 70%;
+  
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+.clients__slider .slick-arrow.slick-next:before,
+.clients__slider .slick-arrow.slick-prev:before {
+  display: none;
+}
+
+@media(min-width: 3500px) {
+  .clients__slider img {
+    max-width: 40%;
+  }
+}
+
+
 @media (min-width: 1920px) {
   .floating__letter {
     top: 13%;

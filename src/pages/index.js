@@ -163,10 +163,11 @@ class HomePage extends Component {
       dots: false,
       arrows: true,
       infinite: true,
-      speed: 500,
+      speed: 300,
       cssEase: "linear",
+      centerMode: true,
       autoplay: true,
-      autoplaySpeed: 9000,
+      autoplaySpeed: 3000,
       slidesToShow: 4,
       slidesToScroll: 1,
       responsive: [
@@ -272,6 +273,7 @@ class HomePage extends Component {
                           closeOnDocumentClick
                           trigger={
                             <img
+                              style={{display: 'none'}}
                               id={`logo-client-${index}`}
                               tabIndex={0}
                               src={element.icon.localFile.url}

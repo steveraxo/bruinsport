@@ -473,34 +473,6 @@
   display: none;
 }
 
-@media (max-width: 4000px) {
-  .clients__slider {
-    max-width: 1380px;
-  }
-}
-
-@media (min-width: 3500px) {
-  .clients__slider img {
-    max-width: 40%;
-  }
-}
-
-@media (max-width: 2560px) {
-  .clients__slider {
-    max-width: 1250px;
-  }
-}
-
-@media (min-width: 1920px) {
-  .clients__slider {
-    max-width: initial;
-  }
-
-  .floating__letter {
-    top: 13%;
-    left: -28%;
-  }
-}
 @media (max-width: 6000px) {
   .floating__letter img {
     width: 50%;
@@ -537,6 +509,18 @@
     left: 35.5%;
   }
 }
+
+@media (max-width: 4000px) {
+  .clients__slider {
+    max-width: 1380px;
+  }
+}
+
+@media (min-width: 3500px) {
+  .clients__slider img {
+    max-width: 40%;
+  }
+}
 @media (max-width: 3000px) {
   .home__page .header__copy {
     left: 31%;
@@ -548,7 +532,16 @@
     left: 31%;
   }
 }
+
+@media (max-width: 2560px) {
+  .clients__slider {
+    max-width: 1250px;
+  }
+}
 @media (max-width: 2000px) {
+  .clients__slider {
+    max-width: initial;
+  }
   .home__page .header__copy {
     left: 18%;
   }
@@ -568,10 +561,13 @@
   }
 }
 @media (max-width: 1920px) {
+  .floating__letter {
+    top: 13%;
+    left: -28%;
+  }
   .floating__letter img {
     width: 70%;
   }
-
   .home__page .featured__section {
     margin-top: -450px;
   }
@@ -612,9 +608,6 @@
     margin: auto;
   }
 }
-
-@media (max-width: 1366px) {
-}
 @media (max-width: 1280px) {
   .latest__news .container {
     padding-left: 0px;
@@ -628,12 +621,6 @@
     font-size: 20.83px;
   }
 }
-@media (max-width: 1120px) {
-  .home__page .header__copy {
-    top: 22%;
-  }
-}
-
 @media (max-width: 1142px) {
   .home__page .latest__news .title p {
     font-size: 17.83px;
@@ -642,6 +629,11 @@
 
   .home__page .latest__news .content p {
     line-height: 20.2px;
+  }
+}
+@media (max-width: 1120px) {
+  .home__page .header__copy {
+    top: 22%;
   }
 }
 @media (max-width: 1024px) {
@@ -804,8 +796,7 @@
     width: 100%;
   }
 }
-@media (max-width: 812px) and (orientation: portrait) {
-}
+
 @media (max-width: 768px) {
   .clients__slider {
     max-height: initial;

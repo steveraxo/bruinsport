@@ -161,13 +161,11 @@ class HomePage extends Component {
 
     let settingsClients = {
       dots: false,
-      arrows: true,
+      arrows: false,
       infinite: true,
-      speed: 500,
-      cssEase: "linear",
-      // centerMode: true,
+      speed: 1000,
       autoplay: true,
-      autoplaySpeed: 5000,
+      autoplaySpeed: 2000,
       slidesToShow: 4,
       slidesToScroll: 1,
       responsive: [

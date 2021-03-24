@@ -449,6 +449,7 @@
 .clients__slider {
   max-height: 150px;
   height: 100%;
+  padding: 0 120px;
 }
 
 .clients__slider div {

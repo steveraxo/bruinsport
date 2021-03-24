@@ -273,7 +273,7 @@ class HomePage extends Component {
                           closeOnDocumentClick
                           trigger={
                             <img
-                              // style={{display: 'none'}}
+                              style={{ display: "none" }}
                               id={`logo-client-${index}`}
                               tabIndex={0}
                               src={element.icon.localFile.url}

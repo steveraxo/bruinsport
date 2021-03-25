@@ -247,7 +247,6 @@ class HomePage extends Component {
                           alt={`Client ${element.title} logo`}
                           onClick={this.triggerClientPopUp}
                           onKeyPress={this.triggerClientPopUp}
-                          loading="lazy"
                           key={`${index}-logo`}
                         />
                       ))}

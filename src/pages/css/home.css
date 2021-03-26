@@ -474,7 +474,7 @@
   /* width: auto !important;
     max-width: 100%; */
   height: 70px;
-  transform: scale(0.5);
+  transform: scale(0.9);
 }
 .clients__slider .slick-arrow.slick-next:before,
 .clients__slider .slick-arrow.slick-prev:before {

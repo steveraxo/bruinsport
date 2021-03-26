@@ -165,7 +165,7 @@ class HomePage extends Component {
       infinite: true,
       speed: 1000,
       autoplay: true,
-      autoplaySpeed: 2000,
+      autoplaySpeed: 3000,
       slidesToShow: 4,
       slidesToScroll: 1,
       responsive: [

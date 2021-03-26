@@ -469,6 +469,13 @@
   align-items: center;
   margin: 0 auto;
 }
+#logo-client-2-s,
+#logo-client-3-s {
+  /* width: auto !important;
+    max-width: 100%; */
+  height: 70px;
+  transform: scale(0.5);
+}
 .clients__slider .slick-arrow.slick-next:before,
 .clients__slider .slick-arrow.slick-prev:before {
   display: none;
@@ -700,13 +707,13 @@
     top: 67px;
     transform: rotate(140deg);
   }
-  #logo-client-2-s,
+  /* #logo-client-2-s,
   #logo-client-3-s {
     /* width: auto !important;
     max-width: 100%; */
-    height: 70px;
+  /* height: 70px;
     transform: scale(0.5);
-  }
+  } */
   .home__page .popup-content {
     max-width: 80% !important;
   }

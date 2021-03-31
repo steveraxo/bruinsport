@@ -659,7 +659,7 @@
     display: none !important;
   }
   .clients__slider {
-    padding: 0 80px;
+    /* padding: 0 80px; */
     margin-bottom: 30px;
   }
   .clients__slider div {

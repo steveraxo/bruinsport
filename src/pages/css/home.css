@@ -667,7 +667,6 @@
   }
   .clients__slider img {
     max-width: 55%;
-    margin: 0;
     display: flex !important;
     justify-content: center;
     align-items: center;

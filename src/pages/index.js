@@ -239,16 +239,18 @@ class HomePage extends Component {
                   <div className="clients__slider">
                     <Slider {...settingsClients}>
                       {pageData.acf.header_logos.map((element, index) => (
-                        <img
-                          datatracknumber={`logo-client-${index}`}
-                          id={`logo-client-${index}-s`}
-                          tabIndex={0}
-                          src={element.icon.localFile.url}
-                          alt={`Client ${element.title} logo`}
-                          onClick={this.triggerClientPopUp}
-                          onKeyPress={this.triggerClientPopUp}
-                          key={`${index}-logo`}
-                        />
+                        <div>
+                          <img
+                            datatracknumber={`logo-client-${index}`}
+                            id={`logo-client-${index}-s`}
+                            tabIndex={0}
+                            src={element.icon.localFile.url}
+                            alt={`Client ${element.title} logo`}
+                            onClick={this.triggerClientPopUp}
+                            onKeyPress={this.triggerClientPopUp}
+                            key={`${index}-logo`}
+                          />
+                        </div>
                       ))}
                     </Slider>
                   </div>

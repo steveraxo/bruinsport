@@ -119,7 +119,6 @@ class HomePage extends Component {
     // This variable will return all the fields related to the post
     const pageData = this.props.data.allWordpressPage.edges[0].node,
       newsData = this.props.data.allWordpressWpNews.edges
-    console.log(newsData)
     //Slick Setting
     let settings = {
       speed: 500,
@@ -530,7 +529,6 @@ class HomePage extends Component {
                                     buttonText={"Read More"}
                                     redirectionLink={
                                       element.node.acf.external_news_link
-                                        .source_url
                                     }
                                   ></ExternalButton>
                                 ) : (
@@ -651,9 +649,7 @@ export const pageQuery = graphql`
         node {
           acf {
             external_link_file
-            external_news_link {
-              source_url
-            }
+            external_news_link
             media_file {
               localFile {
                 url

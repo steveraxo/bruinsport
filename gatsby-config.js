@@ -32,13 +32,12 @@ module.exports = {
     //     ],
     //   },
     // },
-    // {
-    //   resolve: `gatsby-plugin-google-analytics`,
-    //   options: {
-    //     trackingId: "G-KB2MT6CNSS",
-    //     head: true,
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-google-tagmanager`,
+      options: {
+        id: "G-KB2MT6CNSS",
+      },
+    },
     {
       resolve: "gatsby-plugin-react-svg",
       options: {

@@ -33,9 +33,10 @@ module.exports = {
     //   },
     // },
     {
-      resolve: `gatsby-plugin-google-tagmanager`,
+      resolve: `gatsby-plugin-google-analytics`,
       options: {
-        id: "G-KB2MT6CNSS",
+        trackingId: "UA-79923821-1",
+        head: true,
       },
     },
     {

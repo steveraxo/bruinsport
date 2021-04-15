@@ -63,7 +63,7 @@ const Layout = ({ children }) => {
       <Helmet>
         <link rel="icon" href={siteFavicon} />
         <html lang="en" />
-        <script src="https://www.googletagmanager.com/gtag/js?id=G-KB2MT6CNSS" />
+        {/* <script src="https://www.googletagmanager.com/gtag/js?id=G-KB2MT6CNSS" />
         <script
           dangerouslySetInnerHTML={{
             __html: `window.dataLayer = window.dataLayer || [];
@@ -71,7 +71,7 @@ const Layout = ({ children }) => {
   gtag(‘js’, new Date());
   gtag(‘config’, ‘G-KB2MT6CNSS’);`,
           }}
-        />
+        /> */}
       </Helmet>
       <Header siteTitle={siteData.name} siteLogo={siteLogo} />
       <div className="master__wrapper">

@@ -63,7 +63,7 @@ const Layout = ({ children }) => {
       <Helmet>
         <link rel="icon" href={siteFavicon} />
         <html lang="en" />
-        <script
+        {/* <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=UA-19471254-0"
         />
@@ -74,7 +74,7 @@ const Layout = ({ children }) => {
   gtag(‘js’, new Date());
   gtag(‘config’, ‘UA-19471254-0’);`,
           }}
-        />
+        /> */}
       </Helmet>
       <Header siteTitle={siteData.name} siteLogo={siteLogo} />
       <div className="master__wrapper">

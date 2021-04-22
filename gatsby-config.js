@@ -32,13 +32,13 @@ module.exports = {
     //     ],
     //   },
     // },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: "UA-19471254-0",
-        head: true,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-google-analytics`,
+    //   options: {
+    //     trackingId: "UA-19471254-0",
+    //     head: true,
+    //   },
+    // },
     {
       resolve: "gatsby-plugin-react-svg",
       options: {

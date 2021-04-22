@@ -63,7 +63,7 @@ const Layout = ({ children }) => {
       <Helmet>
         <link rel="icon" href={siteFavicon} />
         <html lang="en" />
-        <script src="https://www.googletagmanager.com/gtag/js?id=UA-19471254-0" />
+        <script src="https://www.googletagmanager.com/gtag/js?id=G-KB2MT6CNSS" />
         <script
           dangerouslySetInnerHTML={{
             __html: `window.dataLayer = window.dataLayer || [];

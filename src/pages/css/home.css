@@ -462,7 +462,7 @@
 }
 
 .clients__slider img {
-  max-width: 60%;
+  max-width: 55%;
   display: flex !important;
   justify-content: center;
   align-items: center;
@@ -681,6 +681,7 @@
     margin: auto;
   }
   #logo-client-6-s,
+  #logo-client-2-s,
   #logo-client-7-s {
     transform: scale(0.6);
   }

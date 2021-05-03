@@ -36,7 +36,7 @@ const Footer = () => {
     <>
       <footer className="footer__wrapper">
         <div className="footer__container container">
-          <div className="row text-center justify-content-start align-items-center">
+          <div className="menu-wrapper row text-center align-items-center">
             <div className="footer-menu d-flex justify-content-start align-items-around">
               <Link className="footer-link" to="/approach">
                 About Us

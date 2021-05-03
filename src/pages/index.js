@@ -160,13 +160,11 @@ class HomePage extends Component {
 
     let settingsClients = {
       dots: false,
-      arrows: true,
+      arrows: false,
       infinite: true,
-      speed: 500,
-      cssEase: "linear",
-      // centerMode: true,
+      speed: 1000,
       autoplay: true,
-      autoplaySpeed: 5000,
+      autoplaySpeed: 3000,
       slidesToShow: 4,
       slidesToScroll: 1,
       responsive: [
@@ -240,17 +238,18 @@ class HomePage extends Component {
                   <div className="clients__slider">
                     <Slider {...settingsClients}>
                       {pageData.acf.header_logos.map((element, index) => (
-                        <img
-                          datatracknumber={`logo-client-${index}`}
-                          id={`logo-client-${index}-s`}
-                          tabIndex={0}
-                          src={element.icon.localFile.url}
-                          alt={`Client ${element.title} logo`}
-                          onClick={this.triggerClientPopUp}
-                          onKeyPress={this.triggerClientPopUp}
-                          loading="lazy"
-                          key={`${index}-logo`}
-                        />
+                        <div>
+                          <img
+                            datatracknumber={`logo-client-${index}`}
+                            id={`logo-client-${index}-s`}
+                            tabIndex={0}
+                            src={element.icon.localFile.url}
+                            alt={`Client ${element.title} logo`}
+                            onClick={this.triggerClientPopUp}
+                            onKeyPress={this.triggerClientPopUp}
+                            key={`${index}-logo`}
+                          />
+                        </div>
                       ))}
                     </Slider>
                   </div>
@@ -272,7 +271,7 @@ class HomePage extends Component {
                           closeOnDocumentClick
                           trigger={
                             <img
-                              // style={{display: 'none'}}
+                              style={{ display: "none" }}
                               id={`logo-client-${index}`}
                               tabIndex={0}
                               src={element.icon.localFile.url}

@@ -11,8 +11,16 @@ import NewsCarrousel from "../components/media/newsCarrousel"
 import Img from "gatsby-image"
 import ExternalButton from "../components/master/buttons/externalButton"
 import BruinLogo from "../images/media/bruin-letter.png"
+import axios from "axios"
 
 class MediaPage extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      pressReleases: [],
+      news: [],
+    }
+  }
   changeList(event) {
     const clickedElement = event.target,
       type = event.target.getAttribute("data-type")
@@ -38,12 +46,57 @@ class MediaPage extends Component {
       return true
     })
   }
+
+  formatDate(arr) {
+    arr.forEach(post => {
+      let parts = post.date.split("T")
+      let dateCut = parts[0].split("-")
+      let shortYear = dateCut[0].slice(2, 4)
+      let newDate = `${dateCut[1]}.${dateCut[2]}.${shortYear}`
+      post.date = newDate
+      console.log(newDate)
+    })
+  }
+
+  async getPressReleases() {
+    const press = `${process.env.GATSBY_WP_PROTOCOL}://${process.env.GATSBY_WP_API_LINK}/wp-json/wp/v2/pressreleases?per_page=100`
+    const news = `${process.env.GATSBY_WP_PROTOCOL}://${process.env.GATSBY_WP_API_LINK}/wp-json/wp/v2/news?per_page=100`
+
+    await axios
+      .get(news)
+      .then(({ data }) => {
+        this.formatDate(data)
+        this.setState({
+          news: data,
+        })
+      })
+      .catch(err => {
+        console.log(err)
+      })
+
+    await axios
+      .get(press)
+      .then(({ data }) => {
+        this.formatDate(data)
+        this.setState({
+          pressReleases: data,
+        })
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }
+
+  componentDidMount() {
+    this.getPressReleases()
+  }
   render() {
     var featuredArticles = false
 
     const pageData = this.props.data.allWordpressPage.edges[0].node
     const PressData = this.props.data.allWordpressWpPressreleases.edges
     const NewsData = this.props.data.allWordpressWpNews.edges
+    console.log(PressData)
 
     if (pageData.acf.featured_media) {
       featuredArticles = pageData.acf.featured_media
@@ -238,7 +291,7 @@ class MediaPage extends Component {
                 </div>
                 {NewsData ? (
                   <NewsCarrousel
-                    newsArray={NewsData}
+                    newsArray={this.state.news}
                     state={"active"}
                     elId={"news"}
                   />
@@ -247,7 +300,7 @@ class MediaPage extends Component {
                 )}
                 {PressData ? (
                   <NewsCarrousel
-                    newsArray={PressData}
+                    newsArray={this.state.pressReleases}
                     state={"not__active"}
                     elId={"press"}
                   />

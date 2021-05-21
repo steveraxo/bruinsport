@@ -59,8 +59,8 @@ class MediaPage extends Component {
   }
 
   async getPressReleases() {
-    const press = `${process.env.GATSBY_WP_PROTOCOL}://${process.env.GATSBY_WP_API_LINK}/wp-json/wp/v2/pressreleases?per_page=100`
-    const news = `${process.env.GATSBY_WP_PROTOCOL}://${process.env.GATSBY_WP_API_LINK}/wp-json/wp/v2/news?per_page=100`
+    const press = `${process.env.GATSBY_WP_API_LINK}/wp-json/wp/v2/pressreleases?per_page=100`
+    const news = `${process.env.GATSBY_WP_API_LINK}/wp-json/wp/v2/news?per_page=100`
 
     await axios
       .get(news)

@@ -161,7 +161,7 @@ class Header extends Component {
                     <>
                       {element.acf.media_file ? (
                         <a
-                          href={element.acf.media_file.localFile.url}
+                          href={element.acf.media_file}
                           target="_BLANK"
                           rel="noopener noreferrer"
                         >

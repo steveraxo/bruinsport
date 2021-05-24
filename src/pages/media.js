@@ -65,10 +65,16 @@ class MediaPage extends Component {
     await axios
       .get(news)
       .then(({ data }) => {
+        console.log(data)
         this.formatDate(data)
-        this.setState({
-          news: data,
-        })
+        this.setState(
+          {
+            news: data,
+          },
+          () => {
+            console.log(this.state.news)
+          }
+        )
       })
       .catch(err => {
         console.log(err)
@@ -96,7 +102,6 @@ class MediaPage extends Component {
     const pageData = this.props.data.allWordpressPage.edges[0].node
     const PressData = this.props.data.allWordpressWpPressreleases.edges
     const NewsData = this.props.data.allWordpressWpNews.edges
-    console.log(PressData)
 
     if (pageData.acf.featured_media) {
       featuredArticles = pageData.acf.featured_media

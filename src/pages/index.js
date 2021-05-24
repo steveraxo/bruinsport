@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import Layout from "../layouts/index"
 import { graphql } from "gatsby"
 import { Helmet } from "react-helmet"
+import axios from "axios"
 import "./css/index.css"
 import "./css/home.css"
 import Slider from "react-slick"
@@ -19,6 +20,31 @@ class HomePage extends Component {
     this.state = {
       mixBlend: "mix-blend",
     }
+  }
+
+  formatDate(arr) {
+    arr.forEach(post => {
+      let parts = post.date.split("T")
+      let dateCut = parts[0].split("-")
+      let shortYear = dateCut[0].slice(2, 4)
+      let newDate = `${dateCut[1]}.${dateCut[2]}.${shortYear}`
+      post.date = newDate
+    })
+  }
+
+  getNews() {
+    const news = `${process.env.GATSBY_WP_API_LINK}/wp-json/wp/v2/news?per_page=12&_embed`
+    axios.get(news).then(({ data }) => {
+      this.formatDate(data)
+      this.setState(
+        {
+          news: data,
+        },
+        () => {
+          console.log(this.state.news)
+        }
+      )
+    })
   }
 
   focusTrap() {
@@ -114,11 +140,13 @@ class HomePage extends Component {
         "https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600;700;800;900&display=swap"
       document.head.appendChild(linkMul)
     }, 100)
+
+    this.getNews()
   }
   render() {
     // This variable will return all the fields related to the post
     const pageData = this.props.data.allWordpressPage.edges[0].node,
-      newsData = this.props.data.allWordpressWpNews.edges
+      newsData = this.state.news
     //Slick Setting
     let settings = {
       speed: 500,
@@ -472,16 +500,16 @@ class HomePage extends Component {
                   {...settings}
                 >
                   {newsData.map((element, index) =>
-                    element.node.acf ? (
+                    element.acf ? (
                       <div
                         className={`latest__article`}
                         key={`newsData-${element}-${index}`}
                       >
-                        {element.node.categories !== null ? (
+                        {element.categories !== null ? (
                           <div className={"title"}>
                             <p
                               dangerouslySetInnerHTML={{
-                                __html: element.node.categories[0].name,
+                                __html: element._embedded["wp:term"][0][0].name,
                               }}
                             />
                           </div>
@@ -493,52 +521,49 @@ class HomePage extends Component {
                         <div className={"date__title"}>
                           <p
                             dangerouslySetInnerHTML={{
-                              __html: element.node.date,
+                              __html: element.date,
                             }}
                           />
                         </div>
 
-                        {element.node.title.length > 0 ? (
+                        {element.title.rendered.length > 0 ? (
                           <p
                             className={"content"}
                             dangerouslySetInnerHTML={{
-                              __html: element.node.title,
+                              __html: element.title.rendered,
                             }}
                           />
                         ) : (
                           ""
                         )}
 
-                        {element.node.acf !== null ? (
+                        {element.acf !== null ? (
                           <>
-                            {element.node.acf.media_file ? (
+                            {element.acf.media_file ? (
                               <ExternalButton
                                 buttonClass={""}
                                 buttonText={"Read More"}
-                                redirectionLink={
-                                  element.node.acf.media_file.localFile.url
-                                }
+                                redirectionLink={element.acf.media_file}
                               ></ExternalButton>
                             ) : (
                               <>
-                                {element.node.acf.external_news_link !==
-                                null ? (
+                                {element.acf.external_news_link !== null ? (
                                   <ExternalButton
                                     buttonClass={""}
                                     buttonText={"Read More"}
                                     redirectionLink={
-                                      element.node.acf.external_news_link
+                                      element.acf.external_news_link
                                     }
                                   ></ExternalButton>
                                 ) : (
                                   <>
-                                    {element.node.acf.external_link_file
-                                      .length > 0 ? (
+                                    {element.acf.external_link_file.length >
+                                    0 ? (
                                       <ExternalButton
                                         buttonClass={""}
                                         buttonText={"Read More"}
                                         redirectionLink={
-                                          element.node.acf.external_link_file
+                                          element.acf.external_link_file
                                         }
                                       ></ExternalButton>
                                     ) : (

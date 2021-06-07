@@ -141,7 +141,7 @@ class Header extends Component {
                 <>
                   {element.acf !== null && element.acf.pdf_press_release ? (
                     <a
-                      href={element.acf.pdf_press_release.url.source_url}
+                      href={element.acf.pdf_press_release.url}
                       download
                       target="_BLANK"
                       rel="noopener noreferrer"
@@ -181,7 +181,7 @@ class Header extends Component {
                             <>
                               {element.acf.external_link_file.length > 0 ? (
                                 <a
-                                  href={element.acf.external_link_file}
+                                  href={element.acf.url}
                                   target="_BLANK"
                                   rel="noopener noreferrer"
                                 >

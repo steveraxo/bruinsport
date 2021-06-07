@@ -54,7 +54,6 @@ class MediaPage extends Component {
       let shortYear = dateCut[0].slice(2, 4)
       let newDate = `${dateCut[1]}.${dateCut[2]}.${shortYear}`
       post.date = newDate
-      console.log(newDate)
     })
   }
 
@@ -65,7 +64,6 @@ class MediaPage extends Component {
     await axios
       .get(news)
       .then(({ data }) => {
-        console.log(data)
         this.formatDate(data)
         this.setState(
           {
@@ -84,9 +82,14 @@ class MediaPage extends Component {
       .get(press)
       .then(({ data }) => {
         this.formatDate(data)
-        this.setState({
-          pressReleases: data,
-        })
+        this.setState(
+          {
+            pressReleases: data,
+          },
+          () => {
+            console.log(this.state.pressReleases)
+          }
+        )
       })
       .catch(err => {
         console.log(err)

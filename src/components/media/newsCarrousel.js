@@ -171,7 +171,7 @@ class Header extends Component {
                         <>
                           {element.acf.external_news_link !== null ? (
                             <a
-                              href={element.acf.external_news_link.source_url}
+                              href={element.acf.external_news_link}
                               target="_BLANK"
                               rel="noopener noreferrer"
                             >
@@ -181,7 +181,7 @@ class Header extends Component {
                             <>
                               {element.acf.external_link_file.length > 0 ? (
                                 <a
-                                  href={element.acf.url}
+                                  href={element.acf.external_link_file}
                                   target="_BLANK"
                                   rel="noopener noreferrer"
                                 >

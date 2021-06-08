@@ -547,12 +547,12 @@ class HomePage extends Component {
                               ></ExternalButton>
                             ) : (
                               <>
-                                {element.acf.external_news_link !== null ? (
+                                {element.acf.external_link_file !== null ? (
                                   <ExternalButton
                                     buttonClass={""}
                                     buttonText={"Read More"}
                                     redirectionLink={
-                                      element.acf.external_news_link
+                                      element.acf.external_link_file
                                     }
                                   ></ExternalButton>
                                 ) : (
